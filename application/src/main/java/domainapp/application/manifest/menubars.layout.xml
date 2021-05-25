@@ -69,8 +69,9 @@
             </mb3:section>
         </mb3:menu>
         <mb3:menu>
-            <mb3:named>Simple Objects</mb3:named>
+            <mb3:named>Usuarios</mb3:named>
             <mb3:section>
+<<<<<<< develop
                 <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="create">
                     <cpt:named>create</cpt:named>
                 </mb3:serviceAction>
@@ -80,6 +81,16 @@
                 <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="listAll">
                     <cpt:named>listAll</cpt:named>
 >>>>>>> Stashed changes
+=======
+                <mb3:serviceAction objectType="simple.UsuarioMenu" id="create">
+                    <cpt:named>Cargar reclamo</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.UsuarioMenu" id="findByName">
+                    <cpt:named>Buscar por nombre</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.UsuarioMenu" id="listAll">
+                    <cpt:named>Listar Usuarios</cpt:named>
+>>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>

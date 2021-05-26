@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5bc0400-8762-487f-8135-5dcd245043af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.flattened-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/.flattened-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/main/java/domainapp/application/manifest/menubars.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/domainapp/application/manifest/menubars.layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/translations.pot" beforeDir="false" afterPath="$PROJECT_DIR$/application/translations.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-simple/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/.flattened-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module-simple/translations.pot" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/translations.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/.flattened-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/isis.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/isis.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

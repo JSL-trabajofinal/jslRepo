@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Reclamos.iml" filepath="$PROJECT_DIR$/Reclamos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Reclamos (1).iml" filepath="$PROJECT_DIR$/Reclamos (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/application/Reclamos-application.iml" filepath="$PROJECT_DIR$/application/Reclamos-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-simple/Reclamos-module-simple.iml" filepath="$PROJECT_DIR$/module-simple/Reclamos-module-simple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp/Reclamos-webapp.iml" filepath="$PROJECT_DIR$/webapp/Reclamos-webapp.iml" />
+    </modules>
+  </component>
+</project>

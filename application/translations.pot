@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-05-18 21:25:09+\n"
+"POT-Creation-Date: 2021-05-26 16:15:11+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,6 +68,12 @@ msgstr ""
 
 #: org.apache.isis.applib.domain.DomainObjectList#actionOwningType
 msgid "Action Owning Type"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamos.Reclamo#apellido
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+msgid "Apellido"
 msgstr ""
 
 
@@ -117,6 +123,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#create()
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio#create()
 msgid "Create"
 msgstr ""
 
@@ -141,12 +148,19 @@ msgid "Detail"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.reclamos.Reclamo#direc
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+msgid "Direc"
+msgstr ""
+
+
 #: org.apache.isis.objectstore.jdo.applib.service.DomainChangeJdoAbstract
 msgid "Domain Change"
 msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadJdoMetadata()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#downloadJdoMetadata()
 msgid "Download Jdo Metadata"
 msgstr ""
 
@@ -154,6 +168,7 @@ msgstr ""
 #: domainapp.application.fixture.scenarios.DomainAppDemo#downloadLayoutXml()
 #: domainapp.application.services.homepage.HomePageViewModel#downloadLayoutXml()
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadLayoutXml()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#downloadLayoutXml()
 #: org.apache.isis.applib.AbstractViewModel#downloadLayoutXml()
 #: org.apache.isis.applib.ViewModel#downloadLayoutXml()
 #: org.apache.isis.applib.domain.DomainObjectList#downloadLayoutXml()
@@ -221,6 +236,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#findByName()
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio#findByName()
 msgid "Find By Name"
 msgstr ""
 
@@ -241,6 +257,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusIdLong()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusIdLong()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusIdLong#prop()
 msgid "Id"
 msgstr ""
@@ -261,6 +278,11 @@ msgid "Include"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio#findByName(java.lang.String)
+msgid "Ingreso: "
+msgstr ""
+
+
 #: org.apache.isis.applib.services.swagger.SwaggerService$Format#JSON
 msgid "Json"
 msgstr ""
@@ -272,6 +294,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#listAll()
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio#listAll()
 msgid "List All"
 msgstr ""
 
@@ -301,12 +324,19 @@ msgid "Name"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.reclamos.Reclamo#nombre
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+msgid "Nombre"
+msgstr ""
+
+
 #: org.apache.isis.applib.services.layout.LayoutService$Style#NORMALIZED
 msgid "Normalized"
 msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#notes
+#: domainapp.modules.simple.dom.reclamos.Reclamo#notes
 msgid "Notes"
 msgstr ""
 
@@ -330,6 +360,7 @@ msgstr ""
 #: domainapp.application.fixture.scenarios.DomainAppDemo#openRestApi()
 #: domainapp.application.services.homepage.HomePageViewModel#openRestApi()
 #: domainapp.modules.simple.dom.impl.SimpleObject#openRestApi()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#openRestApi()
 #: org.apache.isis.applib.AbstractViewModel#openRestApi()
 #: org.apache.isis.applib.ViewModel#openRestApi()
 #: org.apache.isis.applib.domain.DomainObjectList#openRestApi()
@@ -418,6 +449,7 @@ msgstr ""
 #: domainapp.application.fixture.scenarios.DomainAppDemo#rebuildMetamodel()
 #: domainapp.application.services.homepage.HomePageViewModel#rebuildMetamodel()
 #: domainapp.modules.simple.dom.impl.SimpleObject#rebuildMetamodel()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#rebuildMetamodel()
 #: org.apache.isis.applib.AbstractViewModel#rebuildMetamodel()
 #: org.apache.isis.applib.ViewModel#rebuildMetamodel()
 #: org.apache.isis.applib.domain.DomainObjectList#rebuildMetamodel()
@@ -427,6 +459,11 @@ msgstr ""
 #: org.apache.isis.applib.fixturescripts.SimpleFixtureScript#rebuildMetamodel()
 #: org.apache.isis.applib.services.config.ConfigurationProperty#rebuildMetamodel()
 msgid "Rebuild Metamodel"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio
+msgid "Reclamos"
 msgstr ""
 
 
@@ -497,6 +534,12 @@ msgid "TargetStr"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.reclamos.Reclamo#telefono
+#: domainapp.modules.simple.dom.reclamos.ReclamoRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+msgid "Telefono"
+msgstr ""
+
+
 #: org.apache.isis.objectstore.jdo.applib.service.DomainChangeJdoAbstract#timestamp
 msgid "Timestamp"
 msgstr ""
@@ -529,6 +572,8 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusVersionTimestamp()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionLong()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionTimestamp()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusVersionLong#prop()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusVersionTimestamp#prop()
 msgid "Version"

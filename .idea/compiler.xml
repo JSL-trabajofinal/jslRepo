@@ -12,8 +12,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Reclamos" target="1.8" />
-      <module name="Reclamos (1)" target="1.8" />
+      <module name="Reclamos" target="1.5" />
+      <module name="Reclamos (1)" target="1.5" />
       <module name="Reclamos (2)" target="1.5" />
       <module name="Reclamos-application" target="1.8" />
       <module name="Reclamos-module-simple" target="1.8" />

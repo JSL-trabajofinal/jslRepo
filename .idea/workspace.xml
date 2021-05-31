@@ -5,13 +5,105 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5bc0400-8762-487f-8135-5dcd245043af" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/isis.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/isis.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reclamos (1).iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reclamos (2).iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/domainapp/application/manifest/menubars.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/domainapp/application/manifest/menubars.layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/Reclamos-application-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/Reclamos-application-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/Reclamos-application-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/Reclamos-application-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/classes/domainapp/application/manifest/menubars.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/classes/domainapp/application/manifest/menubars.layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-html-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-html-report/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/css/cucumber.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/css/cucumber.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/css/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/js/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/js/Chart.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/js/jquery.tablesorter.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/js/jquery.tablesorter.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/overview-failures.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/overview-failures.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/overview-features.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/overview-features.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/overview-steps.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/overview-steps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/overview-tags.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/overview-tags.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/report-feature_domainapp-application-bdd-specs-SimpleObjectSpec_listAllAndCreate-feature.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/report-feature_domainapp-application-bdd-specs-SimpleObjectSpec_listAllAndCreate-feature.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/report-tag_DomainAppDemo.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber-reports/cucumber-html-reports/report-tag_DomainAppDemo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/cucumber.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/surefire-integbddspecs-reports/TEST-domainapp.application.bdd.specs.RunIntegBddSpecs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/surefire-integbddspecs-reports/TEST-domainapp.application.bdd.specs.RunIntegBddSpecs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/surefire-integbddspecs-reports/domainapp.application.bdd.specs.RunIntegBddSpecs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/surefire-integbddspecs-reports/domainapp.application.bdd.specs.RunIntegBddSpecs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/surefire-integtest-reports/TEST-domainapp.application.integtests.mml.MetaModelService_IntegTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/surefire-integtest-reports/TEST-domainapp.application.integtests.mml.MetaModelService_IntegTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/surefire-integtest-reports/TEST-domainapp.application.integtests.smoke.Smoke_IntegTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/surefire-integtest-reports/TEST-domainapp.application.integtests.smoke.Smoke_IntegTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/surefire-integtest-reports/domainapp.application.integtests.mml.MetaModelService_IntegTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/surefire-integtest-reports/domainapp.application.integtests.mml.MetaModelService_IntegTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/target/surefire-integtest-reports/domainapp.application.integtests.smoke.Smoke_IntegTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/application/target/surefire-integtest-reports/domainapp.application.integtests.smoke.Smoke_IntegTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/translations.pot" beforeDir="false" afterPath="$PROJECT_DIR$/application/translations.pot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/PublisherServiceLogging.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/PublisherServiceLogging.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/ThreadPoolSupport.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ThreadPoolSupport.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/Reclamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/Reclamo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/Reclamo.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/Reclamo.layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/ReclamoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/ReclamoRepositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/Reclamos-module-simple-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/Reclamos-module-simple-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/Reclamos-module-simple-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/Reclamos-module-simple-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/QReclamo.class" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/QReclamo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/Reclamo.class" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/Reclamo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/Reclamo.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/Reclamo.layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/ReclamoRepositorio$CreateDomainEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/ReclamoRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/classes/domainapp/modules/simple/dom/reclamos/ReclamoRepositorio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/generated-sources/annotations/domainapp/modules/simple/dom/reclamos/QReclamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/generated-sources/annotations/domainapp/modules/simple/dom/reclamos/QReclamo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusId.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusId.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/TEST-domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusId.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusId.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-integtest-reports/domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/TEST-domainapp.modules.simple.dom.impl.SimpleObject_Test$Name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/TEST-domainapp.modules.simple.dom.impl.SimpleObject_Test$Name.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/TEST-domainapp.modules.simple.dom.impl.SimpleObjects_Test$Create.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/TEST-domainapp.modules.simple.dom.impl.SimpleObjects_Test$Create.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/TEST-domainapp.modules.simple.dom.impl.SimpleObjects_Test$ListAll.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/TEST-domainapp.modules.simple.dom.impl.SimpleObjects_Test$ListAll.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/domainapp.modules.simple.dom.impl.SimpleObject_Test$Name.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/domainapp.modules.simple.dom.impl.SimpleObject_Test$Name.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/domainapp.modules.simple.dom.impl.SimpleObjects_Test$Create.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/domainapp.modules.simple.dom.impl.SimpleObjects_Test$Create.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/domainapp.modules.simple.dom.impl.SimpleObjects_Test$ListAll.txt" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/target/surefire-unittest-reports/domainapp.modules.simple.dom.impl.SimpleObjects_Test$ListAll.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/translations.pot" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/translations.pot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Reclamos-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Reclamos-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/Reclamos-webapp-1.0-SNAPSHOT-tests.jar" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/Reclamos-webapp-1.0-SNAPSHOT-tests.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/Reclamos-webapp-1.0-SNAPSHOT/WEB-INF/isis.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/Reclamos-webapp-1.0-SNAPSHOT/WEB-INF/isis.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/Reclamos-webapp-1.0-SNAPSHOT/WEB-INF/lib/Reclamos-application-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/Reclamos-webapp-1.0-SNAPSHOT/WEB-INF/lib/Reclamos-application-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/Reclamos-webapp-1.0-SNAPSHOT/WEB-INF/lib/Reclamos-module-simple-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/Reclamos-webapp-1.0-SNAPSHOT/WEB-INF/lib/Reclamos-module-simple-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/Reclamos.war" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/Reclamos.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PRIVATE.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PRIVATE.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PUBLIC.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PUBLIC.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,11 +119,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/operador" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/operador" />
+      <recent name="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom" />
       <recent name="C:\Users\lauti\OneDrive\Escritorio\proyectofinal\jslRepo\module-simple\src\main\java\domainapp\modules\simple\dom\reclamos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -51,5 +145,17 @@
       <updated>1621383396794</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -29,18 +29,16 @@ public class QReclamo extends PersistableExpressionImpl<Reclamo> implements Pers
 
     public final StringExpression nombre;
     public final StringExpression apellido;
-    public final StringExpression direc;
+    public final StringExpression direccion;
     public final StringExpression telefono;
-    public final StringExpression notes;
 
     public QReclamo(PersistableExpression parent, String name, int depth)
     {
         super(parent, name);
         this.nombre = new StringExpressionImpl(this, "nombre");
         this.apellido = new StringExpressionImpl(this, "apellido");
-        this.direc = new StringExpressionImpl(this, "direc");
+        this.direccion = new StringExpressionImpl(this, "direccion");
         this.telefono = new StringExpressionImpl(this, "telefono");
-        this.notes = new StringExpressionImpl(this, "notes");
     }
 
     public QReclamo(Class type, String name, ExpressionType exprType)
@@ -48,8 +46,7 @@ public class QReclamo extends PersistableExpressionImpl<Reclamo> implements Pers
         super(type, name, exprType);
         this.nombre = new StringExpressionImpl(this, "nombre");
         this.apellido = new StringExpressionImpl(this, "apellido");
-        this.direc = new StringExpressionImpl(this, "direc");
+        this.direccion = new StringExpressionImpl(this, "direccion");
         this.telefono = new StringExpressionImpl(this, "telefono");
-        this.notes = new StringExpressionImpl(this, "notes");
     }
 }

@@ -142,6 +142,27 @@
         }
       }
     },
+    "/objects/simple.Operador/{objectId}" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 14.1",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Operador , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "$ref" : "#/definitions/simple.OperadorRepr"
+            }
+          }
+        }
+      }
+    },
     "/objects/simple.Reclamo/{objectId}" : {
       "get" : {
         "tags" : [ "simple" ],
@@ -356,7 +377,7 @@
                   }
                 }
               },
-              "direc" : {
+              "usuario" : {
                 "type" : "object",
                 "properties" : {
                   "value" : {
@@ -364,7 +385,7 @@
                   }
                 }
               },
-              "telefono" : {
+              "contraseña" : {
                 "type" : "object",
                 "properties" : {
                   "value" : {
@@ -379,7 +400,7 @@
           "200" : {
             "description" : "simple.ReclamoMenu#create , if Accept: application/json;profile=urn:org.apache.isis/v1",
             "schema" : {
-              "$ref" : "#/definitions/simple.ReclamoRepr"
+              "$ref" : "#/definitions/simple.OperadorRepr"
             }
           }
         }
@@ -391,7 +412,7 @@
         "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.ReclamoMenu#findByName",
         "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
         "parameters" : [ {
-          "name" : "ingreso:",
+          "name" : "operador:",
           "in" : "query",
           "description" : "RO Spec v1.0, section 2.9.1",
           "required" : false,
@@ -408,9 +429,9 @@
             "description" : "simple.ReclamoMenu#findByName , if Accept: application/json;profile=urn:org.apache.isis/v1",
             "schema" : {
               "type" : "array",
-              "description" : "List of simple.Reclamo",
+              "description" : "List of simple.Operador",
               "items" : {
-                "$ref" : "#/definitions/simple.ReclamoRepr"
+                "$ref" : "#/definitions/simple.OperadorRepr"
               }
             }
           }
@@ -428,9 +449,9 @@
             "description" : "simple.ReclamoMenu#listAll , if Accept: application/json;profile=urn:org.apache.isis/v1",
             "schema" : {
               "type" : "array",
-              "description" : "List of simple.Reclamo",
+              "description" : "List of simple.Operador",
               "items" : {
-                "$ref" : "#/definitions/simple.ReclamoRepr"
+                "$ref" : "#/definitions/simple.OperadorRepr"
               }
             }
           }
@@ -533,6 +554,152 @@
               "description" : "List of simple.SimpleObject",
               "items" : {
                 "$ref" : "#/definitions/simple.SimpleObjectRepr"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleReclamoMenu" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 15.1",
+        "produces" : [ "application/json", "application/json;profile=urn:org.restfulobjects:repr-types/object" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/simple.SimpleReclamoMenuRepr"
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleReclamoMenu/actions/create/invoke" : {
+      "post" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.SimpleReclamoMenu#create",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "nombre" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "apellido" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "direccion" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "telefono" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.SimpleReclamoMenu#create , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "$ref" : "#/definitions/simple.ReclamoRepr"
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleReclamoMenu/actions/findByName/invoke" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.SimpleReclamoMenu#findByName",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "name" : "nombreDelCliente",
+          "in" : "query",
+          "description" : "RO Spec v1.0, section 2.9.1",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "x-isis-querystring",
+          "in" : "query",
+          "description" : "RO Spec v1.0, section 2.10: all (formal) arguments as base64 encoded string",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.SimpleReclamoMenu#findByName , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "type" : "array",
+              "description" : "List of simple.Reclamo",
+              "items" : {
+                "$ref" : "#/definitions/simple.ReclamoRepr"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleReclamoMenu/actions/listAllActive/invoke" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.SimpleReclamoMenu#listAllActive",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.SimpleReclamoMenu#listAllActive , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "type" : "array",
+              "description" : "List of simple.Reclamo",
+              "items" : {
+                "$ref" : "#/definitions/simple.ReclamoRepr"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleReclamoMenu/actions/listAllInactive/invoke" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.SimpleReclamoMenu#listAllInactive",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.SimpleReclamoMenu#listAllInactive , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "type" : "array",
+              "description" : "List of simple.Reclamo",
+              "items" : {
+                "$ref" : "#/definitions/simple.ReclamoRepr"
               }
             }
           }
@@ -695,8 +862,8 @@
         "method" : {
           "type" : "string",
           "description" : "HTTP verb to access",
-          "default" : "GET",
-          "enum" : [ "GET", "POST", "PUT", "DELETE" ]
+          "enum" : [ "GET", "POST", "PUT", "DELETE" ],
+          "default" : "GET"
         },
         "type" : {
           "type" : "string",
@@ -712,6 +879,36 @@
         }
       }
     },
+    "simple.OperadorRepr" : {
+      "type" : "object",
+      "properties" : {
+        "nombre" : {
+          "type" : "string"
+        },
+        "apellido" : {
+          "type" : "string"
+        },
+        "usuario" : {
+          "type" : "string"
+        },
+        "contraseña" : {
+          "type" : "string"
+        },
+        "datanucleusIdLong" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "datanucleusVersionLong" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "datanucleusVersionTimestamp" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "description" : "simple.Operador (domainapp.modules.simple.dom.operador.Operador)"
+    },
     "simple.ReclamoRepr" : {
       "type" : "object",
       "properties" : {
@@ -721,7 +918,7 @@
         "apellido" : {
           "type" : "string"
         },
-        "direc" : {
+        "direccion" : {
           "type" : "string"
         },
         "telefono" : {
@@ -738,9 +935,6 @@
         "datanucleusVersionTimestamp" : {
           "type" : "integer",
           "format" : "int64"
-        },
-        "notes" : {
-          "type" : "string"
         }
       },
       "description" : "simple.Reclamo (domainapp.modules.simple.dom.reclamos.Reclamo)"
@@ -781,6 +975,32 @@
         }
       },
       "description" : "domainapp.application.services.homepage.HomePageViewModel (domainapp.application.services.homepage.HomePageViewModel)"
+    },
+    "simple.SimpleReclamoMenuRepr" : {
+      "type" : "object",
+      "required" : [ "extensions", "links" ],
+      "properties" : {
+        "links" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LinkRepr"
+          }
+        },
+        "extensions" : {
+          "type" : "object"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "serviceId" : {
+          "type" : "string",
+          "default" : "simple.SimpleReclamoMenu"
+        },
+        "members" : {
+          "type" : "object"
+        }
+      },
+      "description" : "RO Spec v1.0, section 15.1.2: representation of simple.SimpleReclamoMenu"
     },
     "HrefRepr" : {
       "type" : "object",

@@ -1,168 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="2.077" tests="2" errors="0" skipped="2" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="3.43" tests="2" errors="0" skipped="2" failures="0">
   <properties>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_241\jre\bin"/>
-    <property name="java.vm.version" value="25.241-b07"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\lauti\OneDrive\Escritorio\proyectofinal\jslRepo"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.292-b10"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/taslehoof/IdeaProjects/jslRepo"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="path.separator" value=";"/>
+    <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.script" value=""/>
     <property name="user.country" value="AR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value=""/>
+    <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\lauti\OneDrive\Escritorio\proyectofinal\jslRepo"/>
-    <property name="java.runtime.version" value="1.8.0_241-b07"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_241\jre\lib\endorsed"/>
+    <property name="user.dir" value="/home/taslehoof/IdeaProjects/jslRepo"/>
+    <property name="java.runtime.version" value="1.8.0_292-8u292-b10-0ubuntu1~20.04-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\lauti\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.variant" value=""/>
-    <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="C:\Users\lauti\OneDrive\Escritorio\apache-maven-3.6.3\bin\..\bin\m2.conf"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_241\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python39\Scripts\;C:\Python39\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\lauti\OneDrive\Escritorio\apache-maven-3.6.3\bin;C:\Program Files\Java\jdk1.8.0_241\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\lauti\AppData\Local\Microsoft\WindowsApps;C:\Users\lauti\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lauti\AppData\Roaming\npm;C:\Users\lauti\AppData\Local\GitHubDesktop\bin;."/>
-    <property name="maven.conf" value="C:\Users\lauti\OneDrive\Escritorio\apache-maven-3.6.3\bin\../conf"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/opt/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/opt/maven/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.0"/>
-    <property name="library.jansi.path" value="C:\Users\lauti\OneDrive\Escritorio\apache-maven-3.6.3\bin\..\lib\jansi-native"/>
-    <property name="user.home" value="C:\Users\lauti"/>
-    <property name="user.timezone" value="America/Buenos_Aires"/>
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="os.version" value="5.4.0-73-generic"/>
+    <property name="library.jansi.path" value="/opt/maven/lib/jansi-native"/>
+    <property name="user.home" value="/home/taslehoof"/>
+    <property name="user.timezone" value="America/Argentina/Buenos_Aires"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="lauti"/>
-    <property name="java.class.path" value="C:\Users\lauti\OneDrive\Escritorio\apache-maven-3.6.3\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="taslehoof"/>
+    <property name="java.class.path" value="/opt/maven/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_241\jre"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="es"/>
-    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_241"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_241\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_241\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_241\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_241\jre\classes"/>
-    <property name="sun.stderr.encoding" value="cp850"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Users\lauti\OneDrive\Escritorio\apache-maven-3.6.3\bin\.."/>
-    <property name="file.separator" value="\"/>
+    <property name="java.version" value="1.8.0_292"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/opt/maven"/>
+    <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="sun.stdout.encoding" value="cp850"/>
-    <property name="sun.desktop" value="windows"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="_2_verify" classname="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="0">
     <skipped/>
-    <system-out><![CDATA[16:15:06,225  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
-16:15:06,569  [Reflections          main       INFO ]  Reflections took 156 ms to scan 8 urls, producing 338 keys and 1529 values 
-344   [Reflections               main       INFO ]  Reflections took 156 ms to scan 8 urls, producing 338 keys and 1529 values 
-16:15:06,678  [ServicesInstallerFromConfigurationAndAnnotation main       INFO ]  installing org.apache.isis.core.runtime.services.ServicesInstallerFromConfigurationAndAnnotation
-453   [onfigurationAndAnnotation main       INFO ]  installing org.apache.isis.core.runtime.services.ServicesInstallerFromConfigurationAndAnnotation
-16:15:06,788  [IsisSessionFactoryBuilder main       INFO ]  initialising Isis System
-563   [IsisSessionFactoryBuilder main       INFO ]  initialising Isis System
-16:15:06,788  [IsisSessionFactoryBuilder main       INFO ]  working directory: C:\Users\lauti\OneDrive\Escritorio\proyectofinal\jslRepo\application\.
-563   [IsisSessionFactoryBuilder main       INFO ]  working directory: C:\Users\lauti\OneDrive\Escritorio\proyectofinal\jslRepo\application\.
-16:15:06,788  [IsisSessionFactoryBuilder main       INFO ]  resource stream source: null
-563   [IsisSessionFactoryBuilder main       INFO ]  resource stream source: null
-16:15:06,991  [SpecificationLoader  Thread-2   INFO ]  Loading all specs (up to state of NOT_INTROSPECTED)
-766   [SpecificationLoader       Thread-2   INFO ]  Loading all specs (up to state of NOT_INTROSPECTED)
-16:15:06,991  [PersistenceSessionFactory Thread-3   INFO ]  did *not* find config properties to use JNDI datasource; will use JDBC
-766   [PersistenceSessionFactory Thread-3   INFO ]  did *not* find config properties to use JNDI datasource; will use JDBC
-16:15:07,038  [SpecificationLoader  Thread-2   INFO ]  Introspecting all specs up to TYPE_INTROSPECTED
-813   [SpecificationLoader       Thread-2   INFO ]  Introspecting all specs up to TYPE_INTROSPECTED
-16:15:07,288  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 137 tasks: waited 0 milliseconds 
-1063  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 137 tasks: waited 0 milliseconds 
-16:15:07,288  [SpecificationLoader  Thread-2   INFO ]  Introspecting domainService specs up to TYPE_AND_MEMBERS_INTROSPECTED
-1063  [SpecificationLoader       Thread-2   INFO ]  Introspecting domainService specs up to TYPE_AND_MEMBERS_INTROSPECTED
-16:15:07,381  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 87 tasks: waited 0 milliseconds 
-1156  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 87 tasks: waited 0 milliseconds 
-16:15:07,381  [SpecificationLoader  Thread-2   INFO ]  Introspecting mixin specs up to TYPE_AND_MEMBERS_INTROSPECTED
-1156  [SpecificationLoader       Thread-2   INFO ]  Introspecting mixin specs up to TYPE_AND_MEMBERS_INTROSPECTED
-16:15:07,381  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 11 tasks: waited 0 milliseconds 
-1156  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 11 tasks: waited 0 milliseconds 
-16:15:07,381  [SpecificationLoader  Thread-2   INFO ]  Introspecting all cached specs up to TYPE_AND_MEMBERS_INTROSPECTED
-1156  [SpecificationLoader       Thread-2   INFO ]  Introspecting all cached specs up to TYPE_AND_MEMBERS_INTROSPECTED
-16:15:07,413  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 167 tasks: waited 0 milliseconds 
-1188  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 167 tasks: waited 0 milliseconds 
-16:15:07,413  [SpecificationLoader  Thread-2   INFO ]  init() - done
-1188  [SpecificationLoader       Thread-2   INFO ]  init() - done
-16:15:07,631  [Schema               Thread-3   DEBUG]  La columna ""DELETEME1622056507616"."UNUSED"" añadió a la representación de la table.
-16:15:07,631  [Schema               Thread-3   DEBUG]  Crear la tabla "DELETEME1622056507616"
-16:15:07,631  [Schema               Thread-3   DEBUG]  CREATE TABLE "DELETEME1622056507616"
+    <system-out><![CDATA[21:50:17,211  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
+21:50:17,566  [Reflections          main       INFO ]  Reflections took 262 ms to scan 8 urls, producing 338 keys and 1542 values 
+355   [Reflections               main       INFO ]  Reflections took 262 ms to scan 8 urls, producing 338 keys and 1542 values 
+21:50:17,697  [ServicesInstallerFromConfigurationAndAnnotation main       INFO ]  installing org.apache.isis.core.runtime.services.ServicesInstallerFromConfigurationAndAnnotation
+486   [onfigurationAndAnnotation main       INFO ]  installing org.apache.isis.core.runtime.services.ServicesInstallerFromConfigurationAndAnnotation
+21:50:17,891  [IsisSessionFactoryBuilder main       INFO ]  initialising Isis System
+680   [IsisSessionFactoryBuilder main       INFO ]  initialising Isis System
+21:50:17,892  [IsisSessionFactoryBuilder main       INFO ]  working directory: /home/taslehoof/IdeaProjects/jslRepo/application/.
+681   [IsisSessionFactoryBuilder main       INFO ]  working directory: /home/taslehoof/IdeaProjects/jslRepo/application/.
+21:50:17,892  [IsisSessionFactoryBuilder main       INFO ]  resource stream source: null
+681   [IsisSessionFactoryBuilder main       INFO ]  resource stream source: null
+21:50:18,145  [SpecificationLoader  Thread-2   INFO ]  Loading all specs (up to state of NOT_INTROSPECTED)
+934   [SpecificationLoader       Thread-2   INFO ]  Loading all specs (up to state of NOT_INTROSPECTED)
+21:50:18,149  [PersistenceSessionFactory Thread-3   INFO ]  did *not* find config properties to use JNDI datasource; will use JDBC
+938   [PersistenceSessionFactory Thread-3   INFO ]  did *not* find config properties to use JNDI datasource; will use JDBC
+21:50:18,245  [SpecificationLoader  Thread-2   INFO ]  Introspecting all specs up to TYPE_INTROSPECTED
+1034  [SpecificationLoader       Thread-2   INFO ]  Introspecting all specs up to TYPE_INTROSPECTED
+21:50:18,724  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 140 tasks: waited 0 milliseconds 
+1513  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 140 tasks: waited 0 milliseconds 
+21:50:18,724  [SpecificationLoader  Thread-2   INFO ]  Introspecting domainService specs up to TYPE_AND_MEMBERS_INTROSPECTED
+1513  [SpecificationLoader       Thread-2   INFO ]  Introspecting domainService specs up to TYPE_AND_MEMBERS_INTROSPECTED
+21:50:18,914  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 89 tasks: waited 0 milliseconds 
+1703  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 89 tasks: waited 0 milliseconds 
+21:50:18,914  [SpecificationLoader  Thread-2   INFO ]  Introspecting mixin specs up to TYPE_AND_MEMBERS_INTROSPECTED
+1703  [SpecificationLoader       Thread-2   INFO ]  Introspecting mixin specs up to TYPE_AND_MEMBERS_INTROSPECTED
+21:50:18,930  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 11 tasks: waited 0 milliseconds 
+1719  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 11 tasks: waited 0 milliseconds 
+21:50:18,930  [SpecificationLoader  Thread-2   INFO ]  Introspecting all cached specs up to TYPE_AND_MEMBERS_INTROSPECTED
+1719  [SpecificationLoader       Thread-2   INFO ]  Introspecting all cached specs up to TYPE_AND_MEMBERS_INTROSPECTED
+21:50:19,012  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 170 tasks: waited 0 milliseconds 
+1801  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 170 tasks: waited 0 milliseconds 
+21:50:19,013  [SpecificationLoader  Thread-2   INFO ]  init() - done
+1802  [SpecificationLoader       Thread-2   INFO ]  init() - done
+21:50:19,383  [Schema               Thread-3   DEBUG]  La columna ""DELETEME1622422219375"."UNUSED"" añadió a la representación de la table.
+21:50:19,388  [Schema               Thread-3   DEBUG]  Crear la tabla "DELETEME1622422219375"
+21:50:19,391  [Schema               Thread-3   DEBUG]  CREATE TABLE "DELETEME1622422219375"
 (
     "UNUSED" INTEGER NOT NULL
 )
-16:15:07,631  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
-16:15:07,631  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622056507616"
-16:15:07,631  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622056507616"
-16:15:07,631  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
-16:15:07,772  [Schema               Thread-3   DEBUG]  La columna ""DELETEME1622056507772"."UNUSED"" añadió a la representación de la table.
-16:15:07,772  [Schema               Thread-3   DEBUG]  Crear la tabla "DELETEME1622056507772"
-16:15:07,772  [Schema               Thread-3   DEBUG]  CREATE TABLE "DELETEME1622056507772"
+21:50:19,392  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+21:50:19,406  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622422219375"
+21:50:19,406  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622422219375"
+21:50:19,407  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+21:50:19,732  [Schema               Thread-3   DEBUG]  La columna ""DELETEME1622422219732"."UNUSED"" añadió a la representación de la table.
+21:50:19,732  [Schema               Thread-3   DEBUG]  Crear la tabla "DELETEME1622422219732"
+21:50:19,732  [Schema               Thread-3   DEBUG]  CREATE TABLE "DELETEME1622422219732"
 (
     "UNUSED" INTEGER NOT NULL
 )
-16:15:07,772  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
-16:15:07,772  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622056507772"
-16:15:07,772  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622056507772"
-16:15:07,772  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."id"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."SimpleObject"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."id"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."Reclamo"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La tabla "simple"."Reclamo" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.reclamos.Reclamo (estrategia de heredar="new-table")
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."apellido"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.apellido] -> Columnas ["simple"."Reclamo"."apellido"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."direc"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.direc] -> Columnas ["simple"."Reclamo"."direc"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."nombre"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.nombre] -> Columnas ["simple"."Reclamo"."nombre"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."notes"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.notes] -> Columnas ["simple"."Reclamo"."notes"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."telefono"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.telefono] -> Columnas ["simple"."Reclamo"."telefono"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."version"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."Reclamo"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  Table/View "simple"."Reclamo" ha sido inicializado
-16:15:07,819  [Schema               Thread-3   DEBUG]  La tabla "simple"."SimpleObject" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.impl.SimpleObject (estrategia de heredar="new-table")
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."name"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.impl.SimpleObject.name] -> Columnas ["simple"."SimpleObject"."name"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."notes"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.impl.SimpleObject.notes] -> Columnas ["simple"."SimpleObject"."notes"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."version"" añadió a la representación de la table.
-16:15:07,819  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."SimpleObject"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
-16:15:07,819  [Schema               Thread-3   DEBUG]  Table/View "simple"."SimpleObject" ha sido inicializado
-16:15:07,819  [Schema               Thread-3   DEBUG]  Empezando transaccion del esquema con conneccion "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@7b1fb2e1" y isolacion "serializable"
-16:15:07,834  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Reclamo" returned no table
-16:15:07,834  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Reclamo"
-16:15:07,834  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."Reclamo"
+21:50:19,733  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+21:50:19,738  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622422219732"
+21:50:19,738  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622422219732"
+21:50:19,739  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+21:50:19,845  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."id"" añadió a la representación de la table.
+21:50:19,846  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."SimpleObject"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
+21:50:19,848  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."id"" añadió a la representación de la table.
+21:50:19,848  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."Operador"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
+21:50:19,848  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."id"" añadió a la representación de la table.
+21:50:19,849  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."Reclamo"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
+21:50:19,849  [Schema               Thread-3   DEBUG]  La tabla "simple"."Reclamo" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.reclamos.Reclamo (estrategia de heredar="new-table")
+21:50:19,850  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."apellido"" añadió a la representación de la table.
+21:50:19,853  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.apellido] -> Columnas ["simple"."Reclamo"."apellido"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,853  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."direccion"" añadió a la representación de la table.
+21:50:19,853  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.direccion] -> Columnas ["simple"."Reclamo"."direccion"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,853  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."nombre"" añadió a la representación de la table.
+21:50:19,853  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.nombre] -> Columnas ["simple"."Reclamo"."nombre"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,854  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."telefono"" añadió a la representación de la table.
+21:50:19,854  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.telefono] -> Columnas ["simple"."Reclamo"."telefono"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,855  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."version"" añadió a la representación de la table.
+21:50:19,856  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."Reclamo"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
+21:50:19,856  [Schema               Thread-3   DEBUG]  Table/View "simple"."Reclamo" ha sido inicializado
+21:50:19,856  [Schema               Thread-3   DEBUG]  La tabla "simple"."SimpleObject" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.impl.SimpleObject (estrategia de heredar="new-table")
+21:50:19,856  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."name"" añadió a la representación de la table.
+21:50:19,856  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.impl.SimpleObject.name] -> Columnas ["simple"."SimpleObject"."name"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,856  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."notes"" añadió a la representación de la table.
+21:50:19,857  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.impl.SimpleObject.notes] -> Columnas ["simple"."SimpleObject"."notes"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,857  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."version"" añadió a la representación de la table.
+21:50:19,857  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."SimpleObject"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
+21:50:19,857  [Schema               Thread-3   DEBUG]  Table/View "simple"."SimpleObject" ha sido inicializado
+21:50:19,857  [Schema               Thread-3   DEBUG]  La tabla "simple"."Operador" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.operador.Operador (estrategia de heredar="new-table")
+21:50:19,857  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."apellido"" añadió a la representación de la table.
+21:50:19,857  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.operador.Operador.apellido] -> Columnas ["simple"."Operador"."apellido"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,858  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."contrasef1a"" añadió a la representación de la table.
+21:50:19,858  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.operador.Operador.contraseña] -> Columnas ["simple"."Operador"."contrasef1a"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,858  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."nombre"" añadió a la representación de la table.
+21:50:19,858  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.operador.Operador.nombre] -> Columnas ["simple"."Operador"."nombre"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,858  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."usuario"" añadió a la representación de la table.
+21:50:19,858  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.operador.Operador.usuario] -> Columnas ["simple"."Operador"."usuario"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+21:50:19,859  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."version"" añadió a la representación de la table.
+21:50:19,859  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."Operador"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
+21:50:19,859  [Schema               Thread-3   DEBUG]  Table/View "simple"."Operador" ha sido inicializado
+21:50:19,860  [Schema               Thread-3   DEBUG]  Empezando transaccion del esquema con conneccion "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@4920f7c0" y isolacion "serializable"
+21:50:19,866  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Reclamo" returned no table
+21:50:19,866  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Reclamo"
+21:50:19,866  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."Reclamo"
 (
     "id" BIGINT GENERATED BY DEFAULT AS IDENTITY,
     "apellido" VARCHAR(40) NOT NULL,
-    "direc" VARCHAR(40) NOT NULL,
+    "direccion" VARCHAR(40) NOT NULL,
     "nombre" VARCHAR(40) NOT NULL,
-    "notes" VARCHAR(4000) NULL,
     "telefono" VARCHAR(40) NOT NULL,
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "Reclamo_PK" PRIMARY KEY ("id")
 )
-16:15:07,834  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
-16:15:07,834  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."SimpleObject" returned no table
-16:15:07,834  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."SimpleObject"
-16:15:07,834  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."SimpleObject"
+21:50:19,869  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 3 ms
+21:50:19,875  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."SimpleObject" returned no table
+21:50:19,875  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."SimpleObject"
+21:50:19,875  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."SimpleObject"
 (
     "id" BIGINT GENERATED BY DEFAULT AS IDENTITY,
     "name" VARCHAR(40) NOT NULL,
@@ -170,41 +178,57 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "SimpleObject_PK" PRIMARY KEY ("id")
 )
-16:15:07,834  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
-16:15:07,834  [Schema               Thread-3   DEBUG]  Crear la llave unica "Reclamo_nombre_UNQ" en catalogo "" equema ""simple""
-16:15:07,834  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Reclamo" ADD CONSTRAINT "Reclamo_nombre_UNQ" UNIQUE ("nombre")
-16:15:07,834  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
-16:15:07,834  [Schema               Thread-3   DEBUG]  Crear la llave unica "SimpleObject_name_UNQ" en catalogo "" equema ""simple""
-16:15:07,834  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."SimpleObject" ADD CONSTRAINT "SimpleObject_name_UNQ" UNIQUE ("name")
-16:15:07,834  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
-16:15:07,834  [Schema               Thread-3   DEBUG]  Committing transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@7b1fb2e1"
-16:15:07,834  [Schema               Thread-3   DEBUG]  Cerrando la conneccion de la transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@7b1fb2e1"
-16:15:07,834  [ThreadPoolSupport    main       INFO ]  join'ing 5 tasks: waited 0 milliseconds 
-1609  [ThreadPoolSupport         main       INFO ]  join'ing 5 tasks: waited 0 milliseconds 
-16:15:07,913  [ServiceInitializer   main       INFO ]  calling @PostConstruct on all domain services
-1688  [ServiceInitializer        main       INFO ]  calling @PostConstruct on all domain services
-16:15:08,006  [EmailServiceDefault  main       WARN ]  NOT configured
-1781  [EmailServiceDefault       main       WARN ]  NOT configured
-16:15:08,116  [IsisSystemBootstrapper main       INFO ]  ##########################################################################
-1891  [IsisSystemBootstrapper    main       INFO ]  ##########################################################################
-16:15:08,116  [IsisSystemBootstrapper main       INFO ]  # Bootstrapped in 1875 millis
-1891  [IsisSystemBootstrapper    main       INFO ]  # Bootstrapped in 1875 millis
-16:15:08,116  [IsisSystemBootstrapper main       INFO ]  ##########################################################################
-1891  [IsisSystemBootstrapper    main       INFO ]  ##########################################################################
+21:50:19,877  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+21:50:19,883  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Operador" returned no table
+21:50:19,883  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Operador"
+21:50:19,883  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."Operador"
+(
+    "id" BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    "apellido" VARCHAR(40) NOT NULL,
+    "contrasef1a" VARCHAR(40) NOT NULL,
+    "nombre" VARCHAR(40) NOT NULL,
+    "usuario" VARCHAR(40) NOT NULL,
+    "version" TIMESTAMP NOT NULL,
+    CONSTRAINT "Operador_PK" PRIMARY KEY ("id")
+)
+21:50:19,886  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 3 ms
+21:50:19,891  [Schema               Thread-3   DEBUG]  Crear la llave unica "Reclamo_nombre_UNQ" en catalogo "" equema ""simple""
+21:50:19,892  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Reclamo" ADD CONSTRAINT "Reclamo_nombre_UNQ" UNIQUE ("nombre")
+21:50:19,895  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 3 ms
+21:50:19,896  [Schema               Thread-3   DEBUG]  Crear la llave unica "SimpleObject_name_UNQ" en catalogo "" equema ""simple""
+21:50:19,896  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."SimpleObject" ADD CONSTRAINT "SimpleObject_name_UNQ" UNIQUE ("name")
+21:50:19,898  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+21:50:19,898  [Schema               Thread-3   DEBUG]  Crear la llave unica "Operador_nombre_UNQ" en catalogo "" equema ""simple""
+21:50:19,898  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Operador" ADD CONSTRAINT "Operador_nombre_UNQ" UNIQUE ("nombre")
+21:50:19,900  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+21:50:19,901  [Schema               Thread-3   DEBUG]  Committing transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@4920f7c0"
+21:50:19,901  [Schema               Thread-3   DEBUG]  Cerrando la conneccion de la transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@4920f7c0"
+21:50:19,901  [ThreadPoolSupport    main       INFO ]  join'ing 5 tasks: waited 0 milliseconds 
+2690  [ThreadPoolSupport         main       INFO ]  join'ing 5 tasks: waited 0 milliseconds 
+21:50:20,036  [ServiceInitializer   main       INFO ]  calling @PostConstruct on all domain services
+2825  [ServiceInitializer        main       INFO ]  calling @PostConstruct on all domain services
+21:50:20,179  [EmailServiceDefault  main       WARN ]  NOT configured
+2968  [EmailServiceDefault       main       WARN ]  NOT configured
+21:50:20,368  [IsisSystemBootstrapper main       INFO ]  ##########################################################################
+3157  [IsisSystemBootstrapper    main       INFO ]  ##########################################################################
+21:50:20,368  [IsisSystemBootstrapper main       INFO ]  # Bootstrapped in 3139 millis
+3157  [IsisSystemBootstrapper    main       INFO ]  # Bootstrapped in 3139 millis
+21:50:20,368  [IsisSystemBootstrapper main       INFO ]  ##########################################################################
+3157  [IsisSystemBootstrapper    main       INFO ]  ##########################################################################
                                                             : EXEC org.apache.isis.applib.AppManifestAbstract2$1
-16:15:08,131  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
-1906  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+21:50:20,392  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+3181  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
                                                             : EXEC org.apache.isis.applib.AppManifestAbstract2$2
 /                                                           : EXEC domainapp.modules.simple.SimpleModule$1
 ]]></system-out>
   </testcase>
   <testcase name="_1_learn" classname="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="0">
     <skipped/>
-    <system-out><![CDATA[16:15:08,147  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
-1922  [WithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
+    <system-out><![CDATA[21:50:20,438  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
+3227  [WithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
                                                             : EXEC org.apache.isis.applib.AppManifestAbstract2$1
-16:15:08,147  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
-1922  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+21:50:20,441  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+3230  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
                                                             : EXEC org.apache.isis.applib.AppManifestAbstract2$2
 /                                                           : EXEC domainapp.modules.simple.SimpleModule$1
 ]]></system-out>

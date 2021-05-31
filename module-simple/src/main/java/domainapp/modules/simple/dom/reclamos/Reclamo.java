@@ -31,8 +31,6 @@ import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 
-
-
 import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
 import static org.apache.isis.applib.annotation.SemanticsOf.IDEMPOTENT;
 import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
@@ -50,7 +48,7 @@ public class Reclamo implements Comparable<Reclamo> {
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = "Reclamo: ")
+    @Title(prepend = "Nombre: ")
     @MemberOrder(sequence = "1")
     private String nombre;
 
@@ -58,7 +56,7 @@ public class Reclamo implements Comparable<Reclamo> {
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = " ")
+    @Title(prepend = ". apellido ")
     @MemberOrder(sequence = "2")
     private String apellido;
 
@@ -66,9 +64,9 @@ public class Reclamo implements Comparable<Reclamo> {
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". direc:  ")
+    @Title(prepend = ". direccion:  ")
     @MemberOrder(sequence = "3")
-    private String direc;
+    private String direccion;
 
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
@@ -77,17 +75,11 @@ public class Reclamo implements Comparable<Reclamo> {
     @Title(prepend = ". telefono:  ")
     @MemberOrder(sequence = "4")
     private String telefono;
-
-
-
-
-
-
+/*
   @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
     private String notes;
 
-/*
     @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
     public Reclamo updateName(
             @Parameter(maxLength = 40)
@@ -116,7 +108,7 @@ public class Reclamo implements Comparable<Reclamo> {
 */
     @Override
     public String toString() {
-        return getNombre()+" "+getApellido()+ " "+getDirec()+" "+getTelefono();
+        return getNombre()+" "+getApellido()+ " "+getDireccion()+" "+getTelefono();
     }
 
     public int compareTo(final Reclamo other) {
@@ -124,7 +116,6 @@ public class Reclamo implements Comparable<Reclamo> {
                 .compare(this.getNombre(), other.getNombre())
                 .result();
     }
-
 
     @javax.inject.Inject
     @javax.jdo.annotations.NotPersistent

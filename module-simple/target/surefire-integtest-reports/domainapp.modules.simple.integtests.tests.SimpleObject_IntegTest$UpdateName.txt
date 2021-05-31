@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName

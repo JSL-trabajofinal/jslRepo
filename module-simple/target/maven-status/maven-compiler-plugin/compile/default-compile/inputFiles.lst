@@ -1,0 +1,13 @@
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/fixture/SimpleObjectBuilder.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/ReclamoMenu.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/SimpleModule.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/ReclamoRepositorio.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/operador/Operador.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/SimpleModuleManifest.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/tecnico/Tecnico.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/impl/SimpleObject.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/Reclamo.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/tecnico/TecnicoRepositorio.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/fixture/SimpleObject_persona.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/operador/OperadorRepositorio.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/impl/SimpleObjects.java

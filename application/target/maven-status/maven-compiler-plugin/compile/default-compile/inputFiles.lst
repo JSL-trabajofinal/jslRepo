@@ -1,0 +1,10 @@
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/manifest/DomainAppAppManifestBypassSecurity.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/DomainAppApplicationModule.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/fixture/DomainAppFixtureScriptsSpecificationProvider.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/services/homepage/HomePageService.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/manifest/DomainAppAppManifestWithFixturesBypassSecurity.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/services/health/HealthCheckServiceImpl.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/manifest/DomainAppAppManifestWithFixtures.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/fixture/scenarios/DomainAppDemo.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/manifest/DomainAppAppManifest.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/main/java/domainapp/application/services/homepage/HomePageViewModel.java

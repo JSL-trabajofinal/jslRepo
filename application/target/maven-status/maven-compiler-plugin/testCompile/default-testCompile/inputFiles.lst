@@ -1,0 +1,6 @@
+/home/taslehoof/IdeaProjects/jslRepo/application/src/test/java/domainapp/application/bdd/specs/RunIntegBddSpecs.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/test/java/domainapp/application/integtests/mml/MetaModelService_IntegTest.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/test/java/domainapp/application/integtests/smoke/Smoke_IntegTest.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/test/java/domainapp/application/bdd/specglue/BootstrappingGlue.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/test/java/domainapp/application/integtests/DomainAppIntegTestAbstract.java
+/home/taslehoof/IdeaProjects/jslRepo/application/src/test/java/domainapp/application/bdd/specglue/CatalogOfFixturesGlue.java

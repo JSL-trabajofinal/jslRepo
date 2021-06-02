@@ -79,6 +79,7 @@ formatter.feature({
   ]
 });
 formatter.before({
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
   "duration": 3104612280,
@@ -89,15 +90,20 @@ formatter.before({
 =======
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
   "duration": 2681192922,
   "status": "passed"
 });
 formatter.before({
   "duration": 139837502,
+<<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
   "status": "passed"
 });
 formatter.scenario({
@@ -133,6 +139,7 @@ formatter.match({
   "location": "SimpleObjectMenuGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
   "duration": 245361836,
@@ -142,12 +149,16 @@ formatter.result({
 =======
   "duration": 163532796,
 >>>>>>> Se agrega codigo al existente
+=======
+  "duration": 163532796,
+>>>>>>> package-tecnico
   "status": "passed"
 });
 formatter.match({
   "location": "SimpleObjectMenuGlue.create_a_simple_object()"
 });
 formatter.result({
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
   "duration": 1734644,
@@ -157,6 +168,9 @@ formatter.result({
 =======
   "duration": 1654905,
 >>>>>>> Se agrega codigo al existente
+=======
+  "duration": 1654905,
+>>>>>>> package-tecnico
   "status": "passed"
 });
 formatter.match({
@@ -169,6 +183,7 @@ formatter.match({
   "location": "SimpleObjectMenuGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
   "duration": 7729038,
@@ -179,15 +194,20 @@ formatter.after({
 =======
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
   "duration": 7622970,
   "status": "passed"
 });
 formatter.after({
   "duration": 5201010,
+<<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
   "status": "passed"
 });
 });

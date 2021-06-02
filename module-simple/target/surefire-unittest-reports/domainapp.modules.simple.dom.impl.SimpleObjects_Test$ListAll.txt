@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: domainapp.modules.simple.dom.impl.SimpleObjects_Test$ListAll
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.327 sec - in domainapp.modules.simple.dom.impl.SimpleObjects_Test$ListAll
@@ -10,3 +11,6 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.187 sec - in d
 =======
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.187 sec - in domainapp.modules.simple.dom.impl.SimpleObjects_Test$ListAll
 >>>>>>> Se agrega codigo al existente
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.187 sec - in domainapp.modules.simple.dom.impl.SimpleObjects_Test$ListAll
+>>>>>>> package-tecnico

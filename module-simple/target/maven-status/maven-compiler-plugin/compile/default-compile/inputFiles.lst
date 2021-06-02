@@ -2,6 +2,7 @@
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/ReclamoMenu.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/SimpleModule.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/ReclamoRepositorio.java
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/impl/SimpleObject.java
@@ -14,6 +15,8 @@
 =======
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/operador/Operador.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/SimpleModuleManifest.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/tecnico/Tecnico.java
@@ -23,7 +26,10 @@
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/fixture/SimpleObject_persona.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/operador/OperadorRepositorio.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/impl/SimpleObjects.java
+<<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico

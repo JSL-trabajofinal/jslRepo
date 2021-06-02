@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
 2021-05-30 22:05:39.526 START: workQueue.size: 0, waited for: 1ms, SpecificationLoader#init()
@@ -550,6 +551,8 @@
 =======
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
 2021-06-02 07:37:48.480 START: workQueue.size: 0, waited for: 1ms, SpecificationLoader#init()
 2021-06-02 07:37:48.481 START: workQueue.size: 0, waited for: 2ms, ChangesDtoUtils.init()
 2021-06-02 07:37:48.481 START: workQueue.size: 0, waited for: 1ms, persistenceSessionFactory#init(...)
@@ -1103,7 +1106,10 @@
 2021-06-02 07:37:50.193 END: completed in: 1713ms, persistenceSessionFactory#init(...)
 2021-06-02 07:37:50.193 join'ing 5 tasks: waited 0 milliseconds 
 2021-06-02 07:37:50.459 join'ing 3 tasks: waited 0 milliseconds 
+<<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico

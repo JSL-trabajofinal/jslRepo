@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.194 sec - in domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create
@@ -10,3 +11,6 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in d
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create
 >>>>>>> Se agrega codigo al existente
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create
+>>>>>>> package-tecnico

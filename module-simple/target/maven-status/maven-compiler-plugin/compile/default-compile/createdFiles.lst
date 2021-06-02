@@ -1,6 +1,7 @@
 domainapp/modules/simple/dom/operador/QOperador.class
 domainapp/modules/simple/dom/reclamos/ReclamoRepositorio.class
 domainapp/modules/simple/dom/impl/QSimpleObject.class
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
 domainapp/modules/simple/SimpleModule.class
@@ -9,15 +10,20 @@ domainapp/modules/simple/dom/reclamos/Reclamo.class
 =======
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
 domainapp/modules/simple/dom/tecnico/QTecnico.class
 domainapp/modules/simple/SimpleModule.class
 domainapp/modules/simple/SimpleModule$CollectionDomainEvent.class
 domainapp/modules/simple/dom/reclamos/Reclamo.class
 domainapp/modules/simple/dom/tecnico/TecnicoRepositorio$CreateDomainEvent.class
+<<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
 domainapp/modules/simple/dom/operador/OperadorRepositorio$CreateDomainEvent.class
 domainapp/modules/simple/dom/reclamos/QReclamo.class
 domainapp/modules/simple/fixture/SimpleObject_persona$PersistAll.class
@@ -26,6 +32,7 @@ domainapp/modules/simple/dom/impl/SimpleObjects.class
 domainapp/modules/simple/dom/impl/SimpleObjects$CreateDomainEvent.class
 domainapp/modules/simple/dom/operador/Operador.class
 domainapp/modules/simple/fixture/SimpleObjectBuilder.class
+<<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
 domainapp/modules/simple/SimpleModule$PropertyDomainEvent.class
@@ -34,15 +41,20 @@ domainapp/modules/simple/SimpleModule$1.class
 =======
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
 domainapp/modules/simple/dom/tecnico/Tecnico.class
 domainapp/modules/simple/SimpleModule$PropertyDomainEvent.class
 domainapp/modules/simple/dom/impl/SimpleObject.class
 domainapp/modules/simple/SimpleModule$1.class
 domainapp/modules/simple/dom/tecnico/TecnicoRepositorio.class
+<<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
 =======
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
 domainapp/modules/simple/dom/operador/OperadorRepositorio.class
 domainapp/modules/simple/SimpleModuleManifest.class
 domainapp/modules/simple/fixture/SimpleObject_persona.class

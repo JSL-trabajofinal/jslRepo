@@ -88,7 +88,10 @@
 =======
                 <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="create">
                     <cpt:named>create</cpt:named>
+<<<<<<< HEAD
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="findByName">
                     <cpt:named>findByName</cpt:named>
@@ -100,7 +103,10 @@
 =======
                 <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="listAll">
                     <cpt:named>listAll</cpt:named>
+<<<<<<< HEAD
 >>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>

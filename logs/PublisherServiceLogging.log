@@ -1,3 +1,4 @@
+<<<<<<< develop
 <<<<<<< Updated upstream
 2021-05-30 22:05:45.493 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ixn:interactionDto xmlns:com="http://isis.apache.org/schema/common" xmlns:cmd="http://isis.apache.org/schema/cmd" xmlns:ixn="http://isis.apache.org/schema/ixn">
@@ -5,11 +6,14 @@
     <ixn:minorVersion>0</ixn:minorVersion>
     <ixn:transactionId>747ad66c-1c1a-4a4e-9351-17d6804fd086</ixn:transactionId>
 =======
+=======
+>>>>>>> Se agrega codigo al existente
 2021-06-02 07:38:22.016 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ixn:interactionDto xmlns:com="http://isis.apache.org/schema/common" xmlns:cmd="http://isis.apache.org/schema/cmd" xmlns:ixn="http://isis.apache.org/schema/ixn">
     <ixn:majorVersion>1</ixn:majorVersion>
     <ixn:minorVersion>0</ixn:minorVersion>
     <ixn:transactionId>8694c543-bad8-436c-9ec1-3d868db1c14d</ixn:transactionId>
+<<<<<<< develop
 >>>>>>> Stashed changes
     <ixn:execution xsi:type="ixn:actionInvocationDto" interactionType="action_invocation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <ixn:sequence>0</ixn:sequence>
@@ -41,6 +45,8 @@
     <ixn:majorVersion>1</ixn:majorVersion>
     <ixn:minorVersion>0</ixn:minorVersion>
     <ixn:transactionId>591ecb65-3c19-40ea-8e7b-10059f289966</ixn:transactionId>
+=======
+>>>>>>> Se agrega codigo al existente
     <ixn:execution xsi:type="ixn:actionInvocationDto" interactionType="action_invocation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <ixn:sequence>0</ixn:sequence>
         <ixn:target type="homepage.HomePageService" id="1"/>
@@ -50,12 +56,17 @@
         <ixn:title>homepage.HomePageService:1: homePage()</ixn:title>
         <ixn:metrics>
             <ixn:timings>
+<<<<<<< develop
                 <com:startedAt>2021-05-30T22:06:11.352-03:00</com:startedAt>
                 <com:completedAt>2021-05-30T22:06:11.353-03:00</com:completedAt>
 =======
                 <com:startedAt>2021-06-02T07:38:21.880-03:00</com:startedAt>
                 <com:completedAt>2021-06-02T07:38:21.937-03:00</com:completedAt>
 >>>>>>> Stashed changes
+=======
+                <com:startedAt>2021-06-02T07:38:21.880-03:00</com:startedAt>
+                <com:completedAt>2021-06-02T07:38:21.937-03:00</com:completedAt>
+>>>>>>> Se agrega codigo al existente
             </ixn:timings>
             <ixn:objectCounts>
                 <ixn:loaded before="0" after="0"/>

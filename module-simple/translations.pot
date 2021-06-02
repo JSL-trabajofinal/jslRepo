@@ -24,6 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 <<<<<<< develop
+<<<<<<< develop
 <<<<<<< Updated upstream
 "POT-Creation-Date: 2021-05-30 21:50:14+\n"
 =======
@@ -32,6 +33,9 @@ msgstr ""
 =======
 "POT-Creation-Date: 2021-05-24 21:20:24+\n"
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+"POT-Creation-Date: 2021-06-02 07:37:20+\n"
+>>>>>>> Se agrega codigo al existente
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -80,12 +84,17 @@ msgstr ""
 
 
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create()
 <<<<<<< Updated upstream
 msgid "Alta Cliente"
 =======
 msgid "Alta Reclamo"
 >>>>>>> Stashed changes
+=======
+#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create()
+msgid "Alta Reclamo"
+>>>>>>> Se agrega codigo al existente
 msgstr ""
 
 
@@ -93,6 +102,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamos.Reclamo#apellido
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+<<<<<<< develop
 <<<<<<< Updated upstream
 =======
 #: domainapp.modules.simple.dom.tecnico.Tecnico#apellido
@@ -104,6 +114,10 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio#findByName(java.lang.String,java.lang.String,java.lang.String)
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#apellido
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
+>>>>>>> Se agrega codigo al existente
 msgid "Apellido"
 msgstr ""
 
@@ -119,11 +133,15 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#findByName()
+<<<<<<< develop
 <<<<<<< Updated upstream
 msgid "Buscar cliente"
 =======
 msgid "Buscar Reclamo"
 >>>>>>> Stashed changes
+=======
+msgid "Buscar Reclamo"
+>>>>>>> Se agrega codigo al existente
 msgstr ""
 
 
@@ -170,6 +188,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#create()
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create()
 <<<<<<< Updated upstream
 =======
@@ -178,6 +197,10 @@ msgstr ""
 =======
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio#create()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.OperadorRepositorio#create()
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create()
+>>>>>>> Se agrega codigo al existente
 msgid "Create"
 msgstr ""
 
@@ -188,6 +211,7 @@ msgstr ""
 
 
 <<<<<<< develop
+<<<<<<< develop
 <<<<<<< Updated upstream
 =======
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
@@ -195,6 +219,9 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio#findByName(java.lang.String,java.lang.String,java.lang.String)
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
+>>>>>>> Se agrega codigo al existente
 msgid "DNI"
 msgstr ""
 
@@ -209,7 +236,6 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#delete()
-#: domainapp.modules.simple.dom.reclamo.Usuario#delete()
 msgid "Delete"
 msgstr ""
 
@@ -220,19 +246,28 @@ msgstr ""
 
 
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.reclamos.Reclamo#direccion
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Direccion"
 <<<<<<< Updated upstream
 =======
+=======
+#: domainapp.modules.simple.dom.reclamos.Reclamo#direccion
+#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+msgid "Direccion"
+>>>>>>> Se agrega codigo al existente
 msgstr ""
 
 
 #: domainapp.modules.simple.dom.tecnico.Tecnico#dni
+<<<<<<< develop
 msgid "Dni"
 >>>>>>> Stashed changes
 =======
 #: domainapp.modules.simple.dom.reclamo.Usuario#dni
+=======
+>>>>>>> Se agrega codigo al existente
 msgid "Dni"
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
 msgstr ""
@@ -245,6 +280,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadJdoMetadata()
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.operador.Operador#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#downloadJdoMetadata()
 <<<<<<< Updated upstream
@@ -255,11 +291,17 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.Reclamo#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.reclamo.Usuario#downloadJdoMetadata()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.Operador#downloadJdoMetadata()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#downloadJdoMetadata()
+#: domainapp.modules.simple.dom.tecnico.Tecnico#downloadJdoMetadata()
+>>>>>>> Se agrega codigo al existente
 msgid "Download Jdo Metadata"
 msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadLayoutXml()
+<<<<<<< develop
 <<<<<<< develop
 #: domainapp.modules.simple.dom.operador.Operador#downloadLayoutXml()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#downloadLayoutXml()
@@ -271,6 +313,11 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.Reclamo#downloadLayoutXml()
 #: domainapp.modules.simple.dom.reclamo.Usuario#downloadLayoutXml()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.Operador#downloadLayoutXml()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#downloadLayoutXml()
+#: domainapp.modules.simple.dom.tecnico.Tecnico#downloadLayoutXml()
+>>>>>>> Se agrega codigo al existente
 #: org.apache.isis.applib.AbstractViewModel#downloadLayoutXml()
 #: org.apache.isis.applib.ViewModel#downloadLayoutXml()
 #: org.apache.isis.applib.domain.DomainObjectList#downloadLayoutXml()
@@ -349,6 +396,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#findByName()
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#findByName()
 <<<<<<< Updated upstream
 =======
@@ -357,6 +405,10 @@ msgstr ""
 =======
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio#findByName()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.OperadorRepositorio#findByName()
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName()
+>>>>>>> Se agrega codigo al existente
 msgid "Find By Name"
 msgstr ""
 
@@ -373,6 +425,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusIdLong()
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusIdLong()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusIdLong()
 <<<<<<< Updated upstream
@@ -383,6 +436,11 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.Reclamo#datanucleusIdLong()
 #: domainapp.modules.simple.dom.reclamo.Usuario#datanucleusIdLong()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.Operador#datanucleusIdLong()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusIdLong()
+#: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusIdLong()
+>>>>>>> Se agrega codigo al existente
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusIdLong#prop()
 msgid "Id"
 msgstr ""
@@ -415,6 +473,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#listAll()
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#listAll()
 <<<<<<< Updated upstream
 =======
@@ -423,6 +482,10 @@ msgstr ""
 =======
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio#listAll()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.OperadorRepositorio#listAll()
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#listAll()
+>>>>>>> Se agrega codigo al existente
 msgid "List All"
 msgstr ""
 
@@ -458,23 +521,28 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#updateName(java.lang.String)
 #: domainapp.modules.simple.dom.impl.SimpleObjects#create(java.lang.String)
 #: domainapp.modules.simple.dom.impl.SimpleObjects#findByName(java.lang.String)
-#: domainapp.modules.simple.dom.reclamo.Reclamo#name
-#: domainapp.modules.simple.dom.reclamo.Usuario#name
 msgid "Name"
 msgstr ""
 
 
 <<<<<<< develop
+<<<<<<< develop
+=======
+>>>>>>> Se agrega codigo al existente
 #: domainapp.modules.simple.dom.operador.Operador#nombre
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamos.Reclamo#nombre
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+<<<<<<< develop
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Se agrega codigo al existente
 #: domainapp.modules.simple.dom.tecnico.Tecnico#nombre
 #: domainapp.modules.simple.dom.tecnico.Tecnico#updateName(java.lang.String)
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName(java.lang.String)
+<<<<<<< develop
 >>>>>>> Stashed changes
 msgid "Nombre"
 msgstr ""
@@ -493,6 +561,14 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio#findByName(java.lang.String,java.lang.String,java.lang.String)
 msgid "Nombre"
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+msgid "Nombre"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#findByName(java.lang.String)
+msgid "Nombre del Cliente"
+>>>>>>> Se agrega codigo al existente
 msgstr ""
 
 
@@ -502,7 +578,6 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#notes
-#: domainapp.modules.simple.dom.reclamo.Reclamo#notes
 msgid "Notes"
 msgstr ""
 
@@ -524,6 +599,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#openRestApi()
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.operador.Operador#openRestApi()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#openRestApi()
 <<<<<<< Updated upstream
@@ -534,6 +610,11 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.Reclamo#openRestApi()
 #: domainapp.modules.simple.dom.reclamo.Usuario#openRestApi()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.Operador#openRestApi()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#openRestApi()
+#: domainapp.modules.simple.dom.tecnico.Tecnico#openRestApi()
+>>>>>>> Se agrega codigo al existente
 #: org.apache.isis.applib.AbstractViewModel#openRestApi()
 #: org.apache.isis.applib.ViewModel#openRestApi()
 #: org.apache.isis.applib.domain.DomainObjectList#openRestApi()
@@ -631,6 +712,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#rebuildMetamodel()
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.operador.Operador#rebuildMetamodel()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#rebuildMetamodel()
 <<<<<<< Updated upstream
@@ -641,6 +723,11 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.Reclamo#rebuildMetamodel()
 #: domainapp.modules.simple.dom.reclamo.Usuario#rebuildMetamodel()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.Operador#rebuildMetamodel()
+#: domainapp.modules.simple.dom.reclamos.Reclamo#rebuildMetamodel()
+#: domainapp.modules.simple.dom.tecnico.Tecnico#rebuildMetamodel()
+>>>>>>> Se agrega codigo al existente
 #: org.apache.isis.applib.AbstractViewModel#rebuildMetamodel()
 #: org.apache.isis.applib.ViewModel#rebuildMetamodel()
 #: org.apache.isis.applib.domain.DomainObjectList#rebuildMetamodel()
@@ -654,10 +741,14 @@ msgstr ""
 
 
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu
 =======
 #: domainapp.modules.simple.dom.reclamo.Usuario#reclamos
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.reclamos.ReclamoMenu
+>>>>>>> Se agrega codigo al existente
 msgid "Reclamos"
 msgstr ""
 
@@ -728,6 +819,7 @@ msgid "TargetStr"
 msgstr ""
 
 
+<<<<<<< develop
 <<<<<<< Updated upstream
 =======
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio
@@ -749,21 +841,21 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.reclamo.Reclamo#tipoReclamo
 msgid "Tipo Reclamo"
+=======
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio
+msgid "Tecnicos"
+>>>>>>> Se agrega codigo al existente
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#tipo1
-msgid "Tipo1"
+#: domainapp.modules.simple.dom.reclamos.Reclamo#telefono
+#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+msgid "Telefono"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#tipo2
-msgid "Tipo2"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#tipo3
-msgid "Tipo3"
+#: org.apache.isis.objectstore.jdo.applib.service.DomainChangeJdoAbstract#timestamp
+msgid "Timestamp"
 msgstr ""
 
 
@@ -777,12 +869,8 @@ msgid "Type"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.Usuario#updateApellido()
-msgid "Update Apellido"
-msgstr ""
-
-
 #: domainapp.modules.simple.dom.impl.SimpleObject#updateName()
+<<<<<<< develop
 <<<<<<< develop
 <<<<<<< Updated upstream
 =======
@@ -791,6 +879,9 @@ msgstr ""
 =======
 #: domainapp.modules.simple.dom.reclamo.Usuario#updateName()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#updateName()
+>>>>>>> Se agrega codigo al existente
 msgid "Update Name"
 msgstr ""
 
@@ -801,15 +892,21 @@ msgstr ""
 
 
 <<<<<<< develop
+<<<<<<< develop
 #: domainapp.modules.simple.dom.operador.Operador#usuario
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 =======
 #: domainapp.modules.simple.dom.reclamo.Reclamo#usuario
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.operador.Operador#usuario
+#: domainapp.modules.simple.dom.operador.OperadorRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+>>>>>>> Se agrega codigo al existente
 msgid "Usuario"
 msgstr ""
 
 
+<<<<<<< develop
 <<<<<<< develop
 =======
 #: domainapp.modules.simple.dom.reclamo.UsuarioRepositorio
@@ -818,6 +915,8 @@ msgstr ""
 
 
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+>>>>>>> Se agrega codigo al existente
 #: org.apache.isis.applib.services.config.ConfigurationProperty#value
 msgid "Value"
 msgstr ""
@@ -826,10 +925,14 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusVersionTimestamp()
 <<<<<<< develop
+<<<<<<< develop
+=======
+>>>>>>> Se agrega codigo al existente
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionTimestamp()
+<<<<<<< develop
 <<<<<<< Updated upstream
 =======
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionLong()
@@ -841,6 +944,10 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamo.Usuario#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.reclamo.Usuario#datanucleusVersionTimestamp()
 >>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionLong()
+#: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionTimestamp()
+>>>>>>> Se agrega codigo al existente
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusVersionLong#prop()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusVersionTimestamp#prop()
 msgid "Version"

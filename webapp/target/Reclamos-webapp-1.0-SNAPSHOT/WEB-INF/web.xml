@@ -21,11 +21,15 @@
     xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
+<<<<<<< develop
 <<<<<<< Updated upstream
     <display-name>Simple app</display-name>
 =======
     <display-name>Sistema de Gestión de Reclamos</display-name>
 >>>>>>> Stashed changes
+=======
+    <display-name>Sistema de Gestión de Reclamos</display-name>
+>>>>>>> Se agrega codigo al existente
 
     <welcome-file-list>
         <welcome-file>about/index.html</welcome-file>

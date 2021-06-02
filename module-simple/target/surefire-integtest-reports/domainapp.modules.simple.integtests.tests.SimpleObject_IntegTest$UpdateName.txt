@@ -1,8 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
 -------------------------------------------------------------------------------
+<<<<<<< develop
 <<<<<<< Updated upstream
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
 >>>>>>> Stashed changes
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
+>>>>>>> Se agrega codigo al existente

@@ -61,9 +61,13 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+<<<<<<< develop
 <<<<<<< Updated upstream
   <testcase name="happyCase" classname="domainapp.modules.simple.dom.impl.SimpleObject_Test$Name" time="0.007"/>
 =======
   <testcase name="happyCase" classname="domainapp.modules.simple.dom.impl.SimpleObject_Test$Name" time="0.008"/>
 >>>>>>> Stashed changes
+=======
+  <testcase name="happyCase" classname="domainapp.modules.simple.dom.impl.SimpleObject_Test$Name" time="0.008"/>
+>>>>>>> Se agrega codigo al existente
 </testsuite>

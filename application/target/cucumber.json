@@ -72,11 +72,15 @@
         "before": [
           {
             "result": {
+<<<<<<< develop
 <<<<<<< Updated upstream
               "duration": 3104612280,
 =======
               "duration": 2681192922,
 >>>>>>> Stashed changes
+=======
+              "duration": 2681192922,
+>>>>>>> Se agrega codigo al existente
               "status": "passed"
             },
             "match": {
@@ -85,11 +89,15 @@
           },
           {
             "result": {
+<<<<<<< develop
 <<<<<<< Updated upstream
               "duration": 167476008,
 =======
               "duration": 139837502,
 >>>>>>> Stashed changes
+=======
+              "duration": 139837502,
+>>>>>>> Se agrega codigo al existente
               "status": "passed"
             },
             "match": {
@@ -104,11 +112,15 @@
         "after": [
           {
             "result": {
+<<<<<<< develop
 <<<<<<< Updated upstream
               "duration": 5886307,
 =======
               "duration": 5201010,
 >>>>>>> Stashed changes
+=======
+              "duration": 5201010,
+>>>>>>> Se agrega codigo al existente
               "status": "passed"
             },
             "match": {
@@ -121,11 +133,15 @@
         "steps": [
           {
             "result": {
+<<<<<<< develop
 <<<<<<< Updated upstream
               "duration": 245361836,
 =======
               "duration": 163532796,
 >>>>>>> Stashed changes
+=======
+              "duration": 163532796,
+>>>>>>> Se agrega codigo al existente
               "status": "passed"
             },
             "line": 21,
@@ -143,11 +159,15 @@
           },
           {
             "result": {
+<<<<<<< develop
 <<<<<<< Updated upstream
               "duration": 1734644,
 =======
               "duration": 1654905,
 >>>>>>> Stashed changes
+=======
+              "duration": 1654905,
+>>>>>>> Se agrega codigo al existente
               "status": "passed"
             },
             "line": 22,
@@ -159,11 +179,15 @@
           },
           {
             "result": {
+<<<<<<< develop
 <<<<<<< Updated upstream
               "duration": 7729038,
 =======
               "duration": 7622970,
 >>>>>>> Stashed changes
+=======
+              "duration": 7622970,
+>>>>>>> Se agrega codigo al existente
               "status": "passed"
             },
             "line": 23,

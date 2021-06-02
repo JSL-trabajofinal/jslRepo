@@ -1,8 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: domainapp.application.integtests.mml.MetaModelService_IntegTest
 -------------------------------------------------------------------------------
+<<<<<<< develop
 <<<<<<< Updated upstream
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 3.43 sec - in domainapp.application.integtests.mml.MetaModelService_IntegTest
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 3.094 sec - in domainapp.application.integtests.mml.MetaModelService_IntegTest
 >>>>>>> Stashed changes
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 3.094 sec - in domainapp.application.integtests.mml.MetaModelService_IntegTest
+>>>>>>> Se agrega codigo al existente

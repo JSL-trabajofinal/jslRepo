@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -14,6 +15,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.064" tests="2" errors="0" skipped="0" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.06" tests="2" errors="0" skipped="0" failures="0">
+>>>>>>> Stashed changes
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.06" tests="2" errors="0" skipped="0" failures="0">
 >>>>>>> Stashed changes
@@ -83,6 +87,7 @@
   </properties>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -100,6 +105,10 @@
   <testcase name="happyCase" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.05"/>
   <testcase name="whenNone" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.012"/>
 >>>>>>> package-tecnico
+=======
+  <testcase name="happyCase" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.049"/>
+  <testcase name="whenNone" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.01"/>
+>>>>>>> Stashed changes
 =======
   <testcase name="happyCase" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.049"/>
   <testcase name="whenNone" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$ListAll" time="0.01"/>

@@ -3,6 +3,7 @@ Test set: domainapp.application.integtests.smoke.Smoke_IntegTest
 -------------------------------------------------------------------------------
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -16,6 +17,9 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 sec - in d
 =======
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 sec - in domainapp.application.integtests.smoke.Smoke_IntegTest
 >>>>>>> package-tecnico
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.2 sec - in domainapp.application.integtests.smoke.Smoke_IntegTest
+>>>>>>> Stashed changes
 =======
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.2 sec - in domainapp.application.integtests.smoke.Smoke_IntegTest
 >>>>>>> Stashed changes

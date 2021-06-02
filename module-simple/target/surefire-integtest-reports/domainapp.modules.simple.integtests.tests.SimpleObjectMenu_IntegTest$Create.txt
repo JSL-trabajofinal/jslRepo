@@ -3,6 +3,7 @@ Test set: domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$C
 -------------------------------------------------------------------------------
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -16,6 +17,9 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in d
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.127 sec - in domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create
 >>>>>>> package-tecnico
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.43 sec - in domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create
+>>>>>>> Stashed changes
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.43 sec - in domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create
 >>>>>>> Stashed changes

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -14,6 +15,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.051" tests="2" errors="0" skipped="0" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.084" tests="2" errors="0" skipped="0" failures="0">
+>>>>>>> Stashed changes
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.084" tests="2" errors="0" skipped="0" failures="0">
 >>>>>>> Stashed changes
@@ -83,6 +87,7 @@
   </properties>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -97,6 +102,10 @@
   <testcase name="failsValidation" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.027"/>
 >>>>>>> package-tecnico
   <testcase name="can_be_updated_directly" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.022"/>
+=======
+  <testcase name="failsValidation" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.023"/>
+  <testcase name="can_be_updated_directly" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.058"/>
+>>>>>>> Stashed changes
 =======
   <testcase name="failsValidation" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.023"/>
   <testcase name="can_be_updated_directly" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName" time="0.058"/>

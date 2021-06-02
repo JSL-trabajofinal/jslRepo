@@ -25,6 +25,7 @@ msgstr ""
 "Project-Id-Version: \n"
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
@@ -42,6 +43,9 @@ msgstr ""
 =======
 "POT-Creation-Date: 2021-06-02 07:37:20+\n"
 >>>>>>> package-tecnico
+=======
+"POT-Creation-Date: 2021-06-02 09:10:11+\n"
+>>>>>>> Stashed changes
 =======
 "POT-Creation-Date: 2021-06-02 09:10:11+\n"
 >>>>>>> Stashed changes
@@ -97,6 +101,7 @@ msgstr ""
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
@@ -110,17 +115,22 @@ msgid "Alta Reclamo"
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create()
 msgid "Alta Operador"
 msgstr ""
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create()
 msgid "Alta Reclamo"
 >>>>>>> Se agrega codigo al existente
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create()
@@ -233,6 +243,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObjects#create()
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
@@ -252,6 +263,8 @@ msgstr ""
 >>>>>>> Se agrega codigo al existente
 =======
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create()
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create()
@@ -309,6 +322,7 @@ msgstr ""
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
@@ -318,6 +332,9 @@ msgid "Direccion"
 <<<<<<< Updated upstream
 =======
 =======
+=======
+#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+>>>>>>> Stashed changes
 =======
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 >>>>>>> Stashed changes
@@ -489,6 +506,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObjects#findByName()
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
@@ -510,6 +528,8 @@ msgstr ""
 >>>>>>> Se agrega codigo al existente
 =======
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#findByName()
+=======
+>>>>>>> Stashed changes
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName()
 >>>>>>> package-tecnico
 msgid "Find By Name"
@@ -583,6 +603,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObjects#listAll()
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< develop
@@ -604,6 +625,8 @@ msgstr ""
 >>>>>>> Se agrega codigo al existente
 =======
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#listAll()
+=======
+>>>>>>> Stashed changes
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#listAll()
 >>>>>>> package-tecnico
 msgid "List All"
@@ -711,6 +734,11 @@ msgid "Nombre del Cliente"
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.operador.OperadorMenu#findByName(java.lang.String)
+msgid "Nombre del Operador"
 msgstr ""
 
 
@@ -1017,8 +1045,12 @@ msgstr ""
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 >>>>>>> package-tecnico
+=======
+#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+>>>>>>> Stashed changes
 =======
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 >>>>>>> Stashed changes
@@ -1088,8 +1120,11 @@ msgstr ""
 =======
 #: domainapp.modules.simple.dom.operador.Operador#usuario
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 >>>>>>> package-tecnico
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======

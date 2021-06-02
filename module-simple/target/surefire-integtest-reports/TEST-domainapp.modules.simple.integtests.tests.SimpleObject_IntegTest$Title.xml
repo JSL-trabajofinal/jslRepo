@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -13,6 +14,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title" time="0.05" tests="1" errors="0" skipped="0" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title" time="0.084" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> Stashed changes
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title" time="0.084" tests="1" errors="0" skipped="0" failures="0">
 >>>>>>> Stashed changes
@@ -78,6 +82,7 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -91,6 +96,9 @@
 =======
   <testcase name="interpolatesName" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title" time="0.049"/>
 >>>>>>> package-tecnico
+=======
+  <testcase name="interpolatesName" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title" time="0.083"/>
+>>>>>>> Stashed changes
 =======
   <testcase name="interpolatesName" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title" time="0.083"/>
 >>>>>>> Stashed changes

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -13,6 +14,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.389" tests="4" errors="0" skipped="0" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.736" tests="4" errors="0" skipped="0" failures="0">
+>>>>>>> Stashed changes
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.736" tests="4" errors="0" skipped="0" failures="0">
 >>>>>>> Stashed changes

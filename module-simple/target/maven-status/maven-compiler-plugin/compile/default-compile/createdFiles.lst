@@ -18,6 +18,7 @@ domainapp/modules/simple/SimpleModule$CollectionDomainEvent.class
 domainapp/modules/simple/dom/reclamos/Reclamo.class
 domainapp/modules/simple/dom/tecnico/TecnicoRepositorio$CreateDomainEvent.class
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
@@ -26,6 +27,8 @@ domainapp/modules/simple/dom/tecnico/TecnicoRepositorio$CreateDomainEvent.class
 =======
 >>>>>>> package-tecnico
 domainapp/modules/simple/dom/operador/OperadorRepositorio$CreateDomainEvent.class
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 domainapp/modules/simple/dom/reclamos/QReclamo.class
@@ -52,6 +55,7 @@ domainapp/modules/simple/dom/impl/SimpleObject.class
 domainapp/modules/simple/SimpleModule$1.class
 domainapp/modules/simple/dom/tecnico/TecnicoRepositorio.class
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
@@ -59,6 +63,9 @@ domainapp/modules/simple/dom/tecnico/TecnicoRepositorio.class
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+domainapp/modules/simple/dom/operador/OperadorMenu.class
+>>>>>>> Stashed changes
 =======
 domainapp/modules/simple/dom/operador/OperadorMenu.class
 >>>>>>> Stashed changes

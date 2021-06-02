@@ -73,6 +73,7 @@
           {
             "result": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -89,6 +90,9 @@
 =======
               "duration": 2707008128,
 >>>>>>> Stashed changes
+=======
+              "duration": 2707008128,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "match": {
@@ -97,6 +101,7 @@
           },
           {
             "result": {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
@@ -111,6 +116,9 @@
 =======
               "duration": 139837502,
 >>>>>>> package-tecnico
+=======
+              "duration": 137954809,
+>>>>>>> Stashed changes
 =======
               "duration": 137954809,
 >>>>>>> Stashed changes
@@ -129,6 +137,7 @@
           {
             "result": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -145,6 +154,9 @@
 =======
               "duration": 5157159,
 >>>>>>> Stashed changes
+=======
+              "duration": 5157159,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "match": {
@@ -157,6 +169,7 @@
         "steps": [
           {
             "result": {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
@@ -171,6 +184,9 @@
 =======
               "duration": 163532796,
 >>>>>>> package-tecnico
+=======
+              "duration": 262149835,
+>>>>>>> Stashed changes
 =======
               "duration": 262149835,
 >>>>>>> Stashed changes
@@ -192,6 +208,7 @@
           {
             "result": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -208,6 +225,9 @@
 =======
               "duration": 1453755,
 >>>>>>> Stashed changes
+=======
+              "duration": 1453755,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "line": 22,
@@ -219,6 +239,7 @@
           },
           {
             "result": {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
@@ -233,6 +254,9 @@
 =======
               "duration": 7622970,
 >>>>>>> package-tecnico
+=======
+              "duration": 5837807,
+>>>>>>> Stashed changes
 =======
               "duration": 5837807,
 >>>>>>> Stashed changes

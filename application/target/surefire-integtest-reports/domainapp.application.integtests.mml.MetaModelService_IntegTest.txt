@@ -2,6 +2,7 @@
 Test set: domainapp.application.integtests.mml.MetaModelService_IntegTest
 -------------------------------------------------------------------------------
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -15,6 +16,9 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 3.094 sec - in d
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 3.094 sec - in domainapp.application.integtests.mml.MetaModelService_IntegTest
 >>>>>>> package-tecnico
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 3.203 sec - in domainapp.application.integtests.mml.MetaModelService_IntegTest
+>>>>>>> Stashed changes
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 3.203 sec - in domainapp.application.integtests.mml.MetaModelService_IntegTest
 >>>>>>> Stashed changes

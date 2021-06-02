@@ -80,6 +80,7 @@ formatter.feature({
 });
 formatter.before({
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -105,6 +106,13 @@ formatter.before({
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+  "duration": 2707008128,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 137954809,
+>>>>>>> Stashed changes
 =======
   "duration": 2707008128,
   "status": "passed"
@@ -148,6 +156,7 @@ formatter.match({
 });
 formatter.result({
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -164,12 +173,16 @@ formatter.result({
 =======
   "duration": 262149835,
 >>>>>>> Stashed changes
+=======
+  "duration": 262149835,
+>>>>>>> Stashed changes
   "status": "passed"
 });
 formatter.match({
   "location": "SimpleObjectMenuGlue.create_a_simple_object()"
 });
 formatter.result({
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
@@ -187,6 +200,9 @@ formatter.result({
 =======
   "duration": 1453755,
 >>>>>>> Stashed changes
+=======
+  "duration": 1453755,
+>>>>>>> Stashed changes
   "status": "passed"
 });
 formatter.match({
@@ -199,6 +215,7 @@ formatter.match({
   "location": "SimpleObjectMenuGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
@@ -225,6 +242,13 @@ formatter.after({
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+  "duration": 5837807,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 5157159,
+>>>>>>> Stashed changes
 =======
   "duration": 5837807,
   "status": "passed"

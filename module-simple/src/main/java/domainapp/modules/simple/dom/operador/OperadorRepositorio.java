@@ -18,93 +18,73 @@
  */
 package domainapp.modules.simple.dom.operador;
 
-import domainapp.modules.simple.dom.reclamos.QReclamo;
-import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
-import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
-import org.apache.isis.applib.services.repository.RepositoryService;
-import org.datanucleus.query.typesafe.TypesafeQuery;
 
+import domainapp.modules.simple.dom.reclamos.Reclamo;
+import org.apache.isis.applib.query.QueryDefault;
+
+import org.apache.isis.applib.services.repository.RepositoryService;
+import org.apache.isis.applib.annotation.DomainService;
+import org.apache.isis.applib.annotation.NatureOfService;
+import org.apache.isis.applib.annotation.Programmatic;
+import org.apache.isis.applib.value.Blob;
+
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @DomainService(
-        nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.ReclamoMenu",
-        repositoryFor = Operador.class
-)
-@DomainServiceLayout(
-        named = "Operador",
-        menuOrder = "10"
-)
+        nature = NatureOfService.DOMAIN,
+        repositoryFor = Reclamo.class)
+
+
 public class OperadorRepositorio {
 
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "1")
-    public List<Operador> listAll() {
-        return repositoryService.allInstances(Operador.class);
-    }
-
-
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "2")
-    public List<Operador> findByName(
-            @ParameterLayout(named="Operador: ")final String operador
-    ) {
-        TypesafeQuery<Operador> q = isisJdoSupport.newTypesafeQuery(Operador.class);
-        final QOperador cand = QOperador.candidate();
-        q = q.filter(
-                cand.nombre.indexOf(q.stringParameter("operador")).ne(-1).or(
-                cand.apellido.indexOf(q.stringParameter("operador")).ne(-1)
-                )
-        );
-        return q.setParameter("operador", operador)
-                .executeList();
-    }
-
     @Programmatic
-    public Operador findByNombreYApellido(
-            final String nombre,
-            final String apellido
-    ) {
-        TypesafeQuery<Operador> q = isisJdoSupport.newTypesafeQuery(Operador.class);
-        final QOperador cand = QOperador.candidate();
-        q = q.filter(
-                cand.nombre.eq(q.stringParameter("nombre")).and(
-                cand.apellido.eq(q.stringParameter("apellido"))
-                )
-        );
-        return q.setParameter("nombre", nombre)
-                .setParameter("apellido", apellido)
-                .executeUnique();
-    }
-
-    @Programmatic
-    public void ping() {
-        TypesafeQuery<Operador> q = isisJdoSupport.newTypesafeQuery(Operador.class);
-        final QOperador candidate = QOperador.candidate();
-        q.range(0,2);
-        q.orderBy(candidate.nombre.asc());
-        q.executeList();
-    }
-
-    public static class CreateDomainEvent extends ActionDomainEvent<OperadorRepositorio> {}
-    @Action(domainEvent = CreateDomainEvent.class)
-    @MemberOrder(sequence = "3")
     public Operador create(
-            @ParameterLayout(named="Nombre")final String nombre,
-            @ParameterLayout(named="Apellido")final String apellido,
-            @ParameterLayout(named="Usuario")final String usuario,
-            @ParameterLayout(named="Contraseña")final String contraseña
-            ){
-        return repositoryService.persist(new Operador(nombre, apellido, usuario, contraseña));
+            final String nombre,
+            final String apellido,
+            final String direccion,
+            final String telefono) {
+
+        final Operador Operador = new Operador(nombre,apellido,direccion,telefono);
+        repositoryService.persist(Operador);
+        return Operador;
     }
 
+    @Programmatic
+    public List<Operador> ListarActivos() {
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Operador.class,
+                        "findAllActives"));
+    }
+
+    @Programmatic
+    public List<Operador> ListarInactivos() {
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Operador.class,
+                        "findAllInactives"));
+    }
+
+    @Programmatic
+    public Blob generarReporteOperador()throws  IOException {
+
+        List<Operador> Operadores = new ArrayList<Operador>();
+
+        //EjecutarReportes ejecutarReportes=new EjecutarReportes();
+
+        Operadores = repositoryService.allInstances(Operador.class);
+
+        //return ejecutarReportes.ListadoReclamosPDF(Reclamos);
+        return null;
+    }
+
+    /*
+    @javax.inject.Inject
+    EjecutarReportes ejecutarReportes;
+*/
     @javax.inject.Inject
     RepositoryService repositoryService;
-
-    @javax.inject.Inject
-    IsisJdoSupport isisJdoSupport;
-
 }

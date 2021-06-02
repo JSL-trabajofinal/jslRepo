@@ -124,6 +124,3 @@ public class ReclamoMenu {
     @javax.inject.Inject
     IsisJdoSupport isisJdoSupport;
 }
-
-
-

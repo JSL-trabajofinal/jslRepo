@@ -436,132 +436,6 @@
         }
       }
     },
-    "/services/simple.ReclamoMenu" : {
-      "get" : {
-        "tags" : [ "simple" ],
-        "description" : "RO Spec v1.0, section 15.1",
-        "produces" : [ "application/json", "application/json;profile=urn:org.restfulobjects:repr-types/object" ],
-        "parameters" : [ ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "schema" : {
-              "$ref" : "#/definitions/simple.ReclamoMenuRepr"
-            }
-          }
-        }
-      }
-    },
-    "/services/simple.ReclamoMenu/actions/create/invoke" : {
-      "post" : {
-        "tags" : [ "simple" ],
-        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.ReclamoMenu#create",
-        "consumes" : [ "application/json" ],
-        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
-        "parameters" : [ {
-          "in" : "body",
-          "name" : "body",
-          "required" : false,
-          "schema" : {
-            "type" : "object",
-            "properties" : {
-              "nombre" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "type" : "string"
-                  }
-                }
-              },
-              "apellido" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "type" : "string"
-                  }
-                }
-              },
-              "usuario" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "type" : "string"
-                  }
-                }
-              },
-              "contraseña" : {
-                "type" : "object",
-                "properties" : {
-                  "value" : {
-                    "type" : "string"
-                  }
-                }
-              }
-            }
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "simple.ReclamoMenu#create , if Accept: application/json;profile=urn:org.apache.isis/v1",
-            "schema" : {
-              "$ref" : "#/definitions/simple.OperadorRepr"
-            }
-          }
-        }
-      }
-    },
-    "/services/simple.ReclamoMenu/actions/findByName/invoke" : {
-      "get" : {
-        "tags" : [ "simple" ],
-        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.ReclamoMenu#findByName",
-        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
-        "parameters" : [ {
-          "name" : "operador:",
-          "in" : "query",
-          "description" : "RO Spec v1.0, section 2.9.1",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "name" : "x-isis-querystring",
-          "in" : "query",
-          "description" : "RO Spec v1.0, section 2.10: all (formal) arguments as base64 encoded string",
-          "required" : false,
-          "type" : "string"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "simple.ReclamoMenu#findByName , if Accept: application/json;profile=urn:org.apache.isis/v1",
-            "schema" : {
-              "type" : "array",
-              "description" : "List of simple.Operador",
-              "items" : {
-                "$ref" : "#/definitions/simple.OperadorRepr"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/services/simple.ReclamoMenu/actions/listAll/invoke" : {
-      "get" : {
-        "tags" : [ "simple" ],
-        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.ReclamoMenu#listAll",
-        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
-        "parameters" : [ ],
-        "responses" : {
-          "200" : {
-            "description" : "simple.ReclamoMenu#listAll , if Accept: application/json;profile=urn:org.apache.isis/v1",
-            "schema" : {
-              "type" : "array",
-              "description" : "List of simple.Operador",
-              "items" : {
-                "$ref" : "#/definitions/simple.OperadorRepr"
-              }
-            }
-          }
-        }
-      }
-    },
     "/services/simple.SimpleObjectMenu" : {
       "get" : {
         "tags" : [ "simple" ],
@@ -658,6 +532,152 @@
               "description" : "List of simple.SimpleObject",
               "items" : {
                 "$ref" : "#/definitions/simple.SimpleObjectRepr"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleOperadorMenu" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 15.1",
+        "produces" : [ "application/json", "application/json;profile=urn:org.restfulobjects:repr-types/object" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/simple.SimpleOperadorMenuRepr"
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleOperadorMenu/actions/create/invoke" : {
+      "post" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.SimpleOperadorMenu#create",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "nombre" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "apellido" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "direccion" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "telefono" : {
+                "type" : "object",
+                "properties" : {
+                  "value" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.SimpleOperadorMenu#create , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "$ref" : "#/definitions/simple.OperadorRepr"
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleOperadorMenu/actions/findByName/invoke" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.SimpleOperadorMenu#findByName",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "name" : "nombreDelOperador",
+          "in" : "query",
+          "description" : "RO Spec v1.0, section 2.9.1",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "x-isis-querystring",
+          "in" : "query",
+          "description" : "RO Spec v1.0, section 2.10: all (formal) arguments as base64 encoded string",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.SimpleOperadorMenu#findByName , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "type" : "array",
+              "description" : "List of simple.Operador",
+              "items" : {
+                "$ref" : "#/definitions/simple.OperadorRepr"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleOperadorMenu/actions/listAllActive/invoke" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.SimpleOperadorMenu#listAllActive",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.SimpleOperadorMenu#listAllActive , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "type" : "array",
+              "description" : "List of simple.Operador",
+              "items" : {
+                "$ref" : "#/definitions/simple.OperadorRepr"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/services/simple.SimpleOperadorMenu/actions/listAllInactive/invoke" : {
+      "get" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.SimpleOperadorMenu#listAllInactive",
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/object", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.SimpleOperadorMenu#listAllInactive , if Accept: application/json;profile=urn:org.apache.isis/v1",
+            "schema" : {
+              "type" : "array",
+              "description" : "List of simple.Operador",
+              "items" : {
+                "$ref" : "#/definitions/simple.OperadorRepr"
               }
             }
           }
@@ -1349,32 +1369,6 @@
       },
       "description" : "RO Spec v1.0, section 5.2"
     },
-    "simple.ReclamoMenuRepr" : {
-      "type" : "object",
-      "required" : [ "extensions", "links" ],
-      "properties" : {
-        "links" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LinkRepr"
-          }
-        },
-        "extensions" : {
-          "type" : "object"
-        },
-        "title" : {
-          "type" : "string"
-        },
-        "serviceId" : {
-          "type" : "string",
-          "default" : "simple.ReclamoMenu"
-        },
-        "members" : {
-          "type" : "object"
-        }
-      },
-      "description" : "RO Spec v1.0, section 15.1.2: representation of simple.ReclamoMenu"
-    },
     "RestfulObjectsSupportingUserRepr" : {
       "type" : "object",
       "required" : [ "extensions", "links", "roles", "userName" ],
@@ -1441,6 +1435,32 @@
         }
       },
       "description" : "RO Spec v1.0, section 8.2"
+    },
+    "simple.SimpleOperadorMenuRepr" : {
+      "type" : "object",
+      "required" : [ "extensions", "links" ],
+      "properties" : {
+        "links" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LinkRepr"
+          }
+        },
+        "extensions" : {
+          "type" : "object"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "serviceId" : {
+          "type" : "string",
+          "default" : "simple.SimpleOperadorMenu"
+        },
+        "members" : {
+          "type" : "object"
+        }
+      },
+      "description" : "RO Spec v1.0, section 15.1.2: representation of simple.SimpleOperadorMenu"
     }
   }
 }

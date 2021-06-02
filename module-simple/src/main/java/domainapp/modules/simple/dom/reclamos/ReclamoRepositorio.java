@@ -86,7 +86,4 @@ public class ReclamoRepositorio {
 */
     @javax.inject.Inject
     RepositoryService repositoryService;
-
-
-
 }

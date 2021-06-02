@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -12,6 +13,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.389" tests="4" errors="0" skipped="0" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.736" tests="4" errors="0" skipped="0" failures="0">
+>>>>>>> Stashed changes
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -76,5 +80,5 @@
   <testcase name="Given there are initially 10 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.001"/>
   <testcase name="When I create a new simple object" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
   <testcase name="Then there are 11 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
-  <testcase name="Scenario: Existing simple objects can be listed and new ones created" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.007"/>
+  <testcase name="Scenario: Existing simple objects can be listed and new ones created" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.006"/>
 </testsuite>

@@ -47,7 +47,6 @@
                     <cpt:named>Listar Operadores</cpt:named>
 =======
     <mb3:primary>
-
         <mb3:menu>
             <mb3:named>Reclamos</mb3:named>
             <mb3:section>
@@ -68,6 +67,27 @@
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
+        <mb3:menu>
+            <mb3:named>Operador</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="create">
+                    <cpt:named>Crear Nuevo Operador</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleReclamoMenu" id="findByName">
+                    <cpt:named>Buscar por Operador</cpt:named>
+                </mb3:serviceAction>
+                <!--<mb3:serviceAction objectType="simple.SimpleReclamoMenu" id="findByCuilExact">
+                    <cpt:named>Buscar por CUIT/CUIL</cpt:named>
+                </mb3:serviceAction>-->
+                <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="listAllActive">
+                    <cpt:named>Listar todos los Operador Activos</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="listAllInactive">
+                    <cpt:named>Listar todos los Operador Inactivos</cpt:named>
+                </mb3:serviceAction>
+            </mb3:section>
+        </mb3:menu>
+
         <mb3:menu>
             <mb3:named>Simple Objects</mb3:named>
             <mb3:section>

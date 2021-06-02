@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -12,6 +13,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="3.094" tests="2" errors="0" skipped="2" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="3.203" tests="2" errors="0" skipped="2" failures="0">
+>>>>>>> Stashed changes
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -75,6 +79,7 @@
   </properties>
   <testcase name="_2_verify" classname="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="0">
     <skipped/>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -214,19 +219,58 @@
 07:37:24,696  [Schema               Thread-3   DEBUG]  La columna ""DELETEME1622630244691"."UNUSED"" añadió a la representación de la table.
 07:37:24,700  [Schema               Thread-3   DEBUG]  Crear la tabla "DELETEME1622630244691"
 07:37:24,703  [Schema               Thread-3   DEBUG]  CREATE TABLE "DELETEME1622630244691"
+=======
+    <system-out><![CDATA[09:10:15,252  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
+09:10:15,620  [Reflections          main       INFO ]  Reflections took 282 ms to scan 8 urls, producing 338 keys and 1555 values 
+368   [Reflections               main       INFO ]  Reflections took 282 ms to scan 8 urls, producing 338 keys and 1555 values 
+09:10:15,739  [ServicesInstallerFromConfigurationAndAnnotation main       INFO ]  installing org.apache.isis.core.runtime.services.ServicesInstallerFromConfigurationAndAnnotation
+487   [onfigurationAndAnnotation main       INFO ]  installing org.apache.isis.core.runtime.services.ServicesInstallerFromConfigurationAndAnnotation
+09:10:15,937  [IsisSessionFactoryBuilder main       INFO ]  initialising Isis System
+685   [IsisSessionFactoryBuilder main       INFO ]  initialising Isis System
+09:10:15,937  [IsisSessionFactoryBuilder main       INFO ]  working directory: /home/taslehoof/IdeaProjects/jslRepo/application/.
+685   [IsisSessionFactoryBuilder main       INFO ]  working directory: /home/taslehoof/IdeaProjects/jslRepo/application/.
+09:10:15,937  [IsisSessionFactoryBuilder main       INFO ]  resource stream source: null
+685   [IsisSessionFactoryBuilder main       INFO ]  resource stream source: null
+09:10:16,175  [SpecificationLoader  Thread-2   INFO ]  Loading all specs (up to state of NOT_INTROSPECTED)
+923   [SpecificationLoader       Thread-2   INFO ]  Loading all specs (up to state of NOT_INTROSPECTED)
+09:10:16,179  [PersistenceSessionFactory Thread-3   INFO ]  did *not* find config properties to use JNDI datasource; will use JDBC
+927   [PersistenceSessionFactory Thread-3   INFO ]  did *not* find config properties to use JNDI datasource; will use JDBC
+09:10:16,261  [SpecificationLoader  Thread-2   INFO ]  Introspecting all specs up to TYPE_INTROSPECTED
+1009  [SpecificationLoader       Thread-2   INFO ]  Introspecting all specs up to TYPE_INTROSPECTED
+09:10:16,708  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 143 tasks: waited 0 milliseconds 
+1456  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 143 tasks: waited 0 milliseconds 
+09:10:16,708  [SpecificationLoader  Thread-2   INFO ]  Introspecting domainService specs up to TYPE_AND_MEMBERS_INTROSPECTED
+1456  [SpecificationLoader       Thread-2   INFO ]  Introspecting domainService specs up to TYPE_AND_MEMBERS_INTROSPECTED
+09:10:16,888  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 91 tasks: waited 0 milliseconds 
+1636  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 91 tasks: waited 0 milliseconds 
+09:10:16,888  [SpecificationLoader  Thread-2   INFO ]  Introspecting mixin specs up to TYPE_AND_MEMBERS_INTROSPECTED
+1636  [SpecificationLoader       Thread-2   INFO ]  Introspecting mixin specs up to TYPE_AND_MEMBERS_INTROSPECTED
+09:10:16,902  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 11 tasks: waited 0 milliseconds 
+1650  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 11 tasks: waited 0 milliseconds 
+09:10:16,902  [SpecificationLoader  Thread-2   INFO ]  Introspecting all cached specs up to TYPE_AND_MEMBERS_INTROSPECTED
+1650  [SpecificationLoader       Thread-2   INFO ]  Introspecting all cached specs up to TYPE_AND_MEMBERS_INTROSPECTED
+09:10:16,986  [ThreadPoolSupport    Thread-2   INFO ]  join'ing 173 tasks: waited 0 milliseconds 
+1734  [ThreadPoolSupport         Thread-2   INFO ]  join'ing 173 tasks: waited 0 milliseconds 
+09:10:16,986  [SpecificationLoader  Thread-2   INFO ]  init() - done
+1734  [SpecificationLoader       Thread-2   INFO ]  init() - done
+09:10:17,315  [Schema               Thread-3   DEBUG]  La columna ""DELETEME1622635817309"."UNUSED"" añadió a la representación de la table.
+09:10:17,319  [Schema               Thread-3   DEBUG]  Crear la tabla "DELETEME1622635817309"
+09:10:17,322  [Schema               Thread-3   DEBUG]  CREATE TABLE "DELETEME1622635817309"
+>>>>>>> Stashed changes
 (
     "UNUSED" INTEGER NOT NULL
 )
-07:37:24,704  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
-07:37:24,715  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622630244691"
-07:37:24,715  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622630244691"
-07:37:24,716  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
-07:37:25,027  [Schema               Thread-3   DEBUG]  La columna ""DELETEME1622630245027"."UNUSED"" añadió a la representación de la table.
-07:37:25,027  [Schema               Thread-3   DEBUG]  Crear la tabla "DELETEME1622630245027"
-07:37:25,028  [Schema               Thread-3   DEBUG]  CREATE TABLE "DELETEME1622630245027"
+09:10:17,323  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+09:10:17,336  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622635817309"
+09:10:17,336  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622635817309"
+09:10:17,337  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+09:10:17,612  [Schema               Thread-3   DEBUG]  La columna ""DELETEME1622635817611"."UNUSED"" añadió a la representación de la table.
+09:10:17,612  [Schema               Thread-3   DEBUG]  Crear la tabla "DELETEME1622635817611"
+09:10:17,612  [Schema               Thread-3   DEBUG]  CREATE TABLE "DELETEME1622635817611"
 (
     "UNUSED" INTEGER NOT NULL
 )
+<<<<<<< Updated upstream
 07:37:25,028  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 0 ms
 07:37:25,032  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622630245027"
 07:37:25,032  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622630245027"
@@ -292,6 +336,66 @@
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+09:10:17,613  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+09:10:17,617  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622635817611"
+09:10:17,617  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622635817611"
+09:10:17,618  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+09:10:17,709  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."id"" añadió a la representación de la table.
+09:10:17,709  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."SimpleObject"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
+09:10:17,712  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."id"" añadió a la representación de la table.
+09:10:17,712  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."Operador"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
+09:10:17,712  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."id"" añadió a la representación de la table.
+09:10:17,712  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."Reclamo"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
+09:10:17,712  [Schema               Thread-3   DEBUG]  La columna ""simple"."Tecnico"."id"" añadió a la representación de la table.
+09:10:17,713  [Schema               Thread-3   DEBUG]  Campo [DATASTORE_ID] -> Columnas ["simple"."Tecnico"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
+09:10:17,713  [Schema               Thread-3   DEBUG]  La tabla "simple"."Reclamo" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.reclamos.Reclamo (estrategia de heredar="new-table")
+09:10:17,714  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."apellido"" añadió a la representación de la table.
+09:10:17,716  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.apellido] -> Columnas ["simple"."Reclamo"."apellido"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,716  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."direccion"" añadió a la representación de la table.
+09:10:17,716  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.direccion] -> Columnas ["simple"."Reclamo"."direccion"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,716  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."nombre"" añadió a la representación de la table.
+09:10:17,716  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.nombre] -> Columnas ["simple"."Reclamo"."nombre"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,717  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."telefono"" añadió a la representación de la table.
+09:10:17,717  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.reclamos.Reclamo.telefono] -> Columnas ["simple"."Reclamo"."telefono"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,718  [Schema               Thread-3   DEBUG]  La columna ""simple"."Reclamo"."version"" añadió a la representación de la table.
+09:10:17,718  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."Reclamo"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
+09:10:17,718  [Schema               Thread-3   DEBUG]  Table/View "simple"."Reclamo" ha sido inicializado
+09:10:17,718  [Schema               Thread-3   DEBUG]  La tabla "simple"."SimpleObject" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.impl.SimpleObject (estrategia de heredar="new-table")
+09:10:17,719  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."name"" añadió a la representación de la table.
+09:10:17,719  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.impl.SimpleObject.name] -> Columnas ["simple"."SimpleObject"."name"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,719  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."notes"" añadió a la representación de la table.
+09:10:17,719  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.impl.SimpleObject.notes] -> Columnas ["simple"."SimpleObject"."notes"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,719  [Schema               Thread-3   DEBUG]  La columna ""simple"."SimpleObject"."version"" añadió a la representación de la table.
+09:10:17,719  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."SimpleObject"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
+09:10:17,720  [Schema               Thread-3   DEBUG]  Table/View "simple"."SimpleObject" ha sido inicializado
+09:10:17,720  [Schema               Thread-3   DEBUG]  La tabla "simple"."Operador" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.operador.Operador (estrategia de heredar="new-table")
+09:10:17,720  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."apellido"" añadió a la representación de la table.
+09:10:17,720  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.operador.Operador.apellido] -> Columnas ["simple"."Operador"."apellido"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,721  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."contrasef1a"" añadió a la representación de la table.
+09:10:17,721  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.operador.Operador.contraseña] -> Columnas ["simple"."Operador"."contrasef1a"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,721  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."nombre"" añadió a la representación de la table.
+09:10:17,721  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.operador.Operador.nombre] -> Columnas ["simple"."Operador"."nombre"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,721  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."usuario"" añadió a la representación de la table.
+09:10:17,722  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.operador.Operador.usuario] -> Columnas ["simple"."Operador"."usuario"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,722  [Schema               Thread-3   DEBUG]  La columna ""simple"."Operador"."version"" añadió a la representación de la table.
+09:10:17,722  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."Operador"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
+09:10:17,722  [Schema               Thread-3   DEBUG]  Table/View "simple"."Operador" ha sido inicializado
+09:10:17,722  [Schema               Thread-3   DEBUG]  La tabla "simple"."Tecnico" va a manejar la persistencia de los campos de la clase domainapp.modules.simple.dom.tecnico.Tecnico (estrategia de heredar="new-table")
+09:10:17,722  [Schema               Thread-3   DEBUG]  La columna ""simple"."Tecnico"."apellido"" añadió a la representación de la table.
+09:10:17,723  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.tecnico.Tecnico.apellido] -> Columnas ["simple"."Tecnico"."apellido"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,723  [Schema               Thread-3   DEBUG]  La columna ""simple"."Tecnico"."dni"" añadió a la representación de la table.
+09:10:17,723  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.tecnico.Tecnico.dni] -> Columnas ["simple"."Tecnico"."dni"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,723  [Schema               Thread-3   DEBUG]  La columna ""simple"."Tecnico"."nombre"" añadió a la representación de la table.
+09:10:17,723  [Schema               Thread-3   DEBUG]  Campo [domainapp.modules.simple.dom.tecnico.Tecnico.nombre] -> Columnas ["simple"."Tecnico"."nombre"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+09:10:17,723  [Schema               Thread-3   DEBUG]  La columna ""simple"."Tecnico"."version"" añadió a la representación de la table.
+09:10:17,724  [Schema               Thread-3   DEBUG]  Campo [VERSION] -> Columnas ["simple"."Tecnico"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
+09:10:17,724  [Schema               Thread-3   DEBUG]  Table/View "simple"."Tecnico" ha sido inicializado
+09:10:17,725  [Schema               Thread-3   DEBUG]  Empezando transaccion del esquema con conneccion "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@56c17ffd" y isolacion "serializable"
+09:10:17,730  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Reclamo" returned no table
+09:10:17,731  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Reclamo"
+09:10:17,731  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."Reclamo"
+>>>>>>> Stashed changes
 (
     "id" BIGINT GENERATED BY DEFAULT AS IDENTITY,
     "apellido" VARCHAR(40) NOT NULL,
@@ -301,6 +405,7 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "Reclamo_PK" PRIMARY KEY ("id")
 )
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -324,6 +429,12 @@
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+09:10:17,734  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 3 ms
+09:10:17,738  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."SimpleObject" returned no table
+09:10:17,738  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."SimpleObject"
+09:10:17,738  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."SimpleObject"
+>>>>>>> Stashed changes
 (
     "id" BIGINT GENERATED BY DEFAULT AS IDENTITY,
     "name" VARCHAR(40) NOT NULL,
@@ -331,6 +442,7 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "SimpleObject_PK" PRIMARY KEY ("id")
 )
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -354,6 +466,12 @@
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+09:10:17,739  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+09:10:17,743  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Operador" returned no table
+09:10:17,743  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Operador"
+09:10:17,743  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."Operador"
+>>>>>>> Stashed changes
 (
     "id" BIGINT GENERATED BY DEFAULT AS IDENTITY,
     "apellido" VARCHAR(40) NOT NULL,
@@ -363,6 +481,7 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "Operador_PK" PRIMARY KEY ("id")
 )
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -402,6 +521,12 @@
 07:37:25,177  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Tecnico" returned no table
 07:37:25,177  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Tecnico"
 07:37:25,177  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."Tecnico"
+=======
+09:10:17,746  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 2 ms
+09:10:17,750  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Tecnico" returned no table
+09:10:17,751  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Tecnico"
+09:10:17,751  [Schema               Thread-3   DEBUG]  CREATE TABLE "simple"."Tecnico"
+>>>>>>> Stashed changes
 (
     "id" BIGINT GENERATED BY DEFAULT AS IDENTITY,
     "apellido" VARCHAR(40) NOT NULL,
@@ -410,34 +535,35 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "Tecnico_PK" PRIMARY KEY ("id")
 )
-07:37:25,179  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 2 ms
-07:37:25,183  [Schema               Thread-3   DEBUG]  Crear la llave unica "Reclamo_nombre_UNQ" en catalogo "" equema ""simple""
-07:37:25,184  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Reclamo" ADD CONSTRAINT "Reclamo_nombre_UNQ" UNIQUE ("nombre")
-07:37:25,186  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 2 ms
-07:37:25,187  [Schema               Thread-3   DEBUG]  Crear la llave unica "SimpleObject_name_UNQ" en catalogo "" equema ""simple""
-07:37:25,187  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."SimpleObject" ADD CONSTRAINT "SimpleObject_name_UNQ" UNIQUE ("name")
-07:37:25,188  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
-07:37:25,188  [Schema               Thread-3   DEBUG]  Crear la llave unica "Operador_nombre_UNQ" en catalogo "" equema ""simple""
-07:37:25,188  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Operador" ADD CONSTRAINT "Operador_nombre_UNQ" UNIQUE ("nombre")
-07:37:25,190  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 2 ms
-07:37:25,190  [Schema               Thread-3   DEBUG]  Crear la llave unica "Tecnico_nombre_UNQ" en catalogo "" equema ""simple""
-07:37:25,190  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Tecnico" ADD CONSTRAINT "Tecnico_nombre_UNQ" UNIQUE ("nombre")
-07:37:25,191  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
-07:37:25,192  [Schema               Thread-3   DEBUG]  Committing transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@f3a350"
-07:37:25,192  [Schema               Thread-3   DEBUG]  Cerrando la conneccion de la transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@f3a350"
-07:37:25,192  [ThreadPoolSupport    main       INFO ]  join'ing 5 tasks: waited 0 milliseconds 
-2426  [ThreadPoolSupport         main       INFO ]  join'ing 5 tasks: waited 0 milliseconds 
-07:37:25,320  [ServiceInitializer   main       INFO ]  calling @PostConstruct on all domain services
-2554  [ServiceInitializer        main       INFO ]  calling @PostConstruct on all domain services
-07:37:25,456  [EmailServiceDefault  main       WARN ]  NOT configured
-2690  [EmailServiceDefault       main       WARN ]  NOT configured
-07:37:25,628  [IsisSystemBootstrapper main       INFO ]  ##########################################################################
-2862  [IsisSystemBootstrapper    main       INFO ]  ##########################################################################
-07:37:25,628  [IsisSystemBootstrapper main       INFO ]  # Bootstrapped in 2847 millis
-2862  [IsisSystemBootstrapper    main       INFO ]  # Bootstrapped in 2847 millis
-07:37:25,628  [IsisSystemBootstrapper main       INFO ]  ##########################################################################
-2862  [IsisSystemBootstrapper    main       INFO ]  ##########################################################################
+09:10:17,753  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 2 ms
+09:10:17,757  [Schema               Thread-3   DEBUG]  Crear la llave unica "Reclamo_nombre_UNQ" en catalogo "" equema ""simple""
+09:10:17,757  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Reclamo" ADD CONSTRAINT "Reclamo_nombre_UNQ" UNIQUE ("nombre")
+09:10:17,760  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 2 ms
+09:10:17,761  [Schema               Thread-3   DEBUG]  Crear la llave unica "SimpleObject_name_UNQ" en catalogo "" equema ""simple""
+09:10:17,761  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."SimpleObject" ADD CONSTRAINT "SimpleObject_name_UNQ" UNIQUE ("name")
+09:10:17,762  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+09:10:17,762  [Schema               Thread-3   DEBUG]  Crear la llave unica "Operador_nombre_UNQ" en catalogo "" equema ""simple""
+09:10:17,762  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Operador" ADD CONSTRAINT "Operador_nombre_UNQ" UNIQUE ("nombre")
+09:10:17,763  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+09:10:17,764  [Schema               Thread-3   DEBUG]  Crear la llave unica "Tecnico_nombre_UNQ" en catalogo "" equema ""simple""
+09:10:17,764  [Schema               Thread-3   DEBUG]  ALTER TABLE "simple"."Tecnico" ADD CONSTRAINT "Tecnico_nombre_UNQ" UNIQUE ("nombre")
+09:10:17,765  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
+09:10:17,765  [Schema               Thread-3   DEBUG]  Committing transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@56c17ffd"
+09:10:17,766  [Schema               Thread-3   DEBUG]  Cerrando la conneccion de la transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@56c17ffd"
+09:10:17,766  [ThreadPoolSupport    main       INFO ]  join'ing 5 tasks: waited 0 milliseconds 
+2514  [ThreadPoolSupport         main       INFO ]  join'ing 5 tasks: waited 0 milliseconds 
+09:10:17,862  [ServiceInitializer   main       INFO ]  calling @PostConstruct on all domain services
+2610  [ServiceInitializer        main       INFO ]  calling @PostConstruct on all domain services
+09:10:17,967  [EmailServiceDefault  main       WARN ]  NOT configured
+2715  [EmailServiceDefault       main       WARN ]  NOT configured
+09:10:18,131  [IsisSystemBootstrapper main       INFO ]  ##########################################################################
+2879  [IsisSystemBootstrapper    main       INFO ]  ##########################################################################
+09:10:18,131  [IsisSystemBootstrapper main       INFO ]  # Bootstrapped in 2863 millis
+2879  [IsisSystemBootstrapper    main       INFO ]  # Bootstrapped in 2863 millis
+09:10:18,131  [IsisSystemBootstrapper main       INFO ]  ##########################################################################
+2879  [IsisSystemBootstrapper    main       INFO ]  ##########################################################################
                                                             : EXEC org.apache.isis.applib.AppManifestAbstract2$1
+<<<<<<< Updated upstream
 07:37:25,648  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
 2882  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
 <<<<<<< HEAD
@@ -447,12 +573,17 @@
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+09:10:18,155  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+2903  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+>>>>>>> Stashed changes
                                                             : EXEC org.apache.isis.applib.AppManifestAbstract2$2
 /                                                           : EXEC domainapp.modules.simple.SimpleModule$1
 ]]></system-out>
   </testcase>
   <testcase name="_1_learn" classname="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="0">
     <skipped/>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -478,6 +609,13 @@
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+    <system-out><![CDATA[09:10:18,215  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
+2963  [WithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
+                                                            : EXEC org.apache.isis.applib.AppManifestAbstract2$1
+09:10:18,217  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+2965  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+>>>>>>> Stashed changes
                                                             : EXEC org.apache.isis.applib.AppManifestAbstract2$2
 /                                                           : EXEC domainapp.modules.simple.SimpleModule$1
 ]]></system-out>

@@ -21,6 +21,7 @@
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/SimpleModuleManifest.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/tecnico/Tecnico.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/impl/SimpleObject.java
+/home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/operador/OperadorMenu.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/reclamos/Reclamo.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/dom/tecnico/TecnicoRepositorio.java
 /home/taslehoof/IdeaProjects/jslRepo/module-simple/src/main/java/domainapp/modules/simple/fixture/SimpleObject_persona.java

@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="c5bc0400-8762-487f-8135-5dcd245043af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -92,12 +93,21 @@
       <change beforePath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PRIVATE.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PRIVATE.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PUBLIC.json" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/generated-resources/isis-swagger/swagger-PUBLIC.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/target/maven-archiver/pom.properties" afterDir="false" />
+=======
+    <list default="true" id="d742b3c6-bf4f-4118-b082-571546e087b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/application/src/main/java/domainapp/application/manifest/menubars.layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/domainapp/application/manifest/menubars.layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/translations.pot" beforeDir="false" afterPath="$PROJECT_DIR$/application/translations.pot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-simple/translations.pot" beforeDir="false" afterPath="$PROJECT_DIR$/module-simple/translations.pot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/isis.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/main/webapp/WEB-INF/isis.properties" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< Updated upstream
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -112,6 +122,12 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tO1XseROZTNsQVw90aX3qaZN2r" />
+>>>>>>> Stashed changes
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -119,6 +135,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$/module-simple/src/main/java/domainapp/modules/simple/dom/operador" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -134,10 +151,13 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="domainapp.modules.simple.dom.reclamos" />
     </key>
+=======
+>>>>>>> Stashed changes
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< Updated upstream
       <changelist id="c5bc0400-8762-487f-8135-5dcd245043af" name="Default Changelist" comment="" />
       <created>1621383396794</created>
       <option name="number" value="Default" />
@@ -158,4 +178,14 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+=======
+      <changelist id="d742b3c6-bf4f-4118-b082-571546e087b8" name="Default Changelist" comment="" />
+      <created>1622625368387</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622625368387</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> Stashed changes
 </project>

@@ -1,8 +1,16 @@
+<<<<<<< Updated upstream
 2021-05-30 22:05:45.493 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ixn:interactionDto xmlns:com="http://isis.apache.org/schema/common" xmlns:cmd="http://isis.apache.org/schema/cmd" xmlns:ixn="http://isis.apache.org/schema/ixn">
     <ixn:majorVersion>1</ixn:majorVersion>
     <ixn:minorVersion>0</ixn:minorVersion>
     <ixn:transactionId>747ad66c-1c1a-4a4e-9351-17d6804fd086</ixn:transactionId>
+=======
+2021-06-02 07:38:22.016 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ixn:interactionDto xmlns:com="http://isis.apache.org/schema/common" xmlns:cmd="http://isis.apache.org/schema/cmd" xmlns:ixn="http://isis.apache.org/schema/ixn">
+    <ixn:majorVersion>1</ixn:majorVersion>
+    <ixn:minorVersion>0</ixn:minorVersion>
+    <ixn:transactionId>8694c543-bad8-436c-9ec1-3d868db1c14d</ixn:transactionId>
+>>>>>>> Stashed changes
     <ixn:execution xsi:type="ixn:actionInvocationDto" interactionType="action_invocation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <ixn:sequence>0</ixn:sequence>
         <ixn:target type="homepage.HomePageService" id="1"/>
@@ -12,6 +20,7 @@
         <ixn:title>homepage.HomePageService:1: homePage()</ixn:title>
         <ixn:metrics>
             <ixn:timings>
+<<<<<<< Updated upstream
                 <com:startedAt>2021-05-30T22:05:45.390-03:00</com:startedAt>
                 <com:completedAt>2021-05-30T22:05:45.435-03:00</com:completedAt>
             </ixn:timings>
@@ -43,6 +52,10 @@
             <ixn:timings>
                 <com:startedAt>2021-05-30T22:06:11.352-03:00</com:startedAt>
                 <com:completedAt>2021-05-30T22:06:11.353-03:00</com:completedAt>
+=======
+                <com:startedAt>2021-06-02T07:38:21.880-03:00</com:startedAt>
+                <com:completedAt>2021-06-02T07:38:21.937-03:00</com:completedAt>
+>>>>>>> Stashed changes
             </ixn:timings>
             <ixn:objectCounts>
                 <ixn:loaded before="0" after="0"/>

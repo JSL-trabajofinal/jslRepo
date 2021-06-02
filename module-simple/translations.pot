@@ -23,7 +23,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
+<<<<<<< Updated upstream
 "POT-Creation-Date: 2021-05-30 21:50:14+\n"
+=======
+"POT-Creation-Date: 2021-06-02 07:37:20+\n"
+>>>>>>> Stashed changes
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,7 +76,11 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create()
+<<<<<<< Updated upstream
 msgid "Alta Cliente"
+=======
+msgid "Alta Reclamo"
+>>>>>>> Stashed changes
 msgstr ""
 
 
@@ -80,6 +88,11 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamos.Reclamo#apellido
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#apellido
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
+>>>>>>> Stashed changes
 msgid "Apellido"
 msgstr ""
 
@@ -95,7 +108,11 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#findByName()
+<<<<<<< Updated upstream
 msgid "Buscar cliente"
+=======
+msgid "Buscar Reclamo"
+>>>>>>> Stashed changes
 msgstr ""
 
 
@@ -142,6 +159,10 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#create()
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create()
+>>>>>>> Stashed changes
 msgid "Create"
 msgstr ""
 
@@ -151,6 +172,14 @@ msgid "Current"
 msgstr ""
 
 
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
+msgid "DNI"
+msgstr ""
+
+
+>>>>>>> Stashed changes
 #: org.apache.isis.applib.services.menu.MenuBarsService$Type#DEFAULT
 msgid "Default"
 msgstr ""
@@ -169,6 +198,14 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamos.Reclamo#direccion
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Direccion"
+<<<<<<< Updated upstream
+=======
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.tecnico.Tecnico#dni
+msgid "Dni"
+>>>>>>> Stashed changes
 msgstr ""
 
 
@@ -180,6 +217,10 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.operador.Operador#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#downloadJdoMetadata()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#downloadJdoMetadata()
+>>>>>>> Stashed changes
 msgid "Download Jdo Metadata"
 msgstr ""
 
@@ -187,6 +228,10 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadLayoutXml()
 #: domainapp.modules.simple.dom.operador.Operador#downloadLayoutXml()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#downloadLayoutXml()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#downloadLayoutXml()
+>>>>>>> Stashed changes
 #: org.apache.isis.applib.AbstractViewModel#downloadLayoutXml()
 #: org.apache.isis.applib.ViewModel#downloadLayoutXml()
 #: org.apache.isis.applib.domain.DomainObjectList#downloadLayoutXml()
@@ -234,6 +279,11 @@ msgid "Element Object Type"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.tecnico.Tecnico#eliminar()
+msgid "Eliminar"
+msgstr ""
+
+
 #: domainapp.modules.simple.dom.impl.SimpleObject#updateName(java.lang.String)
 msgid "Exclamation mark is not allowed"
 msgstr ""
@@ -260,6 +310,10 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#findByName()
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#findByName()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName()
+>>>>>>> Stashed changes
 msgid "Find By Name"
 msgstr ""
 
@@ -277,6 +331,10 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusIdLong()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusIdLong()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusIdLong()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusIdLong()
+>>>>>>> Stashed changes
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusIdLong#prop()
 msgid "Id"
 msgstr ""
@@ -309,6 +367,10 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#listAll()
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#listAll()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#listAll()
+>>>>>>> Stashed changes
 msgid "List All"
 msgstr ""
 
@@ -352,6 +414,13 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.OperadorRepositorio#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamos.Reclamo#nombre
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#nombre
+#: domainapp.modules.simple.dom.tecnico.Tecnico#updateName(java.lang.String)
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName(java.lang.String)
+>>>>>>> Stashed changes
 msgid "Nombre"
 msgstr ""
 
@@ -389,6 +458,10 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#openRestApi()
 #: domainapp.modules.simple.dom.operador.Operador#openRestApi()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#openRestApi()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#openRestApi()
+>>>>>>> Stashed changes
 #: org.apache.isis.applib.AbstractViewModel#openRestApi()
 #: org.apache.isis.applib.ViewModel#openRestApi()
 #: org.apache.isis.applib.domain.DomainObjectList#openRestApi()
@@ -487,6 +560,10 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#rebuildMetamodel()
 #: domainapp.modules.simple.dom.operador.Operador#rebuildMetamodel()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#rebuildMetamodel()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#rebuildMetamodel()
+>>>>>>> Stashed changes
 #: org.apache.isis.applib.AbstractViewModel#rebuildMetamodel()
 #: org.apache.isis.applib.ViewModel#rebuildMetamodel()
 #: org.apache.isis.applib.domain.DomainObjectList#rebuildMetamodel()
@@ -570,6 +647,14 @@ msgid "TargetStr"
 msgstr ""
 
 
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio
+msgid "Tecnicos"
+msgstr ""
+
+
+>>>>>>> Stashed changes
 #: domainapp.modules.simple.dom.reclamos.Reclamo#telefono
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Telefono"
@@ -592,6 +677,10 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#updateName()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#updateName()
+>>>>>>> Stashed changes
 msgid "Update Name"
 msgstr ""
 
@@ -618,6 +707,11 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionTimestamp()
+<<<<<<< Updated upstream
+=======
+#: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionLong()
+#: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionTimestamp()
+>>>>>>> Stashed changes
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusVersionLong#prop()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusVersionTimestamp#prop()
 msgid "Version"

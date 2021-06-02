@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title
 -------------------------------------------------------------------------------
+<<<<<<< Updated upstream
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Title
+>>>>>>> Stashed changes

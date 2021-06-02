@@ -79,11 +79,19 @@ formatter.feature({
   ]
 });
 formatter.before({
+<<<<<<< Updated upstream
   "duration": 3104612280,
   "status": "passed"
 });
 formatter.before({
   "duration": 167476008,
+=======
+  "duration": 2681192922,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 139837502,
+>>>>>>> Stashed changes
   "status": "passed"
 });
 formatter.scenario({
@@ -119,14 +127,22 @@ formatter.match({
   "location": "SimpleObjectMenuGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
+<<<<<<< Updated upstream
   "duration": 245361836,
+=======
+  "duration": 163532796,
+>>>>>>> Stashed changes
   "status": "passed"
 });
 formatter.match({
   "location": "SimpleObjectMenuGlue.create_a_simple_object()"
 });
 formatter.result({
+<<<<<<< Updated upstream
   "duration": 1734644,
+=======
+  "duration": 1654905,
+>>>>>>> Stashed changes
   "status": "passed"
 });
 formatter.match({
@@ -139,11 +155,19 @@ formatter.match({
   "location": "SimpleObjectMenuGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
+<<<<<<< Updated upstream
   "duration": 7729038,
   "status": "passed"
 });
 formatter.after({
   "duration": 5886307,
+=======
+  "duration": 7622970,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 5201010,
+>>>>>>> Stashed changes
   "status": "passed"
 });
 });

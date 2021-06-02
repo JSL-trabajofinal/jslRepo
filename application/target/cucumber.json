@@ -72,7 +72,11 @@
         "before": [
           {
             "result": {
+<<<<<<< Updated upstream
               "duration": 3104612280,
+=======
+              "duration": 2681192922,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "match": {
@@ -81,7 +85,11 @@
           },
           {
             "result": {
+<<<<<<< Updated upstream
               "duration": 167476008,
+=======
+              "duration": 139837502,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "match": {
@@ -96,7 +104,11 @@
         "after": [
           {
             "result": {
+<<<<<<< Updated upstream
               "duration": 5886307,
+=======
+              "duration": 5201010,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "match": {
@@ -109,7 +121,11 @@
         "steps": [
           {
             "result": {
+<<<<<<< Updated upstream
               "duration": 245361836,
+=======
+              "duration": 163532796,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "line": 21,
@@ -127,7 +143,11 @@
           },
           {
             "result": {
+<<<<<<< Updated upstream
               "duration": 1734644,
+=======
+              "duration": 1654905,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "line": 22,
@@ -139,7 +159,11 @@
           },
           {
             "result": {
+<<<<<<< Updated upstream
               "duration": 7729038,
+=======
+              "duration": 7622970,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "line": 23,

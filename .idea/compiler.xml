@@ -2,19 +2,31 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+<<<<<<< Updated upstream
       <profile default="true" name="Default" enabled="true" />
+=======
+>>>>>>> Stashed changes
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< Updated upstream
         <module name="Reclamos-application" />
         <module name="Reclamos-webapp" />
+=======
+        <module name="Reclamos-webapp" />
+        <module name="Reclamos-application" />
+>>>>>>> Stashed changes
         <module name="Reclamos-module-simple" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Reclamos" target="1.5" />
+<<<<<<< Updated upstream
       <module name="Reclamos (1)" target="1.5" />
+=======
+      <module name="Reclamos (1)" target="1.8" />
+>>>>>>> Stashed changes
       <module name="Reclamos (2)" target="1.5" />
       <module name="Reclamos-application" target="1.8" />
       <module name="Reclamos-module-simple" target="1.8" />

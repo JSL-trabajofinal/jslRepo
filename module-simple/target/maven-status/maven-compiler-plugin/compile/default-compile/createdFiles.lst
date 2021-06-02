@@ -20,6 +20,7 @@ domainapp/modules/simple/dom/tecnico/TecnicoRepositorio$CreateDomainEvent.class
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
@@ -28,6 +29,8 @@ domainapp/modules/simple/dom/tecnico/TecnicoRepositorio$CreateDomainEvent.class
 =======
 >>>>>>> package-tecnico
 domainapp/modules/simple/dom/operador/OperadorRepositorio$CreateDomainEvent.class
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -60,6 +63,7 @@ domainapp/modules/simple/dom/tecnico/TecnicoRepositorio.class
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 >>>>>>> Stashed changes
@@ -67,6 +71,9 @@ domainapp/modules/simple/dom/tecnico/TecnicoRepositorio.class
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+domainapp/modules/simple/dom/operador/OperadorMenu.class
+>>>>>>> Stashed changes
 =======
 domainapp/modules/simple/dom/operador/OperadorMenu.class
 >>>>>>> Stashed changes

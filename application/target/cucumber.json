@@ -75,6 +75,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -97,6 +98,9 @@
 =======
               "duration": 2707008128,
 >>>>>>> Stashed changes
+=======
+              "duration": 2707008128,
+>>>>>>> Stashed changes
               "status": "passed"
             },
             "match": {
@@ -105,6 +109,7 @@
           },
           {
             "result": {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -121,6 +126,9 @@
 =======
               "duration": 139837502,
 >>>>>>> package-tecnico
+=======
+              "duration": 137954809,
+>>>>>>> Stashed changes
 =======
               "duration": 137954809,
 >>>>>>> Stashed changes
@@ -147,6 +155,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -160,6 +169,9 @@
 =======
               "duration": 5201010,
 >>>>>>> package-tecnico
+=======
+              "duration": 5157159,
+>>>>>>> Stashed changes
 =======
               "duration": 5157159,
 >>>>>>> Stashed changes
@@ -184,6 +196,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -197,6 +210,9 @@
 =======
               "duration": 163532796,
 >>>>>>> package-tecnico
+=======
+              "duration": 262149835,
+>>>>>>> Stashed changes
 =======
               "duration": 262149835,
 >>>>>>> Stashed changes
@@ -226,6 +242,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -239,6 +256,9 @@
 =======
               "duration": 1654905,
 >>>>>>> package-tecnico
+=======
+              "duration": 1453755,
+>>>>>>> Stashed changes
 =======
               "duration": 1453755,
 >>>>>>> Stashed changes
@@ -262,6 +282,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -275,6 +296,9 @@
 =======
               "duration": 7622970,
 >>>>>>> package-tecnico
+=======
+              "duration": 5837807,
+>>>>>>> Stashed changes
 =======
               "duration": 5837807,
 >>>>>>> Stashed changes

@@ -2,6 +2,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -15,6 +16,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp" time="3.346" tests="1" errors="0" skipped="0" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp" time="3.816" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> Stashed changes
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp" time="3.816" tests="1" errors="0" skipped="0" failures="0">
 >>>>>>> Stashed changes
@@ -88,6 +92,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -101,6 +106,9 @@
 =======
   <testcase name="should_be_populated" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp" time="3.142"/>
 >>>>>>> package-tecnico
+=======
+  <testcase name="should_be_populated" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp" time="3.596"/>
+>>>>>>> Stashed changes
 =======
   <testcase name="should_be_populated" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$DataNucleusVersionTimestamp" time="3.596"/>
 >>>>>>> Stashed changes

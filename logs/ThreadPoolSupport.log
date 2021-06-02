@@ -1,6 +1,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -1121,6 +1122,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 2021-06-02 09:11:06.513 START: workQueue.size: 0, waited for: 0ms, SpecificationLoader#init()
 2021-06-02 09:11:06.513 START: workQueue.size: 0, waited for: 1ms, InteractionDtoUtils.init()
 2021-06-02 09:11:06.513 START: workQueue.size: 0, waited for: 1ms, ChangesDtoUtils.init()
@@ -1680,6 +1683,9 @@
 2021-06-02 09:11:09.265 join'ing 3 tasks: waited 0 milliseconds 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

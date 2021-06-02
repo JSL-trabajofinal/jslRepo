@@ -4,6 +4,7 @@ Test set: domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Updat
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -17,6 +18,9 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in d
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
 >>>>>>> package-tecnico
+=======
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
+>>>>>>> Stashed changes
 =======
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec - in domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$UpdateName
 >>>>>>> Stashed changes

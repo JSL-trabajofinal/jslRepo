@@ -3,6 +3,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -16,6 +17,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="3.094" tests="2" errors="0" skipped="2" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="3.203" tests="2" errors="0" skipped="2" failures="0">
+>>>>>>> Stashed changes
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="3.203" tests="2" errors="0" skipped="2" failures="0">
 >>>>>>> Stashed changes
@@ -91,6 +95,7 @@
   </properties>
   <testcase name="_2_verify" classname="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="0">
     <skipped/>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -241,6 +246,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     <system-out><![CDATA[09:10:15,252  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
 09:10:15,620  [Reflections          main       INFO ]  Reflections took 282 ms to scan 8 urls, producing 338 keys and 1555 values 
 368   [Reflections               main       INFO ]  Reflections took 282 ms to scan 8 urls, producing 338 keys and 1555 values 
@@ -280,6 +287,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -300,6 +310,7 @@
 (
     "UNUSED" INTEGER NOT NULL
 )
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -376,6 +387,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 09:10:17,613  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
 09:10:17,617  [Schema               Thread-3   DEBUG]  Borrar la tabla "DELETEME1622635817611"
 09:10:17,617  [Schema               Thread-3   DEBUG]  DROP TABLE "DELETEME1622635817611"
@@ -437,6 +450,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -453,6 +469,7 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "Reclamo_PK" PRIMARY KEY ("id")
 )
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -487,6 +504,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 09:10:17,734  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 3 ms
 09:10:17,738  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."SimpleObject" returned no table
 09:10:17,738  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."SimpleObject"
@@ -494,6 +513,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -508,6 +530,7 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "SimpleObject_PK" PRIMARY KEY ("id")
 )
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -542,6 +565,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 09:10:17,739  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 1 ms
 09:10:17,743  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Operador" returned no table
 09:10:17,743  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Operador"
@@ -549,6 +574,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -565,6 +593,7 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "Operador_PK" PRIMARY KEY ("id")
 )
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -615,6 +644,8 @@
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 09:10:17,746  [Schema               Thread-3   DEBUG]  Tiempo de cumplir = 2 ms
 09:10:17,750  [Schema               Thread-3   DEBUG]  Check of existence of "simple"."Tecnico" returned no table
 09:10:17,751  [Schema               Thread-3   DEBUG]  Crear la tabla "simple"."Tecnico"
@@ -622,6 +653,9 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -669,6 +703,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 07:37:25,648  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
 2882  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
 <<<<<<< HEAD
@@ -694,12 +729,17 @@
 09:10:18,155  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
 2903  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
 >>>>>>> Stashed changes
+=======
+09:10:18,155  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+2903  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+>>>>>>> Stashed changes
                                                             : EXEC org.apache.isis.applib.AppManifestAbstract2$2
 /                                                           : EXEC domainapp.modules.simple.SimpleModule$1
 ]]></system-out>
   </testcase>
   <testcase name="_1_learn" classname="domainapp.application.integtests.mml.MetaModelService_IntegTest" time="0">
     <skipped/>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -729,6 +769,13 @@
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+=======
+    <system-out><![CDATA[09:10:18,215  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
+2963  [WithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
+                                                            : EXEC org.apache.isis.applib.AppManifestAbstract2$1
+09:10:18,217  [HeadlessWithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+2965  [WithBootstrappingAbstract main       INFO ]  ### TEST: domainapp.application.integtests.mml.MetaModelService_IntegTest
+>>>>>>> Stashed changes
 =======
     <system-out><![CDATA[09:10:18,215  [HeadlessWithBootstrappingAbstract main       INFO ]  isis.integTest.module = 
 2963  [WithBootstrappingAbstract main       INFO ]  isis.integTest.module = 

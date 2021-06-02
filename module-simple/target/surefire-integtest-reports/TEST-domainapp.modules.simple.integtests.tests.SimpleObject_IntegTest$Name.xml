@@ -3,6 +3,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -16,6 +17,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.03" tests="2" errors="0" skipped="0" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.033" tests="2" errors="0" skipped="0" failures="0">
+>>>>>>> Stashed changes
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.033" tests="2" errors="0" skipped="0" failures="0">
 >>>>>>> Stashed changes
@@ -93,6 +97,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -110,6 +115,10 @@
   <testcase name="accessible" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.01"/>
   <testcase name="not_editable" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.018"/>
 >>>>>>> package-tecnico
+=======
+  <testcase name="accessible" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.012"/>
+  <testcase name="not_editable" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.02"/>
+>>>>>>> Stashed changes
 =======
   <testcase name="accessible" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.012"/>
   <testcase name="not_editable" classname="domainapp.modules.simple.integtests.tests.SimpleObject_IntegTest$Name" time="0.02"/>

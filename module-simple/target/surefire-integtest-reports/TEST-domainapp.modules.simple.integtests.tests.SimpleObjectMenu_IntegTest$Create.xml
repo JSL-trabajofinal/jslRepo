@@ -3,6 +3,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -16,6 +17,9 @@
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.127" tests="2" errors="0" skipped="0" failures="0">
 >>>>>>> package-tecnico
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.43" tests="2" errors="0" skipped="0" failures="0">
+>>>>>>> Stashed changes
 =======
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.43" tests="2" errors="0" skipped="0" failures="0">
 >>>>>>> Stashed changes
@@ -93,6 +97,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -110,6 +115,10 @@
   <testcase name="happyCase" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.094"/>
   <testcase name="whenAlreadyExists" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.031"/>
 >>>>>>> package-tecnico
+=======
+  <testcase name="happyCase" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.369"/>
+  <testcase name="whenAlreadyExists" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.059"/>
+>>>>>>> Stashed changes
 =======
   <testcase name="happyCase" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.369"/>
   <testcase name="whenAlreadyExists" classname="domainapp.modules.simple.integtests.tests.SimpleObjectMenu_IntegTest$Create" time="0.059"/>

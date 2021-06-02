@@ -65,6 +65,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< develop
 <<<<<<< Updated upstream
@@ -78,6 +79,9 @@
 =======
   <testcase name="happyCase" classname="domainapp.modules.simple.dom.impl.SimpleObject_Test$Name" time="0.008"/>
 >>>>>>> package-tecnico
+=======
+  <testcase name="happyCase" classname="domainapp.modules.simple.dom.impl.SimpleObject_Test$Name" time="0.082"/>
+>>>>>>> Stashed changes
 =======
   <testcase name="happyCase" classname="domainapp.modules.simple.dom.impl.SimpleObject_Test$Name" time="0.082"/>
 >>>>>>> Stashed changes

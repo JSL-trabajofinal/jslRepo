@@ -31,6 +31,7 @@ public class QOperador extends PersistableExpressionImpl<Operador> implements Pe
     public final StringExpression apellido;
     public final StringExpression usuario;
     public final StringExpression contraseña;
+    public final ObjectExpression<java.lang.Boolean> activo;
 
     public QOperador(PersistableExpression parent, String name, int depth)
     {
@@ -39,6 +40,7 @@ public class QOperador extends PersistableExpressionImpl<Operador> implements Pe
         this.apellido = new StringExpressionImpl(this, "apellido");
         this.usuario = new StringExpressionImpl(this, "usuario");
         this.contraseña = new StringExpressionImpl(this, "contraseña");
+        this.activo = new ObjectExpressionImpl<java.lang.Boolean>(this, "activo");
     }
 
     public QOperador(Class type, String name, ExpressionType exprType)
@@ -48,5 +50,6 @@ public class QOperador extends PersistableExpressionImpl<Operador> implements Pe
         this.apellido = new StringExpressionImpl(this, "apellido");
         this.usuario = new StringExpressionImpl(this, "usuario");
         this.contraseña = new StringExpressionImpl(this, "contraseña");
+        this.activo = new ObjectExpressionImpl<java.lang.Boolean>(this, "activo");
     }
 }

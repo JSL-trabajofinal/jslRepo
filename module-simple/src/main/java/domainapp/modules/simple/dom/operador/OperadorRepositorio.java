@@ -44,10 +44,10 @@ public class OperadorRepositorio {
     public Operador create(
             final String nombre,
             final String apellido,
-            final String direccion,
-            final String telefono) {
+            final String usuario ,
+            final String contraseña) {
 
-        final Operador Operador = new Operador(nombre,apellido,direccion,telefono);
+        final Operador Operador = new Operador(nombre,apellido,usuario,contraseña);
         repositoryService.persist(Operador);
         return Operador;
     }
@@ -68,23 +68,6 @@ public class OperadorRepositorio {
                         "findAllInactives"));
     }
 
-    @Programmatic
-    public Blob generarReporteOperador()throws  IOException {
-
-        List<Operador> Operadores = new ArrayList<Operador>();
-
-        //EjecutarReportes ejecutarReportes=new EjecutarReportes();
-
-        Operadores = repositoryService.allInstances(Operador.class);
-
-        //return ejecutarReportes.ListadoReclamosPDF(Reclamos);
-        return null;
-    }
-
-    /*
-    @javax.inject.Inject
-    EjecutarReportes ejecutarReportes;
-*/
     @javax.inject.Inject
     RepositoryService repositoryService;
 }

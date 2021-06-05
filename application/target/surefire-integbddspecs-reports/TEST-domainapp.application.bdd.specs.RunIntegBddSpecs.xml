@@ -1,37 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="4.012" tests="4" errors="0" skipped="0" failures="0">
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.389" tests="4" errors="0" skipped="0" failures="0">
->>>>>>> Stashed changes
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.389" tests="4" errors="0" skipped="0" failures="0">
->>>>>>> Se agrega codigo al existente
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.389" tests="4" errors="0" skipped="0" failures="0">
->>>>>>> package-tecnico
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.736" tests="4" errors="0" skipped="0" failures="0">
->>>>>>> Stashed changes
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.736" tests="4" errors="0" skipped="0" failures="0">
->>>>>>> Stashed changes
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.736" tests="4" errors="0" skipped="0" failures="0">
->>>>>>> Stashed changes
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.736" tests="4" errors="0" skipped="0" failures="0">
->>>>>>> Stashed changes
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.736" tests="4" errors="0" skipped="0" failures="0">
->>>>>>> Stashed changes
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="domainapp.application.bdd.specs.RunIntegBddSpecs" time="3.586" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -63,7 +31,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="5.4.0-73-generic"/>
+    <property name="os.version" value="5.4.0-74-generic"/>
     <property name="library.jansi.path" value="/opt/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/taslehoof"/>
     <property name="user.timezone" value="America/Argentina/Buenos_Aires"/>
@@ -93,8 +61,8 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="Given there are initially 10 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.001"/>
+  <testcase name="Given there are initially 10 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
   <testcase name="When I create a new simple object" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
   <testcase name="Then there are 11 simple objects" classname="Scenario: Existing simple objects can be listed and new ones created" time="0"/>
-  <testcase name="Scenario: Existing simple objects can be listed and new ones created" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.006"/>
+  <testcase name="Scenario: Existing simple objects can be listed and new ones created" classname="Scenario: Existing simple objects can be listed and new ones created" time="0.007"/>
 </testsuite>

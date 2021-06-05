@@ -163,6 +163,35 @@
         }
       }
     },
+    "/objects/simple.Operador/{objectId}/actions/updateActivo/invoke" : {
+      "put" : {
+        "tags" : [ "simple" ],
+        "description" : "RO Spec v1.0, section 19.1: (invoke) resource of simple.Operador#updateActivo",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json;profile=urn:org.apache.isis/v1", "application/json;profile=urn:org.apache.isis/v1;suppress=true", "application/json;profile=urn:org.restfulobjects:repr-types/action-result" ],
+        "parameters" : [ {
+          "name" : "objectId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "type" : "object"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "simple.Operador#updateActivo",
+            "schema" : {
+              "$ref" : "#/definitions/simple.OperadorRepr"
+            }
+          }
+        }
+      }
+    },
     "/objects/simple.Reclamo/{objectId}" : {
       "get" : {
         "tags" : [ "simple" ],
@@ -273,14 +302,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     "/objects/simple.Tecnico/{objectId}" : {
       "get" : {
         "tags" : [ "simple" ],
@@ -370,13 +391,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< develop
->>>>>>> Stashed changes
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     "/services" : {
       "get" : {
         "tags" : [ "> restful objects supporting resources" ],
@@ -583,7 +597,7 @@
                   }
                 }
               },
-              "direccion" : {
+              "usuario" : {
                 "type" : "object",
                 "properties" : {
                   "value" : {
@@ -591,7 +605,7 @@
                   }
                 }
               },
-              "telefono" : {
+              "contraseña" : {
                 "type" : "object",
                 "properties" : {
                   "value" : {
@@ -830,14 +844,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     "/services/simple.TecnicoMenu" : {
       "get" : {
         "tags" : [ "simple" ],
@@ -956,13 +962,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< develop
->>>>>>> Stashed changes
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     "/user" : {
       "get" : {
         "tags" : [ "> restful objects supporting resources" ],
@@ -1136,14 +1135,6 @@
         }
       }
     },
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     "simple.TecnicoRepr" : {
       "type" : "object",
       "properties" : {
@@ -1171,13 +1162,6 @@
       },
       "description" : "simple.Tecnico (domainapp.modules.simple.dom.tecnico.Tecnico)"
     },
-<<<<<<< HEAD
-<<<<<<< develop
->>>>>>> Stashed changes
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     "simple.OperadorRepr" : {
       "type" : "object",
       "properties" : {
@@ -1204,6 +1188,9 @@
         "datanucleusVersionTimestamp" : {
           "type" : "integer",
           "format" : "int64"
+        },
+        "activo" : {
+          "type" : "boolean"
         }
       },
       "description" : "simple.Operador (domainapp.modules.simple.dom.operador.Operador)"
@@ -1275,14 +1262,6 @@
       },
       "description" : "domainapp.application.services.homepage.HomePageViewModel (domainapp.application.services.homepage.HomePageViewModel)"
     },
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     "simple.TecnicoMenuRepr" : {
       "type" : "object",
       "required" : [ "extensions", "links" ],
@@ -1309,13 +1288,6 @@
       },
       "description" : "RO Spec v1.0, section 15.1.2: representation of simple.TecnicoMenu"
     },
-<<<<<<< HEAD
-<<<<<<< develop
->>>>>>> Stashed changes
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     "simple.SimpleReclamoMenuRepr" : {
       "type" : "object",
       "required" : [ "extensions", "links" ],

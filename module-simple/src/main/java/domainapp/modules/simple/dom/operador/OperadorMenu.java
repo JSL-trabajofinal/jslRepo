@@ -29,11 +29,6 @@ public class OperadorMenu {
     @ActionLayout(named = "Alta Operador")
     @MemberOrder(sequence = "1")
     public Operador create(
-/*
-            @Parameter(maxLength = 40,
-                    regexPattern = "^[0-9]{11}$",
-                    regexPatternReplacement = "Solo numeros, sin espacios ni barras (total 11 numeros)"
-            )*/
 
             @Parameter(maxLength = 40,
                     regexPattern = "[A-Za-z\\s]+",
@@ -45,16 +40,18 @@ public class OperadorMenu {
                     regexPatternReplacement = "Debe ser un apellido valido (solo letras)")
             @ParameterLayout(named = "Apellido") final String apellido,
 
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Direccion") final String direccion,
+            @Parameter(maxLength = 40,
+                    regexPattern = "[A-Za-z\\s]+",
+                    regexPatternReplacement = "Debe ser un usuario  valido (solo letras)")
+            @ParameterLayout(named = "Usuario") final String usuario,
 
             @Parameter(maxLength = 40,
-                    regexPattern = "[0-9]+",
-                    regexPatternReplacement = "Solo numeros y sin espacios"
-            )
-            @ParameterLayout(named = "Telefono") final String telefono) {
+                    regexPattern = "[A-Za-z\\s]+",
+                    regexPatternFlags= Pattern.CASE_INSENSITIVE,
+                    regexPatternReplacement = "Debe ser una contraseña valida (solo letras)")
+            @ParameterLayout(named = "Contraseña") final String contraseña) {
 
-        return repositoryOperador.create(nombre, apellido, direccion, telefono);
+        return repositoryOperador.create(nombre, apellido, usuario, contraseña);
     }
 
     @Action(semantics = SemanticsOf.SAFE)
@@ -108,9 +105,6 @@ public class OperadorMenu {
         return operadores;
     }
 
-
-
-
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Operadores Inactivos")
     @MemberOrder(sequence = "3")
@@ -118,7 +112,6 @@ public class OperadorMenu {
         List<Operador> operadores = repositoryOperador.ListarInactivos();
         return operadores;
     }
-
 
     @javax.inject.Inject
     OperadorRepositorio repositoryOperador;

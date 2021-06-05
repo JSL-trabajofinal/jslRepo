@@ -19,26 +19,39 @@
 package domainapp.modules.simple.dom.operador;
 
 import com.google.common.collect.ComparisonChain;
+import jdk.jfr.Enabled;
 import lombok.AccessLevel;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 
-import javax.jdo.annotations.IdentityType;
-import javax.jdo.annotations.VersionStrategy;
+import javax.jdo.annotations.*;
 
 @javax.jdo.annotations.PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
+@javax.jdo.annotations.DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@javax.jdo.annotations.Unique(name="Operador_nombre_UNQ", members = {"nombre"})
+@Sequence(name="operador", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
+@Queries({
+        @Query(
+                name="findAllActives", language="JDOQL",
+                value="SELECT "
+                + "FROM domainapp.modules.simple.dom.operador.Operador "
+                + "WHERE activo == true "),
+        @Query(
+                name="findAllInactives", language="JDOQL",
+                value="SELECT "
+                + "FROM domainapp.modules.simple.dom.operador.Operador "
+                + "WHERE activo == false "),
+})
+@javax.jdo.annotations.Unique(name="Operador_usuario_UNQ", members = {"usuario"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 @lombok.Getter @lombok.Setter
 @lombok.RequiredArgsConstructor
 public class Operador implements Comparable<Operador> {
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
+    @javax.jdo.annotations.Column(allowsNull = "true", length = 40)
     @lombok.NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
     @Title(prepend = "Nombre: ")
@@ -46,7 +59,7 @@ public class Operador implements Comparable<Operador> {
     private String nombre;
 
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
+    @javax.jdo.annotations.Column(allowsNull = "true", length = 40)
     @lombok.NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
     @Title(prepend = ". apellido ")
@@ -57,7 +70,7 @@ public class Operador implements Comparable<Operador> {
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
     @lombok.NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". usuario:  ")
+    @Title(prepend = ". usuario: ")
     @MemberOrder(sequence = "3")
     private String usuario;
 
@@ -68,11 +81,28 @@ public class Operador implements Comparable<Operador> {
     @Title(prepend = ". contraseña:  ")
     @MemberOrder(sequence = "4")
     private String contraseña;
-/*
-  @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
-    @Property(editing = Editing.ENABLED)
-    private String notes;
 
+    @javax.jdo.annotations.Column(allowsNull="true")
+    @Property()
+    private Boolean activo = true;
+
+
+    public String ReporNombre(){ return this.nombre; }
+    public String ReporApellido(){ return this.apellido; }
+    public String ReporUsuario(){ return this.usuario; }
+    public String ReporContraseña(){ return this.contraseña; }
+    public String ReporActivo(){ return this.activo.toString(); }
+
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
+    public Operador updateActivo()
+    {
+        if(getActivo()){ setActivo(false); }
+        else{ setActivo(true); }
+        return this;
+    }
+
+/*
     @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
     public Reclamo updateName(
             @Parameter(maxLength = 40)
@@ -81,16 +111,7 @@ public class Operador implements Comparable<Operador> {
         setName(name);
         return this;
     }
-
-    public String default0UpdateName() {
-        return getName();
-    }
-
-    public TranslatableString validate0UpdateName(final String name) {
-        return name != null && name.contains("!") ? TranslatableString.tr("Exclamation mark is not allowed") : null;
-    }
-
-
+ç
     @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
     public void delete() {
         final String title = titleService.titleOf(this);

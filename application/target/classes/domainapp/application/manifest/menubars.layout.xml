@@ -18,17 +18,10 @@
   under the License.
 -->
 <mb3:menuBars xsi:schemaLocation="http://isis.apache.org/applib/layout/menubars/bootstrap3 http://isis.apache.org/applib/layout/menubars/bootstrap3/menubars.xsd http://isis.apache.org/applib/layout/component http://isis.apache.org/applib/layout/component/component.xsd http://isis.apache.org/applib/layout/links http://isis.apache.org/applib/layout/links/links.xsd" xmlns:cpt="http://isis.apache.org/applib/layout/component" xmlns:lnk="http://isis.apache.org/applib/layout/links" xmlns:mb3="http://isis.apache.org/applib/layout/menubars/bootstrap3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <mb3:primary>
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
+    <mb3:primary><!--
         <mb3:menu>
-            <!--<mb3:named>Reclamos</mb3:named>
+            <mb3:named>Reclamos</mb3:named>
             <mb3:section>
                 <mb3:serviceAction objectType="simple.ReclamoMenu" id="Create:">
                     <cpt:named>Cargar Reclamo</cpt:named>
@@ -39,8 +32,8 @@
                 <mb3:serviceAction objectType="simple.ReclamoMenu" id="ListAll: ">
                     <cpt:named>Listar Reclamos</cpt:named>
                 </mb3:serviceAction>
-            </mb3:section>-->
-        </mb3:menu>
+            </mb3:section>
+        </mb3:menu>-->
         <mb3:menu>
             <mb3:named>Operador</mb3:named>
             <mb3:section>
@@ -52,27 +45,8 @@
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.OperadorMenu" id="ListAll: ">
                     <cpt:named>Listar Operadores</cpt:named>
-                </mb3:serviceAction>
-            </mb3:section>
-        </mb3:menu>
-
-
 =======
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
-
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+    <mb3:primary>
         <mb3:menu>
             <mb3:named>Reclamos</mb3:named>
             <mb3:section>
@@ -117,6 +91,8 @@
         <mb3:menu>
             <mb3:named>Simple Objects</mb3:named>
             <mb3:section>
+<<<<<<< develop
+<<<<<<< develop
                 <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="create">
                     <cpt:named>create</cpt:named>
                 </mb3:serviceAction>
@@ -125,40 +101,46 @@
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="listAll">
                     <cpt:named>listAll</cpt:named>
-                </mb3:serviceAction>
-            </mb3:section>
-        </mb3:menu>
-<<<<<<< HEAD
-<<<<<<< develop
 >>>>>>> Stashed changes
 =======
+                <mb3:serviceAction objectType="simple.UsuarioMenu" id="create">
+                    <cpt:named>Cargar reclamo</cpt:named>
+=======
+                <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="create">
+                    <cpt:named>create</cpt:named>
+<<<<<<< HEAD
 >>>>>>> Se agrega codigo al existente
 =======
 >>>>>>> package-tecnico
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="findByName">
+                    <cpt:named>findByName</cpt:named>
+                </mb3:serviceAction>
+<<<<<<< develop
+                <mb3:serviceAction objectType="simple.UsuarioMenu" id="listAll">
+                    <cpt:named>Listar Usuarios</cpt:named>
+>>>>>>> Issue #1, #2 ,#3, #17, #18, #19 Se crea paquete Reclamos, clases Reclamo y Usuario con sus correspondientes layout, se modifica menubars, y se renombra Simple App a Sistema de Gestion de Reclamos
+=======
+                <mb3:serviceAction objectType="simple.SimpleObjectMenu" id="listAll">
+                    <cpt:named>listAll</cpt:named>
+<<<<<<< HEAD
+>>>>>>> Se agrega codigo al existente
+=======
+>>>>>>> package-tecnico
+                </mb3:serviceAction>
+            </mb3:section>
+        </mb3:menu>
+
+
         <mb3:menu unreferencedActions="true">
             <mb3:named>Other</mb3:named>
         </mb3:menu>
     </mb3:primary>
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
 
 
 
 
 
-<<<<<<< HEAD
-<<<<<<< develop
->>>>>>> Stashed changes
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
     <mb3:secondary>
         <mb3:menu>
             <mb3:named>Prototyping</mb3:named>

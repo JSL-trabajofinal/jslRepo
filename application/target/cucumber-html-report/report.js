@@ -79,71 +79,11 @@ formatter.feature({
   ]
 });
 formatter.before({
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-  "duration": 3104612280,
+  "duration": 2772313226,
   "status": "passed"
 });
 formatter.before({
-  "duration": 167476008,
-=======
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
-  "duration": 2681192922,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 139837502,
-<<<<<<< HEAD
-<<<<<<< develop
->>>>>>> Stashed changes
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
-=======
-  "duration": 2707008128,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 137954809,
->>>>>>> Stashed changes
-=======
-  "duration": 2707008128,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 137954809,
->>>>>>> Stashed changes
-=======
-  "duration": 2707008128,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 137954809,
->>>>>>> Stashed changes
-=======
-  "duration": 2707008128,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 137954809,
->>>>>>> Stashed changes
-=======
-  "duration": 2707008128,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 137954809,
->>>>>>> Stashed changes
+  "duration": 144188637,
   "status": "passed"
 });
 formatter.scenario({
@@ -179,78 +119,14 @@ formatter.match({
   "location": "SimpleObjectMenuGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-  "duration": 245361836,
-=======
-  "duration": 163532796,
->>>>>>> Stashed changes
-=======
-  "duration": 163532796,
->>>>>>> Se agrega codigo al existente
-=======
-  "duration": 163532796,
->>>>>>> package-tecnico
-=======
-  "duration": 262149835,
->>>>>>> Stashed changes
-=======
-  "duration": 262149835,
->>>>>>> Stashed changes
-=======
-  "duration": 262149835,
->>>>>>> Stashed changes
-=======
-  "duration": 262149835,
->>>>>>> Stashed changes
-=======
-  "duration": 262149835,
->>>>>>> Stashed changes
+  "duration": 203828603,
   "status": "passed"
 });
 formatter.match({
   "location": "SimpleObjectMenuGlue.create_a_simple_object()"
 });
 formatter.result({
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-  "duration": 1734644,
-=======
-  "duration": 1654905,
->>>>>>> Stashed changes
-=======
-  "duration": 1654905,
->>>>>>> Se agrega codigo al existente
-=======
-  "duration": 1654905,
->>>>>>> package-tecnico
-=======
-  "duration": 1453755,
->>>>>>> Stashed changes
-=======
-  "duration": 1453755,
->>>>>>> Stashed changes
-=======
-  "duration": 1453755,
->>>>>>> Stashed changes
-=======
-  "duration": 1453755,
->>>>>>> Stashed changes
-=======
-  "duration": 1453755,
->>>>>>> Stashed changes
+  "duration": 1988459,
   "status": "passed"
 });
 formatter.match({
@@ -263,71 +139,11 @@ formatter.match({
   "location": "SimpleObjectMenuGlue.there_are_N_simple_objects(int)"
 });
 formatter.result({
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< develop
-<<<<<<< Updated upstream
-  "duration": 7729038,
+  "duration": 8177753,
   "status": "passed"
 });
 formatter.after({
-  "duration": 5886307,
-=======
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
-  "duration": 7622970,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 5201010,
-<<<<<<< HEAD
-<<<<<<< develop
->>>>>>> Stashed changes
-=======
->>>>>>> Se agrega codigo al existente
-=======
->>>>>>> package-tecnico
-=======
-  "duration": 5837807,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 5157159,
->>>>>>> Stashed changes
-=======
-  "duration": 5837807,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 5157159,
->>>>>>> Stashed changes
-=======
-  "duration": 5837807,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 5157159,
->>>>>>> Stashed changes
-=======
-  "duration": 5837807,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 5157159,
->>>>>>> Stashed changes
-=======
-  "duration": 5837807,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 5157159,
->>>>>>> Stashed changes
+  "duration": 6035726,
   "status": "passed"
 });
 });

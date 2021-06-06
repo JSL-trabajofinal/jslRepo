@@ -95,14 +95,25 @@ public class Usuario implements Comparable<Usuario> {
     @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
     public Usuario updateName(
             @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
-            final String name) {
-        setName(name);
+            @ParameterLayout(named = "Dni") final String dni,
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Apellido") final String apellido,
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Nombre") final String nombre){
+        setDni(dni);
+        setApellido(apellido);
+        setNombre(nombre);
         return this;
     }
 
     public String default0UpdateName() {
-        return getName();
+        return getDni();
+    }
+    public String default1UpdateName() {
+        return getApellido();
+    }
+    public String default2UpdateName() {
+        return getNombre();
     }
 
     public TranslatableString validate0UpdateName(final String name) {

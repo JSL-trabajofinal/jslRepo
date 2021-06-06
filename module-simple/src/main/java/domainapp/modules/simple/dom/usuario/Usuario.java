@@ -111,9 +111,9 @@ public class Usuario implements Comparable<Usuario> {
 
 
     @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void delete() {
+    public void eliminar() {
         final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' deleted", title));
+        messageService.informUser(String.format("'%s' eliminado", title));
         repositoryService.remove(this);
     }
 

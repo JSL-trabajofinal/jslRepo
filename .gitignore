@@ -1,8 +1,4 @@
-
 .idea/
-
-Reclamos (1).iml
-
 logs/
-
-datanucleus.log
+*.log
+**/target/

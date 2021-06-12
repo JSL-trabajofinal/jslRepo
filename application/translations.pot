@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-06-12 00:28:31+\n"
+"POT-Creation-Date: 2021-06-12 07:30:26+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,8 +71,14 @@ msgid "Action Owning Type"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#activo
 #: domainapp.modules.simple.dom.operador.Operador#activo
 msgid "Activo"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create()
+msgid "Alta Ayudante"
 msgstr ""
 
 
@@ -86,6 +92,8 @@ msgid "Alta Reclamo"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#apellido
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.operador.Operador#apellido
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamos.Reclamo#apellido
@@ -106,6 +114,16 @@ msgstr ""
 
 #: org.apache.isis.objectstore.jdo.applib.service.DomainChangeJdoAbstract$ChangeType#AUDIT_ENTRY
 msgid "Audit Entry"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu
+msgid "Ayudantes"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#findByName()
+msgid "Buscar Ayudante"
 msgstr ""
 
 
@@ -154,6 +172,8 @@ msgid "Confirm"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#contraseña
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.operador.Operador#contraseña
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Contraseña"
@@ -211,6 +231,7 @@ msgid "Domain Change"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.operador.Operador#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#downloadJdoMetadata()
@@ -222,6 +243,7 @@ msgstr ""
 
 #: domainapp.application.fixture.scenarios.DomainAppDemo#downloadLayoutXml()
 #: domainapp.application.services.homepage.HomePageViewModel#downloadLayoutXml()
+#: domainapp.modules.simple.dom.ayudante.Ayudante#downloadLayoutXml()
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadLayoutXml()
 #: domainapp.modules.simple.dom.operador.Operador#downloadLayoutXml()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#downloadLayoutXml()
@@ -326,6 +348,7 @@ msgid "Home Page"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#datanucleusIdLong()
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusIdLong()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusIdLong()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusIdLong()
@@ -365,6 +388,16 @@ msgstr ""
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#listAll()
 #: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#listAll()
 msgid "List All"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#listAllActive()
+msgid "Listado de Ayudantes Activos"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#listAllInactive()
+msgid "Listado de Ayudantes Inactivos"
 msgstr ""
 
 
@@ -414,6 +447,8 @@ msgid "Name"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#nombre
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.operador.Operador#nombre
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamos.Reclamo#nombre
@@ -426,6 +461,11 @@ msgstr ""
 #: domainapp.modules.simple.dom.usuario.Usuario#updateName(java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 msgid "Nombre"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#findByName(java.lang.String)
+msgid "Nombre del Ayudante"
 msgstr ""
 
 
@@ -472,6 +512,7 @@ msgstr ""
 
 #: domainapp.application.fixture.scenarios.DomainAppDemo#openRestApi()
 #: domainapp.application.services.homepage.HomePageViewModel#openRestApi()
+#: domainapp.modules.simple.dom.ayudante.Ayudante#openRestApi()
 #: domainapp.modules.simple.dom.impl.SimpleObject#openRestApi()
 #: domainapp.modules.simple.dom.operador.Operador#openRestApi()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#openRestApi()
@@ -569,6 +610,7 @@ msgstr ""
 
 #: domainapp.application.fixture.scenarios.DomainAppDemo#rebuildMetamodel()
 #: domainapp.application.services.homepage.HomePageViewModel#rebuildMetamodel()
+#: domainapp.modules.simple.dom.ayudante.Ayudante#rebuildMetamodel()
 #: domainapp.modules.simple.dom.impl.SimpleObject#rebuildMetamodel()
 #: domainapp.modules.simple.dom.operador.Operador#rebuildMetamodel()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#rebuildMetamodel()
@@ -596,26 +638,31 @@ msgid "Recreate Objects And Return First"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporActivo()
 #: domainapp.modules.simple.dom.operador.Operador#ReporActivo()
 msgid "Repor Activo"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporApellido()
 #: domainapp.modules.simple.dom.operador.Operador#ReporApellido()
 msgid "Repor Apellido"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporContraseña()
 #: domainapp.modules.simple.dom.operador.Operador#ReporContraseña()
 msgid "Repor Contraseña"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporNombre()
 #: domainapp.modules.simple.dom.operador.Operador#ReporNombre()
 msgid "Repor Nombre"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporUsuario()
 #: domainapp.modules.simple.dom.operador.Operador#ReporUsuario()
 msgid "Repor Usuario"
 msgstr ""
@@ -710,6 +757,7 @@ msgid "Type"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#updateActivo()
 #: domainapp.modules.simple.dom.operador.Operador#updateActivo()
 msgid "Update Activo"
 msgstr ""
@@ -727,6 +775,8 @@ msgid "User"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#usuario
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.operador.Operador#usuario
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Usuario"
@@ -738,6 +788,8 @@ msgid "Value"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#datanucleusVersionLong()
+#: domainapp.modules.simple.dom.ayudante.Ayudante#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusVersionLong()

@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-06-05 17:30:15+\n"
+"POT-Creation-Date: 2021-06-12 00:28:31+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,6 +92,9 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.tecnico.Tecnico#apellido
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.usuario.Usuario#apellido
+#: domainapp.modules.simple.dom.usuario.Usuario#updateName(java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 msgid "Apellido"
 msgstr ""
 
@@ -159,6 +162,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#create()
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create()
+#: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#create()
 msgid "Create"
 msgstr ""
 
@@ -195,6 +199,9 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.tecnico.Tecnico#dni
+#: domainapp.modules.simple.dom.usuario.Usuario#dni
+#: domainapp.modules.simple.dom.usuario.Usuario#updateName(java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 msgid "Dni"
 msgstr ""
 
@@ -208,6 +215,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.Operador#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#downloadJdoMetadata()
+#: domainapp.modules.simple.dom.usuario.Usuario#downloadJdoMetadata()
 msgid "Download Jdo Metadata"
 msgstr ""
 
@@ -218,6 +226,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.Operador#downloadLayoutXml()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#downloadLayoutXml()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#downloadLayoutXml()
+#: domainapp.modules.simple.dom.usuario.Usuario#downloadLayoutXml()
 #: org.apache.isis.applib.AbstractViewModel#downloadLayoutXml()
 #: org.apache.isis.applib.ViewModel#downloadLayoutXml()
 #: org.apache.isis.applib.domain.DomainObjectList#downloadLayoutXml()
@@ -266,7 +275,13 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.tecnico.Tecnico#eliminar()
+#: domainapp.modules.simple.dom.usuario.Usuario#eliminar()
 msgid "Eliminar"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.usuario.Usuario#email
+msgid "Email"
 msgstr ""
 
 
@@ -291,6 +306,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#findByName()
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName()
+#: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#findByName()
 msgid "Find By Name"
 msgstr ""
 
@@ -314,6 +330,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusIdLong()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusIdLong()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusIdLong()
+#: domainapp.modules.simple.dom.usuario.Usuario#datanucleusIdLong()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusIdLong#prop()
 msgid "Id"
 msgstr ""
@@ -346,6 +363,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#listAll()
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#listAll()
+#: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#listAll()
 msgid "List All"
 msgstr ""
 
@@ -391,6 +409,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#updateName(java.lang.String)
 #: domainapp.modules.simple.dom.impl.SimpleObjects#create(java.lang.String)
 #: domainapp.modules.simple.dom.impl.SimpleObjects#findByName(java.lang.String)
+#: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#findByName(java.lang.String)
 msgid "Name"
 msgstr ""
 
@@ -403,6 +422,9 @@ msgstr ""
 #: domainapp.modules.simple.dom.tecnico.Tecnico#updateName(java.lang.String)
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName(java.lang.String)
+#: domainapp.modules.simple.dom.usuario.Usuario#nombre
+#: domainapp.modules.simple.dom.usuario.Usuario#updateName(java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.usuario.UsuarioRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 msgid "Nombre"
 msgstr ""
 
@@ -424,6 +446,11 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#notes
 msgid "Notes"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.usuario.Usuario#numeroTelefono
+msgid "Numero Telefono"
 msgstr ""
 
 
@@ -449,6 +476,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.Operador#openRestApi()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#openRestApi()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#openRestApi()
+#: domainapp.modules.simple.dom.usuario.Usuario#openRestApi()
 #: org.apache.isis.applib.AbstractViewModel#openRestApi()
 #: org.apache.isis.applib.ViewModel#openRestApi()
 #: org.apache.isis.applib.domain.DomainObjectList#openRestApi()
@@ -545,6 +573,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.operador.Operador#rebuildMetamodel()
 #: domainapp.modules.simple.dom.reclamos.Reclamo#rebuildMetamodel()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#rebuildMetamodel()
+#: domainapp.modules.simple.dom.usuario.Usuario#rebuildMetamodel()
 #: org.apache.isis.applib.AbstractViewModel#rebuildMetamodel()
 #: org.apache.isis.applib.ViewModel#rebuildMetamodel()
 #: org.apache.isis.applib.domain.DomainObjectList#rebuildMetamodel()
@@ -630,6 +659,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects
+#: domainapp.modules.simple.dom.usuario.UsuarioRepositorio
 msgid "Simple Objects"
 msgstr ""
 
@@ -687,6 +717,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#updateName()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#updateName()
+#: domainapp.modules.simple.dom.usuario.Usuario#updateName()
 msgid "Update Name"
 msgstr ""
 
@@ -715,6 +746,8 @@ msgstr ""
 #: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionTimestamp()
+#: domainapp.modules.simple.dom.usuario.Usuario#datanucleusVersionLong()
+#: domainapp.modules.simple.dom.usuario.Usuario#datanucleusVersionTimestamp()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusVersionLong#prop()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusVersionTimestamp#prop()
 msgid "Version"

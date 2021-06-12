@@ -131,12 +131,12 @@ public class Usuario implements Comparable<Usuario> {
 
     @Override
     public String toString() {
-        return getName();
+        return getNombre();
     }
 
     public int compareTo(final Usuario other) {
         return ComparisonChain.start()
-                .compare(this.getName(), other.getName())
+                .compare(this.getNombre(), other.getNombre())
                 .result();
     }
 

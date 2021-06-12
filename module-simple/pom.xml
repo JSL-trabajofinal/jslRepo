@@ -135,6 +135,12 @@
             <artifactId>hsqldb</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-xml</artifactId>
+            <version>9.4.3.v20170317</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <profiles>

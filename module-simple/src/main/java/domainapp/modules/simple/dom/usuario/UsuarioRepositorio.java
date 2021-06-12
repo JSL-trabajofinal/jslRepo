@@ -18,8 +18,8 @@
  */
 package domainapp.modules.simple.dom.usuario;
 
-import domainapp.modules.simple.dom.impl.QSimpleObject;
-import domainapp.modules.simple.dom.impl.SimpleObject;
+
+import domainapp.modules.simple.dom.impl.*;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
@@ -31,7 +31,7 @@ import java.util.List;
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
         objectType = "simple.UsuarioMenu",
-        repositoryFor = SimpleObject.class
+        repositoryFor = Usuario.class
 )
 @DomainServiceLayout(
         named = "Simple Objects",
@@ -57,7 +57,7 @@ public class UsuarioRepositorio {
         TypesafeQuery<Usuario> q = isisJdoSupport.newTypesafeQuery(Usuario.class);
         final QUsuario cand = QUsuario.candidate();
         q = q.filter(
-                cand.name.indexOf(q.stringParameter("name")).ne(-1)
+                cand.nombre.indexOf(q.stringParameter("name")).ne(-1)
         );
         return q.setParameter("name", name)
                 .executeList();
@@ -68,10 +68,10 @@ public class UsuarioRepositorio {
         TypesafeQuery<Usuario> q = isisJdoSupport.newTypesafeQuery(Usuario.class);
         final QUsuario cand = QUsuario.candidate();
         q = q.filter(
-                cand.name.eq(q.stringParameter("name"))
+                cand.nombre.eq(q.stringParameter("nombre"))
         );
-        return q.setParameter("name", nombre)
-                .executeUnique();
+        return null; //q.setParameter()
+                //.executeUnique();
     }
 
     @Programmatic

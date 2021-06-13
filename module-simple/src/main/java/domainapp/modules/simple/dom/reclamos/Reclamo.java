@@ -16,120 +16,136 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package domainapp.modules.simple.dom.reclamos;
+package domainapp.modules.simple.dom.reclamo;
 
-import javax.jdo.annotations.IdentityType;
-import javax.jdo.annotations.VersionStrategy;
 
 import com.google.common.collect.ComparisonChain;
-
+import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import org.apache.isis.applib.annotation.*;
-
-import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
+import org.apache.isis.schema.utils.jaxbadapters.JodaDateTimeStringAdapter;
+import org.joda.time.LocalDate;
+
+import javax.jdo.annotations.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.math.BigInteger;
 
 import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
-import static org.apache.isis.applib.annotation.SemanticsOf.IDEMPOTENT;
-import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
 
-@javax.jdo.annotations.PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
-@javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@javax.jdo.annotations.Unique(name="Reclamo_nombre_UNQ", members = {"nombre"})
+
+@PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "simple")
+@DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY, column = "id")
+@Sequence(name = "reclamosqe", datastoreSequence = "YOUR_SEQUENCE_NAME2", strategy = SequenceStrategy.CONTIGUOUS, initialValue = 100, allocationSize = 1)
+@Version(strategy = VersionStrategy.DATE_TIME, column = "version")
+@Queries({
+        @Query(
+                name = "find", language = "JDOQL",
+                value = "SELECT "),
+        @Query(
+                name = "findLast", language = "JDOQL",
+                value = "SELECT "
+                        + "ORDER BY nroReclamo DESC"),
+})
+
+@Unique(name = "Reclamo_nombre_UNQ", members = {"nroReclamo"})
 @DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout()  // causes UI events to be triggered
-@lombok.Getter @lombok.Setter
+@DomainObjectLayout(cssClassFa = "file-text-o")
+@lombok.Getter
+@lombok.Setter
 @lombok.RequiredArgsConstructor
 public class Reclamo implements Comparable<Reclamo> {
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
+    @Column(allowsNull = "true", length = 10)
+    @Property(editing = Editing.DISABLED)
+    @Persistent(valueStrategy = IdGeneratorStrategy.SEQUENCE, sequence = "reclamoseq")
+    @Title(prepend = "Nro Reclamo: ")
+    private BigInteger nroReclamo;
+
+    @Column(allowsNull = "true")
     @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = "Nombre: ")
-    @MemberOrder(sequence = "1")
-    private String nombre;
-
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". apellido ")
-    @MemberOrder(sequence = "2")
-    private String apellido;
-
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". direccion:  ")
-    @MemberOrder(sequence = "3")
-    private String direccion;
-
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". telefono:  ")
-    @MemberOrder(sequence = "4")
-    private String telefono;
-/*
-  @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
-    private String notes;
+    @XmlJavaTypeAdapter(JodaDateTimeStringAdapter.ForJaxb.class)
+    private LocalDate fecha = LocalDate.now();
 
-    @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
-    public Reclamo updateName(
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
-            final String name) {
-        setName(name);
+
+    @Column(allowsNull = "false")
+    @lombok.NonNull
+    @lombok.Getter
+    @lombok.Setter
+    @Property(editing = Editing.DISABLED)
+    private TipoReclamo tipoReclamo;
+
+
+    @Column(allowsNull = "false")
+    @lombok.NonNull
+    @lombok.Getter
+    @lombok.Setter
+    @Property(editing = Editing.DISABLED)
+    private Usuario usuario;
+
+
+    @Column(allowsNull = "true")
+    @lombok.NonNull
+    @Property(editing = Editing.DISABLED)
+    private domainapp.modules.simple.dom.reclamo.Estado estado = domainapp.modules.simple.dom.reclamo.Estado.Espera;
+
+    public Reclamo(Usuario usuario) {
+    }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, command = ENABLED, publishing = Publishing.ENABLED)
+    public Reclamo anularReclamo() {
+        if (getEstado().equals(domainapp.modules.simple.dom.reclamo.Estado.Espera)) {
+            setEstado(domainapp.modules.simple.dom.reclamo.Estado.Anulado);
+            messageService.warnUser("Se ha Anulado el reclamo");
+        } else if (getEstado().equals(domainapp.modules.simple.dom.reclamo.Estado.Cerrado)) {
+            messageService.warnUser("No se puede Anular un Reclamo Cerrado");
+        } else {
+            messageService.warnUser("El reclamo ya estaba previamente Anulado");
+        }
         return this;
     }
 
-    public String default0UpdateName() {
-        return getName();
-    }
-
-    public TranslatableString validate0UpdateName(final String name) {
-        return name != null && name.contains("!") ? TranslatableString.tr("Exclamation mark is not allowed") : null;
-    }
 
 
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void delete() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' deleted", title));
-        repositoryService.remove(this);
-    }
-
-*/
     @Override
     public String toString() {
-        return getNombre()+" "+getApellido()+ " "+getDireccion()+" "+getTelefono();
+        return getNroReclamo().toString();
     }
 
+    @Override
     public int compareTo(final Reclamo other) {
         return ComparisonChain.start()
-                .compare(this.getNombre(), other.getNombre())
+                .compare(this.getNroReclamo().toString(), other.getNroReclamo().toString())
                 .result();
     }
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @NotPersistent
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
     RepositoryService repositoryService;
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @NotPersistent
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
+    ReclamoRepositorio repositoryReclamo;
+
+    @javax.inject.Inject
+    @NotPersistent
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
     TitleService titleService;
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @NotPersistent
+    @lombok.Getter(AccessLevel.NONE)
+    @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
+
+
 
 }

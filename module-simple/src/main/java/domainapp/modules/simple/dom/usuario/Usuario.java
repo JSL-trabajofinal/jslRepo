@@ -19,115 +19,120 @@
 package domainapp.modules.simple.dom.usuario;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.reclamo.Reclamo;
+import domainapp.modules.simple.dom.reclamo.ReclamoRepositorio;
 import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NonNull;
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.i18n.TranslatableString;
 import org.apache.isis.applib.services.message.MessageService;
-import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
-import org.apache.isis.applib.spec.AbstractSpecification;
 
-import javax.jdo.annotations.IdentityType;
-import javax.jdo.annotations.VersionStrategy;
-
-import java.util.regex.Matcher;
+import javax.jdo.annotations.*;
+import java.math.BigInteger;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.regex.Pattern;
 
 import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
-import static org.apache.isis.applib.annotation.SemanticsOf.IDEMPOTENT;
-import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
 
-@javax.jdo.annotations.PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
-@javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@javax.jdo.annotations.Unique(name="Usuario_dni_apellido_nombre_UNQ", members = {"dni","apellido","nombre"})
+@PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
+@DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
+@Sequence(name="usuarioseq", datastoreSequence="YOUR_SEQUENCE_NAME", strategy=SequenceStrategy.CONTIGUOUS, initialValue = 10000, allocationSize = 1)
+@Version(strategy= VersionStrategy.DATE_TIME, column="version")
+@Queries({
+        @Query(
+                name = "findAllActives", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.usuario.Usuario "
+                        + "WHERE activo == true "),
+        @Query(
+                name = "findAllInactives", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.usuario.Usuario "
+                        + "WHERE activo == false "),
+})
+
+@Unique(name="Usuario_nombre_UNQ", members = {"dni"})
 @DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout()  // causes UI events to be triggered
+@DomainObjectLayout(cssClassFa="user-circle" )  // causes UI events to be triggered
 @lombok.Getter @lombok.Setter
 @lombok.RequiredArgsConstructor
 public class Usuario implements Comparable<Usuario> {
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = "Usuario: ")
+    @Column(allowsNull = "true", length = 10)
+    @Property(editing = Editing.DISABLED)
+    @Persistent(valueStrategy=IdGeneratorStrategy.SEQUENCE, sequence="usuarioseq")
+    private BigInteger nroUsuario;
+
+    @Column(allowsNull = "true", length = 13)
+    @NonNull
+    @Property(editing = Editing.ENABLED)
     private String dni;
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = " - ")
-    private String apellido;
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = " ")
+    @Column(allowsNull = "false", length = 40)
+    @NonNull
+    @PropertyLayout(named="Nombre")
+    @Property(editing = Editing.ENABLED)
+    @Title(prepend = "Usuario ")
     private String nombre;
 
-    public static class NumeroTelefono extends AbstractSpecification<String> {
-        @Override
-        public String satisfiesSafely(final String numeroTelefono) {
-            Matcher matcher = Pattern.compile("[+]?[0-9 ]+").matcher(numeroTelefono);
-            return matcher.matches() ? null :
-                    "Especifique sólo números y espacios, opcionalmente con prefijo '+'.  " +
-                            "Por ejemplo, '+54 299 4490123', or '0299 4490123'";
-        }
-    }
-
-    @javax.jdo.annotations.Column(allowsNull = "true", length = 15)
+    @Column(allowsNull = "true", length = 40)
+    @NonNull
     @Property(editing = Editing.ENABLED,
-            mustSatisfy = NumeroTelefono.class
+            regexPattern = "[0-9]+",
+            regexPatternReplacement = "Solo numeros y sin espacios"
     )
-    @Getter @Setter
-    private String numeroTelefono;
+    private String telefono;
 
-    @javax.jdo.annotations.Column(allowsNull = "true", length = 50)
-    @Property(editing = Editing.ENABLED)
-    @Getter @Setter
+    @Column(allowsNull = "true", length = 40)
+    @NonNull
+    @Property(editing = Editing.ENABLED,
+            regexPattern = "(\\w+\\.)*\\w+@(\\w+\\.)+[A-Za-z]+",
+            regexPatternFlags= Pattern.CASE_INSENSITIVE,
+            regexPatternReplacement = "Debe ser un email valido (contiene un '@' simbolo)"
+    )
     private String email;
-    public String validateEmail(String email) {
-        return email.contains("@") ? null : "Debe contener @";
-    }
 
-    @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
-    public Usuario updateName(
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Dni") final String dni,
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Apellido") final String apellido,
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Nombre") final String nombre){
-        setDni(dni);
-        setApellido(apellido);
-        setNombre(nombre);
+    @Column(allowsNull = "true", length = 40)
+    @NonNull
+    @Property(editing = Editing.ENABLED)
+    private String direccion;
+
+    @Column(allowsNull = "true")
+    @Property()
+    private Boolean activo = true;
+
+
+    @Persistent(
+            mappedBy = "usuario",
+            dependentElement = "false"
+    )
+    @CollectionLayout(defaultView = "table")
+    @lombok.Getter @lombok.Setter
+    private SortedSet<Reclamo> reclamos = new TreeSet<Reclamo>();
+
+    @Action(
+            semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE,
+            associateWith = "simple"
+    )
+    public Usuario nuevoReclamo() {
+        if(activo){
+            repositoryReclamo.create(this);
+        }
+        else{
+            messageService.warnUser(
+                    "El usuario "+ this.getNombre() + " se encuentra Inactivo, no puede crear nuevo reclamo");
+        }
         return this;
     }
 
-    public String default0UpdateName() {
-        return getDni();
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "activo")
+    public Usuario updateActivo()
+    {
+        if(getActivo()){ setActivo(false); }
+        else{ setActivo(true); }
+        return this;
     }
-    public String default1UpdateName() {
-        return getApellido();
-    }
-    public String default2UpdateName() {
-        return getNombre();
-    }
-
-    public TranslatableString validate0UpdateName(final String name) {
-        return name != null && name.contains("!") ? TranslatableString.tr("Exclamation mark is not allowed") : null;
-    }
-
-
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void eliminar() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' eliminado", title));
-        repositoryService.remove(this);
-    }
-
 
     @Override
     public String toString() {
@@ -140,20 +145,24 @@ public class Usuario implements Comparable<Usuario> {
                 .result();
     }
 
-
+    @NotPersistent
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    RepositoryService repositoryService;
+    ReclamoRepositorio repositoryReclamo;
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
+    @NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    domainapp.modules.simple.dom.usuario.UsuarioRepositorio repositoryUsuario;
+
+    @javax.inject.Inject
+    @NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     TitleService titleService;
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
+    @NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
 
-}
+}}

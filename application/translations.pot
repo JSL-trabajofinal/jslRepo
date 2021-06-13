@@ -87,7 +87,7 @@ msgid "Alta Operador"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create()
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#create()
 msgid "Alta Reclamo"
 msgstr ""
 
@@ -96,8 +96,8 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.operador.Operador#apellido
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-#: domainapp.modules.simple.dom.reclamos.Reclamo#apellido
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#apellido
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.tecnico.Tecnico#apellido
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.usuario.Usuario#apellido
@@ -132,7 +132,7 @@ msgid "Buscar Operador"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#findByName()
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#findByName()
 msgid "Buscar Reclamo"
 msgstr ""
 
@@ -212,8 +212,8 @@ msgid "Detail"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamos.Reclamo#direccion
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#direccion
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Direccion"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.Ayudante#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.operador.Operador#downloadJdoMetadata()
-#: domainapp.modules.simple.dom.reclamos.Reclamo#downloadJdoMetadata()
+#: domainapp.modules.simple.dom.reclamo.Reclamo#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.usuario.Usuario#downloadJdoMetadata()
 msgid "Download Jdo Metadata"
@@ -246,7 +246,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.Ayudante#downloadLayoutXml()
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadLayoutXml()
 #: domainapp.modules.simple.dom.operador.Operador#downloadLayoutXml()
-#: domainapp.modules.simple.dom.reclamos.Reclamo#downloadLayoutXml()
+#: domainapp.modules.simple.dom.reclamo.Reclamo#downloadLayoutXml()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#downloadLayoutXml()
 #: domainapp.modules.simple.dom.usuario.Usuario#downloadLayoutXml()
 #: org.apache.isis.applib.AbstractViewModel#downloadLayoutXml()
@@ -351,7 +351,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.Ayudante#datanucleusIdLong()
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusIdLong()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusIdLong()
-#: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusIdLong()
+#: domainapp.modules.simple.dom.reclamo.Reclamo#datanucleusIdLong()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusIdLong()
 #: domainapp.modules.simple.dom.usuario.Usuario#datanucleusIdLong()
 #: org.apache.isis.core.metamodel.services.jdosupport.Persistable_datanucleusIdLong#prop()
@@ -401,12 +401,12 @@ msgid "Listado de Ayudantes Inactivos"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#listAllActive()
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#listAllActive()
 msgid "Listado de Clientes Activos"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#listAllInactive()
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#listAllInactive()
 msgid "Listado de Clientes Inactivos"
 msgstr ""
 
@@ -451,8 +451,8 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.operador.Operador#nombre
 #: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-#: domainapp.modules.simple.dom.reclamos.Reclamo#nombre
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#nombre
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.tecnico.Tecnico#nombre
 #: domainapp.modules.simple.dom.tecnico.Tecnico#updateName(java.lang.String)
 #: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
@@ -469,7 +469,7 @@ msgid "Nombre del Ayudante"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#findByName(java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#findByName(java.lang.String)
 msgid "Nombre del Cliente"
 msgstr ""
 
@@ -515,7 +515,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.Ayudante#openRestApi()
 #: domainapp.modules.simple.dom.impl.SimpleObject#openRestApi()
 #: domainapp.modules.simple.dom.operador.Operador#openRestApi()
-#: domainapp.modules.simple.dom.reclamos.Reclamo#openRestApi()
+#: domainapp.modules.simple.dom.reclamo.Reclamo#openRestApi()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#openRestApi()
 #: domainapp.modules.simple.dom.usuario.Usuario#openRestApi()
 #: org.apache.isis.applib.AbstractViewModel#openRestApi()
@@ -613,7 +613,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.Ayudante#rebuildMetamodel()
 #: domainapp.modules.simple.dom.impl.SimpleObject#rebuildMetamodel()
 #: domainapp.modules.simple.dom.operador.Operador#rebuildMetamodel()
-#: domainapp.modules.simple.dom.reclamos.Reclamo#rebuildMetamodel()
+#: domainapp.modules.simple.dom.reclamo.Reclamo#rebuildMetamodel()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#rebuildMetamodel()
 #: domainapp.modules.simple.dom.usuario.Usuario#rebuildMetamodel()
 #: org.apache.isis.applib.AbstractViewModel#rebuildMetamodel()
@@ -628,7 +628,7 @@ msgid "Rebuild Metamodel"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu
 msgid "Reclamos"
 msgstr ""
 
@@ -736,8 +736,8 @@ msgid "Tecnicos"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamos.Reclamo#telefono
-#: domainapp.modules.simple.dom.reclamos.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#telefono
+#: domainapp.modules.simple.dom.reclamo.ReclamoMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Telefono"
 msgstr ""
 
@@ -794,8 +794,8 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusVersionTimestamp()
-#: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionLong()
-#: domainapp.modules.simple.dom.reclamos.Reclamo#datanucleusVersionTimestamp()
+#: domainapp.modules.simple.dom.reclamo.Reclamo#datanucleusVersionLong()
+#: domainapp.modules.simple.dom.reclamo.Reclamo#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.usuario.Usuario#datanucleusVersionLong()

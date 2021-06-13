@@ -19,18 +19,15 @@
 package domainapp.modules.simple.dom.operador;
 
 
-import domainapp.modules.simple.dom.reclamos.Reclamo;
+import domainapp.modules.simple.dom.reclamo.Reclamo;
 import org.apache.isis.applib.query.QueryDefault;
 
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
-import org.apache.isis.applib.value.Blob;
 
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @DomainService(

@@ -19,84 +19,54 @@
 package domainapp.modules.simple.dom.usuario;
 
 
-import domainapp.modules.simple.dom.impl.*;
-import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
-import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
+
+import org.apache.isis.applib.annotation.DomainService;
+import org.apache.isis.applib.annotation.NatureOfService;
+import org.apache.isis.applib.annotation.Programmatic;
+import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
-import org.datanucleus.query.typesafe.TypesafeQuery;
 
 import java.util.List;
 
 @DomainService(
-        nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.UsuarioMenu",
-        repositoryFor = Usuario.class
-)
-@DomainServiceLayout(
-        named = "Simple Objects",
-        menuOrder = "10"
-)
+        nature = NatureOfService.DOMAIN,
+        repositoryFor = Usuario.class)
+
+
 public class UsuarioRepositorio {
 
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "1")
-    public List<Usuario> listAll() {
-        return repositoryService.allInstances(Usuario.class);
-    }
-
-
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "2")
-    public List<Usuario> findByName(
-            @ParameterLayout(named="Name")
-            final String name
-    ) {
-        TypesafeQuery<Usuario> q = isisJdoSupport.newTypesafeQuery(Usuario.class);
-        final QUsuario cand = QUsuario.candidate();
-        q = q.filter(
-                cand.nombre.indexOf(q.stringParameter("name")).ne(-1)
-        );
-        return q.setParameter("name", name)
-                .executeList();
-    }
-
     @Programmatic
-    public Usuario findByNameExact(final String name) {
-        TypesafeQuery<Usuario> q = isisJdoSupport.newTypesafeQuery(Usuario.class);
-        final QUsuario cand = QUsuario.candidate();
-        q = q.filter(
-                cand.nombre.eq(q.stringParameter("nombre"))
-        );
-        return null; //q.setParameter()
-                //.executeUnique();
-    }
-
-    @Programmatic
-    public void ping() {
-        TypesafeQuery<Usuario> q = isisJdoSupport.newTypesafeQuery(Usuario.class);
-        final QUsuario candidate = QUsuario.candidate();
-        q.range(0,2);
-        q.orderBy(candidate.nombre.asc());
-        q.executeList();
-    }
-
-    public static class CreateDomainEvent extends ActionDomainEvent<UsuarioRepositorio> {}
-    @Action(domainEvent = CreateDomainEvent.class)
-    @MemberOrder(sequence = "3")
     public Usuario create(
-            @ParameterLayout(named="Dni") final String dni,
-            @ParameterLayout(named="Apellido") final String apellido,
-            @ParameterLayout(named="Nombre") final String nombre) {
-        return repositoryService.persist(new Usuario(dni, apellido, nombre));
+            final String cuil,
+            final String nombre,
+            final String telefono,
+            final String email,
+            final String direccion) {
+
+        final Usuario usuario = new Usuario(cuil,nombre,telefono,email,direccion);
+        repositoryService.persist(usuario);
+        return usuario;
+    }
+
+    @Programmatic
+    public List<Usuario> ListarActivos() {
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Usuario.class,
+                        "findAllActives"));
+    }
+
+    @Programmatic
+    public List<Usuario> ListarInactivos() {
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Usuario.class,
+                        "findAllInactives"));
     }
 
     @javax.inject.Inject
     RepositoryService repositoryService;
 
-    @javax.inject.Inject
-    IsisJdoSupport isisJdoSupport;
+
 
 }

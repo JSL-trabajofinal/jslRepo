@@ -16,74 +16,50 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package domainapp.modules.simple.dom.reclamos;
+package domainapp.modules.simple.dom.reclamo;
 
-import org.apache.isis.applib.query.QueryDefault;
-
-import org.apache.isis.applib.services.repository.RepositoryService;
+import domainapp.modules.simple.dom.usuario.Usuario;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
-import org.apache.isis.applib.value.Blob;
+import org.apache.isis.applib.query.QueryDefault;
+import org.apache.isis.applib.services.repository.RepositoryService;
 
-
-import java.io.IOException;
-import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.List;
 
 @DomainService(
         nature = NatureOfService.DOMAIN,
         repositoryFor = Reclamo.class)
 
-
 public class ReclamoRepositorio {
 
     @Programmatic
     public Reclamo create(
-            final String nombre,
-            final String apellido,
-            final String direccion,
-            final String telefono) {
-
-        final Reclamo Reclamo = new Reclamo(nombre,apellido,direccion,telefono);
-        repositoryService.persist(Reclamo);
-        return Reclamo;
+            final Usuario usuario
+    ) {
+        final Reclamo reclamo = new Reclamo(usuario);
+        repositoryService.persist(reclamo);
+        return reclamo;
     }
 
     @Programmatic
-    public List<Reclamo> ListarActivos() {
+    public List<Reclamo> Listar() {
         return repositoryService.allMatches(
                 new QueryDefault<>(
                         Reclamo.class,
-                        "findAllActives"));
+                        "find"));
     }
 
     @Programmatic
-    public List<Reclamo> ListarInactivos() {
+    public List<Reclamo> ListarUltimos() {
         return repositoryService.allMatches(
                 new QueryDefault<>(
                         Reclamo.class,
-                        "findAllInactives"));
+                        "findLast"));
     }
 
-    @Programmatic
-    public Blob generarReporteReclamos()throws  IOException {
 
-        List<Reclamo> Reclamos = new ArrayList<Reclamo>();
 
-        //EjecutarReportes ejecutarReportes=new EjecutarReportes();
-
-        Reclamos = repositoryService.allInstances(Reclamo.class);
-
-        //return ejecutarReportes.ListadoReclamosPDF(Reclamos);
-        return null;
-    }
-
-    /*
-    @javax.inject.Inject
-    EjecutarReportes ejecutarReportes;
-*/
     @javax.inject.Inject
     RepositoryService repositoryService;
 }

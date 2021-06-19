@@ -45,7 +45,7 @@ public class CuadrillaMenu {
                     regexPatternReplacement = "Debe ser una contraseña valida (solo letras)")
             @ParameterLayout(named = "Contraseña") final String contraseña) {
 
-        return repositoryAyudante.create(nombre, apellido, usuario, contraseña);
+        return repositoryCuadrilla.create(nombre, apellido, usuario, contraseña);
     }
 
     @Action(semantics = SemanticsOf.SAFE)

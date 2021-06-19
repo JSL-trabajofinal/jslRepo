@@ -33,7 +33,7 @@ import java.util.List;
         repositoryFor = Operador.class)
 
 
-public class AyudanteRepositorio {
+public class CuadrillaRepositorio {
 
     @Programmatic
     public Cuadrilla create(

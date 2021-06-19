@@ -19,7 +19,7 @@
 package domainapp.modules.simple.dom.cuadrilla;
 
 
-import domainapp.modules.simple.dom.operador.Operador;
+import domainapp.modules.simple.dom.tecnico.Tecnico;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
@@ -30,7 +30,7 @@ import java.util.List;
 
 @DomainService(
         nature = NatureOfService.DOMAIN,
-        repositoryFor = Operador.class)
+        repositoryFor = Tecnico.class)
 
 
 public class CuadrillaRepositorio {
@@ -42,9 +42,9 @@ public class CuadrillaRepositorio {
             final String usuario ,
             final String contraseña) {
 
-        final Cuadrilla Ayudante = new Cuadrilla(nombre,apellido,usuario,contraseña);
-        repositoryService.persist(Ayudante);
-        return Ayudante;
+        final Cuadrilla Cuadrilla = new Cuadrilla(nombre,apellido,usuario,contraseña);
+        repositoryService.persist(Cuadrilla);
+        return Cuadrilla;
     }
 
     @Programmatic

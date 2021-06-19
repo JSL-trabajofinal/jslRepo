@@ -1,6 +1,6 @@
 package domainapp.modules.simple.dom.cuadrilla;
 
-import domainapp.modules.simple.dom.ayudante.QAyudante;
+import domainapp.modules.simple.dom.cuadrilla.QCuadrilla;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.datanucleus.query.typesafe.TypesafeQuery;
@@ -10,17 +10,17 @@ import java.util.regex.Pattern;
 
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.SimpleAyudanteMenu",
+        objectType = "simple.SimpleCuadrillaMenu",
         repositoryFor = Cuadrilla.class
 )
 @DomainServiceLayout(
-        named = "Ayudantes",
+        named = "Cuadrillas",
         menuOrder = "10"
 )
-public class AyudanteMenu {
+public class CuadrillaMenu {
 
     @Action()
-    @ActionLayout(named = "Alta Ayudante")
+    @ActionLayout(named = "Alta Cuadrilla")
     @MemberOrder(sequence = "1")
     public Cuadrilla create(
 
@@ -49,14 +49,14 @@ public class AyudanteMenu {
     }
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT,named = "Buscar Ayudante")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT,named = "Buscar Cuadrilla")
     @MemberOrder(sequence = "2")
     public List<Cuadrilla> findByName(
             @Parameter(optionality = Optionality.MANDATORY)
             @ParameterLayout(named = "Nombre del Ayudante") final String nombre
     ) {
         TypesafeQuery<Cuadrilla> q = isisJdoSupport.newTypesafeQuery(Cuadrilla.class);
-        final QAyudante cand = QAyudante.candidate();
+        final QCuadrilla cand = QCuadrilla.candidate();
         q = q.filter(
                 cand.nombre.indexOf(q.stringParameter("Nombre")).ne(-1)
         );
@@ -67,7 +67,7 @@ public class AyudanteMenu {
     @Programmatic
     public Cuadrilla findByNameExact(final String nombre) {
         TypesafeQuery<Cuadrilla> q = isisJdoSupport.newTypesafeQuery(Cuadrilla.class);
-        final QAyudante cand = QAyudante.candidate();
+        final QCuadrilla cand = QCuadrilla.candidate();
         q = q.filter(
                 cand.nombre.eq(q.stringParameter("Nombre"))
         );
@@ -92,23 +92,23 @@ public class AyudanteMenu {
 */
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Ayudantes Activos")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas Activos")
     @MemberOrder(sequence = "3")
     public List<Cuadrilla> listAllActive() {
-        List<Cuadrilla> ayudantes = repositoryAyudante.ListarActivos();
-        return ayudantes;
+        List<Cuadrilla> cuadrillas = repositoryCuadrilla.ListarActivos();
+        return cuadrillas;
     }
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Ayudantes Inactivos")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas Inactivos")
     @MemberOrder(sequence = "3")
     public List<Cuadrilla> listAllInactive() {
-        List<Cuadrilla> ayudantes = repositoryAyudante.ListarInactivos();
-        return ayudantes;
+        List<Cuadrilla> cuadrillas = repositoryCuadrilla.ListarInactivos();
+        return cuadrillas;
     }
 
     @javax.inject.Inject
-    AyudanteRepositorio repositoryAyudante;
+    CuadrillaRepositorio repositoryCuadrilla;
 
     @javax.inject.Inject
     IsisJdoSupport isisJdoSupport;

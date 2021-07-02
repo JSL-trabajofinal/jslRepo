@@ -28,45 +28,82 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 
 import java.util.List;
 
-@DomainService(
-        nature = NatureOfService.DOMAIN,
-        repositoryFor = Usuario.class)
+import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
+
+import org.datanucleus.query.typesafe.TypesafeQuery;
+
+import javax.inject.Inject;
 
 
+@DomainService(nature = NatureOfService.DOMAIN, repositoryFor = Usuario.class)
 public class UsuarioRepositorio {
 
-    @Programmatic
     public Usuario create(
-            final String cuil,
+            final Integer dni,
+            final String apellido,
             final String nombre,
             final String telefono,
             final String email,
-            final String direccion) {
-
-        final Usuario usuario = new Usuario(cuil,nombre,telefono,email,direccion);
+            final String direccion,
+            final String barrio
+    ) {
+        final Usuario usuario = new Usuario(
+                dni,
+                apellido.toUpperCase(),
+                nombre.toUpperCase(),
+                telefono,
+                email,
+                direccion,
+                barrio);
         repositoryService.persist(usuario);
         return usuario;
     }
 
+
+
+
+
     @Programmatic
-    public List<Usuario> ListarActivos() {
+    public List<Usuario> listAll() {
         return repositoryService.allMatches(
-                new QueryDefault<>(
-                        Usuario.class,
-                        "findAllActives"));
+                new QueryDefault<>(Usuario.class,
+                        "listAll"));
+    }
+
+
+    @Programmatic
+    public List<Usuario> findByApellido(
+            //@ParameterLayout(named = "Apellido")
+            final String apellido
+    ) {
+        TypesafeQuery<Usuario> q = isisJdoSupport.newTypesafeQuery(Usuario.class);
+        final QUsuario cand = QUsuario.candidate();
+        q = q.filter(
+                cand.apellido.indexOf(q.stringParameter("apellido")).ne(-1)
+        );
+        return q.setParameter("apellido", apellido.toUpperCase())
+                .executeList();
     }
 
     @Programmatic
-    public List<Usuario> ListarInactivos() {
-        return repositoryService.allMatches(
-                new QueryDefault<>(
-                        Usuario.class,
-                        "findAllInactives"));
+    public List<Usuario> findByDni(
+            //@ParameterLayout(named = "Dni")
+            final Integer dni
+    ) {
+        TypesafeQuery<Usuario> q = isisJdoSupport.newTypesafeQuery(Usuario.class);
+        final QUsuario cand = QUsuario.candidate();
+        q = q.filter(
+                cand.dni.eq(q.integerParameter("dni"))
+        );
+        return q.setParameter("dni", dni)
+                .executeList();
     }
 
-    @javax.inject.Inject
+
+    @Inject
     RepositoryService repositoryService;
 
-
+    @javax.inject.Inject
+    IsisJdoSupport isisJdoSupport;
 
 }

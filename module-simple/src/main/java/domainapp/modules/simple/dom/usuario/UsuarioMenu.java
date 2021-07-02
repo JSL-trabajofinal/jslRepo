@@ -20,128 +20,97 @@ package domainapp.modules.simple.dom.usuario;
 
 
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
-import org.datanucleus.query.typesafe.TypesafeQuery;
+import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 
+
+import javax.inject.Inject;
 import java.util.List;
 import java.util.regex.Pattern;
 
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.SimpleUsuarioMenu",
-        repositoryFor = domainapp.modules.simple.dom.usuario.Usuario.class
+        objectType = "usuario.SimpleObjectMenu",
+        repositoryFor = Usuario.class
 )
 @DomainServiceLayout(
-        named = "Reclamos",
-        menuOrder = "10"
+        named = "Usuarios",
+        menuOrder = ""
 )
+
 public class UsuarioMenu {
 
-
-    @Action()
-    @ActionLayout(named = "Alta de Reclamo")
+    public static class CreateDomainEvent extends ActionDomainEvent<UsuarioMenu> {}
+    @Action(domainEvent = CreateDomainEvent.class)
+    @ActionLayout(named = "Alta Usuario")
     @MemberOrder(sequence = "1")
-    public domainapp.modules.simple.dom.usuario.Usuario create(
-
-            @Parameter(maxLength = 40,
-                    regexPattern = "^[0-9]{8}$",
-                    regexPatternReplacement = "Solo numeros, sin puntos (total 8 numeros)"
-            )
-            @ParameterLayout(named = "Dni") final String dni,
-
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternFlags= Pattern.CASE_INSENSITIVE,
-                    regexPatternReplacement = "Debe ser un nombre valido (solo letras)")
-            @ParameterLayout(named = "Nombre") final String nombre,
-
-            @Parameter(maxLength = 40,
+    public Usuario create(
+            @Parameter(
                     regexPattern = "[0-9]+",
                     regexPatternReplacement = "Solo numeros y sin espacios"
             )
-            @ParameterLayout(named = "Telefono") final String telefono,
+            @ParameterLayout(named="DNI") final Integer dni,
 
-            @Parameter(maxLength = 40,
+            @Parameter(
+                    regexPattern = "[A-Za-z]+",
+                    regexPatternFlags = Pattern.CASE_INSENSITIVE,
+                    regexPatternReplacement = "Ingrese solo letras"
+            )
+            @ParameterLayout(named="Apellido") final String apellido,
+            @ParameterLayout(named="Nombre") final String nombre,
+
+
+
+            @ParameterLayout(named="Telefono") final String telefono,
+
+            @Parameter(
                     regexPattern = "(\\w+\\.)*\\w+@(\\w+\\.)+[A-Za-z]+",
                     regexPatternFlags= Pattern.CASE_INSENSITIVE,
-                    regexPatternReplacement = "Debe ser un email valido (contiene un '@' simbolo)")
-            @ParameterLayout(named = "Email") final String email,
+                    regexPatternReplacement = "Debe ser un email valido (contiene un '@' simbolo)"
+            )
+            @ParameterLayout(named="Email") final String email,
 
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Direccion") final String direccion) {
-
-        return repositoryUsuario.create(dni, nombre.toUpperCase(), telefono, email, direccion);
-    }
-
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT,named = "Buscar usuario")
-    @MemberOrder(sequence = "2")
-    public List<domainapp.modules.simple.dom.usuario.Usuario> findByName(
-            @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Nombre") final String nombre
+            @ParameterLayout(named="Direccion") final String direccion,
+            @ParameterLayout(named="Barrio") final String barrio
     ) {
-        TypesafeQuery<domainapp.modules.simple.dom.usuario.Usuario> q = isisJdoSupport.newTypesafeQuery(domainapp.modules.simple.dom.usuario.Usuario.class);
-        final QUsuario cand = QUsuario.candidate();
-        q = q.filter(
-                cand.nombre.indexOf(q.stringParameter("name")).ne(-1)
-        );
-        return q.setParameter("name", nombre)
-                .executeList();
+
+        return usuarioRepository.create(
+                dni,
+                nombre.toUpperCase(),
+                apellido.toUpperCase(),
+                telefono,
+                email,
+                direccion,
+                barrio);
     }
 
-    @Programmatic
-    public domainapp.modules.simple.dom.usuario.Usuario findByNameExact(final String nombre) {
-        TypesafeQuery<domainapp.modules.simple.dom.usuario.Usuario> q = isisJdoSupport.newTypesafeQuery(domainapp.modules.simple.dom.usuario.Usuario.class);
-        final QUsuario cand = QUsuario.candidate();
-        q = q.filter(
-                cand.nombre.eq(q.stringParameter("name"))
-        );
-        return q.setParameter("name", nombre)
-                .executeUnique();
+    @Action()
+    @ActionLayout(named = "Buscar Usuario por Apellido")
+    @MemberOrder(sequence = "3")
+    public List<Usuario> findByApellido(@ParameterLayout(named = "Apellido") final String apellido) {
+        return usuarioRepository.findByApellido(apellido);
+    }
+
+    @Action()
+    @ActionLayout(named = "Buscar Usuario por Dni")
+    @MemberOrder(sequence = "4")
+    public List<Usuario> findByDni(@ParameterLayout(named = "Dni") final Integer dni) {
+        return usuarioRepository.findByDni(dni);
     }
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Busqueda por DNI")
-    @MemberOrder(sequence = "3")
-    public domainapp.modules.simple.dom.usuario.Usuario findByCuilExact(
-            @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Nro Dni") final String dni) {
-        TypesafeQuery<domainapp.modules.simple.dom.usuario.Usuario> q = isisJdoSupport.newTypesafeQuery(domainapp.modules.simple.dom.usuario.Usuario.class);
-        final QUsuario cand = QUsuario.candidate();
-        q = q.filter(
-                cand.dni.eq(q.stringParameter("dni"))
-        );
-        return q.setParameter("dni", dni)
-                .executeUnique();
-    }
-
-
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Usuarios Activos")
-    @MemberOrder(sequence = "3")
-    public List<domainapp.modules.simple.dom.usuario.Usuario> listAllActive() {
-        List<domainapp.modules.simple.dom.usuario.Usuario> usuarios = repositoryUsuario.ListarActivos();
-        return usuarios;
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listar Usuarios")
+    @MemberOrder(sequence = "2")
+    public List<Usuario> listAll() {
+        return usuarioRepository.listAll();
     }
 
 
 
+    @Inject
+    UsuarioRepositorio usuarioRepository;
 
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Clientes Inactivos")
-    @MemberOrder(sequence = "3")
-    public List<domainapp.modules.simple.dom.usuario.Usuario> listAllInactive() {
-        List<domainapp.modules.simple.dom.usuario.Usuario> usuarios = repositoryUsuario.ListarInactivos();
-        return usuarios;
-    }
-
-
-    @javax.inject.Inject
-    domainapp.modules.simple.dom.usuario.UsuarioRepositorio repositoryUsuario;
-
-    @javax.inject.Inject
-    IsisJdoSupport isisJdoSupport;
 }
+
 
 
 

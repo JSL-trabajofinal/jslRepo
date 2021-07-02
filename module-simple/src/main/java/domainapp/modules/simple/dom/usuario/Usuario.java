@@ -20,7 +20,6 @@ package domainapp.modules.simple.dom.usuario;
 
 import com.google.common.collect.ComparisonChain;
 import domainapp.modules.simple.dom.reclamo.Reclamo;
-import domainapp.modules.simple.dom.reclamo.ReclamoRepositorio;
 import lombok.AccessLevel;
 import lombok.NonNull;
 import org.apache.isis.applib.annotation.*;

@@ -2,5 +2,5 @@ package domainapp.modules.simple.dom.reclamo;
 
 public enum Estado {
 
-    Cerrado, Espera, Anulado
+    Abierto, Cerrado, Asignado, Sin_asignar, Anulado
 }

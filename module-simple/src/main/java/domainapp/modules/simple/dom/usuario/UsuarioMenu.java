@@ -20,23 +20,38 @@ package domainapp.modules.simple.dom.usuario;
 
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
+<<<<<<< HEAD
 import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.datanucleus.query.typesafe.TypesafeQuery;
 import org.joda.time.LocalDate;
 
 import javax.inject.Inject;
 import javax.jdo.annotations.Column;
+=======
+
+
+import javax.inject.Inject;
+>>>>>>> develop
 import java.util.List;
 import java.util.regex.Pattern;
 
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
+<<<<<<< HEAD
         objectType = "simple.SimpleUsuarioMenu",
         repositoryFor = Usuario.class
 )
 @DomainServiceLayout(
         named = "Usuario",
         menuOrder = " "
+=======
+        objectType = "usuario.SimpleObjectMenu",
+        repositoryFor = Usuario.class
+)
+@DomainServiceLayout(
+        named = "Usuarios",
+        menuOrder = ""
+>>>>>>> develop
 )
 
 public class UsuarioMenu {
@@ -77,8 +92,13 @@ public class UsuarioMenu {
 
         return usuarioRepository.create(
                 dni,
+<<<<<<< HEAD
                 apellido.toUpperCase(),
                 nombre.toUpperCase(),
+=======
+                nombre.toUpperCase(),
+                apellido.toUpperCase(),
+>>>>>>> develop
                 telefono,
                 email,
                 direccion,
@@ -106,6 +126,20 @@ public class UsuarioMenu {
         return usuarioRepository.listAll();
     }
 
+<<<<<<< HEAD
     @Inject
     UsuarioRepositorio usuarioRepository;
 }
+=======
+
+
+    @Inject
+    UsuarioRepositorio usuarioRepository;
+
+}
+
+
+
+
+
+>>>>>>> develop

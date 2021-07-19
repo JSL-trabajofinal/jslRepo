@@ -18,16 +18,29 @@
  */
 package domainapp.modules.simple.dom.reclamo;
 
+<<<<<<< HEAD
 import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
+=======
+
+
+>>>>>>> develop
 import domainapp.modules.simple.dom.usuario.Usuario;
+
 import lombok.AccessLevel;
 import lombok.Getter;
+<<<<<<< HEAD
 import lombok.NonNull;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.message.MessageService;
+=======
+import lombok.Setter;
+import org.apache.isis.applib.annotation.*;
+
+import org.apache.isis.applib.services.factory.FactoryService;
+>>>>>>> develop
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.schema.utils.jaxbadapters.JodaDateTimeStringAdapter;
 import org.joda.time.LocalDate;
@@ -37,6 +50,7 @@ import javax.jdo.annotations.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
+<<<<<<< HEAD
 @PersistenceCapable(identityType= IdentityType.DATASTORE, schema="simple", table="Reclamo")
 @DatastoreIdentity(strategy=IdGeneratorStrategy.IDENTITY, column="Reclamo_ID")
 @DomainObject(auditing = Auditing.ENABLED)
@@ -90,6 +104,46 @@ public class Reclamo {
             messageService.warnUser("No puede anular dos veces el mismo reclamo");
         }
         return this;
+=======
+
+@PersistenceCapable(identityType= IdentityType.DATASTORE, schema="simple", table="reclamos")
+@javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="idReclamo")
+@DomainObject(auditing = Auditing.ENABLED)
+@DomainObjectLayout()  // causes UI events to be triggered
+@lombok.Getter @lombok.Setter
+public class Reclamo {
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Property()
+    @Getter
+    @Setter
+    private Usuario usuario;
+
+    @Column(allowsNull = "true")
+    @lombok.NonNull
+    @Property(editing = Editing.ENABLED)
+    @XmlJavaTypeAdapter(JodaDateTimeStringAdapter.ForJaxb.class)
+    private LocalDate fecha = LocalDate.now();
+
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Property()
+    @Title(prepend = "Reclamo: ")
+    private TipoReclamo tipoReclamo;
+
+    @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
+    @Property(editing = Editing.ENABLED)
+    private String notes;
+
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @lombok.NonNull
+    @Property()
+    private Estado estado;
+
+    public TipoReclamo title() {
+        return getTipoReclamo();
+>>>>>>> develop
     }
 
     public Reclamo Cerrar() {
@@ -102,6 +156,7 @@ public class Reclamo {
         return this;
     }
 
+<<<<<<< HEAD
     public Reclamo Asignar(){
         CambiarEstado(Estado.En_Proceso);
         return this;
@@ -112,19 +167,28 @@ public class Reclamo {
         return this;
     }
 
+=======
+>>>>>>> develop
     @Action()
     @ActionLayout(named = "Editar")
     public Reclamo update(
             @ParameterLayout(named = "Nombre: ")
+<<<<<<< HEAD
             final TipoReclamo tipoReclamo,
             final Estado estado
     ){
         this.setTipoReclamo(tipoReclamo);
         this.CambiarEstado(estado);
+=======
+            final TipoReclamo tipoReclamo
+    ){
+        this.setTipoReclamo(tipoReclamo);
+>>>>>>> develop
         return this;
     }
 
     public TipoReclamo default0Update() { return getTipoReclamo(); }
+<<<<<<< HEAD
 
     /*@Action()
     @ActionLayout(named = "Asignar Cuadrilla")
@@ -152,5 +216,16 @@ public class Reclamo {
     @Inject
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+=======
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    FactoryService factoryService;
+
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+>>>>>>> develop
     RepositoryService repositoryService;
 }

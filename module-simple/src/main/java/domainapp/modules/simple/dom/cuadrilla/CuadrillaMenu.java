@@ -64,7 +64,7 @@ public class CuadrillaMenu {
                 .executeList();
     }
 
-    @Programmatic
+    /*@Programmatic
     public Cuadrilla findByNameExact(final String nombre) {
         TypesafeQuery<Cuadrilla> q = isisJdoSupport.newTypesafeQuery(Cuadrilla.class);
         final QCuadrilla cand = QCuadrilla.candidate();
@@ -73,7 +73,7 @@ public class CuadrillaMenu {
         );
         return q.setParameter("nombre", nombre)
                 .executeUnique();
-    }
+    }*/
 
     /*@Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Busqueda por CUIT/CUIL")
@@ -91,7 +91,7 @@ public class CuadrillaMenu {
     }
 */
 
-    @Action(semantics = SemanticsOf.SAFE)
+    /*@Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas Activos")
     @MemberOrder(sequence = "3")
     public List<Cuadrilla> listAllActive() {
@@ -105,7 +105,7 @@ public class CuadrillaMenu {
     public List<Cuadrilla> listAllInactive() {
         List<Cuadrilla> cuadrillas = repositoryCuadrilla.ListarInactivos();
         return cuadrillas;
-    }
+    }*/
 
     @javax.inject.Inject
     CuadrillaRepositorio repositoryCuadrilla;

@@ -18,134 +18,139 @@
  */
 package domainapp.modules.simple.dom.reclamo;
 
-
-import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
+import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
-import org.apache.isis.applib.services.title.TitleService;
 import org.apache.isis.schema.utils.jaxbadapters.JodaDateTimeStringAdapter;
 import org.joda.time.LocalDate;
 
+import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import java.math.BigInteger;
-
-import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
 
 
-@PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "simple")
-@DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY, column = "id")
-@Sequence(name = "reclamosqe", datastoreSequence = "YOUR_SEQUENCE_NAME2", strategy = SequenceStrategy.CONTIGUOUS, initialValue = 100, allocationSize = 1)
-@Version(strategy = VersionStrategy.DATE_TIME, column = "version")
-@Queries({
-        @Query(
-                name = "find", language = "JDOQL",
-                value = "SELECT "),
-        @Query(
-                name = "findLast", language = "JDOQL",
-                value = "SELECT "
-                        + "ORDER BY nroReclamo DESC"),
-})
-
-@Unique(name = "Reclamo_nombre_UNQ", members = {"nroReclamo"})
+@PersistenceCapable(identityType= IdentityType.DATASTORE, schema="simple", table="Reclamo")
+@DatastoreIdentity(strategy=IdGeneratorStrategy.IDENTITY, column="Reclamo_ID")
 @DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout(cssClassFa = "file-text-o")
-@lombok.Getter
-@lombok.Setter
-@lombok.RequiredArgsConstructor
-public class Reclamo implements Comparable<Reclamo> {
+@DomainObjectLayout()  // causes UI events to be triggered
+@Getter @Setter
+public class Reclamo {
 
-    @Column(allowsNull = "true", length = 10)
+    @Column(allowsNull = "false", name = "Usuario_ID")
+    @Persistent(mappedBy = "usuario", dependentElement = "true")
+    @Property()
+    @Getter @Setter
+    private Usuario usuario;
+
+    @Column(allowsNull = "false")
+    @NonNull
+    @PropertyLayout(named="Fecha Creacion del Reclamo: ")
     @Property(editing = Editing.DISABLED)
-    @Persistent(valueStrategy = IdGeneratorStrategy.SEQUENCE, sequence = "reclamoseq")
-    @Title(prepend = "Nro Reclamo: ")
-    private BigInteger nroReclamo;
-
-    @Column(allowsNull = "true")
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED)
     @XmlJavaTypeAdapter(JodaDateTimeStringAdapter.ForJaxb.class)
     private LocalDate fecha = LocalDate.now();
 
-
-    @Column(allowsNull = "false")
-    @lombok.NonNull
-    @lombok.Getter
-    @lombok.Setter
-    @Property(editing = Editing.DISABLED)
+    @Column(allowsNull = "true")
+    @Property(editing = Editing.ENABLED)
+    @Title(prepend = "Reclamo: ")
     private TipoReclamo tipoReclamo;
 
+    @Column(allowsNull = "true", length = 4000)
+    @Property(editing = Editing.ENABLED)
+    private String notes;
 
     @Column(allowsNull = "false")
-    @lombok.NonNull
-    @lombok.Getter
-    @lombok.Setter
-    @Property(editing = Editing.DISABLED)
-    private Usuario usuario;
+    @NonNull
+    @Property()
+    private Estado estado;
 
-
-    @Column(allowsNull = "true")
-    @lombok.NonNull
-    @Property(editing = Editing.DISABLED)
-    private domainapp.modules.simple.dom.reclamo.Estado estado = domainapp.modules.simple.dom.reclamo.Estado.Espera;
-
-    public Reclamo(Usuario usuario) {
+    public TipoReclamo title() {
+        return getTipoReclamo();
     }
 
-    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, command = ENABLED, publishing = Publishing.ENABLED)
-    public Reclamo anularReclamo() {
-        if (getEstado().equals(domainapp.modules.simple.dom.reclamo.Estado.Espera)) {
-            setEstado(domainapp.modules.simple.dom.reclamo.Estado.Anulado);
-            messageService.warnUser("Se ha Anulado el reclamo");
-        } else if (getEstado().equals(domainapp.modules.simple.dom.reclamo.Estado.Cerrado)) {
-            messageService.warnUser("No se puede Anular un Reclamo Cerrado");
+    @Programmatic
+    public void CambiarEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
+    public Reclamo Anular() {
+        CambiarEstado(Estado.Anulado);
+        if (getEstado().equals(Estado.Anulado)) {
+            messageService.warnUser("Reclamo Anulado");
         } else {
-            messageService.warnUser("El reclamo ya estaba previamente Anulado");
+            CambiarEstado(Estado.Anulado);
+            messageService.warnUser("No puede anular dos veces el mismo reclamo");
         }
         return this;
     }
 
-
-
-    @Override
-    public String toString() {
-        return getNroReclamo().toString();
+    public Reclamo Cerrar() {
+        if (getEstado().equals(Estado.Anulado)) {
+            messageService.warnUser("No se puede cerrar un reclamo Anulado");
+        } else {
+            CambiarEstado(Estado.Cerrado);
+            messageService.warnUser("Reclamo Cerrado");
+        }
+        return this;
     }
 
-    @Override
-    public int compareTo(final Reclamo other) {
-        return ComparisonChain.start()
-                .compare(this.getNroReclamo().toString(), other.getNroReclamo().toString())
-                .result();
+    public Reclamo Asignar(){
+        CambiarEstado(Estado.En_Proceso);
+        return this;
     }
 
-    @javax.inject.Inject
-    @NotPersistent
-    @lombok.Getter(AccessLevel.NONE)
-    @lombok.Setter(AccessLevel.NONE)
-    RepositoryService repositoryService;
+    public Reclamo sinAsignar(){
+        CambiarEstado(Estado.Sin_Asignar);
+        return this;
+    }
 
-    @javax.inject.Inject
-    @NotPersistent
-    @lombok.Getter(AccessLevel.NONE)
-    @lombok.Setter(AccessLevel.NONE)
-    ReclamoRepositorio repositoryReclamo;
+    @Action()
+    @ActionLayout(named = "Editar")
+    public Reclamo update(
+            @ParameterLayout(named = "Nombre: ")
+            final TipoReclamo tipoReclamo,
+            final Estado estado
+    ){
+        this.setTipoReclamo(tipoReclamo);
+        this.CambiarEstado(estado);
+        return this;
+    }
 
-    @javax.inject.Inject
-    @NotPersistent
-    @lombok.Getter(AccessLevel.NONE)
-    @lombok.Setter(AccessLevel.NONE)
-    TitleService titleService;
+    public TipoReclamo default0Update() { return getTipoReclamo(); }
 
-    @javax.inject.Inject
+    /*@Action()
+    @ActionLayout(named = "Asignar Cuadrilla")
+    public Reclamo AsignarCuadrilla(
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Cuadrilla")
+            final Cuadrilla cuadrilla) {
+
+        this.AsignarCuadrilla() = cuadrilla;
+        return this;
+    }
+
+    public List<Cuadrilla> choices0AsignarCuadrilla() { return CuadrillaRepositorio.ListarActivos(); }*/
+
+    @Inject
     @NotPersistent
-    @lombok.Getter(AccessLevel.NONE)
-    @lombok.Setter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     MessageService messageService;
 
+    @Inject
+    @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    FactoryService factoryService;
 
-
+    @Inject
+    @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    RepositoryService repositoryService;
 }

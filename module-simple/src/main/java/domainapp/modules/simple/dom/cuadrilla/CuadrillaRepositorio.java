@@ -18,7 +18,6 @@
  */
 package domainapp.modules.simple.dom.cuadrilla;
 
-
 import domainapp.modules.simple.dom.tecnico.Tecnico;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
@@ -26,6 +25,7 @@ import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
@@ -39,7 +39,7 @@ public class CuadrillaRepositorio {
     public Cuadrilla create(
             final String nombre,
             final String apellido,
-            final String usuario ,
+            final String usuario,
             final String contraseña) {
 
         final Cuadrilla Cuadrilla = new Cuadrilla(nombre,apellido,usuario,contraseña);
@@ -63,6 +63,6 @@ public class CuadrillaRepositorio {
                         "findAllInactives"));
     }
 
-    @javax.inject.Inject
+    @Inject
     RepositoryService repositoryService;
 }

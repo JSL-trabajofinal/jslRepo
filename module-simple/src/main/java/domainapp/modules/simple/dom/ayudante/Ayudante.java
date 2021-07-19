@@ -20,11 +20,15 @@ package domainapp.modules.simple.dom.ayudante;
 
 import com.google.common.collect.ComparisonChain;
 import lombok.AccessLevel;
+import lombok.Setter;
+import lombok.Getter;
+import lombok.NonNull;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 
+import javax.inject.Inject;
 import javax.jdo.annotations.*;
 
 @PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
@@ -46,12 +50,12 @@ import javax.jdo.annotations.*;
 @Unique(name="Ayudante_usuario_UNQ", members = {"usuario"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
-@lombok.Getter @lombok.Setter
+@Getter @Setter
 @lombok.RequiredArgsConstructor
 public class Ayudante implements Comparable<Ayudante> {
 
     @Column(allowsNull = "true", length = 40)
-    @lombok.NonNull
+    @NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
     @Title(prepend = "Nombre: ")
     @MemberOrder(sequence = "1")
@@ -59,7 +63,7 @@ public class Ayudante implements Comparable<Ayudante> {
 
 
     @Column(allowsNull = "true", length = 40)
-    @lombok.NonNull
+    @NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
     @Title(prepend = ". apellido ")
     @MemberOrder(sequence = "2")
@@ -67,7 +71,7 @@ public class Ayudante implements Comparable<Ayudante> {
 
 
     @Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
+    @NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
     @Title(prepend = ". usuario: ")
     @MemberOrder(sequence = "3")
@@ -75,7 +79,7 @@ public class Ayudante implements Comparable<Ayudante> {
 
 
     @Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
+    @NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
     @Title(prepend = ". contraseña:  ")
     @MemberOrder(sequence = "4")
@@ -85,13 +89,11 @@ public class Ayudante implements Comparable<Ayudante> {
     @Property()
     private Boolean activo = true;
 
-
     public String ReporNombre(){ return this.nombre; }
     public String ReporApellido(){ return this.apellido; }
     public String ReporUsuario(){ return this.usuario; }
     public String ReporContraseña(){ return this.contraseña; }
     public String ReporActivo(){ return this.activo.toString(); }
-
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
     public Ayudante updateActivo()
@@ -130,19 +132,19 @@ public class Ayudante implements Comparable<Ayudante> {
                 .result();
     }
 
-    @javax.inject.Inject
+    @Inject
     @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     RepositoryService repositoryService;
 
-    @javax.inject.Inject
+    @Inject
     @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     TitleService titleService;
 
-    @javax.inject.Inject
+    @Inject
     @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     MessageService messageService;
 
 }

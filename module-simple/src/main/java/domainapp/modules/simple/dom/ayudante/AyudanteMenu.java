@@ -93,7 +93,7 @@ public class AyudanteMenu {
     }
 */
 
-    @Action(semantics = SemanticsOf.SAFE)
+    /*@Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Ayudantes Activos")
     @MemberOrder(sequence = "3")
     public List<Ayudante> listAllActive() {
@@ -107,7 +107,7 @@ public class AyudanteMenu {
     public List<Ayudante> listAllInactive() {
         List<Ayudante> ayudantes = repositoryAyudante.ListarInactivos();
         return ayudantes;
-    }
+    }*/
 
     @javax.inject.Inject
     AyudanteRepositorio repositoryAyudante;

@@ -70,7 +70,7 @@ public class OperadorMenu {
                 .executeList();
     }
 
-    @Programmatic
+    /*@Programmatic
     public Operador findByNameExact(final String nombre) {
         TypesafeQuery<Operador> q = isisJdoSupport.newTypesafeQuery(Operador.class);
         final QOperador cand = QOperador.candidate();
@@ -79,7 +79,7 @@ public class OperadorMenu {
         );
         return q.setParameter("nombre", nombre)
                 .executeUnique();
-    }
+    }*/
 
     /*@Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Busqueda por CUIT/CUIL")
@@ -97,7 +97,7 @@ public class OperadorMenu {
     }
 */
 
-    @Action(semantics = SemanticsOf.SAFE)
+    /*@Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Operadores Activos")
     @MemberOrder(sequence = "3")
     public List<Operador> listAllActive() {
@@ -111,7 +111,7 @@ public class OperadorMenu {
     public List<Operador> listAllInactive() {
         List<Operador> operadores = repositoryOperador.ListarInactivos();
         return operadores;
-    }
+    }*/
 
     @javax.inject.Inject
     OperadorRepositorio repositoryOperador;

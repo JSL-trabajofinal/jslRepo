@@ -21,5 +21,5 @@ public enum TipoReclamo {
     Perdida_de_agua_C_Pavim,
     Mantenimiento_colectora,
     Limpieza_camara,
-    Muestreo_cloro,
+    Muestreo_cloro;
 }

@@ -18,7 +18,6 @@
  */
 package domainapp.modules.simple.dom.operador;
 
-
 import domainapp.modules.simple.dom.reclamo.Reclamo;
 import org.apache.isis.applib.query.QueryDefault;
 
@@ -41,7 +40,7 @@ public class OperadorRepositorio {
     public Operador create(
             final String nombre,
             final String apellido,
-            final String usuario ,
+            final String usuario,
             final String contraseña) {
 
         final Operador Operador = new Operador(nombre,apellido,usuario,contraseña);

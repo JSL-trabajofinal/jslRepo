@@ -1,34 +1,28 @@
-package domainapp.modules.simple.dom.operador;
+package domainapp.modules.simple.dom.cuadrilla;
 
-import java.io.IOException;
+import domainapp.modules.simple.dom.cuadrilla.QCuadrilla;
+import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
+import org.datanucleus.query.typesafe.TypesafeQuery;
 
 import java.util.List;
 import java.util.regex.Pattern;
 
-import domainapp.modules.simple.dom.operador.Operador;
-import domainapp.modules.simple.dom.operador.OperadorRepositorio;
-import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.value.Blob;
-import org.datanucleus.query.typesafe.TypesafeQuery;
-
-import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
-import org.apache.isis.applib.services.repository.RepositoryService;
-
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.SimpleOperadorMenu",
-        repositoryFor = Operador.class
+        objectType = "simple.SimpleCuadrillaMenu",
+        repositoryFor = Cuadrilla.class
 )
 @DomainServiceLayout(
-        named = "Operadores",
+        named = "Cuadrillas",
         menuOrder = "10"
 )
-public class OperadorMenu {
+public class CuadrillaMenu {
 
     @Action()
-    @ActionLayout(named = "Alta Operador")
+    @ActionLayout(named = "Alta Cuadrilla")
     @MemberOrder(sequence = "1")
-    public Operador create(
+    public Cuadrilla create(
 
             @Parameter(maxLength = 40,
                     regexPattern = "[A-Za-z\\s]+",
@@ -51,18 +45,18 @@ public class OperadorMenu {
                     regexPatternReplacement = "Debe ser una contraseña valida (solo letras)")
             @ParameterLayout(named = "Contraseña") final String contraseña) {
 
-        return repositoryOperador.create(nombre, apellido, usuario, contraseña);
+        return repositoryCuadrilla.create(nombre, apellido, usuario, contraseña);
     }
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT,named = "Buscar Operador")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT,named = "Buscar Cuadrilla")
     @MemberOrder(sequence = "2")
-    public List<Operador> findByName(
+    public List<Cuadrilla> findByName(
             @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Nombre del Operador") final String nombre
+            @ParameterLayout(named = "Nombre del Ayudante") final String nombre
     ) {
-        TypesafeQuery<Operador> q = isisJdoSupport.newTypesafeQuery(Operador.class);
-        final QOperador cand = QOperador.candidate();
+        TypesafeQuery<Cuadrilla> q = isisJdoSupport.newTypesafeQuery(Cuadrilla.class);
+        final QCuadrilla cand = QCuadrilla.candidate();
         q = q.filter(
                 cand.nombre.indexOf(q.stringParameter("Nombre")).ne(-1)
         );
@@ -71,9 +65,9 @@ public class OperadorMenu {
     }
 
     /*@Programmatic
-    public Operador findByNameExact(final String nombre) {
-        TypesafeQuery<Operador> q = isisJdoSupport.newTypesafeQuery(Operador.class);
-        final QOperador cand = QOperador.candidate();
+    public Cuadrilla findByNameExact(final String nombre) {
+        TypesafeQuery<Cuadrilla> q = isisJdoSupport.newTypesafeQuery(Cuadrilla.class);
+        final QCuadrilla cand = QCuadrilla.candidate();
         q = q.filter(
                 cand.nombre.eq(q.stringParameter("Nombre"))
         );
@@ -98,23 +92,23 @@ public class OperadorMenu {
 */
 
     /*@Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Operadores Activos")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas Activos")
     @MemberOrder(sequence = "3")
-    public List<Operador> listAllActive() {
-        List<Operador> operadores = repositoryOperador.ListarActivos();
-        return operadores;
+    public List<Cuadrilla> listAllActive() {
+        List<Cuadrilla> cuadrillas = repositoryCuadrilla.ListarActivos();
+        return cuadrillas;
     }
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Operadores Inactivos")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas Inactivos")
     @MemberOrder(sequence = "3")
-    public List<Operador> listAllInactive() {
-        List<Operador> operadores = repositoryOperador.ListarInactivos();
-        return operadores;
+    public List<Cuadrilla> listAllInactive() {
+        List<Cuadrilla> cuadrillas = repositoryCuadrilla.ListarInactivos();
+        return cuadrillas;
     }*/
 
     @javax.inject.Inject
-    OperadorRepositorio repositoryOperador;
+    CuadrillaRepositorio repositoryCuadrilla;
 
     @javax.inject.Inject
     IsisJdoSupport isisJdoSupport;

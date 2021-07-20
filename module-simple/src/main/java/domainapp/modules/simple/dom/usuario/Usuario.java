@@ -18,74 +18,116 @@
  */
 package domainapp.modules.simple.dom.usuario;
 
-import com.google.common.collect.ComparisonChain;
+<<<<<<< HEAD
 import domainapp.modules.simple.dom.reclamo.Reclamo;
-import domainapp.modules.simple.dom.reclamo.ReclamoRepositorio;
+import domainapp.modules.simple.dom.reclamo.TipoReclamo;
+import domainapp.modules.simple.dom.reclamo.Estado;
 import lombok.AccessLevel;
-import lombok.NonNull;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.message.MessageService;
-import org.apache.isis.applib.services.title.TitleService;
+import org.apache.isis.applib.services.factory.FactoryService;
+import org.apache.isis.applib.services.repository.RepositoryService;
 
+import org.apache.isis.applib.services.title.TitleService;
+=======
+import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.reclamo.Estado;
+import domainapp.modules.simple.dom.reclamo.Reclamo;
+import domainapp.modules.simple.dom.reclamo.TipoReclamo;
+import lombok.AccessLevel;
+import lombok.Getter;
+
+import lombok.Setter;
+import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.services.factory.FactoryService;
+
+import org.apache.isis.applib.services.repository.RepositoryService;
+
+>>>>>>> develop
+import org.joda.time.LocalDate;
+
+import javax.inject.Inject;
 import javax.jdo.annotations.*;
-import java.math.BigInteger;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
 
-import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
+<<<<<<< HEAD
+@PersistenceCapable(identityType= IdentityType.DATASTORE, schema="simple")
+@DatastoreIdentity(strategy=IdGeneratorStrategy.IDENTITY, column="Usuario_ID")
+@Sequence(name="usuarioseq",datastoreSequence = "YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS)
+=======
 
-@PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
-@Sequence(name="usuarioseq", datastoreSequence="YOUR_SEQUENCE_NAME", strategy=SequenceStrategy.CONTIGUOUS, initialValue = 10000, allocationSize = 1)
-@Version(strategy= VersionStrategy.DATE_TIME, column="version")
+
+@PersistenceCapable(identityType= IdentityType.DATASTORE, schema="simple", table="usuarios")
+>>>>>>> develop
 @Queries({
-        @Query(
-                name = "findAllActives", language = "JDOQL",
+        @Query(name = "findByApellido", language = "JDOQL",
                 value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.usuario.Usuario "
-                        + "WHERE activo == true "),
-        @Query(
-                name = "findAllInactives", language = "JDOQL",
+                        + "WHERE apellido == :apellido "),
+
+        @Query(name = "findByDni", language = "JDOQL",
                 value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.usuario.Usuario "
-                        + "WHERE activo == false "),
+                        + "WHERE dni == :dni ")
 })
-
-@Unique(name="Usuario_nombre_UNQ", members = {"dni"})
+<<<<<<< HEAD
 @DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout(cssClassFa="user-circle" )  // causes UI events to be triggered
+@DomainObjectLayout()  // causes UI events to be triggered
+@Unique(name="Usuario_dni_UNQ", members = {"dni"})
+@Getter @Setter
+=======
+
+@DomainObject(auditing = Auditing.ENABLED)
+@DomainObjectLayout()  // causes UI events to be triggered
+@Unique(name="Usuario_dni_UNQ", members = {"dni"})
 @lombok.Getter @lombok.Setter
-@lombok.RequiredArgsConstructor
-public class Usuario implements Comparable<Usuario> {
 
-    @Column(allowsNull = "true", length = 10)
-    @Property(editing = Editing.DISABLED)
-    @Persistent(valueStrategy=IdGeneratorStrategy.SEQUENCE, sequence="usuarioseq")
-    private BigInteger nroUsuario;
+>>>>>>> develop
+public class Usuario {
 
-    @Column(allowsNull = "true", length = 13)
-    @NonNull
-    @Property(editing = Editing.ENABLED)
-    private String dni;
+    @Column(allowsNull = "false")
+    @Property()
+    private Integer dni;
 
-    @Column(allowsNull = "false", length = 40)
-    @NonNull
-    @PropertyLayout(named="Nombre")
-    @Property(editing = Editing.ENABLED)
-    @Title(prepend = "Usuario ")
+<<<<<<< HEAD
+    @Column(allowsNull = "false")
+=======
+    @Column(allowsNull = "true")
+    @Property()
+>>>>>>> develop
+    @Title(prepend = "Usuario: ")
+    private String apellido;
+
+    @Column(allowsNull = "false")
+    @Property()
+<<<<<<< HEAD
+    @Title(prepend = " ")
     private String nombre;
 
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
+    @Column(allowsNull = "false")
+=======
+    /*    @Title(prepend = " ")*/
+    private String nombre;
+
+    @Column(allowsNull = "true")
+>>>>>>> develop
     @Property(editing = Editing.ENABLED,
-            regexPattern = "[0-9]+",
+            regexPattern = "[0-9]",
             regexPatternReplacement = "Solo numeros y sin espacios"
     )
     private String telefono;
 
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
+<<<<<<< HEAD
+    @Column(allowsNull = "false")
+=======
+    @Column(allowsNull = "true")
+>>>>>>> develop
     @Property(editing = Editing.ENABLED,
             regexPattern = "(\\w+\\.)*\\w+@(\\w+\\.)+[A-Za-z]+",
             regexPatternFlags= Pattern.CASE_INSENSITIVE,
@@ -93,76 +135,149 @@ public class Usuario implements Comparable<Usuario> {
     )
     private String email;
 
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED)
+<<<<<<< HEAD
+    @Column(allowsNull = "false")
+=======
+    @Column(allowsNull = "true")
+>>>>>>> develop
+    @Property()
     private String direccion;
 
-    @Column(allowsNull = "true")
+    @Column(allowsNull = "false")
     @Property()
-    private Boolean activo = true;
+    private String barrio;
+
+<<<<<<< HEAD
+    @Collection()
+    @Persistent(mappedBy = "usuario", dependentElement = "true")
+    private List<Reclamo> reclamo = new ArrayList<>();
+
+    @Getter @Setter
+    private SortedSet<Usuario> usuario = new TreeSet<>();
+
+    public Usuario(Integer dni, String apellido, String nombre, String telefono, String email, String direccion, String barrio) {
+        this.dni = dni;
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.email = email;
+        this.direccion = direccion;
+        this.barrio = barrio;
+    }
+
+    public Usuario(List<Reclamo> reclamo) {
+        this.reclamo = reclamo;
+    }
+
+=======
+
+    @Persistent(mappedBy = "usuario", dependentElement = "true")
+    @Collection()
+    private List<Reclamo> reclamo = new ArrayList<Reclamo>();
+
+    @Getter
+    @Setter
+    private SortedSet<Usuario> usuario = new TreeSet<>();
 
 
-    @Persistent(
-            mappedBy = "usuario",
-            dependentElement = "false"
-    )
-    @CollectionLayout(defaultView = "table")
-    @lombok.Getter @lombok.Setter
-    private SortedSet<Reclamo> reclamos = new TreeSet<Reclamo>();
 
-    @Action(
-            semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE,
-            associateWith = "simple"
-    )
-    public Usuario nuevoReclamo() {
-        if(activo){
-            repositoryReclamo.create(this);
-        }
-        else{
-            messageService.warnUser(
-                    "El usuario "+ this.getNombre() + " se encuentra Inactivo, no puede crear nuevo reclamo");
-        }
+    public Usuario() {
+    }
+
+    public Usuario(Integer dni, String apellido, String nombre, String telefono, String email, String direccion, String barrio) {
+        this.dni = dni;
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.email = email;
+        this.direccion = direccion;
+        this.barrio = barrio;
+    }
+
+
+
+    public Usuario(List<Reclamo> reclamo) {
+        this.reclamo = reclamo;
+    }
+
+>>>>>>> develop
+    @Action()
+    @ActionLayout(named = "Editar")
+    public Usuario update(
+            @ParameterLayout(named = "Numero de telefono: ")
+            final String telefono,
+
+            @ParameterLayout(named = "Email: ")
+            final String email,
+
+            @ParameterLayout(named = "Direccion: ")
+            final String direccion
+    ){
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
+        this.setTelefono(telefono);
+        this.setDireccion(direccion);
+        this.setEmail(email);
         return this;
     }
 
-    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "activo")
-    public Usuario updateActivo()
-    {
-        if(getActivo()){ setActivo(false); }
-        else{ setActivo(true); }
+    public String default0Update() { return getTelefono(); }
+    public String default1Update()  { return getDireccion(); }
+    public String default2Update() { return getEmail(); }
+
+<<<<<<< HEAD
+    @Action()
+    @ActionLayout(named = "Cargar Reclamo")
+    public Usuario addReclamo(
+=======
+
+    @Action()
+    @ActionLayout(named = "Cargar Reclamo")
+    public Usuario addReclamo(
+
+>>>>>>> develop
+            @ParameterLayout(named="Fecha:") final LocalDate fecha,
+            @ParameterLayout(named="Tipo de Reclamo: ") final TipoReclamo tipoReclamo
+    ){
+        final Reclamo reclamo = factoryService.instantiate(Reclamo.class);
+        reclamo.setFecha(fecha);
+        reclamo.setTipoReclamo(tipoReclamo);
+        reclamo.setNotes("");
+<<<<<<< HEAD
+        reclamo.setEstado(Estado.Sin_Asignar);
+=======
+        reclamo.setEstado(Estado.Abierto);
+>>>>>>> develop
+        getReclamo().add(reclamo);
+        repositoryService.persist(reclamo);
         return this;
     }
 
-    @Override
-    public String toString() {
-        return getNombre();
-    }
-
-    public int compareTo(final Usuario other) {
-        return ComparisonChain.start()
-                .compare(this.getNombre(), other.getNombre())
-                .result();
-    }
-
-    @NotPersistent
-    @javax.inject.Inject
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    ReclamoRepositorio repositoryReclamo;
-
-    @javax.inject.Inject
-    @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    domainapp.modules.simple.dom.usuario.UsuarioRepositorio repositoryUsuario;
-
-    @javax.inject.Inject
-    @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+<<<<<<< HEAD
+    @Inject @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     TitleService titleService;
 
+    @Inject @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    FactoryService factoryService;
+
+    @Inject @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+=======
+
+
     @javax.inject.Inject
     @NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    MessageService messageService;
+    FactoryService factoryService;
+
+    @javax.inject.Inject
+    @NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+>>>>>>> develop
+    RepositoryService repositoryService;
 
 }

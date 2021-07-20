@@ -27,34 +27,33 @@
     <bs3:row>
         <bs3:col span="6">
             <bs3:tabGroup>
-                <bs3:tab name="Reclamo">
+                <bs3:tab name="Cuadrilla">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="reclamo">
-<<<<<<< HEAD
-                                <!--<c:property id="usuario" namedEscaped="true"/>-->
-=======
->>>>>>> develop
-                                <c:property id="fecha" namedEscaped="true"/>
-                                <c:property id="tipoReclamo" namedEscaped="true"/>
-                                <c:property id="notes" namedEscaped="true" multiLine="6" hidden="ALL_TABLES"/>
-                                <c:property id="estado" namedEscaped="true">
-                                </c:property>
+                            <c:fieldSet name="cuadrilla">
+                              <!--  <c:action id="delete">
+                                    <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
+                                </c:action>
+                                -->
+                                <c:property id="nombre" namedEscaped="true"></c:property>
+                                <c:property id="apellido" namedEscaped="true"></c:property>
+                                <c:property id="usuario" namedEscaped="true"></c:property>
+                                <c:property id="contraseña" namedEscaped="true"></c:property>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
-                <bs3:tab name="Metadata">
+                <bs3:tab name="Datos del Cuadrilla">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="Metadata"/>
+                            <c:fieldSet name="Datos del Cuadrilla"/>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
-                <bs3:tab name="Other">
+                <bs3:tab name="Ingreso">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="Other" unreferencedProperties="true"/>
+                            <c:fieldSet name="Ingreso" unreferencedProperties="true"/>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>

@@ -32,7 +32,6 @@ import java.util.List;
         nature = NatureOfService.DOMAIN,
         repositoryFor = Operador.class)
 
-
 public class AyudanteRepositorio {
 
     @Programmatic

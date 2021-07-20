@@ -20,26 +20,26 @@ package domainapp.modules.simple.dom.tecnico;
 
 import com.google.common.collect.ComparisonChain;
 import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.i18n.TranslatableString;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 
-import javax.jdo.annotations.IdentityType;
-import javax.jdo.annotations.VersionStrategy;
+import javax.jdo.annotations.*;
 
 import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
 import static org.apache.isis.applib.annotation.SemanticsOf.IDEMPOTENT;
 import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
 
-@javax.jdo.annotations.PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@javax.jdo.annotations.DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
-@javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@javax.jdo.annotations.Unique(name="Tecnico_nombre_UNQ", members = {"nombre"})
+@PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
+@DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
+@Version(strategy= VersionStrategy.DATE_TIME, column="version")
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
-@lombok.Getter @lombok.Setter
+@Getter @Setter
 @lombok.RequiredArgsConstructor
 public class Tecnico implements Comparable<Tecnico> {
 

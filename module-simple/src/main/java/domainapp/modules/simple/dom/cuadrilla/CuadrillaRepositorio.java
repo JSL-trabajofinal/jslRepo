@@ -16,54 +16,53 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package domainapp.modules.simple.dom.operador;
+package domainapp.modules.simple.dom.cuadrilla;
 
-import domainapp.modules.simple.dom.reclamo.Reclamo;
-import org.apache.isis.applib.query.QueryDefault;
-
-import org.apache.isis.applib.services.repository.RepositoryService;
+import domainapp.modules.simple.dom.tecnico.Tecnico;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
+import org.apache.isis.applib.query.QueryDefault;
+import org.apache.isis.applib.services.repository.RepositoryService;
 
-
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
         nature = NatureOfService.DOMAIN,
-        repositoryFor = Reclamo.class)
+        repositoryFor = Tecnico.class)
 
 
-public class OperadorRepositorio {
+public class CuadrillaRepositorio {
 
     @Programmatic
-    public Operador create(
+    public Cuadrilla create(
             final String nombre,
             final String apellido,
             final String usuario,
             final String contraseña) {
 
-        final Operador Operador = new Operador(nombre,apellido,usuario,contraseña);
-        repositoryService.persist(Operador);
-        return Operador;
+        final Cuadrilla Cuadrilla = new Cuadrilla(nombre,apellido,usuario,contraseña);
+        repositoryService.persist(Cuadrilla);
+        return Cuadrilla;
     }
 
     @Programmatic
-    public List<Operador> ListarActivos() {
+    public List<Cuadrilla> ListarActivos() {
         return repositoryService.allMatches(
                 new QueryDefault<>(
-                        Operador.class,
+                        Cuadrilla.class,
                         "findAllActives"));
     }
 
     @Programmatic
-    public List<Operador> ListarInactivos() {
+    public List<Cuadrilla> ListarInactivos() {
         return repositoryService.allMatches(
                 new QueryDefault<>(
-                        Operador.class,
+                        Cuadrilla.class,
                         "findAllInactives"));
     }
 
-    @javax.inject.Inject
+    @Inject
     RepositoryService repositoryService;
 }

@@ -16,43 +16,39 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package domainapp.modules.simple.dom.ayudante;
+package domainapp.modules.simple.dom.cuadrilla;
 
 import com.google.common.collect.ComparisonChain;
-import lombok.AccessLevel;
-import lombok.Setter;
-import lombok.Getter;
-import lombok.NonNull;
+import lombok.*;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
-
 import javax.inject.Inject;
 import javax.jdo.annotations.*;
 
 @PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
 @DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
 @Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@Sequence(name="ayudante", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
+@Sequence(name="cuadrilla", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
 @Queries({
         @Query(
                 name="findAllActives", language="JDOQL",
                 value="SELECT "
-                + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
+                + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
                 + "WHERE activo == true "),
         @Query(
                 name="findAllInactives", language="JDOQL",
                 value="SELECT "
-                + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
+                + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
                 + "WHERE activo == false "),
 })
-@Unique(name="Ayudante_usuario_UNQ", members = {"usuario"})
+@Unique(name="Tecnico_usuario_UNQ", members = {"usuario"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 @Getter @Setter
-@lombok.RequiredArgsConstructor
-public class Ayudante implements Comparable<Ayudante> {
+@RequiredArgsConstructor
+public class Cuadrilla implements Comparable<Cuadrilla> {
 
     @Column(allowsNull = "true", length = 40)
     @NonNull
@@ -89,14 +85,16 @@ public class Ayudante implements Comparable<Ayudante> {
     @Property()
     private Boolean activo = true;
 
+
     public String ReporNombre(){ return this.nombre; }
     public String ReporApellido(){ return this.apellido; }
     public String ReporUsuario(){ return this.usuario; }
     public String ReporContraseña(){ return this.contraseña; }
     public String ReporActivo(){ return this.activo.toString(); }
 
+
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
-    public Ayudante updateActivo()
+    public Cuadrilla updateActivo()
     {
         if(getActivo()){ setActivo(false); }
         else{ setActivo(true); }
@@ -126,7 +124,7 @@ public class Ayudante implements Comparable<Ayudante> {
         return getNombre()+" "+getApellido()+ " "+getUsuario()+" "+getContraseña();
     }
 
-    public int compareTo(final Ayudante other) {
+    public int compareTo(final Cuadrilla other) {
         return ComparisonChain.start()
                 .compare(this.getNombre(), other.getNombre())
                 .result();

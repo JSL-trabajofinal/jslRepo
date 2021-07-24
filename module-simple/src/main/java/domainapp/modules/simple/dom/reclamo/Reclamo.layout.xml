@@ -31,10 +31,7 @@
                     <bs3:row>
                         <bs3:col span="12">
                             <c:fieldSet name="reclamo">
-<<<<<<< HEAD
                                 <!--<c:property id="usuario" namedEscaped="true"/>-->
-=======
->>>>>>> develop
                                 <c:property id="fecha" namedEscaped="true"/>
                                 <c:property id="tipoReclamo" namedEscaped="true"/>
                                 <c:property id="notes" namedEscaped="true" multiLine="6" hidden="ALL_TABLES"/>

@@ -1,11 +1,6 @@
 package domainapp.modules.simple.dom.reclamo;
 
 public enum Estado {
-<<<<<<< HEAD
-    Cerrado, En_Proceso, Sin_Asignar, Anulado;
+    Cerrado, Asignado, Sin_Asignar, Anulado, En_Proceso
 }
-=======
 
-    Abierto, Cerrado, Asignado, Sin_asignar, Anulado
-}
->>>>>>> develop

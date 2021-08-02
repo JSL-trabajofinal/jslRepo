@@ -18,83 +18,57 @@
  */
 package domainapp.modules.simple.dom.tecnico;
 
-import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
-import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
+
+import domainapp.modules.simple.dom.reclamo.Reclamo;
+import org.apache.isis.applib.annotation.DomainService;
+import org.apache.isis.applib.annotation.NatureOfService;
+import org.apache.isis.applib.annotation.Programmatic;
+import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
-import org.datanucleus.query.typesafe.TypesafeQuery;
 
 import java.util.List;
 
 @DomainService(
-        nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.TecnicoMenu",
-        repositoryFor = Tecnico.class
-)
-@DomainServiceLayout(
-        named = "Tecnicos",
-        menuOrder = "10"
-)
+        nature = NatureOfService.DOMAIN,
+        repositoryFor = Reclamo.class)
+
+
 public class TecnicoRepositorio {
 
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "1")
-    public List<Tecnico> listAll() {
-        return repositoryService.allInstances(Tecnico.class);
-    }
-
-
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
-    @MemberOrder(sequence = "2")
-    public List<Tecnico> findByName(
-            @ParameterLayout(named="Nombre")
-            final String nombre
-    ) {
-        TypesafeQuery<Tecnico> q = isisJdoSupport.newTypesafeQuery(Tecnico.class);
-        final QTecnico cand = QTecnico.candidate();
-        q = q.filter(
-                cand.nombre.indexOf(q.stringParameter("nombre")).ne(-1)
-        );
-        return q.setParameter("nombre", nombre)
-                .executeList();
-    }
-
     @Programmatic
-    public Tecnico findByNameExact(final String nombre) {
-        TypesafeQuery<Tecnico> q = isisJdoSupport.newTypesafeQuery(Tecnico.class);
-        final QTecnico cand = QTecnico.candidate();
-        q = q.filter(
-                cand.nombre.eq(q.stringParameter("nombre"))
-        );
-        return q.setParameter("nombre", nombre)
-                .executeUnique();
-    }
-
-    @Programmatic
-    public void ping() {
-        TypesafeQuery<Tecnico> q = isisJdoSupport.newTypesafeQuery(Tecnico.class);
-        final QTecnico candidate = QTecnico.candidate();
-        q.range(0,2);
-        q.orderBy(candidate.nombre.asc());
-        q.executeList();
-    }
-
-    public static class CreateDomainEvent extends ActionDomainEvent<TecnicoRepositorio> {}
-    @Action(domainEvent = CreateDomainEvent.class)
-    @MemberOrder(sequence = "3")
     public Tecnico create(
-            @ParameterLayout(named="DNI") final String dni,
-            @ParameterLayout(named="Nombre") final String nombre,
-            @ParameterLayout(named="Apellido") final String apellido) {
-        return repositoryService.persist(new Tecnico(dni,nombre,apellido));
+            final String nombre,
+            final String apellido,
+            final String usuario,
+            final String contraseña) {
+
+        final Tecnico Tecnico = new Tecnico(nombre,apellido,usuario,contraseña);
+        repositoryService.persist(Tecnico);
+        return Tecnico;
     }
+
+    @Programmatic
+    public List<Tecnico> ListarActivos() {
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Tecnico.class,
+                        "findAllActives"));
+    }
+
+    @Programmatic
+    public List<Tecnico> ListarInactivos() {
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Tecnico.class,
+                        "findAllInactives"));
+    }
+
+    @Programmatic
+    public List<Reclamo> listAll(){
+        return repositoryService.allInstances(Reclamo.class);
+    }
+
 
     @javax.inject.Inject
     RepositoryService repositoryService;
-
-    @javax.inject.Inject
-    IsisJdoSupport isisJdoSupport;
-
 }

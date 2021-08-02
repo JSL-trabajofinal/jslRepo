@@ -19,103 +19,121 @@
 package domainapp.modules.simple.dom.tecnico;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.i18n.TranslatableString;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 
 import javax.jdo.annotations.*;
 
-import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
-import static org.apache.isis.applib.annotation.SemanticsOf.IDEMPOTENT;
-import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
-
 @PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
+@DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
 @Version(strategy= VersionStrategy.DATE_TIME, column="version")
+@Sequence(name="tecnico", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
+@Queries({
+        @Query(
+                name="findAllActives", language="JDOQL",
+                value="SELECT "
+                        + "FROM domainapp.modules.simple.dom.tecnico.Tecnico "
+                        + "WHERE activo == true "),
+        @Query(
+                name="findAllInactives", language="JDOQL",
+                value="SELECT "
+                        + "FROM domainapp.modules.simple.dom.tecnico.Tecnico "
+                        + "WHERE activo == false "),
+})
+@Unique(name="Tecnico_usuario_UNQ", members = {"usuario"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
-@Getter @Setter
+@lombok.Getter @lombok.Setter
 @lombok.RequiredArgsConstructor
 public class Tecnico implements Comparable<Tecnico> {
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
+    @Column(allowsNull = "false", name = "Cuadrilla_ID")
+    @Property()
+    @Getter
+    @Setter
+    private Cuadrilla cuadrilla;
+
+    @Column(allowsNull = "true", length = 40)
     @lombok.NonNull
     @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-/*    @Title(prepend = "Técnico: ")*/
-    private String dni;
-
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property() // editing disabled by default, see isis.properties
-    @Title(prepend = "Técnico: ")
-    private String apellido;
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property() // editing disabled by default, see isis.properties
-    @Title(prepend = ", ")
+//    @Title(prepend = "Nombre: ")
+    @MemberOrder(sequence = "1")
     private String nombre;
 
 
+    @Column(allowsNull = "true", length = 40)
+    @lombok.NonNull
+    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
+//    @Title(prepend = ". apellido ")
+    @MemberOrder(sequence = "2")
+    private String apellido;
 
 
-    @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
-    public Tecnico updateName(
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Nombre")
-            final String nombre) {
-        setNombre(nombre);
+    @Column(allowsNull = "false", length = 40)
+    @lombok.NonNull
+    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
+//    @Title(prepend = ". usuario: ")
+    @MemberOrder(sequence = "3")
+    private String usuario;
+
+
+    @Column(allowsNull = "false", length = 40)
+    @lombok.NonNull
+    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
+//    @Title(prepend = ". contraseña:  ")
+    @MemberOrder(sequence = "4")
+    private String contraseña;
+
+    @Column(allowsNull="true")
+    @Property()
+    private Boolean activo = true;
+
+
+    public String ReporNombre(){ return this.nombre; }
+    public String ReporApellido(){ return this.apellido; }
+    public String ReporUsuario(){ return this.usuario; }
+    public String ReporContraseña(){ return this.contraseña; }
+    public String ReporActivo(){ return this.activo.toString(); }
+
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
+    public Tecnico updateActivo()
+    {
+        if(getActivo()){ setActivo(false); }
+        else{ setActivo(true); }
         return this;
-    }
-/*
-    public String default0UpdateName() {
-        return getName();
-    }
-
-    public TranslatableString validate0UpdateName(final String name) {
-        return name != null && name.contains("!") ? TranslatableString.tr("Exclamation mark is not allowed") : null;
-    }*/
-
-
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void eliminar() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' eliminado", title));
-        repositoryService.remove(this);
     }
 
 
     @Override
     public String toString() {
-
-        return getDni()+" "+getApellido()+" "+getNombre();
+        return getNombre()+" "+getApellido()+ " "+getUsuario()+" "+getContraseña();
     }
 
     public int compareTo(final Tecnico other) {
         return ComparisonChain.start()
-                .compare(this.getApellido(), other.getApellido())
+                .compare(this.getNombre(), other.getNombre())
                 .result();
     }
 
-
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
+    @NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     RepositoryService repositoryService;
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
+    @NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     TitleService titleService;
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
+    @NotPersistent
     @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
 

@@ -19,13 +19,19 @@
 package domainapp.modules.simple.dom.cuadrilla;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.tecnico.Tecnico;
 import lombok.*;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 import javax.inject.Inject;
 import javax.jdo.annotations.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 @PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
 @DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
@@ -85,6 +91,32 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
     @Property()
     private Boolean activo = true;
 
+    @Collection()
+    @Persistent(mappedBy = "cuadrilla", dependentElement = "true")
+    private List<Tecnico> tecnico = new ArrayList<>();
+
+    @Getter @Setter
+    private SortedSet<Cuadrilla> cuadrilla = new TreeSet<>();
+
+    @Action()
+    @ActionLayout(named = "Cargar Tecnico")
+    public Cuadrilla addTecnico(
+            @ParameterLayout(named="Nombre") final String nombre,
+            @ParameterLayout(named="Apellido") final String apellido
+    ){
+        final Tecnico tecnico = factoryService.instantiate(Tecnico.class);
+        tecnico.setNombre(nombre);
+        tecnico.setApellido(apellido);
+        tecnico.setUsuario("");
+        tecnico.setContraseña("");
+
+ /*       reclamo.setEstado(Estado.Sin_Asignar);
+        reclamo.setEstado(Estado.Asignado);*/
+        getTecnico().add(tecnico);
+        repositoryService.persist(tecnico);
+        return this;
+    }
+
 
     public String ReporNombre(){ return this.nombre; }
     public String ReporApellido(){ return this.apellido; }
@@ -134,6 +166,10 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     RepositoryService repositoryService;
+
+    @Inject @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    FactoryService factoryService;
 
     @Inject
     @NotPersistent

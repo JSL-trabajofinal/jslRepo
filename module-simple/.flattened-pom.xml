@@ -943,6 +943,18 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>org.isisaddons.module.security</groupId>
+      <artifactId>isis-module-security-dom</artifactId>
+      <version>1.17.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mindrot</groupId>
+      <artifactId>jbcrypt</artifactId>
+      <version>0.4</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>org.apache.isis.mavendeps</groupId>
       <artifactId>isis-mavendeps-testing</artifactId>
       <version>1.17.0</version>

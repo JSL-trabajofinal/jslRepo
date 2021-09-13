@@ -18,20 +18,20 @@
  */
 package domainapp.modules.simple.dom.operador;
 
-import domainapp.modules.simple.dom.reclamo.Reclamo;
-import org.apache.isis.applib.query.QueryDefault;
-
+import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
+import org.datanucleus.query.typesafe.TypesafeQuery;
 
 
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
         nature = NatureOfService.DOMAIN,
-        repositoryFor = Reclamo.class)
+        repositoryFor = Operador.class)
 
 
 public class OperadorRepositorio {
@@ -40,30 +40,48 @@ public class OperadorRepositorio {
     public Operador create(
             final String nombre,
             final String apellido,
-            final String usuario,
-            final String contraseña) {
+            final Integer dni,
+            final Integer telefono) {
 
-        final Operador Operador = new Operador(nombre,apellido,usuario,contraseña);
+        final Operador Operador = new Operador(nombre, apellido, dni, telefono);
         repositoryService.persist(Operador);
         return Operador;
     }
 
+    public List<Operador> listAll() {
+        return repositoryService.allInstances(Operador.class);
+    }
+
+
     @Programmatic
-    public List<Operador> ListarActivos() {
-        return repositoryService.allMatches(
-                new QueryDefault<>(
-                        Operador.class,
-                        "findAllActives"));
+    public List<Operador> findByApellido(
+            final String apellido
+    ) {
+        TypesafeQuery<Operador> q = isisJdoSupport.newTypesafeQuery(Operador.class);
+        final QOperador cand = QOperador.candidate();
+        q = q.filter(
+                cand.apellido.indexOf(q.stringParameter("apellido")).ne(-1)
+        );
+        return q.setParameter("apellido", apellido.toUpperCase())
+                .executeList();
     }
 
     @Programmatic
-    public List<Operador> ListarInactivos() {
-        return repositoryService.allMatches(
-                new QueryDefault<>(
-                        Operador.class,
-                        "findAllInactives"));
+    public List<Operador> findByDni(
+            final Integer dni
+    ) {
+        TypesafeQuery<Operador> q = isisJdoSupport.newTypesafeQuery(Operador.class);
+        final QOperador cand = QOperador.candidate();
+        q = q.filter(
+                cand.dni.eq(q.integerParameter("dni"))
+        );
+        return q.setParameter("dni", dni)
+                .executeList();
     }
+
+    @Inject
+    RepositoryService repositoryService;
 
     @javax.inject.Inject
-    RepositoryService repositoryService;
+    IsisJdoSupport isisJdoSupport;
 }

@@ -19,7 +19,7 @@
 package domainapp.modules.simple.dom.operador;
 
 import com.google.common.collect.ComparisonChain;
-import jdk.jfr.Enabled;
+import domainapp.modules.simple.dom.persona.Persona;
 import lombok.AccessLevel;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
@@ -36,62 +36,30 @@ import javax.jdo.annotations.*;
         @Query(
                 name="findAllActives", language="JDOQL",
                 value="SELECT "
-                + "FROM domainapp.modules.simple.dom.operador.Operador "
-                + "WHERE activo == true "),
+                        + "FROM domainapp.modules.simple.dom.operador.Operador "
+                        + "WHERE activo == true "),
         @Query(
                 name="findAllInactives", language="JDOQL",
                 value="SELECT "
-                + "FROM domainapp.modules.simple.dom.operador.Operador "
-                + "WHERE activo == false "),
+                        + "FROM domainapp.modules.simple.dom.operador.Operador "
+                        + "WHERE activo == false "),
 })
-@javax.jdo.annotations.Unique(name="Operador_usuario_UNQ", members = {"usuario"})
+@javax.jdo.annotations.Unique(name="Operador_dni_UNQ", members = {"dni"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 @lombok.Getter @lombok.Setter
-@lombok.RequiredArgsConstructor
-public class Operador implements Comparable<Operador> {
 
-    @javax.jdo.annotations.Column(allowsNull = "true", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = "Nombre: ")
-    @MemberOrder(sequence = "1")
-    private String nombre;
+public class Operador extends Persona {
 
 
-    @javax.jdo.annotations.Column(allowsNull = "true", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". apellido ")
-    @MemberOrder(sequence = "2")
-    private String apellido;
+    public Operador(String nombre, String apellido, Integer dni, Integer telefono) {
+        super(nombre, apellido, dni, telefono);
+    }
 
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". usuario: ")
-    @MemberOrder(sequence = "3")
-    private String usuario;
-
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". contraseña:  ")
-    @MemberOrder(sequence = "4")
-    private String contraseña;
 
     @javax.jdo.annotations.Column(allowsNull="true")
     @Property()
     private Boolean activo = true;
-
-
-    public String ReporNombre(){ return this.nombre; }
-    public String ReporApellido(){ return this.apellido; }
-    public String ReporUsuario(){ return this.usuario; }
-    public String ReporContraseña(){ return this.contraseña; }
-    public String ReporActivo(){ return this.activo.toString(); }
 
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
@@ -102,28 +70,6 @@ public class Operador implements Comparable<Operador> {
         return this;
     }
 
-/*
-    @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
-    public Reclamo updateName(
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
-            final String name) {
-        setName(name);
-        return this;
-    }
-ç
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void delete() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' deleted", title));
-        repositoryService.remove(this);
-    }
-
-*/
-    @Override
-    public String toString() {
-        return getNombre()+" "+getApellido()+ " "+getUsuario()+" "+getContraseña();
-    }
 
     public int compareTo(final Operador other) {
         return ComparisonChain.start()

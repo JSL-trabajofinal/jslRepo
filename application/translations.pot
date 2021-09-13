@@ -23,11 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2021-07-17 19:06:55+\n"
-=======
-"POT-Creation-Date: 2021-06-22 21:01:03+\n"
->>>>>>> develop
+"POT-Creation-Date: 2021-09-13 20:25:02+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,22 +74,13 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.Ayudante#activo
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#activo
 #: domainapp.modules.simple.dom.operador.Operador#activo
+#: domainapp.modules.simple.dom.tecnico.Tecnico#activo
 msgid "Activo"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create()
-msgid "Alta Ayudante"
 msgstr ""
 
 
 #: domainapp.modules.simple.dom.cuadrilla.CuadrillaMenu#create()
 msgid "Alta Cuadrilla"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.operador.OperadorMenu#create()
-msgid "Alta Operador"
 msgstr ""
 
 
@@ -113,13 +100,17 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.ayudante.Ayudante#apellido
-#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#findByApellido(java.lang.String)
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#apellido
 #: domainapp.modules.simple.dom.cuadrilla.CuadrillaMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.operador.Operador#apellido
-#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+#: domainapp.modules.simple.dom.operador.OperadorMenu#findByApellido(java.lang.String)
+#: domainapp.modules.simple.dom.persona.Persona#apellido
 #: domainapp.modules.simple.dom.tecnico.Tecnico#apellido
-#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#findByApellido(java.lang.String)
 #: domainapp.modules.simple.dom.usuario.Usuario#apellido
 #: domainapp.modules.simple.dom.usuario.UsuarioMenu#create(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.usuario.UsuarioMenu#findByApellido(java.lang.String)
@@ -129,6 +120,11 @@ msgstr ""
 
 #: org.apache.isis.core.runtime.system.session.IsisSessionFactoryBuilder
 msgid "Are you sure?"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Estado#Asignado
+msgid "Asignado"
 msgstr ""
 
 
@@ -143,7 +139,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.ayudante.AyudanteMenu
-msgid "Ayudantes"
+msgid "Ayudantees"
 msgstr ""
 
 
@@ -158,8 +154,13 @@ msgid "Barrio"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#findByName()
-msgid "Buscar Ayudante"
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#findByApellido()
+msgid "Buscar Ayudante por Apellido"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#findByDni()
+msgid "Buscar Ayudante por Dni"
 msgstr ""
 
 
@@ -168,8 +169,23 @@ msgid "Buscar Cuadrilla"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.operador.OperadorMenu#findByName()
-msgid "Buscar Operador"
+#: domainapp.modules.simple.dom.operador.OperadorMenu#findByApellido()
+msgid "Buscar Operador por Apellido"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.operador.OperadorMenu#findByDni()
+msgid "Buscar Operador por Dni"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#findByApellido()
+msgid "Buscar Tecnico por Apellido"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#findByDni()
+msgid "Buscar Tecnico por Dni"
 msgstr ""
 
 
@@ -268,12 +284,8 @@ msgid "Confirm"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.Ayudante#contraseña
-#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#contraseña
 #: domainapp.modules.simple.dom.cuadrilla.CuadrillaMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-#: domainapp.modules.simple.dom.operador.Operador#contraseña
-#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Contraseña"
 msgstr ""
 
@@ -283,8 +295,10 @@ msgid "Corte De Agua"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create()
 #: domainapp.modules.simple.dom.impl.SimpleObjects#create()
-#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create()
+#: domainapp.modules.simple.dom.operador.OperadorMenu#create()
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#create()
 msgid "Create"
 msgstr ""
 
@@ -299,7 +313,9 @@ msgid "Current"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
 #: domainapp.modules.simple.dom.usuario.UsuarioMenu#create(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "DNI"
 msgstr ""
@@ -331,7 +347,13 @@ msgid "Direccion: "
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#dni
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#findByDni(java.lang.Integer)
+#: domainapp.modules.simple.dom.operador.Operador#dni
+#: domainapp.modules.simple.dom.operador.OperadorMenu#findByDni(java.lang.Integer)
+#: domainapp.modules.simple.dom.persona.Persona#dni
 #: domainapp.modules.simple.dom.tecnico.Tecnico#dni
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#findByDni(java.lang.Integer)
 #: domainapp.modules.simple.dom.usuario.Usuario#dni
 #: domainapp.modules.simple.dom.usuario.UsuarioMenu#findByDni(java.lang.Integer)
 msgid "Dni"
@@ -347,6 +369,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.operador.Operador#downloadJdoMetadata()
+#: domainapp.modules.simple.dom.persona.Persona#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.reclamo.Reclamo#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#downloadJdoMetadata()
 #: domainapp.modules.simple.dom.usuario.Usuario#downloadJdoMetadata()
@@ -360,6 +383,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#downloadLayoutXml()
 #: domainapp.modules.simple.dom.impl.SimpleObject#downloadLayoutXml()
 #: domainapp.modules.simple.dom.operador.Operador#downloadLayoutXml()
+#: domainapp.modules.simple.dom.persona.Persona#downloadLayoutXml()
 #: domainapp.modules.simple.dom.reclamo.Reclamo#downloadLayoutXml()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#downloadLayoutXml()
 #: domainapp.modules.simple.dom.usuario.Usuario#downloadLayoutXml()
@@ -413,11 +437,6 @@ msgstr ""
 
 #: org.apache.isis.applib.domain.DomainObjectList#elementObjectType
 msgid "Element Object Type"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.tecnico.Tecnico#eliminar()
-msgid "Eliminar"
 msgstr ""
 
 
@@ -477,7 +496,6 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObjects#findByName()
-#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName()
 msgid "Find By Name"
 msgstr ""
 
@@ -501,6 +519,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#datanucleusIdLong()
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusIdLong()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusIdLong()
+#: domainapp.modules.simple.dom.persona.Persona#datanucleusIdLong()
 #: domainapp.modules.simple.dom.reclamo.Reclamo#datanucleusIdLong()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusIdLong()
 #: domainapp.modules.simple.dom.usuario.Usuario#datanucleusIdLong()
@@ -539,8 +558,10 @@ msgid "Limpieza Camara"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#listAll()
 #: domainapp.modules.simple.dom.impl.SimpleObjects#listAll()
-#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#listAll()
+#: domainapp.modules.simple.dom.operador.OperadorMenu#listAll()
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#listAll()
 msgid "List All"
 msgstr ""
 
@@ -591,29 +612,22 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.ayudante.Ayudante#nombre
-#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#nombre
 #: domainapp.modules.simple.dom.cuadrilla.CuadrillaMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.operador.Operador#nombre
-#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+#: domainapp.modules.simple.dom.persona.Persona#nombre
 #: domainapp.modules.simple.dom.tecnico.Tecnico#nombre
-#: domainapp.modules.simple.dom.tecnico.Tecnico#updateName(java.lang.String)
-#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#create(java.lang.String,java.lang.String,java.lang.String)
-#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio#findByName(java.lang.String)
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
 #: domainapp.modules.simple.dom.usuario.Usuario#nombre
 #: domainapp.modules.simple.dom.usuario.UsuarioMenu#create(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Nombre"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#findByName(java.lang.String)
 #: domainapp.modules.simple.dom.cuadrilla.CuadrillaMenu#findByName(java.lang.String)
 msgid "Nombre del Ayudante"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.operador.OperadorMenu#findByName(java.lang.String)
-msgid "Nombre del Operador"
 msgstr ""
 
 
@@ -665,6 +679,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#openRestApi()
 #: domainapp.modules.simple.dom.impl.SimpleObject#openRestApi()
 #: domainapp.modules.simple.dom.operador.Operador#openRestApi()
+#: domainapp.modules.simple.dom.persona.Persona#openRestApi()
 #: domainapp.modules.simple.dom.reclamo.Reclamo#openRestApi()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#openRestApi()
 #: domainapp.modules.simple.dom.usuario.Usuario#openRestApi()
@@ -789,6 +804,7 @@ msgstr ""
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#rebuildMetamodel()
 #: domainapp.modules.simple.dom.impl.SimpleObject#rebuildMetamodel()
 #: domainapp.modules.simple.dom.operador.Operador#rebuildMetamodel()
+#: domainapp.modules.simple.dom.persona.Persona#rebuildMetamodel()
 #: domainapp.modules.simple.dom.reclamo.Reclamo#rebuildMetamodel()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#rebuildMetamodel()
 #: domainapp.modules.simple.dom.usuario.Usuario#rebuildMetamodel()
@@ -825,37 +841,27 @@ msgid "Reparacion De Vereda"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporActivo()
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#ReporActivo()
-#: domainapp.modules.simple.dom.operador.Operador#ReporActivo()
 msgid "Repor Activo"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporApellido()
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#ReporApellido()
-#: domainapp.modules.simple.dom.operador.Operador#ReporApellido()
 msgid "Repor Apellido"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporContraseña()
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#ReporContraseña()
-#: domainapp.modules.simple.dom.operador.Operador#ReporContraseña()
 msgid "Repor Contraseña"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporNombre()
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#ReporNombre()
-#: domainapp.modules.simple.dom.operador.Operador#ReporNombre()
 msgid "Repor Nombre"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.Ayudante#ReporUsuario()
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#ReporUsuario()
-#: domainapp.modules.simple.dom.operador.Operador#ReporUsuario()
 msgid "Repor Usuario"
 msgstr ""
 
@@ -928,11 +934,18 @@ msgid "TargetStr"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.tecnico.TecnicoRepositorio
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu
 msgid "Tecnicos"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.ayudante.Ayudante#telefono
+#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+#: domainapp.modules.simple.dom.operador.Operador#telefono
+#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+#: domainapp.modules.simple.dom.persona.Persona#telefono
+#: domainapp.modules.simple.dom.tecnico.Tecnico#telefono
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#create(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
 #: domainapp.modules.simple.dom.usuario.Usuario#telefono
 #: domainapp.modules.simple.dom.usuario.UsuarioMenu#create(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 msgid "Telefono"
@@ -972,12 +985,12 @@ msgstr ""
 #: domainapp.modules.simple.dom.ayudante.Ayudante#updateActivo()
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#updateActivo()
 #: domainapp.modules.simple.dom.operador.Operador#updateActivo()
+#: domainapp.modules.simple.dom.tecnico.Tecnico#updateActivo()
 msgid "Update Activo"
 msgstr ""
 
 
 #: domainapp.modules.simple.dom.impl.SimpleObject#updateName()
-#: domainapp.modules.simple.dom.tecnico.Tecnico#updateName()
 msgid "Update Name"
 msgstr ""
 
@@ -987,16 +1000,16 @@ msgid "User"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.Ayudante#usuario
-#: domainapp.modules.simple.dom.ayudante.AyudanteMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#usuario
 #: domainapp.modules.simple.dom.cuadrilla.CuadrillaMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-#: domainapp.modules.simple.dom.operador.Operador#usuario
-#: domainapp.modules.simple.dom.operador.OperadorMenu#create(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 #: domainapp.modules.simple.dom.reclamo.Reclamo#usuario
 #: domainapp.modules.simple.dom.usuario.Usuario#usuario
-#: domainapp.modules.simple.dom.usuario.UsuarioMenu
 msgid "Usuario"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.usuario.UsuarioMenu
+msgid "Usuarios"
 msgstr ""
 
 
@@ -1013,6 +1026,8 @@ msgstr ""
 #: domainapp.modules.simple.dom.impl.SimpleObject#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.operador.Operador#datanucleusVersionTimestamp()
+#: domainapp.modules.simple.dom.persona.Persona#datanucleusVersionLong()
+#: domainapp.modules.simple.dom.persona.Persona#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.reclamo.Reclamo#datanucleusVersionLong()
 #: domainapp.modules.simple.dom.reclamo.Reclamo#datanucleusVersionTimestamp()
 #: domainapp.modules.simple.dom.tecnico.Tecnico#datanucleusVersionLong()

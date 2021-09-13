@@ -91,7 +91,7 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
     @Property()
     private Boolean activo = true;
 
-    @Collection()
+    /*@Collection()
     @Persistent(mappedBy = "cuadrilla", dependentElement = "true")
     private List<Tecnico> tecnico = new ArrayList<>();
 
@@ -107,15 +107,14 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
         final Tecnico tecnico = factoryService.instantiate(Tecnico.class);
         tecnico.setNombre(nombre);
         tecnico.setApellido(apellido);
-        tecnico.setUsuario("");
-        tecnico.setContraseña("");
+*/
 
  /*       reclamo.setEstado(Estado.Sin_Asignar);
         reclamo.setEstado(Estado.Asignado);*/
-        getTecnico().add(tecnico);
+/*        getTecnico().add(tecnico);
         repositoryService.persist(tecnico);
         return this;
-    }
+    }*/
 
 
     public String ReporNombre(){ return this.nombre; }

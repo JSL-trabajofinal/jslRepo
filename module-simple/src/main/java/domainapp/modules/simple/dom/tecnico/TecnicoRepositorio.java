@@ -18,19 +18,19 @@
  */
 package domainapp.modules.simple.dom.tecnico;
 
-
-import domainapp.modules.simple.dom.reclamo.Reclamo;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
-import org.apache.isis.applib.query.QueryDefault;
+import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.datanucleus.query.typesafe.TypesafeQuery;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
         nature = NatureOfService.DOMAIN,
-        repositoryFor = Reclamo.class)
+        repositoryFor = Tecnico.class)
 
 
 public class TecnicoRepositorio {
@@ -39,36 +39,48 @@ public class TecnicoRepositorio {
     public Tecnico create(
             final String nombre,
             final String apellido,
-            final String usuario,
-            final String contraseña) {
+            final Integer dni,
+            final Integer telefono) {
 
-        final Tecnico Tecnico = new Tecnico(nombre,apellido,usuario,contraseña);
+        final Tecnico Tecnico = new Tecnico(nombre, apellido, dni, telefono);
         repositoryService.persist(Tecnico);
         return Tecnico;
     }
 
-    @Programmatic
-    public List<Tecnico> ListarActivos() {
-        return repositoryService.allMatches(
-                new QueryDefault<>(
-                        Tecnico.class,
-                        "findAllActives"));
-    }
-
-    @Programmatic
-    public List<Tecnico> ListarInactivos() {
-        return repositoryService.allMatches(
-                new QueryDefault<>(
-                        Tecnico.class,
-                        "findAllInactives"));
-    }
-
-    @Programmatic
-    public List<Reclamo> listAll(){
-        return repositoryService.allInstances(Reclamo.class);
+    public List<Tecnico> listAll() {
+        return repositoryService.allInstances(Tecnico.class);
     }
 
 
-    @javax.inject.Inject
+    @Programmatic
+    public List<Tecnico> findByApellido(
+            final String apellido
+    ) {
+        TypesafeQuery<Tecnico> q = isisJdoSupport.newTypesafeQuery(Tecnico.class);
+        final QTecnico cand = QTecnico.candidate();
+        q = q.filter(
+                cand.apellido.indexOf(q.stringParameter("apellido")).ne(-1)
+        );
+        return q.setParameter("apellido", apellido.toUpperCase())
+                .executeList();
+    }
+
+    @Programmatic
+    public List<Tecnico> findByDni(
+            final Integer dni
+    ) {
+        TypesafeQuery<Tecnico> q = isisJdoSupport.newTypesafeQuery(Tecnico.class);
+        final QTecnico cand = QTecnico.candidate();
+        q = q.filter(
+                cand.dni.eq(q.integerParameter("dni"))
+        );
+        return q.setParameter("dni", dni)
+                .executeList();
+    }
+
+    @Inject
     RepositoryService repositoryService;
+
+    @Inject
+    IsisJdoSupport isisJdoSupport;
 }

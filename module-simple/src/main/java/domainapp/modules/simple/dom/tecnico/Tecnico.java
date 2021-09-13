@@ -19,10 +19,8 @@
 package domainapp.modules.simple.dom.tecnico;
 
 import com.google.common.collect.ComparisonChain;
-import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
+import domainapp.modules.simple.dom.persona.Persona;
 import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
@@ -33,7 +31,7 @@ import javax.jdo.annotations.*;
 @PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
 @DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
 @Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@Sequence(name="tecnico", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
+@Sequence(name="operador", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
 @Queries({
         @Query(
                 name="findAllActives", language="JDOQL",
@@ -46,60 +44,25 @@ import javax.jdo.annotations.*;
                         + "FROM domainapp.modules.simple.dom.tecnico.Tecnico "
                         + "WHERE activo == false "),
 })
-@Unique(name="Tecnico_usuario_UNQ", members = {"usuario"})
+@Unique(name="Tecnico_dni_UNQ", members = {"dni"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 @lombok.Getter @lombok.Setter
-@lombok.RequiredArgsConstructor
-public class Tecnico implements Comparable<Tecnico> {
 
-    @Column(allowsNull = "false", name = "Cuadrilla_ID")
-    @Property()
-    @Getter
-    @Setter
-    private Cuadrilla cuadrilla;
+public class Tecnico extends Persona {
 
-    @Column(allowsNull = "true", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-//    @Title(prepend = "Nombre: ")
-    @MemberOrder(sequence = "1")
-    private String nombre;
+    public Tecnico(){
 
+    }
 
-    @Column(allowsNull = "true", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-//    @Title(prepend = ". apellido ")
-    @MemberOrder(sequence = "2")
-    private String apellido;
+    public Tecnico(String nombre, String apellido, Integer dni, Integer telefono) {
+        super(nombre, apellido, dni, telefono);
+    }
 
-
-    @Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-//    @Title(prepend = ". usuario: ")
-    @MemberOrder(sequence = "3")
-    private String usuario;
-
-
-    @Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-//    @Title(prepend = ". contraseña:  ")
-    @MemberOrder(sequence = "4")
-    private String contraseña;
 
     @Column(allowsNull="true")
     @Property()
     private Boolean activo = true;
-
-
-    public String ReporNombre(){ return this.nombre; }
-    public String ReporApellido(){ return this.apellido; }
-    public String ReporUsuario(){ return this.usuario; }
-    public String ReporContraseña(){ return this.contraseña; }
-    public String ReporActivo(){ return this.activo.toString(); }
 
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
@@ -110,11 +73,6 @@ public class Tecnico implements Comparable<Tecnico> {
         return this;
     }
 
-
-    @Override
-    public String toString() {
-        return getNombre()+" "+getApellido()+ " "+getUsuario()+" "+getContraseña();
-    }
 
     public int compareTo(final Tecnico other) {
         return ComparisonChain.start()

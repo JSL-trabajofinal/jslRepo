@@ -19,18 +19,21 @@
 package domainapp.modules.simple.dom.ayudante;
 
 
-import domainapp.modules.simple.dom.operador.Operador;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.query.QueryDefault;
+import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.datanucleus.query.typesafe.TypesafeQuery;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
         nature = NatureOfService.DOMAIN,
-        repositoryFor = Operador.class)
+        repositoryFor = Ayudante.class)
+
 
 public class AyudanteRepositorio {
 
@@ -38,30 +41,48 @@ public class AyudanteRepositorio {
     public Ayudante create(
             final String nombre,
             final String apellido,
-            final String usuario ,
-            final String contraseña) {
+            final Integer dni,
+            final Integer telefono) {
 
-        final Ayudante Ayudante = new Ayudante(nombre,apellido,usuario,contraseña);
+        final Ayudante Ayudante = new Ayudante(nombre, apellido, dni, telefono);
         repositoryService.persist(Ayudante);
         return Ayudante;
     }
 
+    public List<Ayudante> listAll() {
+        return repositoryService.allInstances(Ayudante.class);
+    }
+
+
     @Programmatic
-    public List<Ayudante> ListarActivos() {
-        return repositoryService.allMatches(
-                new QueryDefault<>(
-                        Ayudante.class,
-                        "findAllActives"));
+    public List<Ayudante> findByApellido(
+            final String apellido
+    ) {
+        TypesafeQuery<Ayudante> q = isisJdoSupport.newTypesafeQuery(Ayudante.class);
+        final QAyudante cand = QAyudante.candidate();
+        q = q.filter(
+                cand.apellido.indexOf(q.stringParameter("apellido")).ne(-1)
+        );
+        return q.setParameter("apellido", apellido.toUpperCase())
+                .executeList();
     }
 
     @Programmatic
-    public List<Ayudante> ListarInactivos() {
-        return repositoryService.allMatches(
-                new QueryDefault<>(
-                        Ayudante.class,
-                        "findAllInactives"));
+    public List<Ayudante> findByDni(
+            final Integer dni
+    ) {
+        TypesafeQuery<Ayudante> q = isisJdoSupport.newTypesafeQuery(Ayudante.class);
+        final QAyudante cand = QAyudante.candidate();
+        q = q.filter(
+                cand.dni.eq(q.integerParameter("dni"))
+        );
+        return q.setParameter("dni", dni)
+                .executeList();
     }
+
+    @Inject
+    RepositoryService repositoryService;
 
     @javax.inject.Inject
-    RepositoryService repositoryService;
+    IsisJdoSupport isisJdoSupport;
 }

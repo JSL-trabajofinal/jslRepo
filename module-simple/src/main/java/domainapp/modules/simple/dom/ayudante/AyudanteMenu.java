@@ -1,14 +1,17 @@
 package domainapp.modules.simple.dom.ayudante;
 
-import domainapp.modules.simple.dom.ayudante.Ayudante;
-import domainapp.modules.simple.dom.ayudante.AyudanteRepositorio;
-import domainapp.modules.simple.dom.ayudante.QAyudante;
-import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
-import org.datanucleus.query.typesafe.TypesafeQuery;
+import org.apache.isis.applib.annotation.DomainService;
+import org.apache.isis.applib.annotation.DomainServiceLayout;
+import org.apache.isis.applib.annotation.NatureOfService;
+
 
 import java.util.List;
 import java.util.regex.Pattern;
+
+
+import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
+
 
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
@@ -16,102 +19,61 @@ import java.util.regex.Pattern;
         repositoryFor = Ayudante.class
 )
 @DomainServiceLayout(
-        named = "Ayudantes",
+        named = "Ayudantees",
         menuOrder = "10"
 )
 public class AyudanteMenu {
 
-    @Action()
-    @ActionLayout(named = "Alta Ayudante")
+    public static class CreateDomainEvent extends ActionDomainEvent<AyudanteMenu> {}
+    @Action(domainEvent = CreateDomainEvent.class)
     @MemberOrder(sequence = "1")
     public Ayudante create(
+            @Parameter(
+                    regexPattern = "[A-Za-z]+",
+                    regexPatternFlags = Pattern.CASE_INSENSITIVE,
+                    regexPatternReplacement = "Ingrese solo letras"
+            )
+            @ParameterLayout(named="Nombre") final String nombre,
 
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternReplacement = "Debe ser un nombre valido (solo letras)")
-            @ParameterLayout(named = "Nombre") final String nombre,
-
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternReplacement = "Debe ser un apellido valido (solo letras)")
-            @ParameterLayout(named = "Apellido") final String apellido,
-
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternReplacement = "Debe ser un usuario  valido (solo letras)")
-            @ParameterLayout(named = "Usuario") final String usuario,
-
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternFlags= Pattern.CASE_INSENSITIVE,
-                    regexPatternReplacement = "Debe ser una contraseña valida (solo letras)")
-            @ParameterLayout(named = "Contraseña") final String contraseña) {
-
-        return repositoryAyudante.create(nombre, apellido, usuario, contraseña);
+            @Parameter(
+                    regexPattern = "[A-Za-z]+",
+                    regexPatternFlags = Pattern.CASE_INSENSITIVE,
+                    regexPatternReplacement = "Ingrese solo letras"
+            )
+            @ParameterLayout(named="Apellido") final String apellido,
+            @ParameterLayout(named="DNI") final Integer dni,
+            @ParameterLayout(named="Telefono") final Integer telefono
+    ) {     return repositoryAyudante.create(
+            nombre.toUpperCase(),
+            apellido.toUpperCase(),
+            dni,
+            telefono);
     }
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT,named = "Buscar Ayudante")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "2")
-    public List<Ayudante> findByName(
-            @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Nombre del Ayudante") final String nombre
-    ) {
-        TypesafeQuery<Ayudante> q = isisJdoSupport.newTypesafeQuery(Ayudante.class);
-        final QAyudante cand = QAyudante.candidate();
-        q = q.filter(
-                cand.nombre.indexOf(q.stringParameter("Nombre")).ne(-1)
-        );
-        return q.setParameter("Nombre", nombre)
-                .executeList();
+    public List<Ayudante> listAll() {
+        return repositoryAyudante.listAll();
     }
 
-    @Programmatic
-    public Ayudante findByNameExact(final String nombre) {
-        TypesafeQuery<Ayudante> q = isisJdoSupport.newTypesafeQuery(Ayudante.class);
-        final QAyudante cand = QAyudante.candidate();
-        q = q.filter(
-                cand.nombre.eq(q.stringParameter("Nombre"))
-        );
-        return q.setParameter("nombre", nombre)
-                .executeUnique();
-    }
-
-    /*@Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Busqueda por CUIT/CUIL")
+    @Action()
+    @ActionLayout(named = "Buscar Ayudante por Apellido")
     @MemberOrder(sequence = "3")
-    public Reclamo findByCuilExact(
-            @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Nro CUIL/CUIT") final String cuil) {
-        TypesafeQuery<Reclamo> q = isisJdoSupport.newTypesafeQuery(Reclamo.class);
-        final QReclamo cand = QReclamo.candidate();
-        q = q.filter(
-                cand.cuil.eq(q.stringParameter("cuil"))
-        );
-        return q.setParameter("cuil", cuil)
-                .executeUnique();
-    }
-*/
 
-    /*@Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Ayudantes Activos")
-    @MemberOrder(sequence = "3")
-    public List<Ayudante> listAllActive() {
-        List<Ayudante> ayudantes = repositoryAyudante.ListarActivos();
-        return ayudantes;
+    public List<Ayudante> findByApellido(@ParameterLayout(named = "Apellido") final String apellido) {
+        return repositoryAyudante.findByApellido(apellido);
     }
 
-    @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Ayudantes Inactivos")
-    @MemberOrder(sequence = "3")
-    public List<Ayudante> listAllInactive() {
-        List<Ayudante> ayudantes = repositoryAyudante.ListarInactivos();
-        return ayudantes;
-    }*/
+    @Action()
+    @ActionLayout(named = "Buscar Ayudante por Dni")
+    @MemberOrder(sequence = "4")
+
+    public List<Ayudante> findByDni(@ParameterLayout(named = "Dni") final Integer dni) {
+        return repositoryAyudante.findByDni(dni);
+    }
 
     @javax.inject.Inject
     AyudanteRepositorio repositoryAyudante;
 
-    @javax.inject.Inject
-    IsisJdoSupport isisJdoSupport;
 }

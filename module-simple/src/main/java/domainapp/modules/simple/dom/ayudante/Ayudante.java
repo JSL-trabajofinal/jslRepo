@@ -19,6 +19,7 @@
 package domainapp.modules.simple.dom.ayudante;
 
 import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.persona.Persona;
 import lombok.AccessLevel;
 import lombok.Setter;
 import lombok.Getter;
@@ -39,112 +40,63 @@ import javax.jdo.annotations.*;
         @Query(
                 name="findAllActives", language="JDOQL",
                 value="SELECT "
-                + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
-                + "WHERE activo == true "),
+                        + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
+                        + "WHERE activo == true "),
         @Query(
                 name="findAllInactives", language="JDOQL",
                 value="SELECT "
-                + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
-                + "WHERE activo == false "),
+                        + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
+                        + "WHERE activo == false "),
 })
-@Unique(name="Ayudante_usuario_UNQ", members = {"usuario"})
+@Unique(name="Ayudante_dni_UNQ", members = {"dni"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
-@Getter @Setter
-@lombok.RequiredArgsConstructor
-public class Ayudante implements Comparable<Ayudante> {
+@lombok.Getter @lombok.Setter
 
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = "Nombre: ")
-    @MemberOrder(sequence = "1")
-    private String nombre;
+public class Ayudante extends Persona {
 
+    public Ayudante(){
 
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". apellido ")
-    @MemberOrder(sequence = "2")
-    private String apellido;
+    }
+
+    public Ayudante(String nombre, String apellido, Integer dni, Integer telefono) {
+        super(nombre, apellido, dni, telefono);
+    }
 
 
-    @Column(allowsNull = "false", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". usuario: ")
-    @MemberOrder(sequence = "3")
-    private String usuario;
-
-
-    @Column(allowsNull = "false", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". contraseña:  ")
-    @MemberOrder(sequence = "4")
-    private String contraseña;
-
-    @Column(allowsNull="true")
+    @javax.jdo.annotations.Column(allowsNull="true")
     @Property()
     private Boolean activo = true;
 
-    public String ReporNombre(){ return this.nombre; }
-    public String ReporApellido(){ return this.apellido; }
-    public String ReporUsuario(){ return this.usuario; }
-    public String ReporContraseña(){ return this.contraseña; }
-    public String ReporActivo(){ return this.activo.toString(); }
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
-    public Ayudante updateActivo()
+    public domainapp.modules.simple.dom.ayudante.Ayudante updateActivo()
     {
         if(getActivo()){ setActivo(false); }
         else{ setActivo(true); }
         return this;
     }
 
-/*
-    @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
-    public Reclamo updateName(
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
-            final String name) {
-        setName(name);
-        return this;
-    }
 
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void delete() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' deleted", title));
-        repositoryService.remove(this);
-    }
-
-*/
-    @Override
-    public String toString() {
-        return getNombre()+" "+getApellido()+ " "+getUsuario()+" "+getContraseña();
-    }
-
-    public int compareTo(final Ayudante other) {
+    public int compareTo(final domainapp.modules.simple.dom.operador.Operador other) {
         return ComparisonChain.start()
                 .compare(this.getNombre(), other.getNombre())
                 .result();
     }
 
-    @Inject
-    @NotPersistent
-    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     RepositoryService repositoryService;
 
-    @Inject
-    @NotPersistent
-    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     TitleService titleService;
 
-    @Inject
-    @NotPersistent
-    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    @javax.inject.Inject
+    @javax.jdo.annotations.NotPersistent
+    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
     MessageService messageService;
 
 }

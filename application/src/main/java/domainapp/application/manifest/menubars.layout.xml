@@ -40,9 +40,7 @@
                 <mb3:serviceAction objectType="simple.SimpleUsuarioMenu" id="listAll">
                     <cpt:named>Listar todos los Usuarios</cpt:named>
                 </mb3:serviceAction>
-                <!--<mb3:serviceAction objectType="simple.SimpleUsuarioMenu" id="listAllInactive">
-                    <cpt:named>Listar todos los Usuarios Inactivos</cpt:named>
-		</mb3:serviceAction>-->
+
             </mb3:section>
         </mb3:menu>
         <mb3:menu>
@@ -62,12 +60,7 @@
                 <mb3:serviceAction objectType="simple.SimpleCuadrillaMenu" id="findByName">
                     <cpt:named>Buscar por Cuadrilla</cpt:named>
                 </mb3:serviceAction>
-                <!--<mb3:serviceAction objectType="simple.SimpleCuadrillaMenu" id="listAllActive">
-                            <cpt:named>Listar todas las Cuadrillas Activos</cpt:named>
-                        </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.SimpleCuadrillaMenu" id="listAllInactive">
-                    <cpt:named>Listar todas las Cuadrillas Inactivas</cpt:named>
-                </mb3:serviceAction>-->
+
             </mb3:section>
         </mb3:menu>
         <mb3:menu>
@@ -76,36 +69,53 @@
                 <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="create">
                     <cpt:named>Cargar Operador</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="findByName">
-                    <cpt:named>Buscar Operador</cpt:named>
+                <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="findByApellido">
+                    <cpt:named>Buscar por Apellido</cpt:named>
                 </mb3:serviceAction>
-		<!-- <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="listAllActive">
-                    <cpt:named>Listar todos los Operadores Activos</cpt:named>
+                <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="findByDni">
+                    <cpt:named>Buscar por DNI</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="listAllInactive">
-                    <cpt:named>Listar todos los Operadores Inactivos</cpt:named>
-		</mb3:serviceAction>-->
+                <mb3:serviceAction objectType="simple.SimpleOperadorMenu" id="listAll">
+                    <cpt:named>Listar todos los Operadores</cpt:named>
+                </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
+
         <mb3:menu>
             <mb3:named>Ayudantes</mb3:named>
             <mb3:section>
                 <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="create">
-                    <cpt:named>Crear Nuevo Ayudante</cpt:named>
+                    <cpt:named>Cargar Ayudante</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="findByName">
-                    <cpt:named>Buscar por Ayudante</cpt:named>
+                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="findByApellido">
+                    <cpt:named>Buscar por Apellido</cpt:named>
                 </mb3:serviceAction>
-		<!-- <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="listAllActive">
-                    <cpt:named>Listar todos los Ayudantes Activos</cpt:named>
+                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="findByDni">
+                    <cpt:named>Buscar por DNI</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="listAllInactive">
-                    <cpt:named>Listar todos los Ayudantes Inactivos</cpt:named>
+                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="listAll">
+                    <cpt:named>Listar todos los Ayudantes</cpt:named>
                 </mb3:serviceAction>
-	      --> 
             </mb3:section>
         </mb3:menu>
 
+        <mb3:menu>
+            <mb3:named>Tecnicos</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="create">
+                    <cpt:named>Cargar Tecnicos</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="findByApellido">
+                    <cpt:named>Buscar por Apellido</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="findByDni">
+                    <cpt:named>Buscar por DNI</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleAyudanteMenu" id="listAll">
+                    <cpt:named>Listar todos los Tecnicos</cpt:named>
+                </mb3:serviceAction>
+            </mb3:section>
+        </mb3:menu>
 
 
         <mb3:menu unreferencedActions="true">

@@ -2,8 +2,6 @@ package domainapp.modules.simple.dom.cuadrilla;
 
 import domainapp.modules.simple.dom.ayudante.Ayudante;
 import domainapp.modules.simple.dom.ayudante.AyudanteRepositorio;
-import domainapp.modules.simple.dom.tecnico.Tecnico;
-import domainapp.modules.simple.dom.tecnico.TecnicoRepositorio;
 import org.apache.isis.applib.annotation.*;
 
 import java.util.List;

@@ -1,103 +1,183 @@
-/*
- *  Licensed to the Apache Software Foundation (ASF) under one
- *  or more contributor license agreements.  See the NOTICE file
- *  distributed with this work for additional information
- *  regarding copyright ownership.  The ASF licenses this file
- *  to you under the Apache License, Version 2.0 (the
- *  "License"); you may not use this file except in compliance
- *  with the License.  You may obtain a copy of the License at
- *
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing,
- *  software distributed under the License is distributed on an
- *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- *  KIND, either express or implied.  See the License for the
- *  specific language governing permissions and limitations
- *  under the License.
- */
 package domainapp.modules.simple.dom.tecnico;
 
-import com.google.common.collect.ComparisonChain;
-import domainapp.modules.simple.dom.persona.Persona;
+import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
+import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.message.MessageService;
-import org.apache.isis.applib.services.repository.RepositoryService;
-import org.apache.isis.applib.services.title.TitleService;
 
 import javax.jdo.annotations.*;
+import java.util.List;
 
-@PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
-@Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@Sequence(name="tecnico", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
+@PersistenceCapable(
+        identityType = IdentityType.DATASTORE,
+        schema = "simple",
+        table = "Tecnico"
+)
+@DatastoreIdentity(
+        strategy = IdGeneratorStrategy.IDENTITY,
+        column = "id"
+)
+@Version(
+        strategy = VersionStrategy.VERSION_NUMBER,
+        column = "version"
+)
 @Queries({
         @Query(
-                name="findAllActives", language="JDOQL",
-                value="SELECT "
+                name = "find", language = "JDOQL",
+                value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.tecnico.Tecnico "
-                        + "WHERE activo == true "),
+                        + "ORDER BY nombre ASC"),
+/*        @Query(
+                name = "findByNombreContains", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.tecnico.Tecnico"
+                        + "WHERE nombre.indexOf(:nombre) >= 0 "),*/
+
         @Query(
-                name="findAllInactives", language="JDOQL",
-                value="SELECT "
+                name = "findByDni", language = "JDOQL",
+                value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.tecnico.Tecnico "
-                        + "WHERE activo == false "),
+                        + "WHERE dni == :dni "
+                        + "ORDER BY dni ASC")
 })
 @Unique(name="Tecnico_dni_UNQ", members = {"dni"})
-@DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout()  // causes UI events to be triggered
-@lombok.Getter @lombok.Setter
+@DomainObject(
+        editing = Editing.DISABLED
+)
+@DomainObjectLayout(
+        bookmarking = BookmarkPolicy.AS_ROOT
+)
+@Getter @Setter
+public class Tecnico implements Comparable<Tecnico>{
 
-public class Tecnico extends Persona {
-
-    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Column(allowsNull = "false", length = 40)
     @Property()
-    @lombok.Getter @lombok.Setter
-    private Cuadrilla cuadrilla;
+    @Title()
+    private String dni;
 
-    public Tecnico(){
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    @Title()
+    private String nombre;
+
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    private String apellido;
+
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    private String direccion;
+
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    private String telefono;
+
+
+    @Persistent(mappedBy = "tecnico", defaultFetchGroup = "true")
+    @Column(allowsNull = "true")
+    @Property()
+    private List<Cuadrilla> cuadrillas1;
+
+
+    public Tecnico(){}
+
+    public Tecnico(
+            String dni,
+            String nombre,
+            String apellido,
+            String direccion,
+            String telefono){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
-    public Tecnico(String nombre, String apellido, Integer dni, Integer telefono, Cuadrilla cuadrilla) {
-        super(nombre, apellido, dni, telefono, cuadrilla);
+    public Tecnico(
+            String dni,
+            String nombre,
+            String apellido,
+            String direccion,
+            String telefono,
+             List<Cuadrilla> cuadrillas1){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.cuadrillas1 = cuadrillas1;
     }
 
+      public String getNombre(){
+        return this.nombre;
+    }
 
-    @Column(allowsNull="true")
-    @Property()
-    private Boolean activo = true;
+    @Action()
+    @ActionLayout(named = "Editar")
+    public Tecnico update(
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "DNI: ")
+            final String dni,
 
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Nombre: ")
+            final String nombre,
 
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Apellido: ")
+            final String apellido,
 
-    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
-    public Tecnico updateActivo()
-    {
-        if(getActivo()){ setActivo(false); }
-        else{ setActivo(true); }
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Direccion: ")
+            final String direccion,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Telefono: ")
+            final String telefono){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
         return this;
     }
 
+    public String default0Update() {return getDni();}
 
+    public String default1Update() {return getNombre();}
+
+    public String default2Update() {return getApellido();}
+
+    public String default3Update() {return getDireccion();}
+
+    public String default4Update() {return getTelefono();}
+
+
+    //region > compareTo, toString
+    @Override
     public int compareTo(final Tecnico other) {
-        return ComparisonChain.start()
-                .compare(this.getNombre(), other.getNombre())
-                .result();
+        return org.apache.isis.applib.util.ObjectContracts.compare(this, other, "dni");
     }
 
-    @javax.inject.Inject
-    @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    RepositoryService repositoryService;
+    @Override
+    public String toString() {
+        return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");
+    }
+    //endregion
 
     @javax.inject.Inject
     @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    TitleService titleService;
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    CuadrillaRepositorio cuadrillaRepository;
 
     @javax.inject.Inject
     @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    MessageService messageService;
-
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    TecnicoRepositorio tecnicoRepository;
 }

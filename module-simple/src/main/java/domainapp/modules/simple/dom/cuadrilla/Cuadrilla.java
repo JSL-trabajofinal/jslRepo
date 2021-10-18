@@ -3,8 +3,6 @@ package domainapp.modules.simple.dom.cuadrilla;
 import domainapp.modules.simple.dom.ayudante.Ayudante;
 import domainapp.modules.simple.dom.ayudante.AyudanteRepositorio;
 import domainapp.modules.simple.dom.reclamo.Reclamo;
-import domainapp.modules.simple.dom.tecnico.Tecnico;
-import domainapp.modules.simple.dom.tecnico.TecnicoRepositorio;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

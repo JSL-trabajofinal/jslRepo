@@ -1,11 +1,9 @@
 package domainapp.modules.simple.dom.tecnico;
 
+
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 
 import java.util.List;
-import java.util.regex.Pattern;
-
 
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
@@ -13,63 +11,63 @@ import java.util.regex.Pattern;
         repositoryFor = Tecnico.class
 )
 @DomainServiceLayout(
-        named = "Tecnicos",
-        menuOrder = "10"
+        named = "",
+        menuOrder = ""
 )
 public class TecnicoMenu {
 
-    public static class CreateDomainEvent extends ActionDomainEvent<TecnicoMenu> {}
-    @Action(domainEvent = CreateDomainEvent.class)
+    @Action()
+    @ActionLayout(named = "Crear Tecnico")
     @MemberOrder(sequence = "1")
     public Tecnico create(
-            @Parameter(
-                    regexPattern = "[A-Za-z]+",
-                    regexPatternFlags = Pattern.CASE_INSENSITIVE,
-                    regexPatternReplacement = "Ingrese solo letras"
-            )
-            @ParameterLayout(named="Nombre") final String nombre,
 
-            @Parameter(
-                    regexPattern = "[A-Za-z]+",
-                    regexPatternFlags = Pattern.CASE_INSENSITIVE,
-                    regexPatternReplacement = "Ingrese solo letras"
-            )
-            @ParameterLayout(named="Apellido") final String apellido,
-            @ParameterLayout(named="DNI") final Integer dni,
-            @ParameterLayout(named="Telefono") final Integer telefono,
-            @ParameterLayout(named="Cuadrilla") final Cuadrilla cuadrilla
-    ) {     return repositoryTecnico.create(
-            nombre.toUpperCase(),
-            apellido.toUpperCase(),
-            dni,
-            telefono,
-            cuadrilla);
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "DNI: ")
+            final String dni,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Nombre: ")
+            final String nombre,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Apellido: ")
+            final String apellido,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Direccion: ")
+            final String direccion,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Telefono: ")
+            final String telefono) {
+
+        return tecnicorepository.create(dni,nombre, apellido, direccion, telefono);
     }
+
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Buscar Tecnico")
     @MemberOrder(sequence = "2")
-    public List<Tecnico> listAll() {
-        return repositoryTecnico.listAll();
+    public Tecnico findByDni(
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Por dni: ")
+            final Tecnico tecnico) {
+
+        return tecnico;
     }
 
-    @Action()
-    @ActionLayout(named = "Buscar Tecnico por Apellido")
+    public List<Tecnico> choices0FindByDni() {return tecnicorepository.Listar();}
+
+
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Tecnicos")
     @MemberOrder(sequence = "3")
-
-    public List<Tecnico> findByApellido(@ParameterLayout(named = "Apellido") final String apellido) {
-        return repositoryTecnico.findByApellido(apellido);
+    public List<Tecnico> listAll() {
+        List<Tecnico> tecnicos = tecnicorepository.Listar();
+        return tecnicos;
     }
 
-    @Action()
-    @ActionLayout(named = "Buscar Tecnico por Dni")
-    @MemberOrder(sequence = "4")
-
-    public List<Tecnico> findByDni(@ParameterLayout(named = "Dni") final Integer dni) {
-        return repositoryTecnico.findByDni(dni);
-    }
 
     @javax.inject.Inject
-    TecnicoRepositorio repositoryTecnico;
-
+    TecnicoRepositorio tecnicorepository;
 }

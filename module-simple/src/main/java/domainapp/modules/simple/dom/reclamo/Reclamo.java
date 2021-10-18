@@ -18,8 +18,6 @@
  */
 package domainapp.modules.simple.dom.reclamo;
 
-import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
-import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import lombok.Getter;

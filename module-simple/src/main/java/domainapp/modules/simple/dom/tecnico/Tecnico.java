@@ -31,7 +31,7 @@ import javax.jdo.annotations.*;
 @PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
 @DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
 @Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@Sequence(name="operador", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
+@Sequence(name="tecnico", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
 @Queries({
         @Query(
                 name="findAllActives", language="JDOQL",
@@ -51,18 +51,23 @@ import javax.jdo.annotations.*;
 
 public class Tecnico extends Persona {
 
-    public Tecnico(){
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Property()
+    @lombok.Getter @lombok.Setter
+    private Cuadrilla cuadrilla;
 
+    public Tecnico(){
     }
 
-    public Tecnico(String nombre, String apellido, Integer dni, Integer telefono) {
-        super(nombre, apellido, dni, telefono);
+    public Tecnico(String nombre, String apellido, Integer dni, Integer telefono, Cuadrilla cuadrilla) {
+        super(nombre, apellido, dni, telefono, cuadrilla);
     }
 
 
     @Column(allowsNull="true")
     @Property()
     private Boolean activo = true;
+
 
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")

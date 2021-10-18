@@ -1,23 +1,5 @@
-/*
- *  Licensed to the Apache Software Foundation (ASF) under one
- *  or more contributor license agreements.  See the NOTICE file
- *  distributed with this work for additional information
- *  regarding copyright ownership.  The ASF licenses this file
- *  to you under the Apache License, Version 2.0 (the
- *  "License"); you may not use this file except in compliance
- *  with the License.  You may obtain a copy of the License at
- *
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing,
- *  software distributed under the License is distributed on an
- *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- *  KIND, either express or implied.  See the License for the
- *  specific language governing permissions and limitations
- *  under the License.
- */
 package domainapp.modules.simple.dom.cuadrilla;
-
+import domainapp.modules.simple.dom.ayudante.Ayudante;
 import domainapp.modules.simple.dom.tecnico.Tecnico;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
@@ -25,44 +7,80 @@ import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
 
-import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
         nature = NatureOfService.DOMAIN,
-        repositoryFor = Tecnico.class)
-
-
+        repositoryFor = Cuadrilla.class
+)
 public class CuadrillaRepositorio {
 
     @Programmatic
-    public Cuadrilla create(
-            final String nombre,
-            final String apellido,
-            final String usuario,
-            final String contraseña) {
+    public List<Cuadrilla> Listar() {
 
-        final Cuadrilla Cuadrilla = new Cuadrilla(nombre,apellido,usuario,contraseña);
-        repositoryService.persist(Cuadrilla);
-        return Cuadrilla;
-    }
-
-    @Programmatic
-    public List<Cuadrilla> ListarActivos() {
         return repositoryService.allMatches(
                 new QueryDefault<>(
                         Cuadrilla.class,
-                        "findAllActives"));
+                        "find"));
     }
 
     @Programmatic
-    public List<Cuadrilla> ListarInactivos() {
+    public List<Cuadrilla> Listar(Tecnico tecnico){
+
         return repositoryService.allMatches(
                 new QueryDefault<>(
                         Cuadrilla.class,
-                        "findAllInactives"));
+                        "findByTecnico",
+                        "tecnico", tecnico));
     }
 
-    @Inject
+    @Programmatic
+    public List<Cuadrilla> Listar(Ayudante ayudante){
+
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Cuadrilla.class,
+                        "findByAyudante",
+                        "ayudante", ayudante));
+    }
+
+    @Programmatic
+    public Cuadrilla findByNombre(final String nombre) {
+
+        return repositoryService.uniqueMatch(
+                new QueryDefault<>(
+                        Cuadrilla.class,
+                        "findByNombre",
+                        "nombre", nombre));
+    }
+
+    @Programmatic
+    public List<Cuadrilla> findByNombreContains(final String nombre) {
+
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Cuadrilla.class,
+                        "findByNombreContains",
+                        "nombre", nombre));
+    }
+
+    @Programmatic
+    public Cuadrilla create(final String nombre, final Tecnico tecnico, final Ayudante ayudante) {
+
+        final Cuadrilla cuadrilla = new Cuadrilla(nombre, tecnico, ayudante);
+        repositoryService.persist(cuadrilla);
+        return cuadrilla;
+    }
+
+    @Programmatic
+    public Cuadrilla findOrCreate(final String nombre, final Tecnico tecnico, Ayudante ayudante) {
+        Cuadrilla cuadrilla = findByNombre(nombre);
+        if (cuadrilla == null) {
+            cuadrilla = create(nombre, tecnico, ayudante);
+        }
+        return cuadrilla;
+    }
+
+    @javax.inject.Inject
     RepositoryService repositoryService;
 }

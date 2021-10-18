@@ -40,9 +40,10 @@ public class TecnicoRepositorio {
             final String nombre,
             final String apellido,
             final Integer dni,
-            final Integer telefono) {
+            final Integer telefono,
+            final Cuadrilla cuadrilla) {
 
-        final Tecnico Tecnico = new Tecnico(nombre, apellido, dni, telefono);
+        final Tecnico Tecnico = new Tecnico(nombre, apellido, dni, telefono, cuadrilla);
         repositoryService.persist(Tecnico);
         return Tecnico;
     }

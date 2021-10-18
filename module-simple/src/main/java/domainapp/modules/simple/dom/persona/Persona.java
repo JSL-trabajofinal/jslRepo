@@ -60,6 +60,10 @@ public abstract class Persona {
     @Property()
     private Integer telefono;
 
+    public Persona(String nombre, String apellido, Integer dni, Integer telefono, Cuadrilla cuadrilla) {
+    }
+
+
     public String title() {
         return getApellido() + ", " + getNombre().substring(0,1);
     }

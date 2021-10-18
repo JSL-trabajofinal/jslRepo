@@ -27,33 +27,28 @@
     <bs3:row>
         <bs3:col span="6">
             <bs3:tabGroup>
-                <bs3:tab name="Cuadrilla">
+                <bs3:tab name="Cuadrillas">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="cuadrilla">
-                              <!--  <c:action id="delete">
-                                    <c:describedAs>Deletes this object from the persistent datastore</c:describedAs>
-                                </c:action>
-                                -->
-                                <c:property id="nombre" namedEscaped="true"></c:property>
-                                <c:property id="apellido" namedEscaped="true"></c:property>
-                                <c:property id="usuario" namedEscaped="true"></c:property>
-                                <c:property id="contraseña" namedEscaped="true"></c:property>
+                            <c:fieldSet name="Datos de Cuadrilla">
+                                <c:property id="cuadrilla" namedEscaped="true"/>
+                                <c:property id="tecnico" namedEscaped="true"/>
+                                <c:property id="ayudante" namedEscaped="true"/>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
-                <bs3:tab name="Datos del Cuadrilla">
+                <bs3:tab name="Metadata">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="Datos del Cuadrilla"/>
+                            <c:fieldSet name="Metadata"/>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>
-                <bs3:tab name="Ingreso">
+                <bs3:tab name="Other">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="Ingreso" unreferencedProperties="true"/>
+                            <c:fieldSet name="Other" unreferencedProperties="true"/>
                         </bs3:col>
                     </bs3:row>
                 </bs3:tab>

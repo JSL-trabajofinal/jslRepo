@@ -36,12 +36,14 @@ public class TecnicoMenu {
             )
             @ParameterLayout(named="Apellido") final String apellido,
             @ParameterLayout(named="DNI") final Integer dni,
-            @ParameterLayout(named="Telefono") final Integer telefono
+            @ParameterLayout(named="Telefono") final Integer telefono,
+            @ParameterLayout(named="Cuadrilla") final Cuadrilla cuadrilla
     ) {     return repositoryTecnico.create(
             nombre.toUpperCase(),
             apellido.toUpperCase(),
             dni,
-            telefono);
+            telefono,
+            cuadrilla);
     }
 
     @Action(semantics = SemanticsOf.SAFE)

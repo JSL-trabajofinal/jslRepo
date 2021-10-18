@@ -1,17 +1,9 @@
 package domainapp.modules.simple.dom.ayudante;
 
-import org.apache.isis.applib.annotation.DomainService;
-import org.apache.isis.applib.annotation.DomainServiceLayout;
-import org.apache.isis.applib.annotation.NatureOfService;
-
-
-import java.util.List;
-import java.util.regex.Pattern;
-
 
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
 
+import java.util.List;
 
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
@@ -19,61 +11,63 @@ import org.apache.isis.applib.services.eventbus.ActionDomainEvent;
         repositoryFor = Ayudante.class
 )
 @DomainServiceLayout(
-        named = "Ayudantees",
-        menuOrder = "10"
+        named = "",
+        menuOrder = ""
 )
 public class AyudanteMenu {
 
-    public static class CreateDomainEvent extends ActionDomainEvent<AyudanteMenu> {}
-    @Action(domainEvent = CreateDomainEvent.class)
+    @Action()
+    @ActionLayout(named = "Crear Ayudante")
     @MemberOrder(sequence = "1")
     public Ayudante create(
-            @Parameter(
-                    regexPattern = "[A-Za-z]+",
-                    regexPatternFlags = Pattern.CASE_INSENSITIVE,
-                    regexPatternReplacement = "Ingrese solo letras"
-            )
-            @ParameterLayout(named="Nombre") final String nombre,
 
-            @Parameter(
-                    regexPattern = "[A-Za-z]+",
-                    regexPatternFlags = Pattern.CASE_INSENSITIVE,
-                    regexPatternReplacement = "Ingrese solo letras"
-            )
-            @ParameterLayout(named="Apellido") final String apellido,
-            @ParameterLayout(named="DNI") final Integer dni,
-            @ParameterLayout(named="Telefono") final Integer telefono
-    ) {     return repositoryAyudante.create(
-            nombre.toUpperCase(),
-            apellido.toUpperCase(),
-            dni,
-            telefono);
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "DNI: ")
+            final String dni,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Nombre: ")
+            final String nombre,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Apellido: ")
+            final String apellido,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Direccion: ")
+            final String direccion,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Telefono: ")
+            final String telefono) {
+
+        return ayudanterepository.create(dni,nombre, apellido, direccion, telefono);
     }
+
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Buscar Ayudante")
     @MemberOrder(sequence = "2")
-    public List<Ayudante> listAll() {
-        return repositoryAyudante.listAll();
+    public Ayudante findByDni(
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Por dni: ")
+            final Ayudante ayudante) {
+
+        return ayudante;
     }
 
-    @Action()
-    @ActionLayout(named = "Buscar Ayudante por Apellido")
+    public List<Ayudante> choices0FindByDni() {return ayudanterepository.Listar();}
+
+
+    @Action(semantics = SemanticsOf.SAFE)
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Ayudantes")
     @MemberOrder(sequence = "3")
-
-    public List<Ayudante> findByApellido(@ParameterLayout(named = "Apellido") final String apellido) {
-        return repositoryAyudante.findByApellido(apellido);
+    public List<Ayudante> listAll() {
+        List<Ayudante> ayudantes = ayudanterepository.Listar();
+        return ayudantes;
     }
 
-    @Action()
-    @ActionLayout(named = "Buscar Ayudante por Dni")
-    @MemberOrder(sequence = "4")
-
-    public List<Ayudante> findByDni(@ParameterLayout(named = "Dni") final Integer dni) {
-        return repositoryAyudante.findByDni(dni);
-    }
 
     @javax.inject.Inject
-    AyudanteRepositorio repositoryAyudante;
-
+    AyudanteRepositorio ayudanterepository;
 }

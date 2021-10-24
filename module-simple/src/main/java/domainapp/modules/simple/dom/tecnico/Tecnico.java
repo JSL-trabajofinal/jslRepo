@@ -1,122 +1,183 @@
-/*
- *  Licensed to the Apache Software Foundation (ASF) under one
- *  or more contributor license agreements.  See the NOTICE file
- *  distributed with this work for additional information
- *  regarding copyright ownership.  The ASF licenses this file
- *  to you under the Apache License, Version 2.0 (the
- *  "License"); you may not use this file except in compliance
- *  with the License.  You may obtain a copy of the License at
- *
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing,
- *  software distributed under the License is distributed on an
- *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- *  KIND, either express or implied.  See the License for the
- *  specific language governing permissions and limitations
- *  under the License.
- */
 package domainapp.modules.simple.dom.tecnico;
 
-import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
+import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.i18n.TranslatableString;
-import org.apache.isis.applib.services.message.MessageService;
-import org.apache.isis.applib.services.repository.RepositoryService;
-import org.apache.isis.applib.services.title.TitleService;
 
 import javax.jdo.annotations.*;
+import java.util.List;
 
-import static org.apache.isis.applib.annotation.CommandReification.ENABLED;
-import static org.apache.isis.applib.annotation.SemanticsOf.IDEMPOTENT;
-import static org.apache.isis.applib.annotation.SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE;
+@PersistenceCapable(
+        identityType = IdentityType.DATASTORE,
+        schema = "simple",
+        table = "Tecnico"
+)
+@DatastoreIdentity(
+        strategy = IdGeneratorStrategy.IDENTITY,
+        column = "id"
+)
+@Version(
+        strategy = VersionStrategy.VERSION_NUMBER,
+        column = "version"
+)
+@Queries({
+        @Query(
+                name = "find", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.tecnico.Tecnico "
+                        + "ORDER BY nombre ASC"),
+/*        @Query(
+                name = "findByNombreContains", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.tecnico.Tecnico"
+                        + "WHERE nombre.indexOf(:nombre) >= 0 "),*/
 
-@PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@DatastoreIdentity(strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY, column="id")
-@Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout()  // causes UI events to be triggered
+        @Query(
+                name = "findByDni", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.tecnico.Tecnico "
+                        + "WHERE dni == :dni "
+                        + "ORDER BY dni ASC")
+})
+@Unique(name="Tecnico_dni_UNQ", members = {"dni"})
+@DomainObject(
+        editing = Editing.DISABLED
+)
+@DomainObjectLayout(
+        bookmarking = BookmarkPolicy.AS_ROOT
+)
 @Getter @Setter
-@lombok.RequiredArgsConstructor
-public class Tecnico implements Comparable<Tecnico> {
+public class Tecnico implements Comparable<Tecnico>{
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-/*    @Title(prepend = "Técnico: ")*/
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    @Title()
     private String dni;
 
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property() // editing disabled by default, see isis.properties
-    @Title(prepend = "Técnico: ")
-    private String apellido;
-
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @lombok.NonNull
-    @Property() // editing disabled by default, see isis.properties
-    @Title(prepend = ", ")
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    @Title()
     private String nombre;
 
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    private String apellido;
+
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    private String direccion;
+
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    private String telefono;
 
 
+    @Persistent(mappedBy = "tecnico", defaultFetchGroup = "true")
+    @Column(allowsNull = "true")
+    @Property()
+    private List<Cuadrilla> cuadrillas1;
 
-    @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
-    public Tecnico updateName(
+
+    public Tecnico(){}
+
+    public Tecnico(
+            String dni,
+            String nombre,
+            String apellido,
+            String direccion,
+            String telefono){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
+    }
+
+    public Tecnico(
+            String dni,
+            String nombre,
+            String apellido,
+            String direccion,
+            String telefono,
+             List<Cuadrilla> cuadrillas1){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.cuadrillas1 = cuadrillas1;
+    }
+
+      public String getNombre(){
+        return this.nombre;
+    }
+
+    @Action()
+    @ActionLayout(named = "Editar")
+    public Tecnico update(
             @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Nombre")
-            final String nombre) {
-        setNombre(nombre);
+            @ParameterLayout(named = "DNI: ")
+            final String dni,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Nombre: ")
+            final String nombre,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Apellido: ")
+            final String apellido,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Direccion: ")
+            final String direccion,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Telefono: ")
+            final String telefono){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
         return this;
     }
-/*
-    public String default0UpdateName() {
-        return getName();
+
+    public String default0Update() {return getDni();}
+
+    public String default1Update() {return getNombre();}
+
+    public String default2Update() {return getApellido();}
+
+    public String default3Update() {return getDireccion();}
+
+    public String default4Update() {return getTelefono();}
+
+
+    //region > compareTo, toString
+    @Override
+    public int compareTo(final Tecnico other) {
+        return org.apache.isis.applib.util.ObjectContracts.compare(this, other, "dni");
     }
-
-    public TranslatableString validate0UpdateName(final String name) {
-        return name != null && name.contains("!") ? TranslatableString.tr("Exclamation mark is not allowed") : null;
-    }*/
-
-
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void eliminar() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' eliminado", title));
-        repositoryService.remove(this);
-    }
-
 
     @Override
     public String toString() {
-
-        return getDni()+" "+getApellido()+" "+getNombre();
+        return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");
     }
-
-    public int compareTo(final Tecnico other) {
-        return ComparisonChain.start()
-                .compare(this.getApellido(), other.getApellido())
-                .result();
-    }
-
+    //endregion
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    RepositoryService repositoryService;
+    @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    CuadrillaRepositorio cuadrillaRepository;
 
     @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    TitleService titleService;
-
-    @javax.inject.Inject
-    @javax.jdo.annotations.NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
-    MessageService messageService;
-
+    @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    TecnicoRepositorio tecnicoRepository;
 }

@@ -1,178 +1,226 @@
-/*
- *  Licensed to the Apache Software Foundation (ASF) under one
- *  or more contributor license agreements.  See the NOTICE file
- *  distributed with this work for additional information
- *  regarding copyright ownership.  The ASF licenses this file
- *  to you under the Apache License, Version 2.0 (the
- *  "License"); you may not use this file except in compliance
- *  with the License.  You may obtain a copy of the License at
- *
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing,
- *  software distributed under the License is distributed on an
- *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- *  KIND, either express or implied.  See the License for the
- *  specific language governing permissions and limitations
- *  under the License.
- */
 package domainapp.modules.simple.dom.usuario;
 
+import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
+import domainapp.modules.simple.dom.reclamo.Estado;
 import domainapp.modules.simple.dom.reclamo.Reclamo;
 import domainapp.modules.simple.dom.reclamo.TipoReclamo;
-import domainapp.modules.simple.dom.reclamo.Estado;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.repository.RepositoryService;
-import org.apache.isis.applib.services.title.TitleService;
-import com.google.common.collect.ComparisonChain;
 import org.joda.time.LocalDate;
-import javax.inject.Inject;
+
 import javax.jdo.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
-import java.util.regex.Pattern;
 
-@PersistenceCapable(identityType= IdentityType.DATASTORE, schema="simple")
-@DatastoreIdentity(strategy=IdGeneratorStrategy.IDENTITY, column="Usuario_ID")
-@Sequence(name="usuarioseq",datastoreSequence = "YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS)
+@PersistenceCapable(
+        identityType = IdentityType.DATASTORE,
+        schema = "simple",
+        table = "Usuario"
+)
+@DatastoreIdentity(
+        strategy = IdGeneratorStrategy.IDENTITY,
+        column = "id"
+)
+@Version(
+        strategy = VersionStrategy.VERSION_NUMBER,
+        column = "version"
+)
 @Queries({
-        @Query(name = "findByApellido", language = "JDOQL",
+        @Query(
+                name = "find", language = "JDOQL",
                 value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.usuario.Usuario "
-                        + "WHERE apellido == :apellido "),
+                        + "ORDER BY nombre ASC"),
 
-        @Query(name = "findByDni", language = "JDOQL",
+
+        @Query(
+                name = "findByNroReclamo", language = "JDOQL",
                 value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.usuario.Usuario "
-                        + "WHERE dni == :dni ")
+                        + "WHERE dni == :dni "
+                        + "ORDER BY dni ASC")
 })
-
-@DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout()  // causes UI events to be triggered
 @Unique(name="Usuario_dni_UNQ", members = {"dni"})
+@DomainObject(
+        editing = Editing.DISABLED
+)
+@DomainObjectLayout(
+        bookmarking = BookmarkPolicy.AS_ROOT
+)
 @Getter @Setter
-public class Usuario {
+public class Usuario implements Comparable<Usuario>{
 
-    @Column(allowsNull = "false")
+    @Column(allowsNull = "false", length = 8)
     @Property()
-    private Integer dni;
+    @Title()
+    private String dni;
 
-
-    @Column(allowsNull = "false")
+    @Column(allowsNull = "false", length = 40)
     @Property()
-    @Title(prepend = "Usuario: ")
-    private String apellido;
-
-    @Column(allowsNull = "false")
-    @Property()
-    /*    @Title(prepend = " ")*/
+    @Title()
     private String nombre;
 
-    @Column(allowsNull = "true")
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    private String apellido;
 
-    @Property(editing = Editing.ENABLED,
-            regexPattern = "[0-9]",
-            regexPatternReplacement = "Solo numeros y sin espacios"
-    )
-    private String telefono;
-
-    @Column(allowsNull = "false")
-    @Property(editing = Editing.ENABLED,
-            regexPattern = "(\\w+\\.)*\\w+@(\\w+\\.)+[A-Za-z]+",
-            regexPatternFlags= Pattern.CASE_INSENSITIVE,
-            regexPatternReplacement = "Debe ser un email valido (contiene un '@' simbolo)"
-    )
-    private String email;
-
-    @Column(allowsNull = "false")
+    @Column(allowsNull = "false", length = 40)
     @Property()
     private String direccion;
 
-    @Column(allowsNull = "false")
+    @Column(allowsNull = "false", length = 40)
     @Property()
-    private String barrio;
+    private String email;
 
-    @Collection()
+    @Column(allowsNull = "false", length = 19)
+    @Property()
+    private String telefono;
+
     @Persistent(mappedBy = "usuario", dependentElement = "true")
-    private List<Reclamo> reclamo = new ArrayList<>();
+    @Collection()
+    private List<Reclamo> reclamos = new ArrayList<Reclamo>();
 
-    @Getter @Setter
-    private SortedSet<Usuario> usuario = new TreeSet<>();
 
-    public Usuario(Integer dni, String apellido, String nombre, String telefono, String email, String direccion, String barrio) {
+    public Usuario(){}
+
+
+    public Usuario(
+            String dni,
+            String nombre,
+            String apellido,
+            String direccion,
+            String email,
+            String telefono){
+
         this.dni = dni;
-        this.apellido = apellido;
         this.nombre = nombre;
-        this.telefono = telefono;
-        this.email = email;
+        this.apellido = apellido;
         this.direccion = direccion;
-        this.barrio = barrio;
+        this.email = email;
+        this.telefono = telefono;
     }
 
-    public Usuario(List<Reclamo> reclamo) {
-        this.reclamo = reclamo;
+    public Usuario(
+            String dni,
+            String nombre,
+            String apellido,
+            String direccion,
+            String telefono,
+            List<Reclamo> reclamos){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.reclamos = reclamos;
     }
 
-    public Usuario() {}
+      public String getNombre(){
+        return this.nombre;
+    }
 
     @Action()
     @ActionLayout(named = "Editar")
     public Usuario update(
-            @ParameterLayout(named = "Numero de telefono: ")
-            final String telefono,
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "DNI: ")
+            final String dni,
 
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Nombre: ")
+            final String nombre,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Apellido: ")
+            final String apellido,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Direccion: ")
+            final String direccion,
+
+            @Parameter(maxLength = 40)
             @ParameterLayout(named = "Email: ")
             final String email,
 
-            @ParameterLayout(named = "Direccion: ")
-            final String direccion
-    ){
-        this.setTelefono(telefono);
-        this.setDireccion(direccion);
-        this.setEmail(email);
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Telefono: ")
+            final String telefono){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
         return this;
     }
 
-    public String default0Update() { return getTelefono(); }
-    public String default1Update()  { return getDireccion(); }
-    public String default2Update() { return getEmail(); }
+    public String default0Update() {return getDni();}
+
+    public String default1Update() {return getNombre();}
+
+    public String default2Update() {return getApellido();}
+
+    public String default3Update() {return getDireccion();}
+
+    public String default4Update() {return getEmail();}
+
+    public String default5Update() {return getTelefono();}
 
 
     @Action()
     @ActionLayout(named = "Cargar Reclamo")
     public Usuario addReclamo(
-            @ParameterLayout(named="Fecha:") final LocalDate fecha,
-            @ParameterLayout(named="Tipo de Reclamo: ") final TipoReclamo tipoReclamo
+            @ParameterLayout(named="Fecha: ") final LocalDate fecha,
+            @ParameterLayout(named="Tipo de Reclamo") final TipoReclamo tipoReclamo
     ){
+
         final Reclamo reclamo = factoryService.instantiate(Reclamo.class);
+        reclamo.setUsuario(this);
         reclamo.setFecha(fecha);
         reclamo.setTipoReclamo(tipoReclamo);
-        reclamo.setNotes("");
         reclamo.setEstado(Estado.Sin_Asignar);
-        reclamo.setEstado(Estado.Asignado);
-        getReclamo().add(reclamo);
+        getReclamos().add(reclamo);
         repositoryService.persist(reclamo);
         return this;
     }
 
 
-    @Inject @NotPersistent
-    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
-    TitleService titleService;
 
-    @Inject @NotPersistent
+
+    //region > compareTo, toString
+    @Override
+    public int compareTo(final Usuario other) {
+        return org.apache.isis.applib.util.ObjectContracts.compare(this, other, "dni");
+    }
+
+    @Override
+    public String toString() {
+        return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");
+    }
+    //endregion
+
+    @javax.inject.Inject
+    @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     FactoryService factoryService;
 
     @javax.inject.Inject
     @NotPersistent
-    @lombok.Getter(AccessLevel.NONE) @lombok.Setter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     RepositoryService repositoryService;
 
+    @javax.inject.Inject
+    @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    CuadrillaRepositorio cuadrillaRepository;
+
+    @javax.inject.Inject
+    @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    UsuarioRepositorio usuarioRepository;
 }

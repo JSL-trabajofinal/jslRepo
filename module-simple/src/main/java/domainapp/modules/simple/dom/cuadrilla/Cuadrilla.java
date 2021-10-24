@@ -1,148 +1,170 @@
-/*
- *  Licensed to the Apache Software Foundation (ASF) under one
- *  or more contributor license agreements.  See the NOTICE file
- *  distributed with this work for additional information
- *  regarding copyright ownership.  The ASF licenses this file
- *  to you under the Apache License, Version 2.0 (the
- *  "License"); you may not use this file except in compliance
- *  with the License.  You may obtain a copy of the License at
- *
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing,
- *  software distributed under the License is distributed on an
- *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- *  KIND, either express or implied.  See the License for the
- *  specific language governing permissions and limitations
- *  under the License.
- */
 package domainapp.modules.simple.dom.cuadrilla;
 
-import com.google.common.collect.ComparisonChain;
-import lombok.*;
+import domainapp.modules.simple.dom.ayudante.Ayudante;
+import domainapp.modules.simple.dom.ayudante.AyudanteRepositorio;
+import domainapp.modules.simple.dom.reclamo.Reclamo;
+import domainapp.modules.simple.dom.tecnico.Tecnico;
+import domainapp.modules.simple.dom.tecnico.TecnicoRepositorio;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.message.MessageService;
-import org.apache.isis.applib.services.repository.RepositoryService;
-import org.apache.isis.applib.services.title.TitleService;
-import javax.inject.Inject;
-import javax.jdo.annotations.*;
 
-@PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
-@Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@Sequence(name="cuadrilla", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
+import javax.jdo.annotations.*;
+import java.util.List;
+
+@PersistenceCapable(
+        identityType=IdentityType.DATASTORE,
+        schema = "simple",
+        table = "Cuadrilla"
+)
+
+@DatastoreIdentity(
+        strategy= IdGeneratorStrategy.IDENTITY,
+        column = "id")
+
+@Version(
+        strategy = VersionStrategy.VERSION_NUMBER,
+        column = "version")
+
 @Queries({
         @Query(
-                name="findAllActives", language="JDOQL",
-                value="SELECT "
-                + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
-                + "WHERE activo == true "),
+                name = "find", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla  "
+                        + "ORDER BY nombre ASC"),
+
         @Query(
-                name="findAllInactives", language="JDOQL",
-                value="SELECT "
-                + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
-                + "WHERE activo == false "),
+                name = "findByNombre", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
+                        + "WHERE nombre == :nombre "),
+         @Query(
+                name = "findByTecnico", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
+                        + "WHERE tecnico == :tecnico "
+                        + "ORDER BY nombre ASC"),
+
+        @Query(
+                name = "findByAyudante", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
+                        + "WHERE ayudante == :ayudante "
+                        + "ORDER BY nombre ASC"),
+
 })
-@Unique(name="Tecnico_usuario_UNQ", members = {"usuario"})
-@DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout()  // causes UI events to be triggered
+
+@Unique(name = "Cuadrilla_nombre_UNQ", members = { "nombre" })
+@DomainObject(
+        editing = Editing.DISABLED
+)
+@DomainObjectLayout(
+        bookmarking = BookmarkPolicy.AS_ROOT
+)
 @Getter @Setter
-@RequiredArgsConstructor
 public class Cuadrilla implements Comparable<Cuadrilla> {
 
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = "Nombre: ")
-    @MemberOrder(sequence = "1")
+    @Column(allowsNull = "false", length = 40)
+    @Property()
     private String nombre;
 
-
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". apellido ")
-    @MemberOrder(sequence = "2")
-    private String apellido;
-
-
-    @Column(allowsNull = "false", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". usuario: ")
-    @MemberOrder(sequence = "3")
-    private String usuario;
-
-
-    @Column(allowsNull = "false", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". contraseña:  ")
-    @MemberOrder(sequence = "4")
-    private String contraseña;
-
-    @Column(allowsNull="true")
+    @Column(allowsNull = "false")
     @Property()
-    private Boolean activo = true;
+    private Tecnico tecnico;
+
+    @Column(allowsNull = "false")
+    @Property()
+    private Ayudante ayudante;
 
 
-    public String ReporNombre(){ return this.nombre; }
-    public String ReporApellido(){ return this.apellido; }
-    public String ReporUsuario(){ return this.usuario; }
-    public String ReporContraseña(){ return this.contraseña; }
-    public String ReporActivo(){ return this.activo.toString(); }
+    @Persistent(mappedBy = "cuadrillaAsignada", defaultFetchGroup = "true")
+    @Column(allowsNull = "true")
+    @Property()
+    private List<Reclamo> reclamosAsignados;
 
-
-    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
-    public Cuadrilla updateActivo()
-    {
-        if(getActivo()){ setActivo(false); }
-        else{ setActivo(true); }
-        return this;
+    public String title(){
+        return getNombre();
     }
 
 /*
-    @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
-    public Reclamo updateName(
+    public String RepoNombre(){ return this.nombre; }
+    public String RepoTecnico(){ return this.tecnico.toString(); }
+    public String RepoAyudante() {return this.ayudante.toString(); }*/
+
+    public Cuadrilla(){}
+
+    public Cuadrilla(
+            final String nombre,
+            final Tecnico tecnico,
+            final Ayudante ayudante){
+
+        this.nombre = nombre;
+        this.tecnico = tecnico;
+        this.ayudante = ayudante;
+    }
+
+
+    @Action()
+    @ActionLayout(named = "Editar")
+    public Cuadrilla update(
+
             @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
-            final String name) {
-        setName(name);
+            @ParameterLayout(named = "Nombre: ")
+            final String nombre,
+
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Tecnico: ")
+            final Tecnico tecnico,
+
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Ayudante: ")
+            final Ayudante ayudante){
+
+        this.nombre = nombre;
+        this.tecnico = tecnico;
+        this.ayudante = ayudante;
+
         return this;
     }
 
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void delete() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' deleted", title));
-        repositoryService.remove(this);
+    public String default0Update() {return getNombre();}
+
+    public Tecnico default1Update() {return getTecnico();}
+    public List<Tecnico> choices1Update() { return tecnicoRepository.Listar();}
+
+    public Ayudante default2Update() {return getAyudante();}
+    public List<Ayudante> choices2Update() {
+        return ayudanteRepository.Listar();
     }
 
-*/
+
+
+    //region > compareTo, toString
+    @Override
+    public int compareTo(final Cuadrilla other) {
+        return org.apache.isis.applib.util.ObjectContracts.compare(this, other, "nombre");
+    }
+
     @Override
     public String toString() {
-        return getNombre()+" "+getApellido()+ " "+getUsuario()+" "+getContraseña();
+        return org.apache.isis.applib.util.ObjectContracts.toString(this, "nombre");
     }
+    //endregion
 
-    public int compareTo(final Cuadrilla other) {
-        return ComparisonChain.start()
-                .compare(this.getNombre(), other.getNombre())
-                .result();
-    }
-
-    @Inject
+    @javax.inject.Inject
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
-    RepositoryService repositoryService;
+    TecnicoRepositorio tecnicoRepository;
 
-    @Inject
+    @javax.inject.Inject
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
-    TitleService titleService;
+    AyudanteRepositorio ayudanteRepository;
 
-    @Inject
+    @javax.inject.Inject
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
-    MessageService messageService;
+    CuadrillaRepositorio cuadrillaRepository;
 
 }

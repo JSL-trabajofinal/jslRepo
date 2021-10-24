@@ -1,4 +1,4 @@
-package domainapp.modules.simple.dom.ayudante;
+package domainapp.modules.simple.dom.tecnico;
 
 
 import org.apache.isis.applib.annotation.*;
@@ -7,19 +7,19 @@ import java.util.List;
 
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.SimpleAyudanteMenu",
-        repositoryFor = Ayudante.class
+        objectType = "simple.SimpleTecnicoMenu",
+        repositoryFor = Tecnico.class
 )
 @DomainServiceLayout(
         named = "",
         menuOrder = ""
 )
-public class AyudanteMenu {
+public class TecnicoMenu {
 
     @Action()
-    @ActionLayout(named = "Crear Ayudante")
+    @ActionLayout(named = "Crear Tecnico")
     @MemberOrder(sequence = "1")
-    public Ayudante create(
+    public Tecnico create(
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "DNI: ")
@@ -41,33 +41,33 @@ public class AyudanteMenu {
             @ParameterLayout(named = "Telefono: ")
             final String telefono) {
 
-        return ayudanterepository.create(dni,nombre, apellido, direccion, telefono);
+        return tecnicorepository.create(dni,nombre, apellido, direccion, telefono);
     }
 
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Buscar Ayudante")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Buscar Tecnico")
     @MemberOrder(sequence = "2")
-    public Ayudante findByDni(
+    public Tecnico findByDni(
             @Parameter(optionality = Optionality.MANDATORY)
             @ParameterLayout(named = "Por dni: ")
-            final Ayudante ayudante) {
+            final Tecnico tecnico) {
 
-        return ayudante;
+        return tecnico;
     }
 
-    public List<Ayudante> choices0FindByDni() {return ayudanterepository.Listar();}
+    public List<Tecnico> choices0FindByDni() {return tecnicorepository.Listar();}
 
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Ayudantes")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Tecnicos")
     @MemberOrder(sequence = "3")
-    public List<Ayudante> listAll() {
-        List<Ayudante> ayudantes = ayudanterepository.Listar();
-        return ayudantes;
+    public List<Tecnico> listAll() {
+        List<Tecnico> tecnicos = tecnicorepository.Listar();
+        return tecnicos;
     }
 
 
     @javax.inject.Inject
-    AyudanteRepositorio ayudanterepository;
+    TecnicoRepositorio tecnicorepository;
 }

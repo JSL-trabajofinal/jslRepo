@@ -25,16 +25,23 @@ import domainapp.application.DomainAppApplicationModule;
 /**
  * Bootstrap the application.
  */
+import org.isisaddons.module.security.SecurityModule;
+
 public class DomainAppAppManifest extends AppManifestAbstract2 {
 
-    public static final Builder BUILDER = Builder
-            .forModule(new DomainAppApplicationModule())
-            .withConfigurationPropertiesFile(
-                    DomainAppAppManifest.class, "isis-non-changing.properties")
-            .withAuthMechanism("shiro");
+    public static final Builder BUILDER = Builder.forModule(new DomainAppApplicationModule())
+            .withAdditionalModules(SecurityModule.class)
+            .withConfigurationPropertiesFile(DomainAppAppManifest.class,
+                    "isis-non-changing.properties")
+            .withAuthMechanism("shiro").withAdditionalServices(
+                    org.isisaddons.module.security.dom.password.PasswordEncryptionServiceUsingJBcrypt.class
+                    ,org.isisaddons.module.security.dom.permission.PermissionsEvaluationServiceAllowBeatsVeto.class
+            );
 
     public DomainAppAppManifest() {
         super(BUILDER);
     }
 
 }
+
+

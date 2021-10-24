@@ -1,150 +1,183 @@
-/*
- *  Licensed to the Apache Software Foundation (ASF) under one
- *  or more contributor license agreements.  See the NOTICE file
- *  distributed with this work for additional information
- *  regarding copyright ownership.  The ASF licenses this file
- *  to you under the Apache License, Version 2.0 (the
- *  "License"); you may not use this file except in compliance
- *  with the License.  You may obtain a copy of the License at
- *
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing,
- *  software distributed under the License is distributed on an
- *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- *  KIND, either express or implied.  See the License for the
- *  specific language governing permissions and limitations
- *  under the License.
- */
 package domainapp.modules.simple.dom.ayudante;
 
-import com.google.common.collect.ComparisonChain;
+import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
+import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 import lombok.AccessLevel;
-import lombok.Setter;
 import lombok.Getter;
-import lombok.NonNull;
+import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.message.MessageService;
-import org.apache.isis.applib.services.repository.RepositoryService;
-import org.apache.isis.applib.services.title.TitleService;
 
-import javax.inject.Inject;
 import javax.jdo.annotations.*;
+import java.util.List;
 
-@PersistenceCapable(identityType=IdentityType.DATASTORE, schema = "simple")
-@DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY, column="id")
-@Version(strategy= VersionStrategy.DATE_TIME, column="version")
-@Sequence(name="ayudante", datastoreSequence="YOUR_SEQUENCE_NAME",strategy=SequenceStrategy.CONTIGUOUS,allocationSize=1)
+@PersistenceCapable(
+        identityType = IdentityType.DATASTORE,
+        schema = "simple",
+        table = "Ayudante"
+)
+@DatastoreIdentity(
+        strategy = IdGeneratorStrategy.IDENTITY,
+        column = "id")
+
+@Version(
+        strategy = VersionStrategy.VERSION_NUMBER,
+        column = "version")
 @Queries({
         @Query(
-                name="findAllActives", language="JDOQL",
-                value="SELECT "
-                + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
-                + "WHERE activo == true "),
+                name = "find", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
+                        + "ORDER BY nombre ASC"),
+ /*       @Query(
+                name = "findByNombreContains", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
+                        + "WHERE nombre.indexOf(:nombre) >= 0 "),
+*/
         @Query(
-                name="findAllInactives", language="JDOQL",
-                value="SELECT "
-                + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
-                + "WHERE activo == false "),
+                name = "findByDni", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.ayudante.Ayudante "
+                        + "WHERE dni == :dni "
+                        + "ORDER BY dni ASC")
 })
-@Unique(name="Ayudante_usuario_UNQ", members = {"usuario"})
-@DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout()  // causes UI events to be triggered
-@Getter @Setter
-@lombok.RequiredArgsConstructor
-public class Ayudante implements Comparable<Ayudante> {
 
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = "Nombre: ")
-    @MemberOrder(sequence = "1")
+@Unique(name="Ayudante_dni_UNQ", members = {"dni"})
+@DomainObject(
+        editing = Editing.DISABLED
+)
+@DomainObjectLayout(
+        bookmarking = BookmarkPolicy.AS_ROOT
+)
+@Getter @Setter
+public class Ayudante implements Comparable<Ayudante>{
+
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    @Title()
+    private String dni;
+
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    @Title()
     private String nombre;
 
-
-    @Column(allowsNull = "true", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". apellido ")
-    @MemberOrder(sequence = "2")
+    @Column(allowsNull = "false", length = 40)
+    @Property()
     private String apellido;
 
-
     @Column(allowsNull = "false", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". usuario: ")
-    @MemberOrder(sequence = "3")
-    private String usuario;
-
-
-    @Column(allowsNull = "false", length = 40)
-    @NonNull
-    @Property(editing = Editing.ENABLED) // editing disabled by default, see isis.properties
-    @Title(prepend = ". contraseña:  ")
-    @MemberOrder(sequence = "4")
-    private String contraseña;
-
-    @Column(allowsNull="true")
     @Property()
-    private Boolean activo = true;
+    private String direccion;
 
-    public String ReporNombre(){ return this.nombre; }
-    public String ReporApellido(){ return this.apellido; }
-    public String ReporUsuario(){ return this.usuario; }
-    public String ReporContraseña(){ return this.contraseña; }
-    public String ReporActivo(){ return this.activo.toString(); }
+    @Column(allowsNull = "false", length = 40)
+    @Property()
+    private String telefono;
 
-    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE, publishing = Publishing.ENABLED, associateWith = "activo")
-    public Ayudante updateActivo()
-    {
-        if(getActivo()){ setActivo(false); }
-        else{ setActivo(true); }
-        return this;
+
+    @Persistent(mappedBy = "ayudante", defaultFetchGroup = "true")
+    @Column(allowsNull = "true")
+    @Property()
+    private List<Cuadrilla> cuadrillas;
+
+
+    public Ayudante(){}
+
+    public Ayudante(
+            String dni,
+            String nombre,
+            String apellido,
+            String direccion,
+            String telefono){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
-/*
-    @Action(semantics = IDEMPOTENT, command = ENABLED, publishing = Publishing.ENABLED, associateWith = "name")
-    public Reclamo updateName(
+    public Ayudante(
+            String dni,
+            String nombre,
+            String apellido,
+            String direccion,
+            String telefono,
+             List<Cuadrilla> cuadrillas){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.cuadrillas = cuadrillas;
+    }
+
+      public String getNombre(){
+        return this.nombre;
+    }
+
+    @Action()
+    @ActionLayout(named = "Editar")
+    public Ayudante update(
             @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
-            final String name) {
-        setName(name);
+            @ParameterLayout(named = "DNI: ")
+            final String dni,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Nombre: ")
+            final String nombre,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Apellido: ")
+            final String apellido,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Direccion: ")
+            final String direccion,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Telefono: ")
+            final String telefono){
+
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
         return this;
     }
 
-    @Action(semantics = NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void delete() {
-        final String title = titleService.titleOf(this);
-        messageService.informUser(String.format("'%s' deleted", title));
-        repositoryService.remove(this);
+    public String default0Update() {return getDni();}
+
+    public String default1Update() {return getNombre();}
+
+    public String default2Update() {return getApellido();}
+
+    public String default3Update() {return getDireccion();}
+
+    public String default4Update() {return getTelefono();}
+
+
+    //region > compareTo, toString
+    @Override
+    public int compareTo(final Ayudante other) {
+        return org.apache.isis.applib.util.ObjectContracts.compare(this, other, "dni");
     }
 
-*/
     @Override
     public String toString() {
-        return getNombre()+" "+getApellido()+ " "+getUsuario()+" "+getContraseña();
+        return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");
     }
+    //endregion
 
-    public int compareTo(final Ayudante other) {
-        return ComparisonChain.start()
-                .compare(this.getNombre(), other.getNombre())
-                .result();
-    }
-
-    @Inject
+    @javax.inject.Inject
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
-    RepositoryService repositoryService;
+    CuadrillaRepositorio cuadrillaRepository;
 
-    @Inject
+    @javax.inject.Inject
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
-    TitleService titleService;
-
-    @Inject
-    @NotPersistent
-    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
-    MessageService messageService;
-
+    AyudanteRepositorio ayudanteRepository;
 }

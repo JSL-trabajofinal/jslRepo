@@ -1,12 +1,12 @@
 package domainapp.modules.simple.dom.cuadrilla;
 
-import domainapp.modules.simple.dom.cuadrilla.QCuadrilla;
+import domainapp.modules.simple.dom.ayudante.Ayudante;
+import domainapp.modules.simple.dom.ayudante.AyudanteRepositorio;
+import domainapp.modules.simple.dom.tecnico.Tecnico;
+import domainapp.modules.simple.dom.tecnico.TecnicoRepositorio;
 import org.apache.isis.applib.annotation.*;
-import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
-import org.datanucleus.query.typesafe.TypesafeQuery;
 
 import java.util.List;
-import java.util.regex.Pattern;
 
 @DomainService(
         nature = NatureOfService.VIEW_MENU_ONLY,
@@ -14,102 +14,62 @@ import java.util.regex.Pattern;
         repositoryFor = Cuadrilla.class
 )
 @DomainServiceLayout(
-        named = "Cuadrillas",
-        menuOrder = "10"
+        named = "",
+        menuOrder = ""
 )
 public class CuadrillaMenu {
 
     @Action()
-    @ActionLayout(named = "Alta Cuadrilla")
+    @ActionLayout(named = "Crear Cuadrilla")
     @MemberOrder(sequence = "1")
     public Cuadrilla create(
 
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternReplacement = "Debe ser un nombre valido (solo letras)")
-            @ParameterLayout(named = "Nombre") final String nombre,
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Nombre: ")
+            final String nombre,
 
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternReplacement = "Debe ser un apellido valido (solo letras)")
-            @ParameterLayout(named = "Apellido") final String apellido,
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Tecnico: ")
+            final Tecnico tecnico,
 
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternReplacement = "Debe ser un usuario  valido (solo letras)")
-            @ParameterLayout(named = "Usuario") final String usuario,
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Ayudante: ")
+            final Ayudante ayudante) {
 
-            @Parameter(maxLength = 40,
-                    regexPattern = "[A-Za-z\\s]+",
-                    regexPatternFlags= Pattern.CASE_INSENSITIVE,
-                    regexPatternReplacement = "Debe ser una contraseña valida (solo letras)")
-            @ParameterLayout(named = "Contraseña") final String contraseña) {
-
-        return repositoryCuadrilla.create(nombre, apellido, usuario, contraseña);
+        return cuadrillarepository.create(nombre, tecnico, ayudante);
     }
 
+    public List<Tecnico> choices1Create() {return tecnicoRepository.Listar();}
+    public List<Ayudante> choices2Create() {return ayudanteRepository.Listar();}
+
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT,named = "Buscar Cuadrilla")
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Buscar Cuadrilla")
     @MemberOrder(sequence = "2")
-    public List<Cuadrilla> findByName(
+    public Cuadrilla findByNombre(
             @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Nombre del Ayudante") final String nombre
-    ) {
-        TypesafeQuery<Cuadrilla> q = isisJdoSupport.newTypesafeQuery(Cuadrilla.class);
-        final QCuadrilla cand = QCuadrilla.candidate();
-        q = q.filter(
-                cand.nombre.indexOf(q.stringParameter("Nombre")).ne(-1)
-        );
-        return q.setParameter("Nombre", nombre)
-                .executeList();
+            @ParameterLayout(named = "Por Nombre: ")
+            final Cuadrilla cuadrilla) {
+
+        return cuadrilla;
     }
 
-    /*@Programmatic
-    public Cuadrilla findByNameExact(final String nombre) {
-        TypesafeQuery<Cuadrilla> q = isisJdoSupport.newTypesafeQuery(Cuadrilla.class);
-        final QCuadrilla cand = QCuadrilla.candidate();
-        q = q.filter(
-                cand.nombre.eq(q.stringParameter("Nombre"))
-        );
-        return q.setParameter("nombre", nombre)
-                .executeUnique();
-    }*/
+    public List<Cuadrilla> choices0FindByNombre() {return cuadrillarepository.Listar();}
 
-    /*@Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Busqueda por CUIT/CUIL")
-    @MemberOrder(sequence = "3")
-    public Reclamo findByCuilExact(
-            @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Nro CUIL/CUIT") final String cuil) {
-        TypesafeQuery<Reclamo> q = isisJdoSupport.newTypesafeQuery(Reclamo.class);
-        final QReclamo cand = QReclamo.candidate();
-        q = q.filter(
-                cand.cuil.eq(q.stringParameter("cuil"))
-        );
-        return q.setParameter("cuil", cuil)
-                .executeUnique();
-    }
-*/
-
-    /*@Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas Activos")
-    @MemberOrder(sequence = "3")
-    public List<Cuadrilla> listAllActive() {
-        List<Cuadrilla> cuadrillas = repositoryCuadrilla.ListarActivos();
-        return cuadrillas;
-    }
 
     @Action(semantics = SemanticsOf.SAFE)
-    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas Inactivos")
-    @MemberOrder(sequence = "3")
-    public List<Cuadrilla> listAllInactive() {
-        List<Cuadrilla> cuadrillas = repositoryCuadrilla.ListarInactivos();
-        return cuadrillas;
-    }*/
+    @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas")
+    @MemberOrder(sequence = "2")
+    public List<Cuadrilla> listAll() {
+        return cuadrillarepository.Listar();
+    }
+
 
     @javax.inject.Inject
-    CuadrillaRepositorio repositoryCuadrilla;
+    CuadrillaRepositorio cuadrillarepository;
 
     @javax.inject.Inject
-    IsisJdoSupport isisJdoSupport;
+    TecnicoRepositorio tecnicoRepository;
+
+    @javax.inject.Inject
+    AyudanteRepositorio ayudanteRepository;
 }

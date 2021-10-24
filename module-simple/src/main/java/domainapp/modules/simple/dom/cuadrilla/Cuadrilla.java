@@ -78,10 +78,10 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
     private Ayudante ayudante;
 
 
-/*    @Persistent(mappedBy = "cuadrilla", defaultFetchGroup = "true")
-    @Column(allowsNull = "false")
+    @Persistent(mappedBy = "cuadrillaAsignada", defaultFetchGroup = "true")
+    @Column(allowsNull = "true")
     @Property()
-    private List<Reclamo> reclamos;*/
+    private List<Reclamo> reclamosAsignados;
 
     public String title(){
         return getNombre();

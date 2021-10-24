@@ -17,6 +17,7 @@ import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigInteger;
+import java.util.List;
 
 @PersistenceCapable(
         identityType = IdentityType.DATASTORE,
@@ -91,10 +92,11 @@ public class Reclamo {
     @Property(editing = Editing.DISABLED)
     private Estado estado;
 
-/*    @Column(allowsNull = "true", name = "cuadrilla_asig_id")
+    @Column(allowsNull = "true", name = "cuadrilla_asig_id")
     @Property()
     @PropertyLayout(named = "Cuadrilla")
-    private Cuadrilla cuadrillaAsignada;*/
+    private Cuadrilla cuadrillaAsignada;
+
 
 
     public Reclamo(){}
@@ -194,6 +196,27 @@ public class Reclamo {
         return this;
     }
 
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
+    @ActionLayout(named = "Asignar Cuadrilla")
+    public Reclamo AsignarCuadrilla(
+            @Parameter(optionality = Optionality.MANDATORY)
+            @ParameterLayout(named = "Cuadrilla")
+            final Cuadrilla cuadrilla) {
+        if (getEstado().equals(Estado.Anulado)) {
+            messageService.warnUser("No se puede asignar un reclamo Anulado!");
+        } else if (getEstado().equals(Estado.Cerrado)) {
+            messageService.warnUser("No se puede asignar un reclamo Cerrado!");
+        }else {
+            this.cuadrillaAsignada = cuadrilla;
+            CambiarEstado(Estado.En_Proceso);
+            messageService.informUser("Reclamo Asignado");
+        }
+        return this;
+    }
+
+    public List<Cuadrilla> choices0AsignarCuadrilla() {
+        return cuadrillaRepository.Listar();
+    }
 
       @Override
     public String toString() {

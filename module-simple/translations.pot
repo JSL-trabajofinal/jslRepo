@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-24 18:05:17+\n"
+"POT-Creation-Date: 2021-10-24 18:15:47+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,6 +73,11 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.reclamo.Estado#Anulado
 msgid "Anulado"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#Anular()
+msgid "Anular"
 msgstr ""
 
 
@@ -171,6 +176,11 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.reclamo.Estado#Cerrado
 msgid "Cerrado"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#Cerrar()
+msgid "Cerrar"
 msgstr ""
 
 

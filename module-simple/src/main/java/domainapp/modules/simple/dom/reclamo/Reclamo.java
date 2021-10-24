@@ -162,6 +162,39 @@ public class Reclamo {
 
     public TipoReclamo default1Update() {return getTipoReclamo();}
 
+    @Programmatic
+    public void CambiarEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
+    public Reclamo Anular() {
+        if (getEstado().equals(Estado.Anulado)) {
+            messageService.warnUser("El reclamo ya se encuentra anulado!");
+        }else if (getEstado().equals(Estado.Cerrado)) {
+            messageService.warnUser("No es posible anular un reclamo cerrado!");
+        } else {
+            CambiarEstado(Estado.Anulado);
+            messageService.informUser("Reclamo anulado");
+        }
+        return this;
+    }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
+    public Reclamo Cerrar() {
+        if (getEstado().equals(Estado.Cerrado)) {
+            messageService.warnUser("El reclamo ya se encuentra cerrado!");
+        }else if (getEstado().equals(Estado.Anulado)) {
+            messageService.warnUser("No es posible cerrar un reclamo anulado!!");
+        } else {
+            CambiarEstado(Estado.Cerrado);
+            messageService.informUser("Reclamo Cerrado");
+        }
+        return this;
+    }
+
+
       @Override
     public String toString() {
         return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");

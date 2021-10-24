@@ -2,7 +2,6 @@ package domainapp.modules.simple.dom.reclamo;
 
 import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
-import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -17,7 +16,6 @@ import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigInteger;
-import java.util.List;
 
 @PersistenceCapable(
         identityType = IdentityType.DATASTORE,

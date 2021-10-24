@@ -1,6 +1,5 @@
 package domainapp.modules.simple.dom.cuadrilla;
 
-import domainapp.modules.simple.dom.reclamo.Reclamo;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

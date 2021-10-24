@@ -1,23 +1,7 @@
-/*
- *  Licensed to the Apache Software Foundation (ASF) under one
- *  or more contributor license agreements.  See the NOTICE file
- *  distributed with this work for additional information
- *  regarding copyright ownership.  The ASF licenses this file
- *  to you under the Apache License, Version 2.0 (the
- *  "License"); you may not use this file except in compliance
- *  with the License.  You may obtain a copy of the License at
- *
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing,
- *  software distributed under the License is distributed on an
- *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- *  KIND, either express or implied.  See the License for the
- *  specific language governing permissions and limitations
- *  under the License.
- */
 package domainapp.modules.simple.dom.reclamo;
 
+import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
+import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -26,22 +10,64 @@ import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.message.MessageService;
-import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.schema.utils.jaxbadapters.JodaDateTimeStringAdapter;
 import org.joda.time.LocalDate;
+
 import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.math.BigInteger;
+import java.util.List;
 
-@PersistenceCapable(identityType= IdentityType.DATASTORE, schema="simple", table="Reclamo")
-@DatastoreIdentity(strategy=IdGeneratorStrategy.IDENTITY, column="Reclamo_ID")
-@DomainObject(auditing = Auditing.ENABLED)
-@DomainObjectLayout()  // causes UI events to be triggered
+@PersistenceCapable(
+        identityType = IdentityType.DATASTORE,
+        schema = "simple",
+        table = "Reclamo"
+)
+@DatastoreIdentity(
+        strategy = IdGeneratorStrategy.IDENTITY,
+        column = "id"
+)
+@Version(
+        strategy = VersionStrategy.VERSION_NUMBER,
+        column = "version"
+)
+@Queries({
+        @Query(
+                name = "find", language = "JDOQL",
+                value = "SELECT "),
+
+
+        @Query(
+                name = "findLast", language = "JDOQL",
+                value = "SELECT "
+                        + "ORDER BY nroReclamo DESC"),
+
+
+        @Query(
+                name = "findByNroReclamo", language = "JDOQL",
+                value = "SELECT "
+                        + "FROM domainapp.modules.simple.dom.reclamo.Reclamo "
+                        + "WHERE nroReclamo == :nroReclamo "
+                        + "ORDER BY nroReclamo ASC")
+})
+@Unique(name="Reclamo_nroReclamo_UNQ", members = {"nroReclamo"})
+@DomainObject(
+        editing = Editing.DISABLED
+)
+@DomainObjectLayout(
+        bookmarking = BookmarkPolicy.AS_ROOT
+)
 @Getter @Setter
 public class Reclamo {
 
-    @Column(allowsNull = "false", name = "Usuario_ID")
-    @Persistent(mappedBy = "usuario", dependentElement = "true")
+    @Column(allowsNull = "true", length = 10)
+    @Property(editing = Editing.DISABLED)
+    @Persistent(valueStrategy = IdGeneratorStrategy.INCREMENT)
+    private BigInteger nroReclamo;
+
+    @Column(allowsNull = "false")
+    @NonNull
     @Property()
     @Getter @Setter
     private Usuario usuario;
@@ -58,82 +84,90 @@ public class Reclamo {
     @Title(prepend = "Reclamo: ")
     private TipoReclamo tipoReclamo;
 
-    @Column(allowsNull = "true", length = 4000)
+    @Column(allowsNull = "true", length = 2000)
     @Property(editing = Editing.ENABLED)
-    private String notes;
+    private String descripcion;
 
-    @Column(allowsNull = "false")
-    @NonNull
-    @Property()
+    @Column(allowsNull = "true", length = 2000)
+    @Property(editing = Editing.DISABLED)
     private Estado estado;
 
-    public TipoReclamo title() {
-        return getTipoReclamo();
-    }
+    @Column(allowsNull = "true", name = "cuadrilla_asig_id")
+    @Property()
+    @PropertyLayout(named = "Cuadrilla")
+    private Cuadrilla cuadrillaAsignada;
 
-    @Programmatic
-    public void CambiarEstado(Estado estado) {
+
+    public Reclamo(){}
+
+
+    public Reclamo(
+            Estado estado,
+            Usuario usuario,
+            LocalDate fecha,
+            TipoReclamo tipoReclamo,
+            String descripcion){
+
         this.estado = estado;
+        this.usuario = usuario;
+        this.fecha = fecha;
+        this.tipoReclamo = tipoReclamo;
+        this.descripcion = descripcion;
+
     }
 
-    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
-    public Reclamo Anular() {
-        CambiarEstado(Estado.Anulado);
-        if (getEstado().equals(Estado.Anulado)) {
-            messageService.warnUser("Reclamo Anulado");
-        } else {
-            CambiarEstado(Estado.Anulado);
-            messageService.warnUser("No puede anular dos veces el mismo reclamo");
-        }
-        return this;
+    public Reclamo(
+            BigInteger nroReclamo,
+            Estado estado,
+            Usuario usuario,
+            LocalDate fecha,
+            TipoReclamo tipoReclamo,
+            String descripcion){
+
+        this.nroReclamo = nroReclamo;
+        this.estado = estado;
+        this.usuario = usuario;
+        this.fecha = fecha;
+        this.tipoReclamo = tipoReclamo;
+        this.descripcion = descripcion;
+
     }
 
-    public Reclamo Cerrar() {
-        if (getEstado().equals(Estado.Anulado)) {
-            messageService.warnUser("No se puede cerrar un reclamo Anulado");
-        } else {
-            CambiarEstado(Estado.Cerrado);
-            messageService.warnUser("Reclamo Cerrado");
-        }
-        return this;
-    }
-
-    public Reclamo Asignar(){
-        CambiarEstado(Estado.En_Proceso);
-        return this;
-    }
-
-    public Reclamo sinAsignar(){
-        CambiarEstado(Estado.Sin_Asignar);
-        return this;
+    public Usuario getUsuario(){
+        return this.usuario;
     }
 
     @Action()
     @ActionLayout(named = "Editar")
     public Reclamo update(
-            @ParameterLayout(named = "Nombre: ")
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Usuario: ")
+            final Usuario usuario,
+
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Tipo Reclamo: ")
             final TipoReclamo tipoReclamo,
-            final Estado estado
-    ){
-        this.setTipoReclamo(tipoReclamo);
+
+            @Parameter(maxLength = 4000)
+            @ParameterLayout(named = "Descripcion: ")
+            final String descripcion){
+
+
+        this.usuario = usuario;
+        this.tipoReclamo = tipoReclamo;
+        this.descripcion = descripcion;
         return this;
     }
 
-    public TipoReclamo default0Update() { return getTipoReclamo(); }
+    public Usuario default0Update() {return getUsuario();}
 
+    public TipoReclamo default1Update() {return getTipoReclamo();}
 
-    /*@Action()
-    @ActionLayout(named = "Asignar Cuadrilla")
-    public Reclamo AsignarCuadrilla(
-            @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Cuadrilla")
-            final Cuadrilla cuadrilla) {
-
-        this.AsignarCuadrilla() = cuadrilla;
-        return this;
+      @Override
+    public String toString() {
+        return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");
     }
-
-    public List<Cuadrilla> choices0AsignarCuadrilla() { return CuadrillaRepositorio.ListarActivos(); }*/
+    //endregion
 
     @Inject
     @NotPersistent
@@ -148,5 +182,10 @@ public class Reclamo {
     @Inject
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
-    RepositoryService repositoryService;
+    CuadrillaRepositorio cuadrillaRepository;
+
+    @Inject
+    @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    ReclamoRepositorio reclamoRepository;
 }

@@ -27,16 +27,16 @@
     <bs3:row>
         <bs3:col span="6">
             <bs3:tabGroup>
-                <bs3:tab name="Reclamo">
+                <bs3:tab name="Reclamos">
                     <bs3:row>
                         <bs3:col span="12">
-                            <c:fieldSet name="reclamo">
-                                <!--<c:property id="usuario" namedEscaped="true"/>-->
+                            <c:fieldSet name="Datos del Reclamo">
+                                <c:property id="nroReclamo" namedEscaped="true"/>
+                                <c:property id="estado" namedEscaped="true"/>
+                                <c:property id="usuario" namedEscaped="true"/>
                                 <c:property id="fecha" namedEscaped="true"/>
                                 <c:property id="tipoReclamo" namedEscaped="true"/>
-                                <c:property id="notes" namedEscaped="true" multiLine="6" hidden="ALL_TABLES"/>
-                                <c:property id="estado" namedEscaped="true">
-                                </c:property>
+                                <c:property id="descripcion" namedEscaped="true" multiLine="9" hidden="ALL_TABLES"/>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>

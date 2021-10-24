@@ -18,7 +18,6 @@
  */
 package domainapp.modules.simple.dom.usuario;
 
-import domainapp.modules.simple.dom.reclamo.Reclamo;
 import domainapp.modules.simple.dom.reclamo.TipoReclamo;
 import domainapp.modules.simple.dom.reclamo.Estado;
 import lombok.AccessLevel;
@@ -28,7 +27,6 @@ import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
-import com.google.common.collect.ComparisonChain;
 import org.joda.time.LocalDate;
 import javax.inject.Inject;
 import javax.jdo.annotations.*;

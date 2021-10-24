@@ -1,5 +1,6 @@
 package domainapp.modules.simple.dom.reclamo;
 
+import domainapp.modules.simple.dom.usuario.Usuario;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;

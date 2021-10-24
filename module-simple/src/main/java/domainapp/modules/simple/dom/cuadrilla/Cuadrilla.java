@@ -1,5 +1,10 @@
 package domainapp.modules.simple.dom.cuadrilla;
 
+import domainapp.modules.simple.dom.ayudante.Ayudante;
+import domainapp.modules.simple.dom.ayudante.AyudanteRepositorio;
+import domainapp.modules.simple.dom.reclamo.Reclamo;
+import domainapp.modules.simple.dom.tecnico.Tecnico;
+import domainapp.modules.simple.dom.tecnico.TecnicoRepositorio;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -72,16 +77,11 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
     @Property()
     private Ayudante ayudante;
 
+
 /*    @Persistent(mappedBy = "cuadrilla", defaultFetchGroup = "true")
     @Column(allowsNull = "false")
     @Property()
     private List<Reclamo> reclamos;*/
-
-
-    @Persistent(mappedBy = "cuadrilla", defaultFetchGroup = "true")
-    @Column(allowsNull = "false")
-    @Property()
-    private List<Reclamo> reclamos;
 
     public String title(){
         return getNombre();
@@ -104,17 +104,6 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
         this.ayudante = ayudante;
     }
 
-    public Cuadrilla(
-            final String nombre,
-            final Tecnico tecnico,
-            final Ayudante ayudante,
-            final List<Reclamo> reclamos){
-
-        this.nombre = nombre;
-        this.tecnico = tecnico;
-        this.ayudante = ayudante;
-        this.reclamos = reclamos;
-    }
 
     @Action()
     @ActionLayout(named = "Editar")

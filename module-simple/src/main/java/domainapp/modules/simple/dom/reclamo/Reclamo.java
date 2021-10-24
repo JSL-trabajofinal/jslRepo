@@ -2,6 +2,7 @@ package domainapp.modules.simple.dom.reclamo;
 
 import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
+import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -90,10 +91,10 @@ public class Reclamo {
     @Property(editing = Editing.DISABLED)
     private Estado estado;
 
-    @Column(allowsNull = "true", name = "cuadrilla_asig_id")
+/*    @Column(allowsNull = "true", name = "cuadrilla_asig_id")
     @Property()
     @PropertyLayout(named = "Cuadrilla")
-    private Cuadrilla cuadrillaAsignada;
+    private Cuadrilla cuadrillaAsignada;*/
 
 
     public Reclamo(){}

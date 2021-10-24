@@ -1,4 +1,6 @@
 package domainapp.modules.simple.dom.cuadrilla;
+import domainapp.modules.simple.dom.ayudante.Ayudante;
+import domainapp.modules.simple.dom.tecnico.Tecnico;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;

@@ -3,13 +3,10 @@ package domainapp.modules.simple.dom.reclamo;
 
 import org.apache.isis.applib.annotation.*;
 
+import javax.inject.Inject;
 import java.util.List;
 
-@DomainService(
-        nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.SimpleReclamoMenu",
-        repositoryFor = Reclamo.class
-)
+@DomainService(nature = NatureOfService.VIEW_MENU_ONLY,objectType = "simple.SimpleReclamoMenu",repositoryFor = Reclamo.class)
 @DomainServiceLayout(
         named = "",
         menuOrder = ""
@@ -29,8 +26,6 @@ public class ReclamoMenu {
 
     public List<Reclamo> choices0FindByNroReclamo() {return reclamorepository.Listar();}
 
-
-
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Reclamos")
     @MemberOrder(sequence = "2")
@@ -39,8 +34,6 @@ public class ReclamoMenu {
         return reclamos;
     }
 
-
-    @javax.inject.Inject
+    @Inject
     ReclamoRepositorio reclamorepository;
-
 }

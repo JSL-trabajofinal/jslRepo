@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-24 18:23:30+\n"
+"POT-Creation-Date: 2021-10-25 21:12:25+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -280,13 +280,13 @@ msgid "Cuadrilla"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.ayudante.Ayudante#cuadrillas
-msgid "Cuadrillas"
+#: domainapp.modules.simple.dom.tecnico.Tecnico#cuadrillaTecnico
+msgid "Cuadrilla Tecnico"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.tecnico.Tecnico#cuadrillas1
-msgid "Cuadrillas1"
+#: domainapp.modules.simple.dom.ayudante.Ayudante#cuadrillasAyudante
+msgid "Cuadrillas Ayudante"
 msgstr ""
 
 

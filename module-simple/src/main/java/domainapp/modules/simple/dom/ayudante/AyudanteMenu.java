@@ -3,6 +3,7 @@ package domainapp.modules.simple.dom.ayudante;
 
 import org.apache.isis.applib.annotation.*;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
@@ -44,7 +45,6 @@ public class AyudanteMenu {
         return ayudanterepository.create(dni,nombre, apellido, direccion, telefono);
     }
 
-
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Buscar Ayudante")
     @MemberOrder(sequence = "2")
@@ -58,7 +58,6 @@ public class AyudanteMenu {
 
     public List<Ayudante> choices0FindByDni() {return ayudanterepository.Listar();}
 
-
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Ayudantes")
     @MemberOrder(sequence = "3")
@@ -67,7 +66,6 @@ public class AyudanteMenu {
         return ayudantes;
     }
 
-
-    @javax.inject.Inject
+    @Inject
     AyudanteRepositorio ayudanterepository;
 }

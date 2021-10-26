@@ -10,30 +10,19 @@ import lombok.Getter;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 
+import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import java.util.List;
 
-@PersistenceCapable(
-        identityType=IdentityType.DATASTORE,
-        schema = "simple",
-        table = "Cuadrilla"
-)
-
-@DatastoreIdentity(
-        strategy= IdGeneratorStrategy.IDENTITY,
-        column = "id")
-
-@Version(
-        strategy = VersionStrategy.VERSION_NUMBER,
-        column = "version")
-
+@PersistenceCapable(identityType=IdentityType.DATASTORE,schema = "simple",table = "Cuadrilla")
+@DatastoreIdentity(strategy= IdGeneratorStrategy.IDENTITY,column = "id")
+@Version(strategy = VersionStrategy.VERSION_NUMBER,column = "version")
 @Queries({
         @Query(
                 name = "find", language = "JDOQL",
                 value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla  "
                         + "ORDER BY nombre ASC"),
-
         @Query(
                 name = "findByNombre", language = "JDOQL",
                 value = "SELECT "
@@ -45,23 +34,16 @@ import java.util.List;
                         + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
                         + "WHERE tecnico == :tecnico "
                         + "ORDER BY nombre ASC"),
-
         @Query(
                 name = "findByAyudante", language = "JDOQL",
                 value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.cuadrilla.Cuadrilla "
                         + "WHERE ayudante == :ayudante "
                         + "ORDER BY nombre ASC"),
-
 })
-
 @Unique(name = "Cuadrilla_nombre_UNQ", members = { "nombre" })
-@DomainObject(
-        editing = Editing.DISABLED
-)
-@DomainObjectLayout(
-        bookmarking = BookmarkPolicy.AS_ROOT
-)
+@DomainObject(editing = Editing.DISABLED)
+@DomainObjectLayout(bookmarking = BookmarkPolicy.AS_ROOT)
 @Getter @Setter
 public class Cuadrilla implements Comparable<Cuadrilla> {
 
@@ -76,7 +58,6 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
     @Column(allowsNull = "false")
     @Property()
     private Ayudante ayudante;
-
 
     @Persistent(mappedBy = "cuadrillaAsignada", defaultFetchGroup = "true")
     @Column(allowsNull = "true")
@@ -98,17 +79,14 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
             final String nombre,
             final Tecnico tecnico,
             final Ayudante ayudante){
-
         this.nombre = nombre;
         this.tecnico = tecnico;
         this.ayudante = ayudante;
     }
 
-
     @Action()
     @ActionLayout(named = "Editar")
     public Cuadrilla update(
-
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Nombre: ")
             final String nombre,
@@ -124,21 +102,16 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
         this.nombre = nombre;
         this.tecnico = tecnico;
         this.ayudante = ayudante;
-
         return this;
     }
 
     public String default0Update() {return getNombre();}
-
     public Tecnico default1Update() {return getTecnico();}
     public List<Tecnico> choices1Update() { return tecnicoRepository.Listar();}
-
     public Ayudante default2Update() {return getAyudante();}
     public List<Ayudante> choices2Update() {
         return ayudanteRepository.Listar();
     }
-
-
 
     //region > compareTo, toString
     @Override
@@ -152,18 +125,15 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
     }
     //endregion
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     TecnicoRepositorio tecnicoRepository;
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     AyudanteRepositorio ayudanteRepository;
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     CuadrillaRepositorio cuadrillaRepository;
 

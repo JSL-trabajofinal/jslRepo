@@ -19,31 +19,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigInteger;
 import java.util.List;
 
-@PersistenceCapable(
-        identityType = IdentityType.DATASTORE,
-        schema = "simple",
-        table = "Reclamo"
-)
-@DatastoreIdentity(
-        strategy = IdGeneratorStrategy.IDENTITY,
-        column = "id"
-)
-@Version(
-        strategy = VersionStrategy.VERSION_NUMBER,
-        column = "version"
-)
+@PersistenceCapable(identityType = IdentityType.DATASTORE,schema = "simple",table = "Reclamo")
+@DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY,column = "id")
+@Version(strategy = VersionStrategy.VERSION_NUMBER,column = "version")
 @Queries({
         @Query(
                 name = "find", language = "JDOQL",
                 value = "SELECT "),
-
-
         @Query(
                 name = "findLast", language = "JDOQL",
                 value = "SELECT "
                         + "ORDER BY nroReclamo DESC"),
-
-
         @Query(
                 name = "findByNroReclamo", language = "JDOQL",
                 value = "SELECT "
@@ -52,12 +38,8 @@ import java.util.List;
                         + "ORDER BY nroReclamo ASC")
 })
 @Unique(name="Reclamo_nroReclamo_UNQ", members = {"nroReclamo"})
-@DomainObject(
-        editing = Editing.DISABLED
-)
-@DomainObjectLayout(
-        bookmarking = BookmarkPolicy.AS_ROOT
-)
+@DomainObject(editing = Editing.DISABLED)
+@DomainObjectLayout(bookmarking = BookmarkPolicy.AS_ROOT)
 @Getter @Setter
 public class Reclamo {
 
@@ -97,10 +79,7 @@ public class Reclamo {
     @PropertyLayout(named = "Cuadrilla")
     private Cuadrilla cuadrillaAsignada;
 
-
-
     public Reclamo(){}
-
 
     public Reclamo(
             Estado estado,
@@ -108,13 +87,11 @@ public class Reclamo {
             LocalDate fecha,
             TipoReclamo tipoReclamo,
             String descripcion){
-
         this.estado = estado;
         this.usuario = usuario;
         this.fecha = fecha;
         this.tipoReclamo = tipoReclamo;
         this.descripcion = descripcion;
-
     }
 
     public Reclamo(
@@ -124,14 +101,12 @@ public class Reclamo {
             LocalDate fecha,
             TipoReclamo tipoReclamo,
             String descripcion){
-
         this.nroReclamo = nroReclamo;
         this.estado = estado;
         this.usuario = usuario;
         this.fecha = fecha;
         this.tipoReclamo = tipoReclamo;
         this.descripcion = descripcion;
-
     }
 
     public Usuario getUsuario(){
@@ -153,7 +128,6 @@ public class Reclamo {
             @ParameterLayout(named = "Descripcion: ")
             final String descripcion){
 
-
         this.usuario = usuario;
         this.tipoReclamo = tipoReclamo;
         this.descripcion = descripcion;
@@ -161,14 +135,12 @@ public class Reclamo {
     }
 
     public Usuario default0Update() {return getUsuario();}
-
     public TipoReclamo default1Update() {return getTipoReclamo();}
 
     @Programmatic
     public void CambiarEstado(Estado estado) {
         this.estado = estado;
     }
-
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
     public Reclamo Anular() {
@@ -218,29 +190,25 @@ public class Reclamo {
         return cuadrillaRepository.Listar();
     }
 
-      @Override
+    @Override
     public String toString() {
         return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");
     }
     //endregion
 
-    @Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     MessageService messageService;
 
-    @Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     FactoryService factoryService;
 
-    @Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     CuadrillaRepositorio cuadrillaRepository;
 
-    @Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     ReclamoRepositorio reclamoRepository;
 }

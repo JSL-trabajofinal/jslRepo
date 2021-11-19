@@ -98,6 +98,16 @@ public class Reclamo {
     private Cuadrilla cuadrillaAsignada;
 
 
+    @Column(allowsNull = "true", length = 2000)
+    @Property(editing = Editing.ENABLED)
+    private String observacion;
+
+    @Column(allowsNull = "true")
+    @PropertyLayout(named="Fecha Cierre del Reclamo: ")
+    @Property(editing = Editing.DISABLED)
+    @XmlJavaTypeAdapter(JodaDateTimeStringAdapter.ForJaxb.class)
+    private LocalDate fechaCierre;
+
 
     public Reclamo(){}
 
@@ -133,6 +143,17 @@ public class Reclamo {
         this.descripcion = descripcion;
 
     }
+
+    public Reclamo(
+            Estado estado,
+            String observacion,
+            LocalDate fechaCierre){
+
+        this.estado = estado;
+        this.observacion = observacion;
+        this.fechaCierre = fechaCierre;
+    }
+
 
     public Usuario getUsuario(){
         return this.usuario;
@@ -184,12 +205,20 @@ public class Reclamo {
     }
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
-    public Reclamo Cerrar() {
+    public Reclamo Cerrar(
+           // @ParameterLayout(named="Fecha Cierre: ") final LocalDate fechaCierre,
+            @ParameterLayout(named="Observacion") final String observacion) {
         if (getEstado().equals(Estado.Cerrado)) {
             messageService.warnUser("El reclamo ya se encuentra cerrado!");
         }else if (getEstado().equals(Estado.Anulado)) {
             messageService.warnUser("No es posible cerrar un reclamo anulado!!");
-        } else {
+        }else if (getEstado().equals(Estado.Sin_Asignar)) {
+            messageService.warnUser("No es posible cerrar un reclamo sin asignar!");
+        }else {
+            final Reclamo reclamo = factoryService.instantiate(Reclamo.class);
+            fechaCierre = LocalDate.now();
+            reclamo.setFechaCierre(fechaCierre);
+            reclamo.setObservacion(observacion);
             CambiarEstado(Estado.Cerrado);
             messageService.informUser("Reclamo Cerrado");
         }

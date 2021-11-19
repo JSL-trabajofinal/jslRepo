@@ -25,6 +25,17 @@ public class CuadrillaRepositorio {
     }
 
     @Programmatic
+    public List<Cuadrilla> Listar(Cuadrilla nombre){
+
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Cuadrilla.class,
+                        "findByCuadrilla",
+                        "nombre", nombre));
+    }
+
+/*
+    @Programmatic
     public List<Cuadrilla> Listar(Tecnico tecnico){
 
         return repositoryService.allMatches(
@@ -42,7 +53,7 @@ public class CuadrillaRepositorio {
                         Cuadrilla.class,
                         "findByAyudante",
                         "ayudante", ayudante));
-    }
+    }*/
 
     @Programmatic
     public Cuadrilla findByNombre(final String nombre) {

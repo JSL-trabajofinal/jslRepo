@@ -175,13 +175,13 @@ public class Usuario implements Comparable<Usuario>{
     @Action()
     @ActionLayout(named = "Cargar Reclamo")
     public Usuario addReclamo(
-            @ParameterLayout(named="Fecha: ") final LocalDate fecha,
+            //@ParameterLayout(named="Fecha: ") final LocalDate fecha,
             @ParameterLayout(named="Tipo de Reclamo") final TipoReclamo tipoReclamo
     ){
 
         final Reclamo reclamo = factoryService.instantiate(Reclamo.class);
         reclamo.setUsuario(this);
-        reclamo.setFecha(fecha);
+        reclamo.setFecha(LocalDate.now());
         reclamo.setTipoReclamo(tipoReclamo);
         reclamo.setEstado(Estado.Sin_Asignar);
         getReclamos().add(reclamo);

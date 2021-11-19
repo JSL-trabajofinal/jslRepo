@@ -106,7 +106,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- this project's own modules -->
+              <!-- this project's own modules -->
             <dependency>
                 <groupId>com.ifes</groupId>
                 <artifactId>Reclamos-module-simple</artifactId>

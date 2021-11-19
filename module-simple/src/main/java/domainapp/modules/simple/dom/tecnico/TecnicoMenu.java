@@ -3,6 +3,7 @@ package domainapp.modules.simple.dom.tecnico;
 
 import org.apache.isis.applib.annotation.*;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
@@ -58,7 +59,6 @@ public class TecnicoMenu {
 
     public List<Tecnico> choices0FindByDni() {return tecnicorepository.Listar();}
 
-
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Tecnicos")
     @MemberOrder(sequence = "3")
@@ -67,7 +67,6 @@ public class TecnicoMenu {
         return tecnicos;
     }
 
-
-    @javax.inject.Inject
+    @Inject
     TecnicoRepositorio tecnicorepository;
 }

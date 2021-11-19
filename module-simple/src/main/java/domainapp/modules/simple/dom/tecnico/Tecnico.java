@@ -7,22 +7,13 @@ import lombok.Getter;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 
+import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import java.util.List;
 
-@PersistenceCapable(
-        identityType = IdentityType.DATASTORE,
-        schema = "simple",
-        table = "Tecnico"
-)
-@DatastoreIdentity(
-        strategy = IdGeneratorStrategy.IDENTITY,
-        column = "id"
-)
-@Version(
-        strategy = VersionStrategy.VERSION_NUMBER,
-        column = "version"
-)
+@PersistenceCapable(identityType = IdentityType.DATASTORE,schema = "simple",table = "Tecnico")
+@DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY,column = "id")
+@Version(strategy = VersionStrategy.VERSION_NUMBER,column = "version")
 @Queries({
         @Query(
                 name = "find", language = "JDOQL",
@@ -43,12 +34,8 @@ import java.util.List;
                         + "ORDER BY dni ASC")
 })
 @Unique(name="Tecnico_dni_UNQ", members = {"dni"})
-@DomainObject(
-        editing = Editing.DISABLED
-)
-@DomainObjectLayout(
-        bookmarking = BookmarkPolicy.AS_ROOT
-)
+@DomainObject(editing = Editing.DISABLED)
+@DomainObjectLayout(bookmarking = BookmarkPolicy.AS_ROOT)
 @Getter @Setter
 public class Tecnico implements Comparable<Tecnico>{
 
@@ -74,12 +61,10 @@ public class Tecnico implements Comparable<Tecnico>{
     @Property()
     private String telefono;
 
-
     @Persistent(mappedBy = "tecnico", defaultFetchGroup = "true")
     @Column(allowsNull = "true")
     @Property()
-    private List<Cuadrilla> cuadrillas1;
-
+    private List<Cuadrilla> cuadrillaTecnico;
 
     public Tecnico(){}
 
@@ -103,17 +88,17 @@ public class Tecnico implements Comparable<Tecnico>{
             String apellido,
             String direccion,
             String telefono,
-             List<Cuadrilla> cuadrillas1){
+             List<Cuadrilla> cuadrillaTecnico){
 
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.cuadrillas1 = cuadrillas1;
+        this.cuadrillaTecnico = cuadrillaTecnico;
     }
 
-      public String getNombre(){
+    public String getNombre(){
         return this.nombre;
     }
 
@@ -149,15 +134,10 @@ public class Tecnico implements Comparable<Tecnico>{
     }
 
     public String default0Update() {return getDni();}
-
     public String default1Update() {return getNombre();}
-
     public String default2Update() {return getApellido();}
-
     public String default3Update() {return getDireccion();}
-
     public String default4Update() {return getTelefono();}
-
 
     //region > compareTo, toString
     @Override
@@ -171,13 +151,11 @@ public class Tecnico implements Comparable<Tecnico>{
     }
     //endregion
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     CuadrillaRepositorio cuadrillaRepository;
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     TecnicoRepositorio tecnicoRepository;
 }

@@ -6,6 +6,7 @@ import domainapp.modules.simple.dom.tecnico.Tecnico;
 import domainapp.modules.simple.dom.tecnico.TecnicoRepositorio;
 import org.apache.isis.applib.annotation.*;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
@@ -64,12 +65,12 @@ public class CuadrillaMenu {
     }
 
 
-    @javax.inject.Inject
+    @Inject
     CuadrillaRepositorio cuadrillarepository;
 
-    @javax.inject.Inject
+    @Inject
     TecnicoRepositorio tecnicoRepository;
 
-    @javax.inject.Inject
+    @Inject
     AyudanteRepositorio ayudanteRepository;
 }

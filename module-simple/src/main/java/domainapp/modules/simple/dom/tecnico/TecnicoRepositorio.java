@@ -6,12 +6,10 @@ import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
 
+import javax.inject.Inject;
 import java.util.List;
 
-@DomainService(
-        nature = NatureOfService.DOMAIN,
-        repositoryFor = Tecnico.class
-)
+@DomainService( nature = NatureOfService.DOMAIN,repositoryFor = Tecnico.class)
 public class TecnicoRepositorio {
 
     @Programmatic
@@ -71,6 +69,6 @@ public class TecnicoRepositorio {
         return tecnico;
     }
 
-    @javax.inject.Inject
+    @Inject
     RepositoryService repositoryService;
 }

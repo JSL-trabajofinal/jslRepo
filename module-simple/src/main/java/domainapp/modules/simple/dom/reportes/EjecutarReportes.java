@@ -24,7 +24,7 @@ public class EjecutarReportes {
 
         for (Reclamo recla : reclamos) {
 
-            RepoReclamo repoReclamos = new RepoReclamo();//recla.ReporCuil(),cli.ReporName(),cli.ReporTelefono(),cli.ReporEmail(),cli.ReporDireccion());
+            RepoReclamo repoReclamos = new RepoReclamo(recla.ReporNumeroReclamo(), recla.ReporNombreCompleto(), recla.ReporTelefono(), recla.ReporDescripcion(), recla.ReporDireccion(), recla.ReporTipoReclamo(), recla.ReporCuadrillla());
 
             reclamosDatasource.add(repoReclamos);
 

@@ -6,6 +6,7 @@ import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.apache.isis.applib.value.Blob;
 import org.joda.time.LocalDate;
 
 import javax.inject.Inject;
@@ -78,6 +79,12 @@ public class ReclamoRepositorio {
         return reclamo;
     }
 
+    public Blob generarReporteReclamo() {
+        return null;
+    }
+
     @Inject
     RepositoryService repositoryService;
+
+
 }

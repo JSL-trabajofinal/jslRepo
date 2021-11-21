@@ -30,15 +30,11 @@ public class RepoMenu {
     )
     @ActionLayout(
             bookmarking = BookmarkPolicy.AS_ROOT,
-            named = "Reporte de Clientes"
+            named = "Reporte Reclamo"
     )
     @MemberOrder(sequence = "1")
-    /**
-     *  reporte de todos los clientes cargados en el sistema
-     *
-     */
-    public Blob generarReporteReclamo(
-    ) throws JRException, IOException {
+    // reporte de Reclamo
+    public Blob generarReporteReclamo() throws JRException, IOException {
         return repositoryReclamo.generarReporteReclamo();
     }
 

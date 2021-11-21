@@ -10,6 +10,7 @@ import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.message.MessageService;
+import org.apache.isis.applib.value.Blob;
 import org.apache.isis.schema.utils.jaxbadapters.JodaDateTimeStringAdapter;
 import org.joda.time.LocalDate;
 
@@ -181,6 +182,14 @@ public class Reclamo {
         return this;
     }
 
+    public BigInteger ReporNumeroReclamo(){ return this.nroReclamo; }
+    public String ReporNombreCompleto(){ return this.nombreCompleto(); }
+    public String ReporTelefono(){ return this.usuario.getTelefono(); }
+    public String ReporDescripcion(){ return this.descripcion; }
+    public String ReporDireccion(){ return this.usuario.getDireccion(); }
+    public TipoReclamo ReporTipoReclamo(){ return this.tipoReclamo; }
+    public Cuadrilla ReporCuadrillla(){ return this.cuadrillaAsignada; }
+
     public Usuario default0Update() {return getUsuario();}
 
     public TipoReclamo default1Update() {return getTipoReclamo();}
@@ -243,6 +252,13 @@ public class Reclamo {
         return this;
     }
 
+    @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
+    @ActionLayout(named = "Reporte Reclamo")
+    public Blob ReporteReclamo() {
+
+        return this.reclamoRepository.generarReporteReclamo();
+    }
+
     public List<Cuadrilla> choices0AsignarCuadrilla() {
         return cuadrillaRepository.Listar();
     }
@@ -252,6 +268,10 @@ public class Reclamo {
         return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");
     }
     //endregion
+
+    public String nombreCompleto(){
+        return this.usuario.getNombre() + this.usuario.getApellido() != null ? this.usuario.getNombre() +","+this.usuario.getApellido():"---";
+    }
 
     @Inject
     @NotPersistent

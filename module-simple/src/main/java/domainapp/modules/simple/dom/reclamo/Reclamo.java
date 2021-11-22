@@ -73,7 +73,7 @@ public class Reclamo {
     @Column(allowsNull = "false")
     @NonNull
     @Property()
-    @Getter @Setter
+
     private Usuario usuario;
 
     @Column(allowsNull = "false")
@@ -279,15 +279,28 @@ public class Reclamo {
     @Action()
     @ActionLayout(named = "Cargar Planilla")
     public Reclamo addPlanilla(
-            @ParameterLayout(named="Se realizo conexion") final boolean seRealizoConexion
+            @ParameterLayout(named="Se realizo conexion") final boolean seRealizoConexion,
+            @ParameterLayout(named="Se cambio conexion") final boolean seCambioConexion,
+            @ParameterLayout(named="Se reparo conexion") final boolean seReparoConexion,
+            @ParameterLayout(named="Se anulo conexion") final boolean seAnuloConexion,
+            @ParameterLayout(named="Se destapo red") final boolean seDestapoRed,
+            @ParameterLayout(named="Colectora nivel alto") final boolean colectoraNivelAlto,
+            @ParameterLayout(named="Problema interno") final boolean problemaInterno,
+            @ParameterLayout(named="Observacion") final String observacion
+
      ){
 
         final PlanillaCuadrilla planilla = factoryService.instantiate(PlanillaCuadrilla.class);
         planilla.setCuadrilla(cuadrillaAsignada);
         //planilla.setFecha(LocalDate.now());
         planilla.setSeRealizoConexion(seRealizoConexion);
-        planilla.setSeCambioConexion(planilla.isSeCambioConexion());
-        planilla.setObservacion("");
+        planilla.setSeCambioConexion(seCambioConexion);
+        planilla.setSeReparoConexion(seReparoConexion);
+        planilla.setSeAnuloConexion(seAnuloConexion);
+        planilla.setSeDestapoRed(seDestapoRed);
+        planilla.setColectoraNivelAlto(colectoraNivelAlto);
+        planilla.setProblemaInterno(problemaInterno);
+        planilla.setObservacion(observacion);
         getPlanillas().add(planilla);
         repositoryService.persist(planilla);
         return this;

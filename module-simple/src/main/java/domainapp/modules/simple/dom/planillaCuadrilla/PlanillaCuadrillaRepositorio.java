@@ -42,11 +42,16 @@ public class PlanillaCuadrillaRepositorio {
             final Reclamo reclamoAsignado,
             final boolean seRealizoConexion,
             final boolean seCambioConexion,
+            final boolean seReparoConexion,
+            final boolean seAnuloConexion,
+            final boolean seDestapoRed,
+            final boolean colectoraNivelAlto,
+            final boolean problemaInterno,
             // final LocalDate fechaPlanilla,
             final String observacion
 
     ) {
-        final PlanillaCuadrilla planillaCuadrilla = new PlanillaCuadrilla(cuadrilla, reclamoAsignado, seRealizoConexion, seCambioConexion, observacion);
+        final PlanillaCuadrilla planillaCuadrilla = new PlanillaCuadrilla(cuadrilla, reclamoAsignado, seRealizoConexion, seCambioConexion, seReparoConexion, seAnuloConexion, seDestapoRed, colectoraNivelAlto, problemaInterno, observacion);
         repositoryService.persist(planillaCuadrilla);
         return planillaCuadrilla;
     }

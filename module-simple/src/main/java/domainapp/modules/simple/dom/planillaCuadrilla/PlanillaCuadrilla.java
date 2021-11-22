@@ -63,9 +63,7 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
     private Cuadrilla cuadrilla;
 
     @Property(
-            editing = Editing.DISABLED,
-            editingDisabledReason = "tilde"
-    )
+            editing = Editing.DISABLED)
     @Column(allowsNull = "false")
     private boolean seRealizoConexion;
     public boolean isSeRealizoConexion() { return seRealizoConexion; }
@@ -73,13 +71,47 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
 
 
     @Property(
-            editing = Editing.DISABLED,
-            editingDisabledReason = "tilde"
-    )
+            editing = Editing.DISABLED)
     @Column(allowsNull = "false")
     private boolean seCambioConexion;
     public boolean isSeCambioConexion() { return seCambioConexion; }
     public void setSeCambioConexion(final boolean seCambioConexion) { this.seCambioConexion = seCambioConexion; }
+
+    @Property(
+            editing = Editing.DISABLED)
+    @Column(allowsNull = "false")
+    private boolean seReparoConexion;
+    public boolean isSeReparoConexion() { return seReparoConexion; }
+    public void setSeReparoConexion(final boolean seReparoConexion) { this.seReparoConexion = seReparoConexion; }
+
+    @Property(
+            editing = Editing.DISABLED)
+    @Column(allowsNull = "false")
+    private boolean seAnuloConexion;
+    public boolean isSeAnuloConexion() { return seAnuloConexion; }
+    public void setSeAnuloConexion(final boolean seAnuloConexion) { this.seAnuloConexion = seAnuloConexion; }
+
+    @Property(
+            editing = Editing.DISABLED)
+    @Column(allowsNull = "false")
+    private boolean seDestapoRed;
+    public boolean isSeDestapoRed() { return seDestapoRed; }
+    public void setSeDestapoRed(final boolean seDestapoRed) { this.seDestapoRed = seDestapoRed; }
+
+
+    @Property(
+            editing = Editing.DISABLED)
+    @Column(allowsNull = "false")
+    private boolean colectoraNivelAlto;
+    public boolean isColectoraNivelAlto() { return colectoraNivelAlto; }
+    public void setColectoraNivelAlto(final boolean colectoraNivelAlto) { this.colectoraNivelAlto = colectoraNivelAlto; }
+
+    @Property(
+            editing = Editing.DISABLED)
+    @Column(allowsNull = "false")
+    private boolean problemaInterno;
+    public boolean isProblemaInterno() { return problemaInterno; }
+    public void setProblemaInterno(final boolean problemaInterno) { this.problemaInterno = problemaInterno; }
 
     @Column(allowsNull = "true")
     @NonNull
@@ -132,11 +164,21 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
             final Reclamo reclamoAsignado,
             final boolean seRealizoConexion,
             final boolean seCambioConexion,
+            final boolean seReparoConexion,
+            final boolean seAnuloConexion,
+            final boolean seDestapoRed,
+            final boolean colectoraNivelAlto,
+            final boolean problemaInterno,
             final String observacion){
         this.cuadrilla = cuadrilla;
         this.reclamoAsignado = reclamoAsignado;
         this.seRealizoConexion = seRealizoConexion;
         this.seCambioConexion = seCambioConexion;
+        this.seReparoConexion = seReparoConexion;
+        this.seAnuloConexion = seAnuloConexion;
+        this.seDestapoRed = seDestapoRed;
+        this.colectoraNivelAlto = colectoraNivelAlto;
+        this.problemaInterno = problemaInterno;
         this.observacion = observacion;
     }
 
@@ -158,30 +200,27 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se cambio conexión")
             final boolean seCambioConexion,
-/*
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se reparo conexión")
-            final Estado tareaTres,
+            final boolean seReparoConexion,
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se anulo conexión")
-            final Estado tareaCuatro,
-
+            final boolean seAnuloConexion,
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se destapo red")
-            final Estado tareaCinco,
+            final boolean seDestapoRed,
 
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Colectora nivel alto")
-            final Estado tareaSeis,
-
+            final boolean colectoraNivelAlto,
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Problema interno")
-            final Estado tareaSiete,*/
+            final boolean problemaInterno,
 
 
            @Parameter(maxLength = 40)
@@ -191,12 +230,11 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
 
         this.seRealizoConexion = seRealizoConexion;
         this.seCambioConexion = seCambioConexion;
-/*        this.tareaDos = tareaDos;
-        this.tareaTres = tareaTres;
-        this.tareaCuatro = tareaCuatro;
-        this.tareaCinco = tareaCinco;
-        this.tareaSeis = tareaSeis;
-        this.tareaSiete = tareaSiete;*/
+        this.seReparoConexion = seReparoConexion;
+        this.seAnuloConexion = seAnuloConexion;
+        this.seDestapoRed = seDestapoRed;
+        this.colectoraNivelAlto = colectoraNivelAlto;
+        this.problemaInterno = problemaInterno;
         this.observacion = observacion;
 
         return this;

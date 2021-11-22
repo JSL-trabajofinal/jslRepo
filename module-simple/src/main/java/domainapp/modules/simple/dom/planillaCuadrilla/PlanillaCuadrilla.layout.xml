@@ -34,6 +34,10 @@
                                 <c:property id="cuadrilla" namedEscaped="true"/>
                                 <c:property id="seRealizoConexion" namedEscaped="true"/>
                                 <c:property id="seCambioConexion" namedEscaped="true"/>
+                                <c:property id="seReparoConexion" namedEscaped="true"/>
+                                <c:property id="seAnuloConexion" namedEscaped="true"/>
+                                <c:property id="seDestapoRed" namedEscaped="true"/>
+                                <c:property id="colectoraNivelAlto" namedEscaped="true"/>
                                 <c:property id="observacion" namedEscaped="true"/>
                                 <c:action id="updatePlanillaCuadrilla"/>
 

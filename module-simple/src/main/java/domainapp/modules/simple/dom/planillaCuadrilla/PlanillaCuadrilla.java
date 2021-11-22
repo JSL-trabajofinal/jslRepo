@@ -6,6 +6,7 @@ import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 
 import domainapp.modules.simple.dom.reclamo.Reclamo;
 import domainapp.modules.simple.dom.tecnico.Tecnico;
+import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
@@ -55,7 +56,6 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
 
 
 
-
     @Property()
     @NonNull
     @Column(allowsNull = "false")
@@ -80,6 +80,12 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
     private boolean seCambioConexion;
     public boolean isSeCambioConexion() { return seCambioConexion; }
     public void setSeCambioConexion(final boolean seCambioConexion) { this.seCambioConexion = seCambioConexion; }
+
+    @Column(allowsNull = "true")
+    @NonNull
+    @Property()
+    @Getter @Setter
+    private Reclamo reclamoAsignado;
 
 /*    @Action()
     @MemberOrder(name = "seRealizoConexion", sequence = "1")
@@ -113,7 +119,7 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
     private Estado tareaSiete;*/
     @Property()
     @NonNull
-    @Column(allowsNull = "false")
+    @Column(allowsNull = "true")
     @Getter @Setter
     private String observacion;
 
@@ -123,14 +129,18 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
 
     public PlanillaCuadrilla(
             final Cuadrilla cuadrilla,
+            final Reclamo reclamoAsignado,
             final boolean seRealizoConexion,
             final boolean seCambioConexion,
             final String observacion){
         this.cuadrilla = cuadrilla;
+        this.reclamoAsignado = reclamoAsignado;
         this.seRealizoConexion = seRealizoConexion;
         this.seCambioConexion = seCambioConexion;
         this.observacion = observacion;
     }
+
+
 
 /*    public Cuadrilla default0Update() {return getCuadrilla();}
     public String default1Update() {return getObservacion();}*/
@@ -191,6 +201,7 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
 
         return this;
     }
+
 
 
     //region > compareTo, toString

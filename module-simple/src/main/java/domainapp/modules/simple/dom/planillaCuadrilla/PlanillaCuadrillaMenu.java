@@ -3,6 +3,7 @@ package domainapp.modules.simple.dom.planillaCuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
+import domainapp.modules.simple.dom.reclamo.Reclamo;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +23,7 @@ import java.util.List;
         menuOrder = ""
 )
 public class PlanillaCuadrillaMenu {
+/*
 
     @Action()
     @ActionLayout(named = "Crear Planilla Cuadrilla")
@@ -49,9 +51,9 @@ public class PlanillaCuadrillaMenu {
 
     }
 
+*/
 
-    public List<Cuadrilla> choices0Create() {return cuadrillaRepository.Listar();}
-
+    /*public List<Cuadrilla> choices0Create() {return cuadrillaRepository.Listar();}*/
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas")

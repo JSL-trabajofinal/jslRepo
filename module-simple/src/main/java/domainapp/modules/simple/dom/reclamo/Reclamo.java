@@ -2,6 +2,8 @@ package domainapp.modules.simple.dom.reclamo;
 
 import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
+import domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla;
+import domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrillaRepositorio;
 import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -10,6 +12,7 @@ import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.message.MessageService;
+import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.schema.utils.jaxbadapters.JodaDateTimeStringAdapter;
 import org.joda.time.LocalDate;
 
@@ -17,6 +20,7 @@ import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 @PersistenceCapable(
@@ -97,10 +101,14 @@ public class Reclamo {
     @PropertyLayout(named = "Cuadrilla")
     private Cuadrilla cuadrillaAsignada;
 
+    @Persistent(mappedBy = "reclamoAsignado", dependentElement = "true")
+    @Collection()
+    private List<PlanillaCuadrilla> planillas = new ArrayList<PlanillaCuadrilla>();
 
-    @Column(allowsNull = "true", length = 2000)
+
+/*    @Column(allowsNull = "true", length = 2000)
     @Property(editing = Editing.ENABLED)
-    private String observacion;
+    private String observacion;*/
 
     @Column(allowsNull = "true")
     @PropertyLayout(named="Fecha Cierre del Reclamo: ")
@@ -145,12 +153,31 @@ public class Reclamo {
     }
 
     public Reclamo(
+            BigInteger nroReclamo,
+            Estado estado,
+            Usuario usuario,
+            LocalDate fecha,
+            TipoReclamo tipoReclamo,
+            String descripcion,
+            List<PlanillaCuadrilla> planillas){
+
+        this.nroReclamo = nroReclamo;
+        this.estado = estado;
+        this.usuario = usuario;
+        this.fecha = fecha;
+        this.tipoReclamo = tipoReclamo;
+        this.descripcion = descripcion;
+        this.planillas = planillas;
+
+    }
+
+    public Reclamo(
             Estado estado,
             String observacion,
             LocalDate fechaCierre){
 
         this.estado = estado;
-        this.observacion = observacion;
+     //   this.observacion = observacion;
         this.fechaCierre = fechaCierre;
     }
 
@@ -218,7 +245,7 @@ public class Reclamo {
             final Reclamo reclamo = factoryService.instantiate(Reclamo.class);
             fechaCierre = LocalDate.now();
             reclamo.setFechaCierre(fechaCierre);
-            reclamo.setObservacion(observacion);
+          // reclamo.setObservacion(observacion);
             CambiarEstado(Estado.Cerrado);
             messageService.informUser("Reclamo Cerrado");
         }
@@ -247,11 +274,35 @@ public class Reclamo {
         return cuadrillaRepository.Listar();
     }
 
+
+
+    @Action()
+    @ActionLayout(named = "Cargar Planilla")
+    public Reclamo addPlanilla(
+            @ParameterLayout(named="Se realizo conexion") final boolean seRealizoConexion
+     ){
+
+        final PlanillaCuadrilla planilla = factoryService.instantiate(PlanillaCuadrilla.class);
+        planilla.setCuadrilla(cuadrillaAsignada);
+        //planilla.setFecha(LocalDate.now());
+        planilla.setSeRealizoConexion(seRealizoConexion);
+        planilla.setSeCambioConexion(planilla.isSeCambioConexion());
+        planilla.setObservacion("");
+        getPlanillas().add(planilla);
+        repositoryService.persist(planilla);
+        return this;
+    }
+
       @Override
     public String toString() {
-        return org.apache.isis.applib.util.ObjectContracts.toString(this, "dni");
+        return org.apache.isis.applib.util.ObjectContracts.toString(this, "nroReclamo");
     }
     //endregion
+
+
+    @Inject @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    RepositoryService repositoryService;
 
     @Inject
     @NotPersistent
@@ -272,4 +323,9 @@ public class Reclamo {
     @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     ReclamoRepositorio reclamoRepository;
+
+    @Inject
+    @NotPersistent
+    @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
+    PlanillaCuadrillaRepositorio planillaCuadrillaRepository;
 }

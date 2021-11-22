@@ -1,5 +1,6 @@
 package domainapp.modules.simple.dom.planillaCuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
+import domainapp.modules.simple.dom.reclamo.Reclamo;
 import org.apache.isis.applib.annotation.DomainService;
 import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
@@ -38,13 +39,14 @@ public class PlanillaCuadrillaRepositorio {
     public PlanillaCuadrilla create(
 
             final Cuadrilla cuadrilla,
+            final Reclamo reclamoAsignado,
             final boolean seRealizoConexion,
             final boolean seCambioConexion,
             // final LocalDate fechaPlanilla,
             final String observacion
 
     ) {
-        final PlanillaCuadrilla planillaCuadrilla = new PlanillaCuadrilla(cuadrilla, seRealizoConexion, seCambioConexion, observacion);
+        final PlanillaCuadrilla planillaCuadrilla = new PlanillaCuadrilla(cuadrilla, reclamoAsignado, seRealizoConexion, seCambioConexion, observacion);
         repositoryService.persist(planillaCuadrilla);
         return planillaCuadrilla;
     }

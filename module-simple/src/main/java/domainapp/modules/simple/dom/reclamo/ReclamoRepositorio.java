@@ -80,4 +80,5 @@ public class ReclamoRepositorio {
 
     @Inject
     RepositoryService repositoryService;
+
 }

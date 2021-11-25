@@ -4,7 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
   {
     path: 'home',
@@ -13,10 +14,6 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'reclamos',
@@ -31,8 +28,12 @@ const routes: Routes = [
     loadChildren: () => import('./cuadrillas/cuadrillas.module').then( m => m.CuadrillasPageModule)
   },
   {
-    path: 'detalle-cuadrilla',
-    loadChildren: () => import('./detalle-cuadrilla/detalle-cuadrilla.module').then( m => m.DetalleCuadrillaPageModule)
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cuadrilla-detalle',
+    loadChildren: () => import('./detalle-cuadrilla/detalle-cuadrilla.page').then( m => m.DetalleCuadrillaPage)
   }
 ];
 @NgModule({

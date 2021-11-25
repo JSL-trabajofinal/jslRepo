@@ -8,12 +8,16 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'reclamos',
@@ -28,12 +32,12 @@ const routes: Routes = [
     loadChildren: () => import('./cuadrillas/cuadrillas.module').then( m => m.CuadrillasPageModule)
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
     path: 'cuadrilla-detalle',
     loadChildren: () => import('./detalle-cuadrilla/detalle-cuadrilla.page').then( m => m.DetalleCuadrillaPage)
+  },
+  {
+    path: 'intro',
+    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
   }
 ];
 @NgModule({

@@ -1,9 +1,55 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>reclamo-detalle</ion-title>
+    <ion-title slot="end">Detalle del Reclamo</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu/reclamos"> </ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content>
+  <div id="container">
+    <div *ngIf="datosReclamo != null">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">
+            <h2>Datos del Reclamo</h2>
+          </ion-card-title>
+        </ion-card-header>
+
+
+        <ion-item>
+          <ion-icon name="calendar" slot="start"></ion-icon>
+          <ion-label>
+            <h3>Fecha de Alta</h3>
+
+            <h4>{{datosReclamo.fecha}}</h4> <br>
+
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="chatbox-ellipses" slot="start"></ion-icon>
+          <ion-label>
+            <h3>Descripción</h3>
+
+            <h4>{{datosReclamo.descripcion}}</h4> <br>
+
+          </ion-label> 
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="people" slot="start"></ion-icon>
+          <ion-label>
+            <h3>Cuadrilla Asignada</h3>
+
+          <h4>{{datosCuadrilla.nombre}}</h4><br>
+
+          </ion-label> 
+        </ion-item>
+
+      </ion-card>
+    </div>
+  </div>
 </ion-content>

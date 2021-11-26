@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { ReclamosPageRoutingModule } from './reclamos-routing.module';
 
@@ -12,8 +12,10 @@ import { ReclamosPage } from './reclamos.page';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
-    ReclamosPageRoutingModule
+    IonicModule.forRoot(),
+    ReclamosPageRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [ReclamosPage]
 })

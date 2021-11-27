@@ -33,11 +33,15 @@ const routes: Routes = [
   },
   {
     path: 'cuadrilla-detalle',
-    loadChildren: () => import('./detalle-cuadrilla/detalle-cuadrilla.page').then( m => m.DetalleCuadrillaPage)
+    loadChildren: () => import('./cuadrilla-detalle/cuadrilla-detalle.module').then( m => m.CuadrillaDetallePageModule)
   },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cuadrilla-detalle',
+    loadChildren: () => import('./cuadrilla-detalle/cuadrilla-detalle.module').then( m => m.CuadrillaDetallePageModule)
   }
 
 ];

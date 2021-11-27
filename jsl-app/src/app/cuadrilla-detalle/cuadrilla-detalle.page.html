@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="end">Cuadrillas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu/reclamos"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content>
+    <ion-app>
+      <ion-header translucent>
+        <ion-toolbar>
+          <ion-title>Lista de Cuadrillas</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+        <ion-content fullscreen>
+          <ion-list>
+            <ion-list-header>Cuadrillas</ion-list-header>
+        <ion-item *ngFor="let cuadrillas of contenidoArray; let ultimo = last;" [ngClass]="{ultimo:ultimo}">
+
+          <ion-label>
+          <p>Nro de Reclamo: {{cuadrillas.nroReclamo | titlecase}} </p>
+          <p>Tipo de Reclamo: {{cuadrillas.tipoReclamo | titlecase}} </p>
+          <p>Fecha: {{cuadrillas.fecha | titlecase}} </p>
+          </ion-label>
+
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-app>
+  </ion-content>

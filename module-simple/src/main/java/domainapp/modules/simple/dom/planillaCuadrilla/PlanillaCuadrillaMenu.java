@@ -23,37 +23,7 @@ import java.util.List;
         menuOrder = ""
 )
 public class PlanillaCuadrillaMenu {
-/*
 
-    @Action()
-    @ActionLayout(named = "Crear Planilla Cuadrilla")
-    @MemberOrder(sequence = "1")
-    public PlanillaCuadrilla create(
-
-            @Parameter(optionality = Optionality.MANDATORY)
-            @ParameterLayout(named = "Cuadrilla: ")
-            final Cuadrilla cuadrilla,
-
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Se realizo conexión")
-            final boolean seRealizoConexion,
-
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Se cambio conexión")
-            final boolean seCambioConexion,
-
-            @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Observacion")
-            final String observacion)
-    {
-
-        return planillaCuadrillaRepository.create(cuadrilla, seRealizoConexion, seCambioConexion, observacion);
-
-    }
-
-*/
-
-    /*public List<Cuadrilla> choices0Create() {return cuadrillaRepository.Listar();}*/
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Cuadrillas")

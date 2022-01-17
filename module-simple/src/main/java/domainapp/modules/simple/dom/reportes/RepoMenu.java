@@ -1,3 +1,4 @@
+/*
 package domainapp.modules.simple.dom.reportes;
 
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
@@ -38,7 +39,8 @@ public class RepoMenu {
         return repositoryReclamo.generarReporteReclamo();
     }
 
-    /*@Action(
+    */
+/*@Action(
             semantics = SemanticsOf.SAFE,
             restrictTo = RestrictTo.PROTOTYPING
     )
@@ -50,7 +52,8 @@ public class RepoMenu {
     public Blob generarReportePresupuestos(
     ) throws JRException, IOException {
         return repositoryCuadrilla.generarReportePresupuestos();
-    }*/
+    }*//*
+
 
 
     @Inject
@@ -63,4 +66,4 @@ public class RepoMenu {
     @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     CuadrillaRepositorio repositoryCuadrilla;
-}
+}*/

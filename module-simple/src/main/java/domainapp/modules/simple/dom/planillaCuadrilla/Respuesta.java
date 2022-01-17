@@ -1,5 +1,5 @@
 package domainapp.modules.simple.dom.planillaCuadrilla;
 
-public enum Estado {
+public enum Respuesta {
     Si, No
 }

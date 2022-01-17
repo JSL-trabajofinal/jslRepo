@@ -8,7 +8,6 @@ import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
 
 import javax.inject.Inject;
-import java.math.BigInteger;
 import java.util.List;
 
 @DomainService(
@@ -40,13 +39,13 @@ public class PlanillaCuadrillaRepositorio {
 
             final Cuadrilla cuadrilla,
             final Reclamo reclamoAsignado,
-            final boolean seRealizoConexion,
-            final boolean seCambioConexion,
-            final boolean seReparoConexion,
-            final boolean seAnuloConexion,
-            final boolean seDestapoRed,
-            final boolean colectoraNivelAlto,
-            final boolean problemaInterno,
+            final Respuesta seRealizoConexion,
+            final Respuesta seCambioConexion,
+            final Respuesta seReparoConexion,
+            final Respuesta seAnuloConexion,
+            final Respuesta seDestapoRed,
+            final Respuesta colectoraNivelAlto,
+            final Respuesta problemaInterno,
             // final LocalDate fechaPlanilla,
             final String observacion
 

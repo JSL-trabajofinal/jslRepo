@@ -1,3 +1,4 @@
+/*
 package domainapp.modules.simple.dom.reportes;
 
 import domainapp.modules.simple.dom.reclamo.Reclamo;
@@ -34,7 +35,8 @@ public class EjecutarReportes {
         return GenerarArchivoPDF("ReporteReclamo.jrxml","ReporteReclamo.pdf", ds);
     }
 
-    /*public Blob  ListadoPresupuestosPDF(List<Presupuesto> presupuestos)throws JRException, IOException{
+    */
+/*public Blob  ListadoPresupuestosPDF(List<Presupuesto> presupuestos)throws JRException, IOException{
 
         List<RepoPresupuestos> presupuestosDatasource = new ArrayList<RepoPresupuestos>();
 
@@ -51,7 +53,8 @@ public class EjecutarReportes {
 
         JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(presupuestosDatasource);
         return GenerarArchivoPDF("listadoPresupuestos.jrxml","ListadoPresupuestos.pdf", ds);
-    }*/
+    }*//*
+
 
     private Blob GenerarArchivoPDF(String archivoDesing, String nombreSalida, JRBeanCollectionDataSource ds) throws JRException, IOException{
 
@@ -67,3 +70,4 @@ public class EjecutarReportes {
     }
 }
 
+*/

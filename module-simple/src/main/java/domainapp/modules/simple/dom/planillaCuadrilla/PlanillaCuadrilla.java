@@ -1,23 +1,18 @@
 package domainapp.modules.simple.dom.planillaCuadrilla;
 
-import domainapp.modules.simple.dom.ayudante.Ayudante;
 import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 
 import domainapp.modules.simple.dom.reclamo.Reclamo;
-import domainapp.modules.simple.dom.tecnico.Tecnico;
-import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 import org.apache.isis.applib.annotation.*;
-import org.joda.time.LocalDate;
 
 import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import java.math.BigInteger;
-import java.util.List;
 
 
 @PersistenceCapable(
@@ -62,56 +57,55 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
     @Getter @Setter
     private Cuadrilla cuadrilla;
 
-    @Property(
-            editing = Editing.DISABLED)
-    @Column(allowsNull = "false")
-    private boolean seRealizoConexion;
-    public boolean isSeRealizoConexion() { return seRealizoConexion; }
-    public void setSeRealizoConexion(final boolean seRealizoConexion) { this.seRealizoConexion = seRealizoConexion; }
+    @Property(editing = Editing.ENABLED)
+    @NonNull
+    @Column(allowsNull = "true")
+    @Getter @Setter
+    private Respuesta seRealizoConexion;
+
+    @Property(editing = Editing.ENABLED)
+    @NonNull
+    @Column(allowsNull = "true")
+    @Getter @Setter
+    private Respuesta seCambioConexion;
 
 
-    @Property(
-            editing = Editing.DISABLED)
-    @Column(allowsNull = "false")
-    private boolean seCambioConexion;
-    public boolean isSeCambioConexion() { return seCambioConexion; }
-    public void setSeCambioConexion(final boolean seCambioConexion) { this.seCambioConexion = seCambioConexion; }
-
-    @Property(
-            editing = Editing.DISABLED)
-    @Column(allowsNull = "false")
-    private boolean seReparoConexion;
-    public boolean isSeReparoConexion() { return seReparoConexion; }
-    public void setSeReparoConexion(final boolean seReparoConexion) { this.seReparoConexion = seReparoConexion; }
-
-    @Property(
-            editing = Editing.DISABLED)
-    @Column(allowsNull = "false")
-    private boolean seAnuloConexion;
-    public boolean isSeAnuloConexion() { return seAnuloConexion; }
-    public void setSeAnuloConexion(final boolean seAnuloConexion) { this.seAnuloConexion = seAnuloConexion; }
-
-    @Property(
-            editing = Editing.DISABLED)
-    @Column(allowsNull = "false")
-    private boolean seDestapoRed;
-    public boolean isSeDestapoRed() { return seDestapoRed; }
-    public void setSeDestapoRed(final boolean seDestapoRed) { this.seDestapoRed = seDestapoRed; }
+    @Property(editing = Editing.ENABLED)
+    @NonNull
+    @Column(allowsNull = "true")
+    @Getter @Setter
+    private Respuesta seReparoConexion;
 
 
-    @Property(
-            editing = Editing.DISABLED)
-    @Column(allowsNull = "false")
-    private boolean colectoraNivelAlto;
-    public boolean isColectoraNivelAlto() { return colectoraNivelAlto; }
-    public void setColectoraNivelAlto(final boolean colectoraNivelAlto) { this.colectoraNivelAlto = colectoraNivelAlto; }
+    @Property(editing = Editing.ENABLED)
+    @NonNull
+    @Column(allowsNull = "true")
+    @Getter @Setter
+    private Respuesta seAnuloConexion;
 
-    @Property(
-            editing = Editing.DISABLED)
-    @Column(allowsNull = "false")
-    private boolean problemaInterno;
-    public boolean isProblemaInterno() { return problemaInterno; }
-    public void setProblemaInterno(final boolean problemaInterno) { this.problemaInterno = problemaInterno; }
+
+    @Property(editing = Editing.ENABLED)
+    @NonNull
+    @Column(allowsNull = "true")
+    @Getter @Setter
+    private Respuesta seDestapoRed;
+
+
+    @Property(editing = Editing.ENABLED)
+    @NonNull
+    @Column(allowsNull = "true")
+    @Getter @Setter
+    private Respuesta colectoraNivelAlto;
+
+
+
+    @Property(editing = Editing.ENABLED)
+    @NonNull
+    @Column(allowsNull = "true")
+    @Getter @Setter
+    private Respuesta problemaInterno;
+
+
 
     @Column(allowsNull = "true")
     @NonNull
@@ -119,36 +113,8 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
     @Getter @Setter
     private Reclamo reclamoAsignado;
 
-/*    @Action()
-    @MemberOrder(name = "seRealizoConexion", sequence = "1")
-    public PlanillaCuadrilla marcar() {
-        setSeRealizoConexion(isSeRealizoConexion());
-        return this;
-    }*/
 
- /*   @Property()
-    @Column(allowsNull = "false")
-    private Estado tareaDos;
 
-    @Property()
-    @Column(allowsNull = "false")
-    private Estado tareaTres;
-
-    @Property()
-    @Column(allowsNull = "false")
-    private Estado tareaCuatro;
-
-    @Property()
-    @Column(allowsNull = "false")
-    private Estado tareaCinco;
-
-    @Property()
-    @Column(allowsNull = "false")
-    private Estado tareaSeis;
-
-    @Property()
-    @Column(allowsNull = "false")
-    private Estado tareaSiete;*/
     @Property()
     @NonNull
     @Column(allowsNull = "true")
@@ -157,18 +123,21 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
 
     public String title(){ return "Planilla de Servicio"; }
 
+
+
+
     public PlanillaCuadrilla(){}
 
     public PlanillaCuadrilla(
             final Cuadrilla cuadrilla,
             final Reclamo reclamoAsignado,
-            final boolean seRealizoConexion,
-            final boolean seCambioConexion,
-            final boolean seReparoConexion,
-            final boolean seAnuloConexion,
-            final boolean seDestapoRed,
-            final boolean colectoraNivelAlto,
-            final boolean problemaInterno,
+            final Respuesta seRealizoConexion,
+            final Respuesta seCambioConexion,
+            final Respuesta seReparoConexion,
+            final Respuesta seAnuloConexion,
+            final Respuesta seDestapoRed,
+            final Respuesta colectoraNivelAlto,
+            final Respuesta problemaInterno,
             final String observacion){
         this.cuadrilla = cuadrilla;
         this.reclamoAsignado = reclamoAsignado;
@@ -184,10 +153,6 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
 
 
 
-/*    public Cuadrilla default0Update() {return getCuadrilla();}
-    public String default1Update() {return getObservacion();}*/
-
-
     @Action()
     @ActionLayout(named = "Editar")
     public PlanillaCuadrilla updatePlanillaCuadrilla(
@@ -195,37 +160,37 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se realizo conexión")
-            final boolean seRealizoConexion,
+            final Respuesta seRealizoConexion,
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se cambio conexión")
-            final boolean seCambioConexion,
+            final Respuesta seCambioConexion,
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se reparo conexión")
-            final boolean seReparoConexion,
+            final Respuesta seReparoConexion,
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se anulo conexión")
-            final boolean seAnuloConexion,
+            final Respuesta seAnuloConexion,
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Se destapo red")
-            final boolean seDestapoRed,
+            final Respuesta seDestapoRed,
 
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Colectora nivel alto")
-            final boolean colectoraNivelAlto,
+            final Respuesta colectoraNivelAlto,
 
             @Parameter(maxLength = 40)
             @ParameterLayout(named = "Problema interno")
-            final boolean problemaInterno,
+            final Respuesta problemaInterno,
 
 
-           @Parameter(maxLength = 40)
-           @ParameterLayout(named = "Observacion")
-           final String observacion)
+            @Parameter(maxLength = 40)
+            @ParameterLayout(named = "Observacion")
+            final String observacion)
     {
 
         this.seRealizoConexion = seRealizoConexion;
@@ -263,5 +228,6 @@ public class PlanillaCuadrilla implements Comparable<PlanillaCuadrilla> {
     @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     CuadrillaRepositorio cuadrillaRepository;
+
 
 }

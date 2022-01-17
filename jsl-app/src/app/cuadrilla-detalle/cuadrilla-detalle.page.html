@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title slot="end">Cuadrillas</ion-title>
+    <ion-title slot="end">Reclamos Asignados</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/menu/reclamos"> </ion-back-button>
     </ion-buttons>
@@ -17,13 +17,20 @@
 
         <ion-content fullscreen>
           <ion-list>
-            <ion-list-header>Cuadrillas</ion-list-header>
+            <ion-list-header>Reclamos Asignados</ion-list-header>
         <ion-item *ngFor="let cuadrillas of contenidoArray; let ultimo = last;" [ngClass]="{ultimo:ultimo}">
 
           <ion-label>
           <p>Nro de Reclamo: {{cuadrillas.nroReclamo | titlecase}} </p>
           <p>Tipo de Reclamo: {{cuadrillas.tipoReclamo | titlecase}} </p>
           <p>Fecha: {{cuadrillas.fecha | titlecase}} </p>
+
+          <ion-button
+            (click)="cargarPlanilla(cuadrillas.$$instanceId)"
+            color="secondary"
+            size="small"
+            slot="end"
+            ><ion-icon color="light" name="document-text-sharp"></ion-icon>&nbsp; Cargar Planilla</ion-button><br/>
           </ion-label>
 
         </ion-item>

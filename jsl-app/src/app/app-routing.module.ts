@@ -42,7 +42,11 @@ const routes: Routes = [
   {
     path: 'cuadrilla-detalle',
     loadChildren: () => import('./cuadrilla-detalle/cuadrilla-detalle.module').then( m => m.CuadrillaDetallePageModule)
+  },  {
+    path: 'crear-planilla',
+    loadChildren: () => import('./crear-planilla/crear-planilla.module').then( m => m.CrearPlanillaPageModule)
   }
+
 
 ];
 @NgModule({

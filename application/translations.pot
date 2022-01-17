@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-16 22:21:49+\n"
+"POT-Creation-Date: 2022-01-16 22:42:41+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -224,8 +224,8 @@ msgid "Colectora Nivel Alto"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
-#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Colectora nivel alto"
 msgstr ""
 
@@ -641,6 +641,11 @@ msgid "Name"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.planillaCuadrilla.Respuesta#No
+msgid "No"
+msgstr ""
+
+
 #: domainapp.modules.simple.dom.ayudante.Ayudante#nombre
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#nombre
 #: domainapp.modules.simple.dom.tecnico.Tecnico#nombre
@@ -688,9 +693,8 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#observacion
-#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
-#: domainapp.modules.simple.dom.reclamo.Reclamo#Cerrar(java.lang.String)
-#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Observacion"
 msgstr ""
 
@@ -811,8 +815,8 @@ msgid "Problema Interno"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
-#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Problema interno"
 msgstr ""
 
@@ -970,49 +974,54 @@ msgid "Se Reparo Conexion"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se anulo conexion"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se anulo conexión"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se cambio conexion"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se cambio conexión"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
-#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se destapo red"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se realizo conexion"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se realizo conexión"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.reclamo.Reclamo#addPlanilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se reparo conexion"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(boolean,boolean,boolean,boolean,boolean,boolean,boolean,java.lang.String)
+#: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
 msgid "Se reparo conexión"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.planillaCuadrilla.Respuesta#Si
+msgid "Si"
 msgstr ""
 
 

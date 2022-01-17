@@ -4,6 +4,7 @@ import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 import domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla;
 import domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrillaRepositorio;
+import domainapp.modules.simple.dom.planillaCuadrilla.Respuesta;
 import domainapp.modules.simple.dom.usuario.Usuario;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -177,7 +178,7 @@ public class Reclamo {
             LocalDate fechaCierre){
 
         this.estado = estado;
-     //   this.observacion = observacion;
+        //   this.observacion = observacion;
         this.fechaCierre = fechaCierre;
     }
 
@@ -232,20 +233,18 @@ public class Reclamo {
     }
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
-    public Reclamo Cerrar(
-           // @ParameterLayout(named="Fecha Cierre: ") final LocalDate fechaCierre,
-            @ParameterLayout(named="Observacion") final String observacion) {
+    public Reclamo Cerrar()
+    {
         if (getEstado().equals(Estado.Cerrado)) {
             messageService.warnUser("El reclamo ya se encuentra cerrado!");
         }else if (getEstado().equals(Estado.Anulado)) {
-            messageService.warnUser("No es posible cerrar un reclamo anulado!!");
+            messageService.warnUser("No es posible cerrar un reclamo anulado!");
         }else if (getEstado().equals(Estado.Sin_Asignar)) {
             messageService.warnUser("No es posible cerrar un reclamo sin asignar!");
         }else {
             final Reclamo reclamo = factoryService.instantiate(Reclamo.class);
             fechaCierre = LocalDate.now();
             reclamo.setFechaCierre(fechaCierre);
-          // reclamo.setObservacion(observacion);
             CambiarEstado(Estado.Cerrado);
             messageService.informUser("Reclamo Cerrado");
         }
@@ -279,20 +278,21 @@ public class Reclamo {
     @Action()
     @ActionLayout(named = "Cargar Planilla")
     public Reclamo addPlanilla(
-            @ParameterLayout(named="Se realizo conexion") final boolean seRealizoConexion,
-            @ParameterLayout(named="Se cambio conexion") final boolean seCambioConexion,
-            @ParameterLayout(named="Se reparo conexion") final boolean seReparoConexion,
-            @ParameterLayout(named="Se anulo conexion") final boolean seAnuloConexion,
-            @ParameterLayout(named="Se destapo red") final boolean seDestapoRed,
-            @ParameterLayout(named="Colectora nivel alto") final boolean colectoraNivelAlto,
-            @ParameterLayout(named="Problema interno") final boolean problemaInterno,
+            @ParameterLayout(named="Se realizo conexion") final Respuesta seRealizoConexion,
+            @ParameterLayout(named="Se cambio conexion") final Respuesta seCambioConexion,
+            @ParameterLayout(named="Se reparo conexion") final Respuesta seReparoConexion,
+            @ParameterLayout(named="Se anulo conexion") final Respuesta seAnuloConexion,
+            @ParameterLayout(named="Se destapo red") final Respuesta seDestapoRed,
+            @ParameterLayout(named="Colectora nivel alto") final Respuesta colectoraNivelAlto,
+            @ParameterLayout(named="Problema interno") final Respuesta problemaInterno,
             @ParameterLayout(named="Observacion") final String observacion
 
-     ){
+    ){
 
         final PlanillaCuadrilla planilla = factoryService.instantiate(PlanillaCuadrilla.class);
         planilla.setCuadrilla(cuadrillaAsignada);
         //planilla.setFecha(LocalDate.now());
+
         planilla.setSeRealizoConexion(seRealizoConexion);
         planilla.setSeCambioConexion(seCambioConexion);
         planilla.setSeReparoConexion(seReparoConexion);
@@ -306,7 +306,7 @@ public class Reclamo {
         return this;
     }
 
-      @Override
+    @Override
     public String toString() {
         return org.apache.isis.applib.util.ObjectContracts.toString(this, "nroReclamo");
     }

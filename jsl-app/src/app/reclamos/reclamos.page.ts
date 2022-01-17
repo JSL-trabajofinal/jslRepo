@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reclamos',
@@ -52,5 +53,37 @@ export class ReclamosPage implements OnInit {
     console.log(idReclamo);
     this.router.navigate(['/reclamo-detalle', { id_Reclamo: idReclamo }]);
   }
+
+  alertaLogOut(){
+    Swal.fire({
+      title: "Esta seguro que desea cerrar la sesión",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: "Si",
+      confirmButtonColor: "#68DE65",
+      cancelButtonText: "No",
+      cancelButtonColor: "#DF4343",
+  })
+  .then(resultado => {
+      if (resultado.isConfirmed) {
+        Swal.fire({
+          title: "Sesión cerrada exitosamente!",
+                icon: 'success', 
+                confirmButtonColor: "#68DE65",               
+              })
+          this.router.navigate(['/login']);
+      } else {
+        Swal.fire({
+          title: "Acción cancelada ", 
+          confirmButtonColor: "#68DE65",
+          icon: 'error',
+                 })
+      }
+  });
+    }
+
+
 }
+
+
 

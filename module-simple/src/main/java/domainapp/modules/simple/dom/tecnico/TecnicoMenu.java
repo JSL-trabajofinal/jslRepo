@@ -1,9 +1,13 @@
 package domainapp.modules.simple.dom.tecnico;
 
 
+import domainapp.modules.simple.dom.reportes.EjecutarReportes;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.value.Blob;
 
 import javax.inject.Inject;
+import java.io.IOException;
 import java.util.List;
 
 @DomainService(
@@ -65,6 +69,13 @@ public class TecnicoMenu {
     public List<Tecnico> listAll() {
         List<Tecnico> tecnicos = tecnicorepository.Listar();
         return tecnicos;
+    }
+
+    @Action()
+    @ActionLayout(named = "Listado Exportado")
+    public Blob ExportarListado() throws JRException, IOException {
+        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+        return ejecutarReportes.ListadoTecnicosPDF(tecnicorepository.Listar());
     }
 
     @Inject

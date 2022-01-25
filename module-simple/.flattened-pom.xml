@@ -70,6 +70,11 @@
         <version>1.4.01</version>
       </dependency>
       <dependency>
+        <groupId>com.lowagie</groupId>
+        <artifactId>itext</artifactId>
+        <version>2.1.7</version>
+      </dependency>
+      <dependency>
         <groupId>com.danhaywood.mavenmixin</groupId>
         <artifactId>cucumberreporting</artifactId>
         <version>0.0.2</version>
@@ -988,12 +993,6 @@
       <artifactId>jasperreports</artifactId>
       <version>6.3.1</version>
       <scope>compile</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>com.lowagie</groupId>
-          <artifactId>itext</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>

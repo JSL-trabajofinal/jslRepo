@@ -176,16 +176,18 @@
             <artifactId>itext</artifactId>
             <version>2.1.7.js2</version>
         </dependency>-->
+
+
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
             <version>6.3.1</version>
-            <exclusions>
+        <!--    <exclusions>
                 <exclusion>
                     <groupId>com.lowagie</groupId>
                     <artifactId>itext</artifactId>
                 </exclusion>
-            </exclusions>
+            </exclusions>-->
         </dependency>
 
     </dependencies>
@@ -200,7 +202,7 @@
         </repository>
 
     </repositories>
-  <!--  <profiles>
+<!--    <profiles>
         <profile>
             <id>isis-validate</id>
             <activation>

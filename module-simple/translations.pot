@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-24 01:05:41+\n"
+"POT-Creation-Date: 2022-01-25 20:21:35+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -578,6 +578,11 @@ msgid "List All"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.tecnico.TecnicoMenu#ExportarListado()
+msgid "Listado Exportado"
+msgstr ""
+
+
 #: domainapp.modules.simple.dom.ayudante.AyudanteMenu#listAll()
 msgid "Listado de Ayudantes"
 msgstr ""
@@ -902,6 +907,11 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.reclamo.TipoReclamo#Reparacion_de_vereda
 msgid "Reparacion De Vereda"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.tecnico.Tecnico#RepoNombre()
+msgid "Repo Nombre"
 msgstr ""
 
 

@@ -66,6 +66,8 @@ public class Tecnico implements Comparable<Tecnico>{
     @Property()
     private List<Cuadrilla> cuadrillaTecnico;
 
+    public String RepoNombre() { return this.nombre; }
+
     public Tecnico(){}
 
     public Tecnico(

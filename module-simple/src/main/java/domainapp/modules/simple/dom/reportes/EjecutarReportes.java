@@ -1,6 +1,6 @@
 package domainapp.modules.simple.dom.reportes;
 
-
+import domainapp.modules.simple.dom.reclamo.Reclamo;
 import domainapp.modules.simple.dom.tecnico.Tecnico;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
@@ -17,13 +17,27 @@ import java.util.Map;
 
 public class EjecutarReportes {
 
+    public Blob ListadoReclamoPDF(List<Reclamo> reclamos) throws JRException, IOException {
+
+        List<RepoReclamo> recla = new ArrayList<RepoReclamo>();
+        recla.add(new RepoReclamo());
+
+        for(Reclamo reclamo : reclamos){
+            RepoReclamo repoReclamo = new RepoReclamo(reclamo.ReporNroReclamo(),reclamo.ReporNombre(),reclamo.ReporApellido(),reclamo.ReporDescripcion(),reclamo.ReporEstado(),reclamo.ReporTipoReclamo());
+            recla.add(repoReclamo);
+        }
+
+        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(recla);
+        return GenerarArchivoPDF("ListadoReclamo.jrxml","Listado Reclamo.pdf",ds);
+    }
+
     public Blob ListadoTecnicosPDF(List<Tecnico> tecnicos) throws JRException, IOException{
 
-        List<RepoTecnico> repoTecnicos = new ArrayList<>();
+        List<RepoTecnico> repoTecnicos = new ArrayList<RepoTecnico>();
         repoTecnicos.add(new RepoTecnico());
 
         for (Tecnico tecnico : tecnicos) {
-            RepoTecnico repoTecnico = new RepoTecnico(tecnico.RepoNombre());
+            RepoTecnico repoTecnico = new RepoTecnico(tecnico.RepoDni(), tecnico.RepoApellido(), tecnico.RepoNombre(),tecnico.RepoTelefono(), tecnico.RepoDireccion());
             repoTecnicos.add(repoTecnico);
         }
 
@@ -36,7 +50,7 @@ public class EjecutarReportes {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(archivoDesing);
         JasperDesign jasperDesign = JRXmlLoader.load(inputStream);
         JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
-        Map<String, Object> parameters = new HashMap<>();
+        Map<String, Object> parameters = new HashMap<String, Object>();
         parameters.put("ds", ds);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, ds);
         byte[] contentBytes = JasperExportManager.exportReportToPdf(jasperPrint);

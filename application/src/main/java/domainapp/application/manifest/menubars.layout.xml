@@ -116,6 +116,15 @@
             </mb3:section>
         </mb3:menu>
 
+        <mb3:menu>
+            <mb3:named>Reportes</mb3:named>
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.ReporteMenu" id="generarReporte">
+                    <cpt:named>Reporte Reclamo</cpt:named>
+                </mb3:serviceAction>
+            </mb3:section>
+        </mb3:menu>
+
 
         <mb3:menu unreferencedActions="true">
             <mb3:named>Other</mb3:named>

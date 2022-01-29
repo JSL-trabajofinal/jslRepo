@@ -209,15 +209,20 @@ public class Reclamo {
             @ParameterLayout(named = "Descripcion: ")
             final String descripcion){
 
-
         this.usuario = usuario;
         this.tipoReclamo = tipoReclamo;
         this.descripcion = descripcion;
         return this;
     }
 
-    public Usuario default0Update() {return getUsuario();}
+    public String ReporNroReclamo(){ return String.valueOf(this.getNroReclamo()); }
+    public String ReporNombre(){ return this.getUsuario().getNombre(); }
+    public String ReporApellido(){ return this.getUsuario().getApellido(); }
+    public String ReporDescripcion(){ return this.descripcion; }
+    public String ReporEstado(){ return String.valueOf(this.estado); }
+    public String ReporTipoReclamo(){ return String.valueOf(this.tipoReclamo); }
 
+    public Usuario default0Update() {return getUsuario();}
     public TipoReclamo default1Update() {return getTipoReclamo();}
 
     @Programmatic

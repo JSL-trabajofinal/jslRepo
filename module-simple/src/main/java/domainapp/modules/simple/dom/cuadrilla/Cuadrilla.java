@@ -116,12 +116,12 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
     //region > compareTo, toString
     @Override
     public int compareTo(final Cuadrilla other) {
-        return org.apache.isis.applib.util.ObjectContracts.compare(this, other, "nombre");
+        return org.apache.isis.applib.util.ObjectContracts.compare(this, other);
     }
 
     @Override
     public String toString() {
-        return org.apache.isis.applib.util.ObjectContracts.toString(this, "nombre");
+        return org.apache.isis.applib.util.ObjectContracts.toString(this);
     }
     //endregion
 

@@ -1,6 +1,7 @@
 package domainapp.modules.simple.dom.reportes;
 
 
+import domainapp.modules.simple.dom.reclamo.Reclamo;
 import domainapp.modules.simple.dom.tecnico.Tecnico;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
@@ -23,13 +24,29 @@ public class EjecutarReportes {
         repoTecnicos.add(new RepoTecnico());
 
         for (Tecnico tecnico : tecnicos) {
-            RepoTecnico repoTecnico = new RepoTecnico(tecnico.RepoNombre());
+            RepoTecnico repoTecnico = new RepoTecnico(tecnico.RepoDni(), tecnico.RepoApellido(), tecnico.RepoNombre(),tecnico.RepoTelefono(), tecnico.RepoDireccion());
             repoTecnicos.add(repoTecnico);
         }
 
         JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoTecnicos);
         return GenerarArchivoPDF("ListadoTecnicosDesing.jrxml", "Listado de Tecnicos.pdf", ds);
     }
+
+    public Blob ListadoReclamosPDF(List<Reclamo> reclamos) throws JRException, IOException{
+
+        List<RepoReclamo> repoReclamos = new ArrayList<>();
+        repoReclamos.add(new RepoReclamo());
+
+        for (Reclamo reclamo : reclamos) {
+            RepoReclamo repoReclamo = new RepoReclamo(reclamo.RepoNroReclamo(), reclamo.RepoFecha().toString("dd-MM-yyyy"), reclamo.RepoTipoReclamo(), reclamo.RepoEstado(), reclamo.RepoCuadrilla());
+            repoReclamos.add(repoReclamo);
+        }
+
+        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoReclamos);
+        return GenerarArchivoPDF("ListadoReclamosDesing.jrxml", "Listado de Reclamos.pdf", ds);
+    }
+
+
 
     private Blob GenerarArchivoPDF(String archivoDesing, String nombreSalida, JRBeanCollectionDataSource ds) throws JRException, IOException{
 

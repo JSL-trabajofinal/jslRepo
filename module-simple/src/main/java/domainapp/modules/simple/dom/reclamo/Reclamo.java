@@ -117,6 +117,13 @@ public class Reclamo {
     @XmlJavaTypeAdapter(JodaDateTimeStringAdapter.ForJaxb.class)
     private LocalDate fechaCierre;
 
+    public String RepoNroReclamo() { return this.nroReclamo.toString(); }
+    public LocalDate RepoFecha(){ return this.fecha; }
+    public String RepoTipoReclamo() { return this.tipoReclamo.toString(); }
+    public String RepoEstado() { return this.estado.toString(); }
+    public String RepoCuadrilla() { return this.cuadrillaAsignada.getNombre(); }
+
+
 
     public Reclamo(){}
 

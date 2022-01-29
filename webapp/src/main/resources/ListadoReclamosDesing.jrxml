@@ -33,11 +33,11 @@
 		<queryString>
 			<![CDATA[]]>
 		</queryString>
-		<field name="dni" class="java.lang.String"/>
-		<field name="apellido" class="java.lang.String"/>
-		<field name="nombre" class="java.lang.String"/>
-		<field name="telefono" class="java.lang.String"/>
-		<field name="direccion" class="java.lang.String"/>
+		<field name="nroReclamo" class="java.lang.String"/>
+		<field name="fecha" class="java.lang.String"/>
+		<field name="tipoReclamo" class="java.lang.String"/>
+		<field name="estado" class="java.lang.String"/>
+		<field name="cuadrilla" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="ds" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<queryString>
@@ -102,7 +102,7 @@
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[REPORTE DE TECNICOS -EPAS]]></text>
+				<text><![CDATA[REPORTE DE RECLAMOS -EPAS]]></text>
 			</staticText>
 			<componentElement>
 				<reportElement x="10" y="50" width="550" height="130" uuid="ef0bb0a3-4994-4714-a5bd-7664a3ab418f">
@@ -125,7 +125,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[DNI]]></text>
+								<text><![CDATA[Nro Reclamo]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
@@ -134,7 +134,7 @@
 									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{dni}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{nroReclamo}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -148,7 +148,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[Apellido]]></text>
+								<text><![CDATA[Fecha]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
@@ -157,7 +157,30 @@
 									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="160" uuid="1bf3f8d1-812e-48b0-9658-6fb6fec04b1e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="160" height="30" forecolor="#FFFFFF" backcolor="#336B87" uuid="6f9958ee-6d51-4ead-b70d-38f3bceafb94">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Tipo de Reclamo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="160" height="30" uuid="0188c561-8952-47fe-abb5-cca97ce73136">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{tipoReclamo}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -171,7 +194,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[Nombre]]></text>
+								<text><![CDATA[Estado]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
@@ -180,53 +203,30 @@
 									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="100" uuid="1bf3f8d1-812e-48b0-9658-6fb6fec04b1e">
+					<jr:column width="110" uuid="1bf3f8d1-812e-48b0-9658-6fb6fec04b1e">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
 						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement mode="Opaque" x="0" y="0" width="100" height="30" forecolor="#FFFFFF" backcolor="#336B87" uuid="6f9958ee-6d51-4ead-b70d-38f3bceafb94">
+								<reportElement mode="Opaque" x="0" y="0" width="110" height="30" forecolor="#FFFFFF" backcolor="#336B87" uuid="6f9958ee-6d51-4ead-b70d-38f3bceafb94">
 									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 								</reportElement>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font isBold="true"/>
 								</textElement>
-								<text><![CDATA[Telefono]]></text>
+								<text><![CDATA[Cuadrilla Asignada]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="100" height="30" uuid="0188c561-8952-47fe-abb5-cca97ce73136">
+								<reportElement x="0" y="0" width="110" height="30" uuid="0188c561-8952-47fe-abb5-cca97ce73136">
 									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="170" uuid="1bf3f8d1-812e-48b0-9658-6fb6fec04b1e">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
-						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement mode="Opaque" x="0" y="0" width="170" height="30" forecolor="#FFFFFF" backcolor="#336B87" uuid="6f9958ee-6d51-4ead-b70d-38f3bceafb94">
-									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
-								</reportElement>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font isBold="true"/>
-								</textElement>
-								<text><![CDATA[Dirección]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="Table_TD" height="30">
-							<textField>
-								<reportElement x="0" y="0" width="170" height="30" uuid="0188c561-8952-47fe-abb5-cca97ce73136">
-									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
-								</reportElement>
-								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{cuadrilla}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>

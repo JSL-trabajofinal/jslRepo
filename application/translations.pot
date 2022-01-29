@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-29 01:44:53+\n"
+"POT-Creation-Date: 2022-01-29 02:48:17+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -965,6 +965,36 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.reclamo.Reclamo#RepoTipoReclamo()
 msgid "Repo Tipo Reclamo"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporApellido()
+msgid "Repor Apellido"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporDescripcion()
+msgid "Repor Descripcion"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporEstado()
+msgid "Repor Estado"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporNombre()
+msgid "Repor Nombre"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporNroReclamo()
+msgid "Repor Nro Reclamo"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporTipoReclamo()
+msgid "Repor Tipo Reclamo"
 msgstr ""
 
 

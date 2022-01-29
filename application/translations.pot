@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-29 02:48:17+\n"
+"POT-Creation-Date: 2022-01-29 19:19:39+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -129,8 +129,8 @@ msgid "Ayudante: "
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Baja_presi髇
-msgid "Baja Presi髇"
+#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Baja_presi贸n
+msgid "Baja Presi贸n"
 msgstr ""
 
 
@@ -250,8 +250,8 @@ msgid "Conexion De Cloaca"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Conexi髇_clandestina
-msgid "Conexi髇 Clandestina"
+#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Conexi贸n_clandestina
+msgid "Conexi贸n Clandestina"
 msgstr ""
 
 
@@ -582,6 +582,7 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.reclamo.ReclamoMenu#ExportarListado()
 #: domainapp.modules.simple.dom.tecnico.TecnicoMenu#ExportarListado()
+#: domainapp.modules.simple.dom.usuario.UsuarioMenu#ExportarListado()
 msgid "Listado Exportado"
 msgstr ""
 
@@ -862,8 +863,8 @@ msgid "Published Interaction"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Purga_de_ca駃eria
-msgid "Purga De Ca駃eria"
+#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Purga_de_ca帽ieria
+msgid "Purga De Ca帽ieria"
 msgstr ""
 
 
@@ -919,6 +920,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.tecnico.Tecnico#RepoApellido()
+#: domainapp.modules.simple.dom.usuario.Usuario#RepoApellido()
 msgid "Repo Apellido"
 msgstr ""
 
@@ -929,12 +931,19 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.tecnico.Tecnico#RepoDireccion()
+#: domainapp.modules.simple.dom.usuario.Usuario#RepoDireccion()
 msgid "Repo Direccion"
 msgstr ""
 
 
 #: domainapp.modules.simple.dom.tecnico.Tecnico#RepoDni()
+#: domainapp.modules.simple.dom.usuario.Usuario#RepoDni()
 msgid "Repo Dni"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.usuario.Usuario#RepoEmail()
+msgid "Repo Email"
 msgstr ""
 
 
@@ -949,6 +958,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.tecnico.Tecnico#RepoNombre()
+#: domainapp.modules.simple.dom.usuario.Usuario#RepoNombre()
 msgid "Repo Nombre"
 msgstr ""
 
@@ -959,42 +969,13 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.tecnico.Tecnico#RepoTelefono()
+#: domainapp.modules.simple.dom.usuario.Usuario#RepoTelefono()
 msgid "Repo Telefono"
 msgstr ""
 
 
 #: domainapp.modules.simple.dom.reclamo.Reclamo#RepoTipoReclamo()
 msgid "Repo Tipo Reclamo"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporApellido()
-msgid "Repor Apellido"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporDescripcion()
-msgid "Repor Descripcion"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporEstado()
-msgid "Repor Estado"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporNombre()
-msgid "Repor Nombre"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporNroReclamo()
-msgid "Repor Nro Reclamo"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.reclamo.Reclamo#ReporTipoReclamo()
-msgid "Repor Tipo Reclamo"
 msgstr ""
 
 
@@ -1066,7 +1047,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
-msgid "Se anulo conexi髇"
+msgid "Se anulo conexi贸n"
 msgstr ""
 
 
@@ -1076,7 +1057,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
-msgid "Se cambio conexi髇"
+msgid "Se cambio conexi贸n"
 msgstr ""
 
 
@@ -1092,7 +1073,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
-msgid "Se realizo conexi髇"
+msgid "Se realizo conexi贸n"
 msgstr ""
 
 
@@ -1102,7 +1083,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
-msgid "Se reparo conexi髇"
+msgid "Se reparo conexi贸n"
 msgstr ""
 
 

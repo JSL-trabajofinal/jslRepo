@@ -1,9 +1,13 @@
 package domainapp.modules.simple.dom.usuario;
 
 
+import domainapp.modules.simple.dom.reportes.EjecutarReportes;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.value.Blob;
 
 import javax.inject.Inject;
+import java.io.IOException;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -74,6 +78,13 @@ public class UsuarioMenu {
     public List<Usuario> listAll() {
         List<Usuario> usuarios = usuariorepository.Listar();
         return usuarios;
+    }
+
+    @Action()
+    @ActionLayout(named = "Listado Exportado")
+    public Blob ExportarListado() throws JRException, IOException {
+        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+        return ejecutarReportes.ListadoUsuariosPDF(usuariorepository.Listar());
     }
 
     @Inject

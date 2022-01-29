@@ -1,7 +1,5 @@
 package domainapp.modules.simple.dom.reportes;
 
-
-
 public class RepoReclamo {
 
     private String nroReclamo;
@@ -28,6 +26,7 @@ public class RepoReclamo {
     public String getTipoReclamo(){ return this.tipoReclamo; }
     public String getEstado(){ return this.estado; }
     public String getCuadrilla(){ return this.cuadrilla; }
+
 
 }
 

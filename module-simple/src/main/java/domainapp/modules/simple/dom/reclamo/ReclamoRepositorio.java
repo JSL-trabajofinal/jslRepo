@@ -24,31 +24,31 @@ public class ReclamoRepositorio {
                         "find"));
     }
 
-    @Programmatic
+    /*@Programmatic
     public List<Reclamo> ListarUltimos() {
         return repositoryService.allMatches(
                 new QueryDefault<>(
                         Reclamo.class,
                         "findLast"));
-    }
+    }*/
 
-    @Programmatic
+   /* @Programmatic
     public Reclamo findByNroReclamo(final BigInteger nroReclamo) {
         return repositoryService.uniqueMatch(
                 new QueryDefault<>(
                         Reclamo.class,
                         "findByNroReclamo",
                         "nroReclamo", nroReclamo));
-    }
+    }*/
 
-    @Programmatic
+    /*@Programmatic
     public List<Reclamo> findByUsuarioContains(final Usuario usuario) {
         return repositoryService.allMatches(
                 new QueryDefault<>(
                         Reclamo.class,
                         "findByUsuarioContains",
                         "usuario", usuario));
-    }
+    }*/
 
     @Programmatic
     public Reclamo create(
@@ -63,7 +63,7 @@ public class ReclamoRepositorio {
         return reclamo;
     }
 
-    @Programmatic
+    /*@Programmatic
     public Reclamo findOrCreate(
             final BigInteger nroReclamo,
             final Estado estado,
@@ -77,11 +77,7 @@ public class ReclamoRepositorio {
             reclamo = create(estado, usuario, fecha, tipoReclamo,descripcion);
         }
         return reclamo;
-    }
-
-    public Blob generarReporteReclamo() {
-        return null;
-    }
+    }*/
 
     @Inject
     RepositoryService repositoryService;

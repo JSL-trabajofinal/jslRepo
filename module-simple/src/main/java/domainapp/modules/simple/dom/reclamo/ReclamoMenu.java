@@ -1,6 +1,5 @@
 package domainapp.modules.simple.dom.reclamo;
 
-
 import domainapp.modules.simple.dom.reportes.EjecutarReportes;
 import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;

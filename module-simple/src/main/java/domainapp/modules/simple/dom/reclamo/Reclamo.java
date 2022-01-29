@@ -1,5 +1,4 @@
 package domainapp.modules.simple.dom.reclamo;
-
 import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import domainapp.modules.simple.dom.cuadrilla.CuadrillaRepositorio;
 import domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla;
@@ -123,10 +122,7 @@ public class Reclamo {
     public String RepoEstado() { return this.estado.toString(); }
     public String RepoCuadrilla() { return this.cuadrillaAsignada.getNombre(); }
 
-
-
     public Reclamo(){}
-
 
     public Reclamo(
             Estado estado,
@@ -189,7 +185,6 @@ public class Reclamo {
         this.fechaCierre = fechaCierre;
     }
 
-
     public Usuario getUsuario(){
         return this.usuario;
     }
@@ -215,13 +210,6 @@ public class Reclamo {
         return this;
     }
 
-    public String ReporNroReclamo(){ return String.valueOf(this.getNroReclamo()); }
-    public String ReporNombre(){ return this.getUsuario().getNombre(); }
-    public String ReporApellido(){ return this.getUsuario().getApellido(); }
-    public String ReporDescripcion(){ return this.descripcion; }
-    public String ReporEstado(){ return String.valueOf(this.estado); }
-    public String ReporTipoReclamo(){ return String.valueOf(this.tipoReclamo); }
-
     public Usuario default0Update() {return getUsuario();}
     public TipoReclamo default1Update() {return getTipoReclamo();}
 
@@ -229,7 +217,6 @@ public class Reclamo {
     public void CambiarEstado(Estado estado) {
         this.estado = estado;
     }
-
 
     @Action(semantics = SemanticsOf.IDEMPOTENT_ARE_YOU_SURE)
     public Reclamo Anular() {
@@ -285,8 +272,6 @@ public class Reclamo {
         return cuadrillaRepository.Listar();
     }
 
-
-
     @Action()
     @ActionLayout(named = "Cargar Planilla")
     public Reclamo addPlanilla(
@@ -323,7 +308,6 @@ public class Reclamo {
         return org.apache.isis.applib.util.ObjectContracts.toString(this, "nroReclamo");
     }
     //endregion
-
 
     @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)

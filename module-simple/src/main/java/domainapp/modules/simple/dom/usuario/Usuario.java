@@ -69,6 +69,13 @@ public class Usuario implements Comparable<Usuario>{
     @Collection()
     private List<Reclamo> reclamos = new ArrayList<Reclamo>();
 
+    public String RepoDni(){ return this.dni;}
+    public String RepoApellido(){ return this.apellido;}
+    public String RepoNombre(){ return this.nombre;}
+    public String RepoDireccion() { return this.direccion;}
+    public String RepoTelefono() {return this.telefono;}
+
+
     public Usuario(){}
 
     public Usuario(

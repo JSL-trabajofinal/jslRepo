@@ -1,8 +1,8 @@
 package domainapp.modules.simple.dom.reportes;
 
-
 import domainapp.modules.simple.dom.reclamo.Reclamo;
 import domainapp.modules.simple.dom.tecnico.Tecnico;
+import domainapp.modules.simple.dom.usuario.Usuario;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
@@ -46,7 +46,19 @@ public class EjecutarReportes {
         return GenerarArchivoPDF("ListadoReclamosDesing.jrxml", "Listado de Reclamos.pdf", ds);
     }
 
+    public Blob ListadoUsuariosPDF(List<Usuario> usuarios) throws JRException, IOException{
 
+        List<RepoUsuario> repoUsuarios = new ArrayList<>();
+        repoUsuarios.add(new RepoUsuario());
+
+        for (Usuario usuario : usuarios) {
+            RepoUsuario repoUsuario = new RepoUsuario(usuario.RepoDni(), usuario.RepoApellido(), usuario.RepoNombre(), usuario.RepoDireccion(), usuario.RepoTelefono());
+            repoUsuarios.add(repoUsuario);
+        }
+
+        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoUsuarios);
+        return GenerarArchivoPDF("ListadoUsuariosDesing.jrxml", "Listado de Usuarios.pdf", ds);
+    }
 
     private Blob GenerarArchivoPDF(String archivoDesing, String nombreSalida, JRBeanCollectionDataSource ds) throws JRException, IOException{
 

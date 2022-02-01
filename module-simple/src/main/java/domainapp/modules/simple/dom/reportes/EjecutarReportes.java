@@ -1,5 +1,6 @@
 package domainapp.modules.simple.dom.reportes;
 
+import domainapp.modules.simple.dom.cuadrilla.Cuadrilla;
 import domainapp.modules.simple.dom.reclamo.Reclamo;
 import domainapp.modules.simple.dom.tecnico.Tecnico;
 import domainapp.modules.simple.dom.usuario.Usuario;
@@ -30,6 +31,20 @@ public class EjecutarReportes {
 
         JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoTecnicos);
         return GenerarArchivoPDF("ListadoTecnicosDesing.jrxml", "Listado de Tecnicos.pdf", ds);
+    }
+
+    public Blob ListadoCuadrillasPDF(List<Cuadrilla> cuadrillas) throws JRException, IOException{
+
+        List<RepoCuadrilla> repoCuadrillas = new ArrayList<>();
+        repoCuadrillas.add(new RepoCuadrilla());
+
+        for (Cuadrilla cuadrilla : cuadrillas) {
+            RepoCuadrilla repoCuadrilla = new RepoCuadrilla(cuadrilla.RepoCuadrilla(), cuadrilla.RepoTecnico(), cuadrilla.RepoAyudante());//,tecnico.RepoTelefono(), tecnico.RepoDireccion());
+            repoCuadrillas.add(repoCuadrilla);
+        }
+
+        JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(repoCuadrillas);
+        return GenerarArchivoPDF("ListadoCuadrillasDesing.jrxml", "Listado de Cuadrillas.pdf", ds);
     }
 
     public Blob ListadoReclamosPDF(List<Reclamo> reclamos) throws JRException, IOException{

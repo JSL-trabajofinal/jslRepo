@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-01-29 19:19:25+\n"
+"POT-Creation-Date: 2022-02-01 11:44:38+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -578,6 +578,7 @@ msgid "List All"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.cuadrilla.CuadrillaMenu#ExportarListado()
 #: domainapp.modules.simple.dom.reclamo.ReclamoMenu#ExportarListado()
 #: domainapp.modules.simple.dom.tecnico.TecnicoMenu#ExportarListado()
 #: domainapp.modules.simple.dom.usuario.UsuarioMenu#ExportarListado()
@@ -918,6 +919,12 @@ msgid "Repo Apellido"
 msgstr ""
 
 
+#: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#RepoAyudante()
+msgid "Repo Ayudante"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#RepoCuadrilla()
 #: domainapp.modules.simple.dom.reclamo.Reclamo#RepoCuadrilla()
 msgid "Repo Cuadrilla"
 msgstr ""
@@ -932,11 +939,6 @@ msgstr ""
 #: domainapp.modules.simple.dom.tecnico.Tecnico#RepoDni()
 #: domainapp.modules.simple.dom.usuario.Usuario#RepoDni()
 msgid "Repo Dni"
-msgstr ""
-
-
-#: domainapp.modules.simple.dom.usuario.Usuario#RepoEmail()
-msgid "Repo Email"
 msgstr ""
 
 
@@ -958,6 +960,11 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.reclamo.Reclamo#RepoNroReclamo()
 msgid "Repo Nro Reclamo"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#RepoTecnico()
+msgid "Repo Tecnico"
 msgstr ""
 
 

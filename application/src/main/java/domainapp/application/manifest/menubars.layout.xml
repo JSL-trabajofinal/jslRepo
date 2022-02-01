@@ -81,6 +81,9 @@
                 <mb3:serviceAction objectType="simple.SimplePlanillaCuadrillaMenu" id="listAll">
                     <cpt:named>Listar Planillas</cpt:named>
                 </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleCuadrillaMenu" id="ExportarListado">
+                    <cpt:named>Exportar Listado a PDF</cpt:named>
+                </mb3:serviceAction>
             </mb3:section>
 
         </mb3:menu>
@@ -99,7 +102,7 @@
                     <cpt:named>Listar</cpt:named>
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.SimpleTecnicoMenu" id="ExportarListado">
-                <cpt:named>Exportar Listado a PDF</cpt:named>
+                    <cpt:named>Exportar Listado a PDF</cpt:named>
                 </mb3:serviceAction>
                 </mb3:section>
         </mb3:menu>

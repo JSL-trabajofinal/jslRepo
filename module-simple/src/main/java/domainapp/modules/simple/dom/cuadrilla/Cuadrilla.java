@@ -68,10 +68,9 @@ public class Cuadrilla implements Comparable<Cuadrilla> {
         return getNombre();
     }
 
-/*
-    public String RepoNombre(){ return this.nombre; }
-    public String RepoTecnico(){ return this.tecnico.toString(); }
-    public String RepoAyudante() {return this.ayudante.toString(); }*/
+    public String RepoCuadrilla(){ return this.nombre; }
+    public Tecnico RepoTecnico(){ return this.tecnico; }
+    public Ayudante RepoAyudante() {return this.ayudante;}
 
     public Cuadrilla(){}
 

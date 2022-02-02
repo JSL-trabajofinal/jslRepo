@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title slot="end">Configuración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title color="primary">Sistema de Reclamos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+  <ion-content fullscreen>
+  <ion-label>
+    <br><br>
+    <h2>Para empezar a usar la aplicación, por favor introduzca la URL del servidor.</h2>
+    <br><br>
+  </ion-label>
+
+  <ion-item>
+    <ion-label position="floating">Introduzca la URL del servidor aquí:</ion-label>
+    <ion-input type="text" [(ngModel)]="urlControl"></ion-input>
+  </ion-item>
+
+  <div class="ion-pagging">
+    <ion-button (click)="urlServicio()"
+    color="primary"
+    size="small"
+    expand="full">
+      Conectar
+    </ion-button>
+
+    </div>
+  </ion-content>
+</ion-app>
+</ion-content>

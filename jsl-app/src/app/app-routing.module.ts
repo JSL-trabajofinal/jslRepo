@@ -45,6 +45,10 @@ const routes: Routes = [
   },  {
     path: 'crear-planilla',
     loadChildren: () => import('./crear-planilla/crear-planilla.module').then( m => m.CrearPlanillaPageModule)
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   }
 
 

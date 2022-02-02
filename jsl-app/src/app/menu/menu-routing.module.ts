@@ -28,6 +28,13 @@ const routes: Routes = [
             (m) => m.CuadrillasPageModule
           ),
       },
+      {
+        path: 'inicio',
+        loadChildren: () =>
+          import('../inicio/inicio.module').then(
+            (m) => m.InicioPageModule
+          ),
+      },
 
       {
         path: '',

@@ -33,6 +33,11 @@ export class MenuPage {
     this.menu.close();
   }
 
+  goToConfiguracion() {
+    this.navCtrl.navigateRoot('inicio');
+    this.menu.close();
+  }
+
   goToHome() {
     this.navCtrl.navigateRoot('menu/home');
     this.menu.close();

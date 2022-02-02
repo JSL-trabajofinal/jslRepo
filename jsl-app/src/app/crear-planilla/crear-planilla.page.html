@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="end">Nueva Planilla</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"> </ion-back-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container">
+    <form [formGroup]="planillaForm" (ngSubmit)="submit()">
+      <ion-card style="background-color: rgb(42, 98, 201)">
+        <ion-card-header style="text-align: center">
+          <ion-card-title
+            style="
+              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                sans-serif;"color="light">
+            Planilla de Servicios
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="construct-outline" slot="start"></ion-icon>
+            <ion-label>Se realizo conexión</ion-label>
+            <ion-select interface="popover" formControlName="seRealizoConexion">
+              <ion-select-option  >Si</ion-select-option>
+              <ion-select-option  >No</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+  
+           <ion-item>
+            <ion-icon name="construct-outline" slot="start"></ion-icon>
+            <ion-label>Se cambio conexión</ion-label>
+            <ion-select interface="popover" formControlName="seCambioConexion">
+              <ion-select-option  >Si</ion-select-option>
+              <ion-select-option  >No</ion-select-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-icon name="construct-outline" slot="start"></ion-icon>
+            <ion-label>Se reparo conexión</ion-label>
+            <ion-select interface="popover" formControlName="seReparoConexion">
+              <ion-select-option  >Si</ion-select-option>
+              <ion-select-option  >No</ion-select-option>
+              </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-icon name="construct-outline" slot="start"></ion-icon>
+            <ion-label>Se anulo conexión</ion-label>
+            <ion-select interface="popover" formControlName="seAnuloConexion">
+              <ion-select-option  >Si</ion-select-option>
+              <ion-select-option  >No</ion-select-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-icon name="construct-outline" slot="start"></ion-icon>
+            <ion-label>Se destapo red</ion-label>
+            <ion-select interface="popover" formControlName="seDestapoRed">
+              <ion-select-option  >Si</ion-select-option>
+              <ion-select-option  >No</ion-select-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-icon name="construct-outline" slot="start"></ion-icon>
+            <ion-label>Colectora nivel alto</ion-label>
+            <ion-select interface="popover" formControlName="colectoraNivelAlto">
+              <ion-select-option  >Si</ion-select-option>
+              <ion-select-option  >No</ion-select-option>
+            </ion-select>
+          </ion-item>
+  
+  
+          <ion-item>
+            <ion-icon name="construct-outline" slot="start"></ion-icon>
+            <ion-label>Problema interno</ion-label>
+            <ion-select interface="popover" formControlName="problemaInterno">
+              <ion-select-option  >Si</ion-select-option>
+              <ion-select-option  >No</ion-select-option>
+            </ion-select>
+          </ion-item>
+  
+          <ion-item>
+            <ion-icon name="document-text-outline" slot="start"></ion-icon>
+            Observaciones: &nbsp;
+            <ion-input type="text" formControlName="observacion"></ion-input>
+          </ion-item>
+  
+          </ion-card>
+        <ion-button
+          type="submit"
+          expand="block"
+          style="background-color: rgb(131, 131, 133)"
+        >
+          Guardar
+        </ion-button>
+     </form>
+  </div>
+</ion-content>

@@ -40,6 +40,9 @@
                 <mb3:serviceAction objectType="simple.SimpleUsuarioMenu" id="listAll">
                     <cpt:named>Listar Usuarios</cpt:named>
                 </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleUsuarioMenu" id="ExportarListado">
+                    <cpt:named>Exportar Listado a PDF</cpt:named>
+                </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
         <mb3:menu>
@@ -47,6 +50,9 @@
             <mb3:section>
                 <mb3:serviceAction objectType="simple.SimpleReclamoMenu" id="listAll">
                     <cpt:named>Listar Reclamos</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleReclamoMenu" id="ExportarListado">
+                    <cpt:named>Exportar Listado a PDF</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
         </mb3:menu>
@@ -64,7 +70,24 @@
                     <cpt:named>Listar</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
+
+            <mb3:section>
+                <mb3:serviceAction objectType="simple.SimplePlanillaCuadrillaMenu" id="create">
+                    <cpt:named>Cargar Planilla</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimplePlanillaCuadrillaMenu" id="findByNombre">
+                    <cpt:named>Buscar Planillas</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimplePlanillaCuadrillaMenu" id="listAll">
+                    <cpt:named>Listar Planillas</cpt:named>
+                </mb3:serviceAction>
+                <mb3:serviceAction objectType="simple.SimpleCuadrillaMenu" id="ExportarListado">
+                    <cpt:named>Exportar Listado a PDF</cpt:named>
+                </mb3:serviceAction>
+            </mb3:section>
+
         </mb3:menu>
+
 
         <mb3:menu>
             <mb3:named>Tecnicos</mb3:named>
@@ -78,7 +101,10 @@
                 <mb3:serviceAction objectType="simple.SimpleTecnicoMenu" id="listAll">
                     <cpt:named>Listar</cpt:named>
                 </mb3:serviceAction>
-            </mb3:section>
+                <mb3:serviceAction objectType="simple.SimpleTecnicoMenu" id="ExportarListado">
+                    <cpt:named>Exportar Listado a PDF</cpt:named>
+                </mb3:serviceAction>
+                </mb3:section>
         </mb3:menu>
 
         <mb3:menu>

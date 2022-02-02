@@ -1,0 +1,47 @@
+ion-title{
+    text-align: left;
+    color: #ffffffee;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+ion-content{
+    --background: #999999 url("/assets/EpasFondo.png") no-repeat center center / cover;
+}
+
+.vertical-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    margin-top: 20%;
+  }
+
+#rounded {
+    width: 100%;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 10px;
+    margin-bottom: 15px;  
+    color: #48678f96;
+    font-weight: bold;
+    box-shadow: 10px 5px 5px black;
+}
+
+#margenesForm{
+    margin-top: 20%;
+}
+
+.buttonform{
+    border-radius:3px;
+    size: 30px;
+    border:rgba(0,0,0,.3) 0px solid;
+    box-sizing:border-box;
+    box-shadow: 10px 5px 5px black;
+  }
+
+  #button{
+      text-align: right;
+    //   box-shadow: 10px 5px 5px black;
+  }
+  

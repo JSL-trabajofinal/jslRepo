@@ -2,10 +2,15 @@ package domainapp.modules.simple.dom.cuadrilla;
 
 import domainapp.modules.simple.dom.ayudante.Ayudante;
 import domainapp.modules.simple.dom.ayudante.AyudanteRepositorio;
+import domainapp.modules.simple.dom.reportes.EjecutarReportes;
 import domainapp.modules.simple.dom.tecnico.Tecnico;
 import domainapp.modules.simple.dom.tecnico.TecnicoRepositorio;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.value.Blob;
 
+import javax.inject.Inject;
+import java.io.IOException;
 import java.util.List;
 
 @DomainService(
@@ -63,13 +68,20 @@ public class CuadrillaMenu {
         return cuadrillarepository.Listar();
     }
 
+    @Action()
+    @ActionLayout(named = "Listado Exportado")
+    public Blob ExportarListado() throws JRException, IOException {
+        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+        return ejecutarReportes.ListadoCuadrillasPDF(cuadrillarepository.Listar());
+    }
 
-    @javax.inject.Inject
+
+    @Inject
     CuadrillaRepositorio cuadrillarepository;
 
-    @javax.inject.Inject
+    @Inject
     TecnicoRepositorio tecnicoRepository;
 
-    @javax.inject.Inject
+    @Inject
     AyudanteRepositorio ayudanteRepository;
 }

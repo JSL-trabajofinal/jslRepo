@@ -12,31 +12,20 @@ import org.apache.isis.applib.services.factory.FactoryService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.joda.time.LocalDate;
 
+import javax.inject.Inject;
 import javax.jdo.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@PersistenceCapable(
-        identityType = IdentityType.DATASTORE,
-        schema = "simple",
-        table = "Usuario"
-)
-@DatastoreIdentity(
-        strategy = IdGeneratorStrategy.IDENTITY,
-        column = "id"
-)
-@Version(
-        strategy = VersionStrategy.VERSION_NUMBER,
-        column = "version"
-)
+@PersistenceCapable(identityType = IdentityType.DATASTORE,schema = "simple",table = "Usuario")
+@DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY,column = "id")
+@Version(strategy = VersionStrategy.VERSION_NUMBER,column = "version")
 @Queries({
         @Query(
                 name = "find", language = "JDOQL",
                 value = "SELECT "
                         + "FROM domainapp.modules.simple.dom.usuario.Usuario "
                         + "ORDER BY nombre ASC"),
-
-
         @Query(
                 name = "findByNroReclamo", language = "JDOQL",
                 value = "SELECT "
@@ -45,12 +34,8 @@ import java.util.List;
                         + "ORDER BY dni ASC")
 })
 @Unique(name="Usuario_dni_UNQ", members = {"dni"})
-@DomainObject(
-        editing = Editing.DISABLED
-)
-@DomainObjectLayout(
-        bookmarking = BookmarkPolicy.AS_ROOT
-)
+@DomainObject(editing = Editing.DISABLED)
+@DomainObjectLayout(bookmarking = BookmarkPolicy.AS_ROOT)
 @Getter @Setter
 public class Usuario implements Comparable<Usuario>{
 
@@ -84,9 +69,14 @@ public class Usuario implements Comparable<Usuario>{
     @Collection()
     private List<Reclamo> reclamos = new ArrayList<Reclamo>();
 
+    public String RepoDni(){ return this.dni;}
+    public String RepoApellido(){ return this.apellido;}
+    public String RepoNombre(){ return this.nombre;}
+    public String RepoDireccion() { return this.direccion;}
+    public String RepoTelefono() {return this.telefono;}
+
 
     public Usuario(){}
-
 
     public Usuario(
             String dni,
@@ -120,7 +110,7 @@ public class Usuario implements Comparable<Usuario>{
         this.reclamos = reclamos;
     }
 
-      public String getNombre(){
+    public String getNombre(){
         return this.nombre;
     }
 
@@ -160,37 +150,28 @@ public class Usuario implements Comparable<Usuario>{
     }
 
     public String default0Update() {return getDni();}
-
     public String default1Update() {return getNombre();}
-
     public String default2Update() {return getApellido();}
-
     public String default3Update() {return getDireccion();}
-
     public String default4Update() {return getEmail();}
-
     public String default5Update() {return getTelefono();}
-
 
     @Action()
     @ActionLayout(named = "Cargar Reclamo")
     public Usuario addReclamo(
-            @ParameterLayout(named="Fecha: ") final LocalDate fecha,
+            //@ParameterLayout(named="Fecha: ") final LocalDate fecha,
             @ParameterLayout(named="Tipo de Reclamo") final TipoReclamo tipoReclamo
     ){
 
         final Reclamo reclamo = factoryService.instantiate(Reclamo.class);
         reclamo.setUsuario(this);
-        reclamo.setFecha(fecha);
+        reclamo.setFecha(LocalDate.now());
         reclamo.setTipoReclamo(tipoReclamo);
         reclamo.setEstado(Estado.Sin_Asignar);
         getReclamos().add(reclamo);
         repositoryService.persist(reclamo);
         return this;
     }
-
-
-
 
     //region > compareTo, toString
     @Override
@@ -204,23 +185,19 @@ public class Usuario implements Comparable<Usuario>{
     }
     //endregion
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     FactoryService factoryService;
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     RepositoryService repositoryService;
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     CuadrillaRepositorio cuadrillaRepository;
 
-    @javax.inject.Inject
-    @NotPersistent
+    @Inject @NotPersistent
     @Getter(AccessLevel.NONE) @Setter(AccessLevel.NONE)
     UsuarioRepositorio usuarioRepository;
 }

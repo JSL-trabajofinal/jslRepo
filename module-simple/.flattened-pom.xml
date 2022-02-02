@@ -7,9 +7,9 @@
   to you under the Apache License, Version 2.0 (the
   "License"); you may not use this file except in compliance
   with the License.  You may obtain a copy of the License at
-  
+
          http://www.apache.org/licenses/LICENSE-2.0
-         
+
   Unless required by applicable law or agreed to in writing,
   software distributed under the License is distributed on an
   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -54,10 +54,25 @@
         <version>1.0-SNAPSHOT</version>
       </dependency>
       <dependency>
+        <groupId>org.olap4j</groupId>
+        <artifactId>olap4j</artifactId>
+        <version>1.2.0</version>
+      </dependency>
+      <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>1.18.2</version>
         <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>xml-apis</groupId>
+        <artifactId>xml-apis</artifactId>
+        <version>1.4.01</version>
+      </dependency>
+      <dependency>
+        <groupId>com.lowagie</groupId>
+        <artifactId>itext</artifactId>
+        <version>2.1.7</version>
       </dependency>
       <dependency>
         <groupId>com.danhaywood.mavenmixin</groupId>
@@ -449,8 +464,8 @@
         <version>2.1</version>
         <exclusions>
           <exclusion>
-            <artifactId>tools</artifactId>
             <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -480,16 +495,16 @@
         <version>3.0.24.Final</version>
         <exclusions>
           <exclusion>
-            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
             <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
           </exclusion>
           <exclusion>
-            <artifactId>jsr250-api</artifactId>
             <groupId>javax.annotation</groupId>
+            <artifactId>jsr250-api</artifactId>
           </exclusion>
           <exclusion>
-            <artifactId>activation</artifactId>
             <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -515,12 +530,12 @@
         <version>7.9.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
           </exclusion>
           <exclusion>
-            <artifactId>commons-io</artifactId>
             <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -535,8 +550,8 @@
         <version>7.9.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -546,8 +561,8 @@
         <version>7.9.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -557,8 +572,8 @@
         <version>7.9.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -568,8 +583,8 @@
         <version>7.9.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -579,8 +594,8 @@
         <version>7.9.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -590,12 +605,12 @@
         <version>7.9.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
           </exclusion>
           <exclusion>
-            <artifactId>cglib</artifactId>
             <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -605,8 +620,8 @@
         <version>7.8.1</version>
         <exclusions>
           <exclusion>
-            <artifactId>wicket-core</artifactId>
             <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -621,8 +636,8 @@
         <version>1.11.4</version>
         <exclusions>
           <exclusion>
-            <artifactId>jquery</artifactId>
             <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -632,12 +647,12 @@
         <version>0.5.4</version>
         <exclusions>
           <exclusion>
-            <artifactId>wicket-core</artifactId>
             <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
           </exclusion>
           <exclusion>
-            <artifactId>wicket-request</artifactId>
             <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-request</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -647,20 +662,20 @@
         <version>0.10.16</version>
         <exclusions>
           <exclusion>
+            <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-util</artifactId>
-            <groupId>org.apache.wicket</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-request</artifactId>
-            <groupId>org.apache.wicket</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
-            <groupId>org.apache.wicket</groupId>
           </exclusion>
           <exclusion>
-            <artifactId>wicket-extensions</artifactId>
             <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-extensions</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -670,52 +685,52 @@
         <version>0.10.16</version>
         <exclusions>
           <exclusion>
+            <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-util</artifactId>
-            <groupId>org.apache.wicket</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-request</artifactId>
-            <groupId>org.apache.wicket</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
-            <groupId>org.apache.wicket</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-extensions</artifactId>
-            <groupId>org.apache.wicket</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
-            <groupId>org.webjars</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <groupId>org.webjars</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.webjars</groupId>
             <artifactId>jquerypp</artifactId>
-            <groupId>org.webjars</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.webjars</groupId>
             <artifactId>jquery-ui</artifactId>
-            <groupId>org.webjars</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.webjars</groupId>
             <artifactId>typeaheadjs</artifactId>
-            <groupId>org.webjars</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.webjars</groupId>
             <artifactId>x-editable-bootstrap</artifactId>
-            <groupId>org.webjars</groupId>
           </exclusion>
           <exclusion>
+            <groupId>org.webjars</groupId>
             <artifactId>spin-js</artifactId>
-            <groupId>org.webjars</groupId>
           </exclusion>
           <exclusion>
-            <artifactId>closure-compiler</artifactId>
             <groupId>com.google.javascript</groupId>
+            <artifactId>closure-compiler</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -725,8 +740,8 @@
         <version>4.17.37-1</version>
         <exclusions>
           <exclusion>
-            <artifactId>momentjs</artifactId>
             <groupId>org.webjars</groupId>
+            <artifactId>momentjs</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -736,8 +751,8 @@
         <version>0.10.16</version>
         <exclusions>
           <exclusion>
-            <artifactId>wicket-core</artifactId>
             <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -747,8 +762,8 @@
         <version>7.0.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>wicket-core</artifactId>
             <groupId>org.apache.wicket</groupId>
+            <artifactId>wicket-core</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -768,8 +783,8 @@
         <version>9.4.3.v20170317</version>
         <exclusions>
           <exclusion>
-            <artifactId>javax.servlet</artifactId>
             <groupId>org.eclipse.jetty.orbit</groupId>
+            <artifactId>javax.servlet</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -794,8 +809,8 @@
         <version>2.6.0</version>
         <exclusions>
           <exclusion>
-            <artifactId>junit-dep</artifactId>
             <groupId>junit</groupId>
+            <artifactId>junit-dep</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -911,8 +926,8 @@
         <version>1.5.9</version>
         <exclusions>
           <exclusion>
-            <artifactId>commons-lang3</artifactId>
             <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
           </exclusion>
         </exclusions>
       </dependency>
@@ -971,6 +986,18 @@
       <groupId>javax.xml.bind</groupId>
       <artifactId>jaxb-api</artifactId>
       <version>2.2.7</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.jasperreports</groupId>
+      <artifactId>jasperreports</artifactId>
+      <version>6.3.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.lowagie</groupId>
+      <artifactId>itext</artifactId>
+      <version>2.1.7</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

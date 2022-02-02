@@ -6,15 +6,14 @@ import org.apache.isis.applib.annotation.NatureOfService;
 import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
+import org.apache.isis.applib.value.Blob;
 import org.joda.time.LocalDate;
 
+import javax.inject.Inject;
 import java.math.BigInteger;
 import java.util.List;
 
-@DomainService(
-        nature = NatureOfService.DOMAIN,
-        repositoryFor = Reclamo.class
-)
+@DomainService( nature = NatureOfService.DOMAIN, repositoryFor = Reclamo.class)
 public class ReclamoRepositorio {
 
     @Programmatic
@@ -25,33 +24,31 @@ public class ReclamoRepositorio {
                         "find"));
     }
 
-    @Programmatic
+    /*@Programmatic
     public List<Reclamo> ListarUltimos() {
         return repositoryService.allMatches(
                 new QueryDefault<>(
                         Reclamo.class,
                         "findLast"));
-    }
+    }*/
 
-    @Programmatic
+   /* @Programmatic
     public Reclamo findByNroReclamo(final BigInteger nroReclamo) {
-
         return repositoryService.uniqueMatch(
                 new QueryDefault<>(
                         Reclamo.class,
                         "findByNroReclamo",
                         "nroReclamo", nroReclamo));
-    }
+    }*/
 
-    @Programmatic
+    /*@Programmatic
     public List<Reclamo> findByUsuarioContains(final Usuario usuario) {
-
         return repositoryService.allMatches(
                 new QueryDefault<>(
                         Reclamo.class,
                         "findByUsuarioContains",
                         "usuario", usuario));
-    }
+    }*/
 
     @Programmatic
     public Reclamo create(
@@ -66,7 +63,7 @@ public class ReclamoRepositorio {
         return reclamo;
     }
 
-    @Programmatic
+    /*@Programmatic
     public Reclamo findOrCreate(
             final BigInteger nroReclamo,
             final Estado estado,
@@ -80,8 +77,10 @@ public class ReclamoRepositorio {
             reclamo = create(estado, usuario, fecha, tipoReclamo,descripcion);
         }
         return reclamo;
-    }
+    }*/
 
-    @javax.inject.Inject
+    @Inject
     RepositoryService repositoryService;
+
+
 }

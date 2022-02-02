@@ -1,16 +1,17 @@
 package domainapp.modules.simple.dom.usuario;
 
 
+import domainapp.modules.simple.dom.reportes.EjecutarReportes;
+import net.sf.jasperreports.engine.JRException;
 import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.value.Blob;
 
+import javax.inject.Inject;
+import java.io.IOException;
 import java.util.List;
 import java.util.regex.Pattern;
 
-@DomainService(
-        nature = NatureOfService.VIEW_MENU_ONLY,
-        objectType = "simple.SimpleUsuarioMenu",
-        repositoryFor = Usuario.class
-)
+@DomainService(nature = NatureOfService.VIEW_MENU_ONLY,objectType = "simple.SimpleUsuarioMenu",repositoryFor = Usuario.class)
 @DomainServiceLayout(
         named = "",
         menuOrder = ""
@@ -22,9 +23,7 @@ public class UsuarioMenu {
     @MemberOrder(sequence = "1")
     public Usuario create(
 
-            @Parameter(
-                    maxLength = 8,
-                    regexPatternReplacement = "Solo se admiten hasta 8 dígitos, sin puntos")
+            @Parameter(maxLength = 8,regexPatternReplacement = "Solo se admiten hasta 8 dígitos, sin puntos")
             @ParameterLayout(named = "DNI: ")
             final String dni,
 
@@ -60,7 +59,6 @@ public class UsuarioMenu {
         return usuariorepository.create(dni,nombre, apellido, direccion, email, telefono);
     }
 
-
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Buscar Usuario")
     @MemberOrder(sequence = "2")
@@ -74,7 +72,6 @@ public class UsuarioMenu {
 
     public List<Usuario> choices0FindByDni() {return usuariorepository.Listar();}
 
-
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Usuarios")
     @MemberOrder(sequence = "3")
@@ -83,7 +80,13 @@ public class UsuarioMenu {
         return usuarios;
     }
 
+    @Action()
+    @ActionLayout(named = "Listado Exportado")
+    public Blob ExportarListado() throws JRException, IOException {
+        EjecutarReportes ejecutarReportes = new EjecutarReportes();
+        return ejecutarReportes.ListadoUsuariosPDF(usuariorepository.Listar());
+    }
 
-    @javax.inject.Inject
+    @Inject
     UsuarioRepositorio usuariorepository;
 }

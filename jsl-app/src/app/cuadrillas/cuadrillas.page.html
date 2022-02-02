@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-align="center">
+     Cuadrillas
+    </ion-title>
+    <ion-buttons slot="end"><ion-button (click)="alertaLogOut()">
+      <ion-icon name="log-out-outline">
+      </ion-icon></ion-button></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-app>
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Lista de Cuadrillas</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-list-header>Cuadrillas</ion-list-header>
+      <ion-item *ngFor="let resultado of contenidoArray">
+        <ion-label>
+
+          <h3>{{resultado.nombre}}</h3>
+
+        </ion-label>
+
+    <ion-button
+      class="ion-text-right"
+      (click)="obtieneCuadrilla(resultado.$$instanceId)"
+      color="secondary"
+      slot="end"
+      >Reclamos Asigandos</ion-button>
+      </ion-item>
+  </ion-list>
+ </ion-content>
+</ion-app>
+</ion-content>

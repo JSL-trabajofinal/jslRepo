@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-align="center">
+     Reclamos
+    </ion-title>
+    <ion-buttons slot="end"><ion-button (click)="alertaLogOut()">
+      <ion-icon name="log-out-outline">
+      </ion-icon></ion-button></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-app>
+    <ion-header translucent>
+    </ion-header>
+    
+    <ion-content fullscreen>
+      <ion-list>
+        <ion-list-header> Lista de Reclamos Activos </ion-list-header>
+         <ion-item *ngFor="let resultado of contenidoArray">
+          <ion-item>
+<!--            <ion-avatar slot="start">
+            <img src="../../assets/reclamo.png"/>
+          </ion-avatar> -->
+
+            <ion-label>
+              <h3>Nro.{{resultado.nroReclamo}}</h3>
+              <h4>{{resultado.tipoReclamo}}</h4>
+              <h5>{{resultado.estado}}</h5>
+            </ion-label>
+
+
+          </ion-item>
+          <ion-button
+            (click)="obtieneReclamo(resultado.$$instanceId)"
+            color="secondary"
+            size="small"
+            slot="end"
+            ><ion-icon color="light" name="document-text-sharp"></ion-icon>&nbsp; Detalle</ion-button><br/>
+      </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-app>
+</ion-content>

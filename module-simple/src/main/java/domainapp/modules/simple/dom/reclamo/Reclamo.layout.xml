@@ -36,7 +36,9 @@
                                 <c:property id="usuario" namedEscaped="true"/>
                                 <c:property id="fecha" namedEscaped="true"/>
                                 <c:property id="tipoReclamo" namedEscaped="true"/>
-                                <c:property id="descripcion" namedEscaped="true" multiLine="9" hidden="ALL_TABLES"/>
+                                <c:property id="descripcion" namedEscaped="true" multiLine="8" hidden="ALL_TABLES"/>
+                                <c:property id="fechaCierre" namedEscaped="true"/>
+                                <c:property id="observacion" namedEscaped="true" multiLine="8" hidden="ALL_TABLES"/>
                             </c:fieldSet>
                         </bs3:col>
                     </bs3:row>

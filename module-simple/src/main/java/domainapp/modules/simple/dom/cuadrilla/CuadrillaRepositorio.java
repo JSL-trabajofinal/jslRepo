@@ -7,6 +7,7 @@ import org.apache.isis.applib.annotation.Programmatic;
 import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.repository.RepositoryService;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @DomainService(
@@ -25,6 +26,17 @@ public class CuadrillaRepositorio {
     }
 
     @Programmatic
+    public List<Cuadrilla> Listar(Cuadrilla nombre){
+
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        Cuadrilla.class,
+                        "findByCuadrilla",
+                        "nombre", nombre));
+    }
+
+/*
+    @Programmatic
     public List<Cuadrilla> Listar(Tecnico tecnico){
 
         return repositoryService.allMatches(
@@ -42,7 +54,7 @@ public class CuadrillaRepositorio {
                         Cuadrilla.class,
                         "findByAyudante",
                         "ayudante", ayudante));
-    }
+    }*/
 
     @Programmatic
     public Cuadrilla findByNombre(final String nombre) {
@@ -81,6 +93,6 @@ public class CuadrillaRepositorio {
         return cuadrilla;
     }
 
-    @javax.inject.Inject
+    @Inject
     RepositoryService repositoryService;
 }

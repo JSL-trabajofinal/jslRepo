@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-02 02:22:12+\n"
+"POT-Creation-Date: 2022-02-02 20:13:28+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -129,8 +129,8 @@ msgid "Ayudante: "
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Baja_presi髇
-msgid "Baja Presi髇"
+#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Baja_presi贸n
+msgid "Baja Presi贸n"
 msgstr ""
 
 
@@ -250,8 +250,8 @@ msgid "Conexion De Cloaca"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Conexi髇_clandestina
-msgid "Conexi髇 Clandestina"
+#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Conexi贸n_clandestina
+msgid "Conexi贸n Clandestina"
 msgstr ""
 
 
@@ -859,8 +859,8 @@ msgid "Published Interaction"
 msgstr ""
 
 
-#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Purga_de_ca駃eria
-msgid "Purga De Ca駃eria"
+#: domainapp.modules.simple.dom.reclamo.TipoReclamo#Purga_de_ca帽ieria
+msgid "Purga De Ca帽ieria"
 msgstr ""
 
 
@@ -1046,7 +1046,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
-msgid "Se anulo conexi髇"
+msgid "Se anulo conexi贸n"
 msgstr ""
 
 
@@ -1056,7 +1056,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
-msgid "Se cambio conexi髇"
+msgid "Se cambio conexi贸n"
 msgstr ""
 
 
@@ -1072,7 +1072,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
-msgid "Se realizo conexi髇"
+msgid "Se realizo conexi贸n"
 msgstr ""
 
 
@@ -1082,7 +1082,7 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.planillaCuadrilla.PlanillaCuadrilla#updatePlanillaCuadrilla(domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,domainapp.modules.simple.dom.planillaCuadrilla.Respuesta,java.lang.String)
-msgid "Se reparo conexi髇"
+msgid "Se reparo conexi贸n"
 msgstr ""
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { ServicioUrlService } from '../servicios/servicio-url.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,17 @@ export class LoginService {
 
   ConversionBase64: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private servicioUrl: ServicioUrlService) { }
 
-  url = environment.urlServidor
+  url : any;
 
   realizaLogin(usuario:String, contrasena:String){
+    this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+      console.log(data);
+      this.url = data;
+     }).unsubscribe();
+
   this.ConversionBase64 = btoa(usuario+":"+contrasena);
 
       let headers: HttpHeaders = new HttpHeaders();

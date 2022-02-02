@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { ServicioUrlService } from '../servicios/servicio-url.service';
 
 @Component({
   selector: 'app-cuadrillas',
@@ -12,13 +12,17 @@ export class CuadrillasPage implements OnInit {
   datosCuadrilla;
   id_Cuadrilla;
   
-  constructor(private http: HttpClient, private router:Router) { }
+  constructor(private http: HttpClient, private router:Router,
+    private servicioUrl: ServicioUrlService) { }
 
   public contenidoArray: any = null;
   public contenidoArrayTecnico: any = null;
-  url = environment.urlServidor;
-
+  url: any;
   ngOnInit() {
+    this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+      console.log(data)
+      this.url = data;
+     }).unsubscribe();
     this.listarCuadrillas();
   }
 

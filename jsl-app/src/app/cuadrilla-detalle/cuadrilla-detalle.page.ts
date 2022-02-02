@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { ServicioUrlService } from '../servicios/servicio-url.service';
 
 
 @Component({
@@ -17,12 +17,13 @@ export class CuadrillaDetallePage{
   cuadrillas: any;
   param: any;
   resultadosArraytemp: any;
-  url = environment.urlServidor;
+  url: any;
   
   constructor(
     private http: HttpClient,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private servicioUrl: ServicioUrlService
   ) {}
   
   
@@ -30,6 +31,10 @@ export class CuadrillaDetallePage{
   public resultadosArrayFiltrado = [];
   
   ngOnInit() {
+    this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+      console.log(data)
+      this.url = data;
+     }).unsubscribe();
     this.param = this.activatedRoute.snapshot.params;
     if (Object.keys(this.param).length) {
       this.detallarCuadrilla(this.param.id_Cuadrilla);

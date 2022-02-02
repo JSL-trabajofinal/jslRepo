@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { ServicioUrlService } from '../servicios/servicio-url.service'
 
 
 @Injectable({
@@ -8,10 +8,21 @@ import { environment } from 'src/environments/environment';
 })
 export class PlanillaService {
 
-  servidorUrl = environment.urlServidor;
-
-  constructor(private httpClient: HttpClient) { }
   
+  constructor(private httpClient: HttpClient,
+    private servicioUrl: ServicioUrlService) { }
+  
+    servidorUrl: any;
+
+
+/*     urlService(){
+      this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+        console.log(data)
+        this.servidorUrl = data;
+       }).unsubscribe();
+  
+    } */
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -20,17 +31,26 @@ export class PlanillaService {
     }),
   };
 
-  private Url = this.servidorUrl + '/restful/objects/simple.Reclamo/';
-  private urlPlanilla = this.servidorUrl + '/restful/objects/simple.PlanillaCuadrilla/';
+ 
+/*   private Url = this.servidorUrl + '/restful/objects/simple.Reclamo/';
+  private urlPlanilla = this.servidorUrl + '/restful/objects/simple.PlanillaCuadrilla/'; */
 
 
   getPlanillas(id: number) {
+      this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+        console.log(data)
+        this.servidorUrl = data;
+       }).unsubscribe();
     console.log('id de getPlanilla ' + id);
-    return this.httpClient.get(this.urlPlanilla + id, this.httpOptions);
+    return this.httpClient.get(this.servidorUrl + '/restful/objects/simple.PlanillaCuadrilla/' + id, this.httpOptions);
   }
 
 
   crearPlanilla(id, planilla) {
+    this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+      console.log(data)
+      this.servidorUrl = data;
+     }).unsubscribe();
     console.log('Ingresando a crearPlanilla ' + id);
     const httpOptions = {
       headers: new HttpHeaders({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { ServicioUrlService } from '../servicios/servicio-url.service';
 
 @Component({
   selector: 'app-reclamo-detalle',
@@ -13,14 +13,19 @@ export class ReclamoDetallePage implements OnInit {
   datosReclamo;
   datosCuadrilla;
   param: any;
-  url = environment.urlServidor;
+  url: any;
 
   constructor(
     private http: HttpClient,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private servicioUrl: ServicioUrlService
   ) {}
 
   ngOnInit() {
+    this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+      console.log(data)
+      this.url = data;
+     }).unsubscribe();
     this.param = this.activatedRoute.snapshot.params;
     if (Object.keys(this.param).length) {
       this.detallarReclamo(this.param.id_Reclamo);

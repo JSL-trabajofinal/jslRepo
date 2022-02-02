@@ -3,7 +3,7 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { PlanillaService } from './../servicios/planilla.service';
-import { environment } from 'src/environments/environment';
+import { ServicioUrlService } from '../servicios/servicio-url.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,8 +14,8 @@ import Swal from 'sweetalert2';
 export class CrearPlanillaPage implements OnInit {
 
  
-  servidorUrl = environment.urlServidor;
-
+  servidorUrl : any;
+  data: any;
   planillaForm: FormGroup;
   id;
   idReclamo;
@@ -33,7 +33,8 @@ export class CrearPlanillaPage implements OnInit {
     private paramRoute: ActivatedRoute,
     private router: Router,
     private planillaService: PlanillaService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private servicioUrl: ServicioUrlService
   ) {
     this.planillaForm = this.fb.group({
       seRealizoConexion: ['No',Validators.required],
@@ -49,6 +50,10 @@ export class CrearPlanillaPage implements OnInit {
 
 
   ngOnInit() {
+    this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+      console.log(data);
+      this.servidorUrl = data;
+     }).unsubscribe();
     this.param = this.activatedRoute.snapshot.params;
     if (Object.keys(this.param).length) {
       // this.getPlanilla(this.param.idReclamo);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { ServicioUrlService } from '../servicios/servicio-url.service'
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,14 +11,19 @@ import Swal from 'sweetalert2';
 })
 export class ReclamosPage implements OnInit {
   resultadosArraytemp: any;
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router,
+    private servicioUrl: ServicioUrlService) {}
 
   public contenidoArray: any = null;
   public resultadosArrayFiltrado = [];
-  url = environment.urlServidor;
+  url: any;
   
 
   ngOnInit() {
+    this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+      console.log(data)
+      this.url = data;
+     }).unsubscribe();
     this.listarReclamos();
   }
   listarReclamos() {

@@ -4,7 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '././../servicios/login.service';
 import { ToastController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { ServicioUrlService } from '../servicios/servicio-url.service';
+
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,15 @@ import { environment } from 'src/environments/environment';
 export class LoginPage implements OnInit {
 
   private loginForm: FormGroup;
-  URLServidorInicial : string = environment.urlServidor;
+  URLServidorInicial : any;
+  data: any;
   usuario = '';
   password = '';
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute,
     private router: Router, private formBuilder: FormBuilder, private loginService: LoginService,
-    public toastController: ToastController) { 
+    public toastController: ToastController,
+    private servicioUrl: ServicioUrlService) { 
 
       this.loginForm = this.formBuilder.group({
         usuario: ['', Validators.required],
@@ -29,6 +32,10 @@ export class LoginPage implements OnInit {
     }
 
   ngOnInit() {
+    this.servicioUrl.$getObjectSource.subscribe(data  =>  {
+      console.log(data)
+      this.URLServidorInicial = data;
+     }).unsubscribe();
     window.localStorage.URLservidor = this.URLServidorInicial;
   }
 
@@ -60,8 +67,8 @@ export class LoginPage implements OnInit {
 
   async loginErroneoToast() {
     const toast = await this.toastController.create({
-      message: 'Usuario o Contraseña incorrecto, vuelva a ingresarlos',
-      duration: 2500
+      message: 'Usuario o Contraseña incorrecto, vuelva a ingresarlos o verifique URL',
+      duration: 3500
     });
     toast.present();
   }

@@ -20,39 +20,81 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Apache Isis&trade; SimpleApp</title>
+        <title>JSL - Sistema de Gestion de Reclamos</title>
         
         <style type="text/css">
-body {
-    background-color: #1A467B;
-    font-family: Verdana, Helvetica, Arial;
-    font-size: 90%;
-}
+        body {
+            background-color: #1D1D86;
+            font-family: Verdana, Helvetica, Arial;
+            font-size: 90%;
+            background-image: url("about/images/wastewater.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
-li {
-    margin-top: 6px;
-    margin-bottom: 6px;
-}
-table {
-    border-collapse: collapse;
-}
-table, th, td {
-    border: 1px;
-    border-style: solid;
-    border-color: lightgray;
-}
-th, td {
-    padding: 10px;
-}
-#wrapper {
-    background-color: #ffffff;
-    width: 900px;
-    margin: 8px auto;
-    padding: 12px;
-}
+        #header1 {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-family: "Roboto", Helvetica, Arial, sans-serif;
+            color: white;
+            font-size: 40px;
+
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        #b1{
+            position: relative;
+            top: 50%;
+            color:white;
+        }
+        #a1, a1:visited{
+            color:white;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+        #imagen {
+			width:500px;
+			height:375px;
+			position:relative;
+		}
+		#imagen>div
+		{
+			margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+		}
+
         </style>
     </head>
     <body>
+    <div id="imagen">
+        <img src="about/images/descarga.jpg"><!-- width="500" height="375">-->
+    </div>
+    <div>
+        <br/>
+        <br/>
+        <br/>
+
+        <h1 id=header1>
+            JSL
+            <br/>
+            Sistema de Gestion de Reclamos
+            <br/>
+            <br/>
+            <b id=b1><a id=a1 href="wicket/">Entrar al Sistema</a></b>
+        </h1>
+    </div>
+    </body>
+
+
+    <!--<body>
         <div id="wrapper">
             <img alt="Isis Logo" src="about/images/isis-logo.png" />
              
@@ -113,5 +155,5 @@ th, td {
             </p>
             
         </div>
-    </body>
+    </body>-->
 </html>

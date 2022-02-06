@@ -165,6 +165,7 @@ public class Usuario implements Comparable<Usuario>{
 
         final Reclamo reclamo = factoryService.instantiate(Reclamo.class);
         reclamo.setUsuario(this);
+        reclamo.setDireccion(this.direccion);
         reclamo.setFecha(LocalDate.now());
         reclamo.setTipoReclamo(tipoReclamo);
         reclamo.setEstado(Estado.Sin_Asignar);

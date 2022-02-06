@@ -34,6 +34,7 @@
                                 <c:property id="nroReclamo" namedEscaped="true"/>
                                 <c:property id="estado" namedEscaped="true"/>
                                 <c:property id="usuario" namedEscaped="true"/>
+                                <c:property id="direccion" namedEscaped="true"/>
                                 <c:property id="fecha" namedEscaped="true"/>
                                 <c:property id="tipoReclamo" namedEscaped="true"/>
                                 <c:property id="descripcion" namedEscaped="true" multiLine="8" hidden="ALL_TABLES"/>

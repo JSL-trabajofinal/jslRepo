@@ -43,10 +43,5 @@ export class ReclamoDetallePage implements OnInit {
       this.datosReclamo = resultados;
     });
 
-    const URL2 = this.url+'/restful/objects/simple.Cuadrilla/' + id_Reclamo;
-    this.http.get(URL2, httpOptions).subscribe((resultados2) => {
-      this.datosCuadrilla = resultados2;
-    });
-
   }
 }

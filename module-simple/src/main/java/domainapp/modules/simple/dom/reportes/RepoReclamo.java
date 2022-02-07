@@ -6,16 +6,18 @@ public class RepoReclamo {
     private String fecha;
     private String tipoReclamo;
     private String estado;
-    private String cuadrilla;
+    private String usuario;
 
 
-    public RepoReclamo(String nroReclamo, String fecha, String tipoReclamo, String estado, String cuadrilla){
+
+    public RepoReclamo(String nroReclamo, String fecha, String tipoReclamo, String estado, String usuario){
 
         this.nroReclamo = nroReclamo;
         this.fecha = fecha;
         this.tipoReclamo = tipoReclamo;
         this.estado = estado;
-        this.cuadrilla = cuadrilla;
+        this.usuario = usuario;
+
 
     }
 
@@ -25,7 +27,7 @@ public class RepoReclamo {
     public String getFecha(){ return this.fecha; }
     public String getTipoReclamo(){ return this.tipoReclamo; }
     public String getEstado(){ return this.estado; }
-    public String getCuadrilla(){ return this.cuadrilla; }
+    public String getUsuario(){ return this.usuario; }
 
 
 }

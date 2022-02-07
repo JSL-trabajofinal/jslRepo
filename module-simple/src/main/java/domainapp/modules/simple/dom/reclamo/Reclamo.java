@@ -125,7 +125,8 @@ public class Reclamo {
     public LocalDate RepoFecha(){ return this.fecha; }
     public String RepoTipoReclamo() { return this.tipoReclamo.toString(); }
     public String RepoEstado() { return this.estado.toString(); }
-    public String RepoCuadrilla() { return this.cuadrillaAsignada.getNombre(); }
+    public String RepoUsuario() { return this.usuario.getApellido() + " " + this.usuario.getNombre();  }
+
 
     public Reclamo(){}
 

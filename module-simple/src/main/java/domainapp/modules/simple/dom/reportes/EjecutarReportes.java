@@ -53,7 +53,7 @@ public class EjecutarReportes {
         repoReclamos.add(new RepoReclamo());
 
         for (Reclamo reclamo : reclamos) {
-            RepoReclamo repoReclamo = new RepoReclamo(reclamo.RepoNroReclamo(), reclamo.RepoFecha().toString("dd-MM-yyyy"), reclamo.RepoTipoReclamo(), reclamo.RepoEstado(), reclamo.RepoCuadrilla());
+            RepoReclamo repoReclamo = new RepoReclamo(reclamo.RepoNroReclamo(), reclamo.RepoFecha().toString("dd-MM-yyyy"), reclamo.RepoTipoReclamo(), reclamo.RepoEstado(), reclamo.RepoUsuario());
             repoReclamos.add(repoReclamo);
         }
 

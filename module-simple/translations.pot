@@ -23,7 +23,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-06 01:16:38+\n"
+"POT-Creation-Date: 2022-02-07 00:58:41+\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -926,7 +926,6 @@ msgstr ""
 
 
 #: domainapp.modules.simple.dom.cuadrilla.Cuadrilla#RepoCuadrilla()
-#: domainapp.modules.simple.dom.reclamo.Reclamo#RepoCuadrilla()
 msgid "Repo Cuadrilla"
 msgstr ""
 
@@ -977,6 +976,11 @@ msgstr ""
 
 #: domainapp.modules.simple.dom.reclamo.Reclamo#RepoTipoReclamo()
 msgid "Repo Tipo Reclamo"
+msgstr ""
+
+
+#: domainapp.modules.simple.dom.reclamo.Reclamo#RepoUsuario()
+msgid "Repo Usuario"
 msgstr ""
 
 

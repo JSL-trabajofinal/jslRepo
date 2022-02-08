@@ -16,7 +16,7 @@ import java.util.List;
 )
 public class ReclamoMenu {
 
-    @Action(semantics = SemanticsOf.SAFE)
+/*    @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Buscar por Nro de Reclamo")
     @MemberOrder(sequence = "1")
     public Reclamo findByNroReclamo(
@@ -27,7 +27,7 @@ public class ReclamoMenu {
         return reclamo;
     }
 
-    public List<Reclamo> choices0FindByNroReclamo() {return reclamorepository.Listar();}
+    public List<Reclamo> choices0FindByNroReclamo() {return reclamorepository.Listar();}*/
 
     @Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT, named = "Listado de Reclamos")

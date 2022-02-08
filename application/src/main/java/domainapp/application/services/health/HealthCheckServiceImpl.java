@@ -16,7 +16,7 @@ public class HealthCheckServiceImpl implements HealthCheckService {
     public Health check() {
 
         try {
-            simpleObjects.ping();
+            /*simpleObjects.ping();*/
             return Health.ok();
         } catch (Exception ex) {
             return Health.error(ex.getMessage());

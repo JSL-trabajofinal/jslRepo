@@ -33,13 +33,13 @@ import domainapp.modules.simple.dom.impl.SimpleObjects;
 )
 public class HomePageViewModel {
 
-    public TranslatableString title() {
+  /*  public TranslatableString title() {
         return TranslatableString.tr("{num} objects", "num", getObjects().size());
-    }
+    }*/
 
-    public List<SimpleObject> getObjects() {
+  /*  public List<SimpleObject> getObjects() {
         return simpleObjects.listAll();
-    }
+    }*/
 
     @javax.inject.Inject
     SimpleObjects simpleObjects;

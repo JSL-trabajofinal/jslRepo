@@ -59,13 +59,13 @@
             <mb3:named>Cuadrillas</mb3:named>
             <mb3:section>
                 <mb3:serviceAction objectType="simple.SimpleCuadrillaMenu" id="create">
-                    <cpt:named>Crear</cpt:named>
+                    <cpt:named>Crear Cuadrilla</cpt:named>
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.SimpleCuadrillaMenu" id="findByNombre">
-                    <cpt:named>Buscar</cpt:named>
+                    <cpt:named>Buscar Cuadrilla</cpt:named>
                 </mb3:serviceAction>
                 <mb3:serviceAction objectType="simple.SimpleCuadrillaMenu" id="listAll">
-                    <cpt:named>Listar</cpt:named>
+                    <cpt:named>Listar Cuadrillas</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
 

@@ -288,7 +288,7 @@ public class Reclamo {
     }
 
     @Action()
-   /* @ActionLayout(named = "Cargar Planilla")*/
+    @ActionLayout(named = "Cargar Planilla")
     public Reclamo addPlanilla(
             @ParameterLayout(named="Se realizo conexion") final Respuesta seRealizoConexion,
             @ParameterLayout(named="Se cambio conexion") final Respuesta seCambioConexion,

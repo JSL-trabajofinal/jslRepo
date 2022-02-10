@@ -24,19 +24,18 @@
           <ion-label>
             <h3>Fecha de Alta</h3>
 
-            <h4>{{datosReclamo.fecha}}</h4> <br>
+            <h4>{{datosReclamo.fecha | date: 'dd/MM/yyyy'}}</h4> <br>
 
           </ion-label>
         </ion-item>
 
         <ion-item>
           <ion-icon name="chatbox-ellipses" slot="start"></ion-icon>
-          <ion-label>
+          <ion-label class="ion-text-wrap">
             <h3>Descripción</h3>
 
             <h4>{{datosReclamo.descripcion}}</h4> <br>
-
-          </ion-label> 
+          </ion-label>
         </ion-item>
 
         <ion-item>

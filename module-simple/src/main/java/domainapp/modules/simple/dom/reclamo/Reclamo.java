@@ -273,6 +273,8 @@ public class Reclamo {
             messageService.warnUser("No se puede asignar un reclamo Anulado!");
         } else if (getEstado().equals(Estado.Cerrado)) {
             messageService.warnUser("No se puede asignar un reclamo Cerrado!");
+        } else if (getEstado().equals(Estado.En_Proceso)) {
+            messageService.warnUser("El reclamo ya posee una cuadrilla asignada!");
         }else {
             this.cuadrillaAsignada = cuadrilla;
             CambiarEstado(Estado.En_Proceso);
@@ -286,7 +288,7 @@ public class Reclamo {
     }
 
     @Action()
-    @ActionLayout(named = "Cargar Planilla")
+   /* @ActionLayout(named = "Cargar Planilla")*/
     public Reclamo addPlanilla(
             @ParameterLayout(named="Se realizo conexion") final Respuesta seRealizoConexion,
             @ParameterLayout(named="Se cambio conexion") final Respuesta seCambioConexion,

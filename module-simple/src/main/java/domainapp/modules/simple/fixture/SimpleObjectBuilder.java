@@ -17,7 +17,7 @@
  *  under the License.
  */
 
-package domainapp.modules.simple.fixture;
+/*package domainapp.modules.simple.fixture;
 
 import org.apache.isis.applib.fixturescripts.BuilderScriptAbstract;
 
@@ -47,4 +47,4 @@ public class SimpleObjectBuilder extends BuilderScriptAbstract<SimpleObject, Sim
     @javax.inject.Inject
     SimpleObjects simpleObjects;
 
-}
+}*/

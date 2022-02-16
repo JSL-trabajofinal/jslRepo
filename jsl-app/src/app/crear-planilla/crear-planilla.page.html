@@ -89,15 +89,18 @@
             </ion-select>
           </ion-item>
   
+
           <ion-item>
-            <ion-icon name="document-text-outline" slot="start"></ion-icon>
-            Observaciones: &nbsp;
-            <ion-input type="text" formControlName="observacion"></ion-input>
-          </ion-item>
+            <ion-icon name="clipboard-outline" slot="start" required></ion-icon>
+            <ion-textarea placeholder="Ingrese las observaciones en este área..." formControlName="observacion" required></ion-textarea>
+          </ion-item> <br>
+          <ion-label color="danger" *ngIf="planillaForm.controls.observacion.errors?.required && (planillaForm.touched || planillaForm.dirty)">* La observación es obligatoria </ion-label><br>
+          
   
           </ion-card>
         <ion-button
           type="submit"
+          [disabled]="!planillaForm.valid"
           expand="block"
           style="background-color: rgb(131, 131, 133)"
         >

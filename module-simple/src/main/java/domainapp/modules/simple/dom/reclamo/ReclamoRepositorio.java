@@ -54,11 +54,12 @@ public class ReclamoRepositorio {
     public Reclamo create(
             final Estado estado,
             final Usuario usuario,
+            final String direccion,
             final LocalDate fecha,
             final TipoReclamo tipoReclamo,
             final String descripcion) {
 
-        final Reclamo reclamo = new Reclamo(estado,usuario,fecha,tipoReclamo,descripcion);
+        final Reclamo reclamo = new Reclamo(estado,usuario,direccion,fecha,tipoReclamo,descripcion);
         repositoryService.persist(reclamo);
         return reclamo;
     }

@@ -76,6 +76,11 @@ public class Reclamo {
 
     private Usuario usuario;
 
+    @Column(allowsNull = "true")
+    @NonNull
+    @Property()
+    private String direccion;
+
     @Column(allowsNull = "false")
     @NonNull
     @PropertyLayout(named="Fecha Creacion del Reclamo: ")
@@ -120,19 +125,22 @@ public class Reclamo {
     public LocalDate RepoFecha(){ return this.fecha; }
     public String RepoTipoReclamo() { return this.tipoReclamo.toString(); }
     public String RepoEstado() { return this.estado.toString(); }
-    public String RepoCuadrilla() { return this.cuadrillaAsignada.getNombre(); }
+    public String RepoUsuario() { return this.usuario.getApellido() + " " + this.usuario.getNombre();  }
+
 
     public Reclamo(){}
 
     public Reclamo(
             Estado estado,
             Usuario usuario,
+            String direccion,
             LocalDate fecha,
             TipoReclamo tipoReclamo,
             String descripcion){
 
         this.estado = estado;
         this.usuario = usuario;
+        this.direccion = direccion;
         this.fecha = fecha;
         this.tipoReclamo = tipoReclamo;
         this.descripcion = descripcion;
@@ -143,6 +151,7 @@ public class Reclamo {
             BigInteger nroReclamo,
             Estado estado,
             Usuario usuario,
+            String direccion,
             LocalDate fecha,
             TipoReclamo tipoReclamo,
             String descripcion){
@@ -150,6 +159,7 @@ public class Reclamo {
         this.nroReclamo = nroReclamo;
         this.estado = estado;
         this.usuario = usuario;
+        this.direccion = direccion;
         this.fecha = fecha;
         this.tipoReclamo = tipoReclamo;
         this.descripcion = descripcion;
@@ -160,6 +170,7 @@ public class Reclamo {
             BigInteger nroReclamo,
             Estado estado,
             Usuario usuario,
+            String direccion,
             LocalDate fecha,
             TipoReclamo tipoReclamo,
             String descripcion,
@@ -168,6 +179,7 @@ public class Reclamo {
         this.nroReclamo = nroReclamo;
         this.estado = estado;
         this.usuario = usuario;
+        this.direccion = direccion;
         this.fecha = fecha;
         this.tipoReclamo = tipoReclamo;
         this.descripcion = descripcion;
@@ -188,6 +200,7 @@ public class Reclamo {
     public Usuario getUsuario(){
         return this.usuario;
     }
+    public String getDireccion(){ return this.usuario.getDireccion(); }
 
     @Action()
     @ActionLayout(named = "Editar")
@@ -260,6 +273,8 @@ public class Reclamo {
             messageService.warnUser("No se puede asignar un reclamo Anulado!");
         } else if (getEstado().equals(Estado.Cerrado)) {
             messageService.warnUser("No se puede asignar un reclamo Cerrado!");
+        } else if (getEstado().equals(Estado.En_Proceso)) {
+            messageService.warnUser("El reclamo ya posee una cuadrilla asignada!");
         }else {
             this.cuadrillaAsignada = cuadrilla;
             CambiarEstado(Estado.En_Proceso);

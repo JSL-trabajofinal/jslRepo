@@ -29,3 +29,9 @@
 #   webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-application-1.0-SNAPSHOT.jar
 #   webapp/target/project-webapp-1.0-SNAPSHOT/WEB-INF/lib/project-module-simple-1.0-SNAPSHOT.jar
 #   webapp/target/project.war
+
+.flattened-pom.xml
+
+translations.pot
+
+

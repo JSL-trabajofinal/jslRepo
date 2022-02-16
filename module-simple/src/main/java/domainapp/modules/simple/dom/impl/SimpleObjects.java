@@ -47,7 +47,7 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 )
 public class SimpleObjects {
 
-    @Action(semantics = SemanticsOf.SAFE)
+    /*@Action(semantics = SemanticsOf.SAFE)
     @ActionLayout(bookmarking = BookmarkPolicy.AS_ROOT)
     @MemberOrder(sequence = "1")
     public List<SimpleObject> listAll() {
@@ -81,24 +81,24 @@ public class SimpleObjects {
         return q.setParameter("name", name)
                 .executeUnique();
     }
-
-    @Programmatic
+*/
+/*    @Programmatic
     public void ping() {
         TypesafeQuery<SimpleObject> q = isisJdoSupport.newTypesafeQuery(SimpleObject.class);
         final QSimpleObject candidate = QSimpleObject.candidate();
         q.range(0,2);
         q.orderBy(candidate.name.asc());
         q.executeList();
-    }
+    }*/
 
-    public static class CreateDomainEvent extends ActionDomainEvent<SimpleObjects> {}
+  /*  public static class CreateDomainEvent extends ActionDomainEvent<SimpleObjects> {}
     @Action(domainEvent = CreateDomainEvent.class)
     @MemberOrder(sequence = "3")
     public SimpleObject create(
             @ParameterLayout(named="Name")
             final String name) {
         return repositoryService.persist(new SimpleObject(name));
-    }
+    }*/
 
     @javax.inject.Inject
     RepositoryService repositoryService;

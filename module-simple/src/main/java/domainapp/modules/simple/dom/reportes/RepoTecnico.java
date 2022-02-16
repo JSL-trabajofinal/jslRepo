@@ -21,8 +21,8 @@ public class RepoTecnico {
     public RepoTecnico(){}
 
         public String getDni(){ return this.dni; }
-        public String getApellido(){ return this.apellido; }
-        public String getNombre(){ return this.nombre; }
+        public String getApellido(){ return this.apellido.toUpperCase(); }
+        public String getNombre(){ return this.nombre.substring(0,1).toUpperCase()+this.nombre.substring(1).toLowerCase(); }
         public String getTelefono(){ return this.telefono; }
         public String getDireccion(){ return this.direccion; }
 }

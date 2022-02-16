@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -cp webapp/target/Reclamos.war

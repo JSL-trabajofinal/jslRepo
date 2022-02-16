@@ -44,7 +44,7 @@ export class CrearPlanillaPage implements OnInit {
       seDestapoRed: ['No',Validators.required],
       colectoraNivelAlto: ['No',Validators.required],
       problemaInterno: ['No',Validators.required],
-      observacion: [' ',Validators.required],
+      observacion: [,Validators.required, minLength(20)],
     });
   }
 
@@ -130,4 +130,8 @@ export class CrearPlanillaPage implements OnInit {
   }
 
 
+}
+
+function minLength(arg0: number): any {
+  throw new Error('Function not implemented.');
 }
